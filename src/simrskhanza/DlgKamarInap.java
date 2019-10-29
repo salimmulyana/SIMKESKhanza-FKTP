@@ -3680,6 +3680,11 @@ public class DlgKamarInap extends javax.swing.JDialog {
         TNoRM1.setHighlighter(null);
         TNoRM1.setName("TNoRM1"); // NOI18N
         TNoRM1.setPreferredSize(new java.awt.Dimension(90, 23));
+        TNoRM1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TNoRM1ActionPerformed(evt);
+            }
+        });
         panelGlass9.add(TNoRM1);
 
         TPasien1.setEditable(false);
@@ -8775,7 +8780,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         param.put("kontakrs",akses.getkontakrs());
                         param.put("emailrs",akses.getemailrs());   
                         param.put("logo",Sequel.cariGambar("select logo from setting")); 
-                        Valid.MyReport("rptRM2D.jasper","report","::[ Lembar Assasmen ]::",param); 
+                        Valid.MyReport("rptRMRanap.jasper","report","::[ Rekam Medis Rawat Inap ]::",param); 
                     }else{
                           JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
                           tbKamIn.requestFocus();
@@ -8839,6 +8844,16 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         "on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi desc ",TNoRM.getText()));
                 param.put("petugas",Sequel.cariIsi("select nama from petugas where nip=?",akses.getkode()));
                 
+                param.put("umur",Sequel.cariIsi("select pasien.umur from pasien where pasien.no_rkm_medis=?",TNoRM.getText()));  
+                param.put("rps",Sequel.cariIsi("select pemeriksaan_ralan.keluhan from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("terapi",Sequel.cariIsi("select pemeriksaan_ralan.rtl from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("tb",Sequel.cariIsi("select pemeriksaan_ralan.tinggi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("bb",Sequel.cariIsi("select pemeriksaan_ralan.berat from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("tensi",Sequel.cariIsi("select pemeriksaan_ralan.tensi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("nadi",Sequel.cariIsi("select pemeriksaan_ralan.nadi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("respirasi",Sequel.cariIsi("select pemeriksaan_ralan.respirasi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("suhu",Sequel.cariIsi("select pemeriksaan_ralan.suhu_tubuh from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
+                param.put("diagnosa",Sequel.cariIsi("select kamar_inap.diagnosa_awal from kamar_inap where kamar_inap.no_rawat=?",norawat.getText())); 
                 param.put("namars",akses.getnamars());
                     param.put("alamatrs",akses.getalamatrs());
                     param.put("kotars",akses.getkabupatenrs());
@@ -8846,10 +8861,14 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     param.put("kontakrs",akses.getkontakrs());
                     param.put("emailrs",akses.getemailrs());   
                     param.put("logo",Sequel.cariGambar("select logo from setting")); 
-                Valid.MyReport("rptRM2D.jasper","report","::[ Lembar Assasmen ]::",param); 
+                Valid.MyReport("rptRMRanap.jasper","report","::[ Rekam Medis Rawat Inap ]::",param); 
         }  
                                     
     }//GEN-LAST:event_MnRMRanapActionPerformed
+
+    private void TNoRM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNoRM1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TNoRM1ActionPerformed
 
     /**
     * @param args the command line arguments
