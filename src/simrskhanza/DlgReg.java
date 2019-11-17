@@ -8829,6 +8829,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             param.put("emailrs",akses.getemailrs());
             param.put("logo",Sequel.cariGambar("select logo from setting"));
             param.put("logo2",Sequel.cariGambar("select logo from setting"));
+            param.put("petugas",Sequel.cariIsi("select nama from petugas where nip=?",akses.getkode()));
             Valid.MyReportqry("rptResepRegisterPoli.jasper","report","::[ Blanko Resep dan Register Poli ]::",
                    "select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,pasien.no_tlp,"+
                    "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,pasien.umur as umur,poliklinik.nm_poli,"+
