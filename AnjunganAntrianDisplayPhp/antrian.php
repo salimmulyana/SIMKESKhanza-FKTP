@@ -64,20 +64,28 @@ include ('config.php');
         <a href="antrian.php?action=lama" style="text-decoration:none; color:#000;">
           <div class="card border-success mb-4">
             <div class="card-body text-success">
-              <div style="font-size:120px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">L<span class="antrian_loket"><span></div>
+              <div style="font-size:50px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">DAFTAR: A<span class="antrian_loket"><span></div>
             </div>
-            <div class="card-footer bg-transparent border-success display-4">Loket <span class="get_loket"><span></div>
+            <div class="card-footer bg-transparent border-success display-4">
+				<div style="font-size:55px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">Loket <span class="get_loket"><span></div>
+          </div>
           </div>
         </a>
         <a href="antrian.php?action=baru" style="text-decoration:none; color:#000;">
           <div class="card border-success mb-4">
             <div class="card-body text-success">
-              <div style="font-size:120px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">B<span class="antrian_cs"><span></div>
-            </div>
-            <div class="card-footer bg-transparent border-success display-4">Loket <span class="get_cs"><span></div>
-          </div>
+              <div style="font-size:55px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">KASIR: B<span class="antrian_cs"><span></div>
+            </div>            
         </a>
       </div>
+      </a>
+        <a href="antrian.php?action=apotek" style="text-decoration:none; color:#000;">
+          <div class="card border-success mb-4">
+            <div class="card-body text-success">
+              <div style="font-size:55px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">APOTEK: C<span class="antrian_apotek"><span></div>
+            </div>
+            </div>
+        </a>
     </div>
     <div class="row">
     <div class="col-12 d-flex flex-column justify-content-end pl-2 pr-2 pb-0 mt-3">
@@ -94,7 +102,7 @@ include ('config.php');
         AND jadwal.kd_poli=poliklinik.kd_poli
         WHERE jadwal.hari_kerja='$namahari'");
         while ($row = fetch_array($jadwal)) {
-          echo '<i class="fas fa-user-md"></i> '.$row['0'].' - '.$row['1'].' - '.$row['2'].' s/d '.$row['3'].' WITA &nbsp;&nbsp;&nbsp; ';
+          echo '<i class="fas fa-user-md"></i> '.$row['0'].' - '.$row['1'].' - '.$row['2'].' s/d '.$row['3'].' WIB &nbsp;&nbsp;&nbsp; ';
         }
         ?>
       </marquee></div>
@@ -107,6 +115,9 @@ include ('config.php');
 <?php } ?>
 <?php if($action == 'lama') { ?>
 <?php include('includes/pasien_lama.php'); ?>
+<?php } ?>
+<?php if($action == 'apotek') { ?>
+<?php include('includes/pasien_apotek.php'); ?>
 <?php } ?>
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
@@ -136,6 +147,17 @@ function getAntrianCS() {
   });
 };
 
+setInterval(function(){ getAntrianapotek(); }, 2000);
+
+function getAntrianapotek() {
+  $.ajax({
+    url: 'includes/antriapotek.php',
+    type: 'post',
+    success: function(data) {
+      $('.antrian_apotek').html(data);
+    }
+  });
+};
 setInterval(function(){ getLoket(); }, 2000);
 
 function getLoket() {
@@ -153,6 +175,16 @@ setInterval(function(){ getCS(); }, 2000);
 function getCS() {
   $.ajax({
     url: 'includes/cs.php',
+    type: 'post',
+    success: function(data) {
+      $('.get_cs').html(data);
+    }
+  });
+};
+
+function getapotek() {
+  $.ajax({
+    url: 'includes/apotek.php',
     type: 'post',
     success: function(data) {
       $('.get_cs').html(data);

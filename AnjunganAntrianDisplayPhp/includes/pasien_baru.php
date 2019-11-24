@@ -3,7 +3,7 @@
 	$loket="1";
 	$loket2="2";
 	$loket3="3";
-	$loket4="4";
+	$loket4="kasir";
 	$loket5="5";
 ?>
 <script type="text/javascript" >
@@ -20,10 +20,10 @@ $(document).ready(function(){
 <body >
 		<audio id="suarabel" src="suara/Airport_Bell.wav"></audio>
 		<audio id="suarabeel" src="suara/Airport_Bell3.wav"></audio>
-		<audio id="pasienlama" src="suara/Pasienbaru.wav"></audio>
+		<audio id="pasienlama" src="suara/kasir.wav"></audio>
 		<audio id="suarabelnomorurut" src="suara/no_urut.wav"  ></audio>
 		<audio id="b" src="suara/b.wav"  ></audio>
-		<audio id="suarabelsuarabelloket" src="suara/Diloket.wav"  ></audio>
+		<audio id="suarabelsuarabelloket" src="suara/loketkasir.wav"  ></audio>
 		<audio id="nol" src="suara/nol.wav"  ></audio>
 
 		<audio id="belas" src="suara/belas.wav"  ></audio>
@@ -59,13 +59,13 @@ $(document).ready(function(){
 			query("INSERT INTO `antrics` (`loket`, `antrian`) VALUES ('1', '1')");
 		}
 		 ?>
-		<div align="center" style="font-size: 64px;color:white; text-shadow: 2px 2px 4px #000000;margin: 40px;">Sistem Antrian CS <form method="POST" action=""><input type="submit" class="btn btn-lg" value="Reset"></form></div>
+		<div align="center" style="font-size: 64px;color:white; text-shadow: 2px 2px 4px #000000;margin: 40px;">Sistem Antrian Kasir <form method="POST" action=""><input type="submit" class="btn btn-lg" value="Reset"></form></div>
 
 										<div class="container text-center">
 									    <div class="row justify-content-center">
 												<div class="card-deck">
 												  <div class="card" style="width: 20rem;">
-											      <div class="card-header" style="font-size:41px;">Loket 4</div>
+											      <div class="card-header" style="font-size:41px;">Kasir</div>
 												    <div class="card-body">
 															<h5 class="card-title" style="font-size:100px;">B<?php echo $antrian; ?></h5>
 												    </div>
@@ -77,18 +77,7 @@ $(document).ready(function(){
 															</div>
 												    </div>
 												  </div>
-												  <div class="card" style="width: 20rem;">
-														<div class="card-header" style="font-size:41px;">Loket 5</div>
-												    <div class="card-body">
-															<h5 class="card-title" style="font-size:100px;">B<?php echo $antrian; ?></h5>
-												    </div>
-												    <div class="card-footer p-0">
-															<div class="btn-group btn-group-justified">
-															  <a href="#" class="btn btn-primary" style="font-size:41px;"><?php $q = fetch_assoc(query("SELECT MAX(noantrian) as q FROM antrian_loket WHERE type = 'CS' AND postdate LIKE current_date()")); if(empty($q['q'])) { echo '0'; } else { echo $q['q']; } ?></a>
-															  <a href="#" class="btn btn-primary" style="font-size:41px;"><i class="fas fa-bullhorn" onclick="mulai5();"></i></a>
-															  <a href="antrian.php?action=baru&loket=5" class="btn btn-primary" style="font-size:41px;"><i class="fas fa-forward"></i></a>
-															</div>
-												    </div>
+												  </div>
 												  </div>
 												</div>
 											</div>
@@ -110,7 +99,7 @@ $(document).ready(function(){
 													document.getElementById('pasienlama').currentTime=0;
 													document.getElementById('pasienlama').play();
 											}, totalwaktu);
-											totalwaktu=totalwaktu+1500;
+											totalwaktu=totalwaktu+2500;
 
 
 
@@ -120,7 +109,7 @@ $(document).ready(function(){
 													document.getElementById('suarabelnomorurut').currentTime=0;
 													document.getElementById('suarabelnomorurut').play();
 											}, totalwaktu);
-											totalwaktu=totalwaktu+1000;
+											totalwaktu=totalwaktu+1200;
 
 											//MAINKAN SUARA P
 											setTimeout(function() {

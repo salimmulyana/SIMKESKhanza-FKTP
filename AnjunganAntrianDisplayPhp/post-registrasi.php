@@ -44,7 +44,7 @@ if(!empty($_POST['no_rkm_medis'])){
             stts            = 'Belum',
             stts_daftar     = 'Lama',
             status_lanjut   = 'Ralan',
-            kd_pj           = 'A01',
+            kd_pj           = '{$get_pasien['kd_pj']}',
             umurdaftar      = '{$umurdaftar}',
             sttsumur        = 'Th',
             status_bayar    = 'Belum Bayar',

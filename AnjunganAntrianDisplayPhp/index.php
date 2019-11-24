@@ -114,7 +114,7 @@ include ('config.php');
       background-color: #428bca;
     }
     </style>
-    <title>SKDP</title>
+    <title>APM</title>
   </head>
   <body>
     <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -138,17 +138,10 @@ include ('config.php');
             <ul class="list-unstyled mt-3 mb-4">
               <span style="font-size: 120px; color: white;"><i class="fas fa-stethoscope"></i></span>
             </ul>
-            <h1 class="display-4">DAFTAR</h1>
+            <h1 class="display-4">DAFTAR MANDIRI</h1>
           </div>
         </div>
-        <div class="card mb-4 shadow-sm" data-toggle="modal" data-target="#kontrol">
-          <div class="card-body btn btn-lg btn-danger">
-            <ul class="list-unstyled mt-3 mb-4">
-              <span style="font-size: 120px; color: white;"><i class="fas fa-user-md"></i></span>
-            </ul>
-            <a href="#" style="text-decoration: none; color: white;"><h1 class="display-4">KONTROL</h1></a>
-          </div>
-        </div>
+        
       </div>
     </div>
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center text-danger">
@@ -156,49 +149,62 @@ include ('config.php');
     </div>
 
     <!-- Modal Antrian -->
-    <div class="modal fade" id="antrian" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	
+    <div  class="modal fade" id="antrian" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg  modal-fix" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Antrian Loket</h5>
+            <h2 class="modal-title" id="exampleModalCenterTitle">Antrian Loket Pendaftaran, Kasir dan Apotek</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
-            </button>
+            </button>		
           </div>
           <div class="modal-body">
-            <div class="row justify-content-around">
-            <div class="col-5 pt-5 pb-5">
+            <div class="row" class="col-md-12">
+            <div class="col-4 pt-1 pb-1">
               <div id="printAntrianLoket" style="display: none;" class="cetak">
                 <div style="width: 180px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;">
                   <div id="print_nomor_loket"></div>
-                  Loket Pendaftaran
+                  ANTRIAN PENDAFTARAN
                 </div>
               </div>
               <div id="display_nomor_loket"></div>
               <form role="form" id="formloket" name="formloket">
-                <button type="submit" class="btn btn-lg btn-danger btn-block" id="btnKRM" value="Submit" name="btnKRM" onclick="printDiv('printAntrianLoket');">AMBIL ANTRIAN LOKET</button>
+                <button type="submit" class="btn btn-lg btn-danger btn-block" id="btnKRM" value="Submit" name="btnKRM" onclick="printDiv('printAntrianLoket');">ANTRIAN PENDAFTARAN</button>
               </form>
             </div>
-            <div class="col-5 pt-5 pb-5">
+            <div class="col-4 pt-1 pb-1">
               <div id="printAntrianCS" style="display: none;" class="cetak">
                 <div style="width: 180px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;">
                   <div id="print_nomor_cs"></div>
-                  Layanan Pelanggan
+                  ANTRIAN KASIR
                 </div>
               </div>
               <div id="display_nomor_cs"></div>
               <form role="form" id="formcs" name="formcs">
-                <button type="submit" class="btn btn-lg btn-danger btn-block" id="btnKRMCS" value="Submit" name="btnKRMCS" onclick="printDiv('printAntrianCS');">AMBIL ANTRIAN CS</button>
+                <button type="submit" class="btn btn-lg btn-danger btn-block" id="btnKRMCS" value="Submit" name="btnKRMCS" onclick="printDiv('printAntrianCS');">ANTRIAN KASIR</button>
               </form>
             </div>
+            <div class="col-4 pt-1 pb-1">
+              <div id="printAntrianpr" style="display: none;" class="cetak">
+                <div style="width: 180px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;">
+                  <div id="print_nomor_pr"></div>
+                  ANTRIAN APOTEK
+                </div>
+              </div>
+              <div id="display_nomor_pr"></div>
+              <form role="form" id="formpr" name="formpr">
+                <button type="submit" class="btn btn-lg btn-danger btn-block" id="btnKRMpr" value="Submit" name="btnKRMpr" onclick="printDiv('printAntrianpr');">ANTRIAN APOTEK</button>
+              </form>
             </div>
+			</div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
           </div>
         </div>
-      </div>
     </div>
+ </div>
 
     <!-- Modal Daftar -->
     <div class="modal fade" id="daftar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -212,11 +218,8 @@ include ('config.php');
           </div>
           <ul class="nav nav-tabs mt-3 pl-2 pr-2">
             <li class="nav-item">
-              <a class="nav-link active" data-toggle="tab" href="#umum">Umum</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#bpjs">BPJS</a>
-            </li>
+              <a class="nav-link active" data-toggle="tab" href="#umum">Umum/BPJS/Asuransi Lain</a>
+            
           </ul>
           <!-- Tab panes -->
           <div class="tab-content">
@@ -1121,6 +1124,8 @@ include ('config.php');
       $("#print_nomor_loket").load("get-antrian.php?aksi=printloket");
       $("#display_nomor_cs").load("get-antrian.php?aksi=tampilcs");
       $("#print_nomor_cs").load("get-antrian.php?aksi=printcs");
+      $("#display_nomor_pr").load("get-antrian.php?aksi=tampilapotek");
+      $("#print_nomor_pr").load("get-antrian.php?aksi=printapotek");
     })
     </script>
     <script>

@@ -4,9 +4,9 @@ if (preg_match ('/config.php/', basename($_SERVER['PHP_SELF']))) die ('Unable to
 
 define ("DB_HOST","localhost");
 define ("DB_USER","root");
-define ("DB_PASS","");
-define ("DB_NAME","sik");
-define ("URL","https://localhost/webapps/apm");
+define ("DB_PASS","dotamedika15112019");
+define ("DB_NAME","dotamedika13112019");
+define ("URL","http://192.168.196.82/AnjunganAntrianDisplayPhp");
 
 define('BpjsApiUrl', 'https://new-api.bpjs-kesehatan.go.id:8080/new-vclaim-rest/');
 define('ConsID', '');
@@ -99,7 +99,7 @@ $getSettings = query("SELECT * FROM setting");
 $dataSettings = fetch_assoc($getSettings);
 
 // Get date and time
-date_default_timezone_set('Asia/Makassar');
+date_default_timezone_set('Asia/Jakarta');
 $tanggal    = date('d');
 $bulan      = date('m');
 $tahun      = date('Y');
