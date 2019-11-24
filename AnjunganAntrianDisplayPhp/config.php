@@ -4,8 +4,8 @@ if (preg_match ('/config.php/', basename($_SERVER['PHP_SELF']))) die ('Unable to
 
 define ("DB_HOST","localhost");
 define ("DB_USER","root");
-define ("DB_PASS","dotamedika15112019");
-define ("DB_NAME","dotamedika13112019");
+define ("DB_PASS","password");
+define ("DB_NAME","database");
 define ("URL","http://192.168.196.82/AnjunganAntrianDisplayPhp");
 
 define('BpjsApiUrl', 'https://new-api.bpjs-kesehatan.go.id:8080/new-vclaim-rest/');
