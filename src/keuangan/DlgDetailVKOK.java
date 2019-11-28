@@ -660,7 +660,7 @@ public final class DlgDetailVKOK extends javax.swing.JDialog {
                     param.put("tanggal2",Valid.SetTgl(Tgl2.getSelectedItem()+"")+" 23:59:59");
                     param.put("cari","%"+TCari.getText().trim()+"%");                    
                     param.put("logo",Sequel.cariGambar("select logo from setting"));
-                    Valid.MyReport("rptDetailTindakanOperasi.jasper",param,"::[ Detail Tindakan Operasi ]::");                    
+                    Valid.MyReport("rptDetailTindakanVk.jasper",param,"::[ Detail Tindakan Operasi ]::");                    
                 }   break;
             case 1:
                 if(tabModeOperasi2.getRowCount()==0){

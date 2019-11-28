@@ -78,7 +78,7 @@
 	<detail>
 		<band height="273">
 			<rectangle>
-				<reportElement mode="Opaque" x="7" y="143" width="199" height="41" forecolor="#FF9933" backcolor="#FAA40F" uuid="8073e923-517c-47a0-89db-9859d8394fd9"/>
+				<reportElement mode="Opaque" x="7" y="143" width="199" height="51" forecolor="#FF9933" backcolor="#FAA40F" uuid="8073e923-517c-47a0-89db-9859d8394fd9"/>
 			</rectangle>
 			<textField>
 				<reportElement x="10" y="43" width="190" height="23" forecolor="#002800" uuid="77c517d4-3dcb-4851-8d1e-b4b6880f0dbc"/>
@@ -149,16 +149,16 @@
 				<text><![CDATA[Hotline Service: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="7" y="165" width="197" height="20" uuid="1d124b1c-f87c-4ba8-86ba-fd3600a843e9"/>
+				<reportElement x="7" y="172" width="197" height="20" uuid="1d124b1c-f87c-4ba8-86ba-fd3600a843e9"/>
 				<textElement textAlignment="Center" rotation="UpsideDown">
-					<font size="16" isBold="true"/>
+					<font fontName="Arial Narrow" size="14" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="9" y="139" width="196" height="19" uuid="36150946-b791-43d7-96e3-4a07f68cc479"/>
 				<textElement textAlignment="Center" rotation="UpsideDown">
-					<font size="12"/>
+					<font fontName="Arial Narrow" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{kotars}]]></textFieldExpression>
 			</textField>
@@ -170,9 +170,9 @@
 				<textFieldExpression><![CDATA[$P{kontakrs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="5" y="156" width="201" height="13" uuid="c39c8aaa-4fef-47ca-a2f0-76d536056fa4"/>
+				<reportElement x="5" y="145" width="201" height="24" uuid="c39c8aaa-4fef-47ca-a2f0-76d536056fa4"/>
 				<textElement textAlignment="Center" rotation="UpsideDown">
-					<font size="8"/>
+					<font fontName="Arial Narrow" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{alamatrs}]]></textFieldExpression>
 			</textField>
