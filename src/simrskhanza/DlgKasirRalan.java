@@ -420,6 +420,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPopupMenu1 = new javax.swing.JPopupMenu();
+        MnCetakSuratSakit4 = new javax.swing.JMenuItem();
         MnDataRM = new javax.swing.JMenu();
         MnRMIGD = new javax.swing.JMenu();
         MnDataTriaseIGD = new javax.swing.JMenuItem();
@@ -478,7 +479,6 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnCetakSuratSakit2 = new javax.swing.JMenuItem();
         MnCetakSuratSakit3 = new javax.swing.JMenuItem();
         MnCetakSuratSakit1 = new javax.swing.JMenuItem();
-        MnCetakSuratSakit4 = new javax.swing.JMenuItem();
         MnPersetujuanMedis = new javax.swing.JMenuItem();
         MnBuktiPelayananRalan = new javax.swing.JMenuItem();
         MnLembarRalan = new javax.swing.JMenuItem();
@@ -715,6 +715,19 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 
         jPopupMenu1.setForeground(new java.awt.Color(50, 50, 50));
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
+
+        MnCetakSuratSakit4.setBackground(new java.awt.Color(255, 255, 254));
+        MnCetakSuratSakit4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCetakSuratSakit4.setForeground(new java.awt.Color(50, 50, 50));
+        MnCetakSuratSakit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCetakSuratSakit4.setText("Surat Cuti Sakit 4");
+        MnCetakSuratSakit4.setName("MnCetakSuratSakit4"); // NOI18N
+        MnCetakSuratSakit4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCetakSuratSakit4ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnCetakSuratSakit4);
 
         MnDataRM.setBackground(new java.awt.Color(250, 255, 245));
         MnDataRM.setForeground(new java.awt.Color(50, 50, 50));
@@ -1596,19 +1609,6 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             }
         });
         jMenu4.add(MnCetakSuratSakit1);
-
-        MnCetakSuratSakit4.setBackground(new java.awt.Color(255, 255, 254));
-        MnCetakSuratSakit4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCetakSuratSakit4.setForeground(new java.awt.Color(50, 50, 50));
-        MnCetakSuratSakit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSakit4.setText("Surat Cuti Sakit 4");
-        MnCetakSuratSakit4.setName("MnCetakSuratSakit4"); // NOI18N
-        MnCetakSuratSakit4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCetakSuratSakit4ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(MnCetakSuratSakit4);
 
         MnPersetujuanMedis.setBackground(new java.awt.Color(255, 255, 254));
         MnPersetujuanMedis.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
