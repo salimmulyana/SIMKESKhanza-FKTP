@@ -1345,7 +1345,14 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("noresep",NoResep.getText());
             param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
             param.put("logo",Sequel.cariGambar("select logo from setting")); 
-            
+            param.put("tgl_lahir",Sequel.cariIsi("select tgl_lahir from pasien where no_rkm_medis=?",TNoRm.getText()));
+            param.put("umur",Sequel.cariIsi("select umur from pasien where no_rkm_medis=?",TNoRm.getText()));
+            param.put("jk",Sequel.cariIsi("select jk from pasien where no_rkm_medis=?",TNoRm.getText()));
+            param.put("nik",Sequel.cariIsi("select no_ktp from pasien where no_rkm_medis=?",TNoRm.getText()));
+            param.put("no_telp",Sequel.cariIsi("select no_telp from pasien where no_rkm_medis=?",TNoRm.getText()));
+            param.put("no_peserta",Sequel.cariIsi("select no_peserta from pasien where no_rkm_medis=?",TNoRm.getText()));
+            param.put("poli",Sequel.cariIsi("select nm_poli from poliklinik where kd_poli=?",Sequel.cariIsi("select kd_poli from reg_periksa where no_rawat=?",TNoRw.getText())));
+            param.put("alamat",Sequel.cariIsi("select alamat from pasien where no_rkm_medis=?",TNoRm.getText()));           
             Valid.MyReport("rptLembarObat.jasper",param,"::[ Lembar Pemberian Obat ]::");
             this.setCursor(Cursor.getDefaultCursor());
         }
