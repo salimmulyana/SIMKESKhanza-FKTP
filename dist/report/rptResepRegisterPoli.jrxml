@@ -141,7 +141,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
-				<text><![CDATA[Dokter,]]></text>
+				<text><![CDATA[Pemeriksa,]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="71" y="99" width="8" height="19" uuid="6bfa944d-a977-4672-a9cc-4215d030e4d7"/>
@@ -816,11 +816,11 @@
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="238" y="59" width="140" height="20" uuid="6056b65f-9c6a-4edd-b332-386bece9b2d6"/>
+				<reportElement x="282" y="59" width="96" height="20" uuid="6056b65f-9c6a-4edd-b332-386bece9b2d6"/>
 				<textElement textAlignment="Right">
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Tgl."+$F{tgl_registrasi}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{tgl_registrasi}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="263" y="71" width="3" height="19" uuid="4522f207-a90c-4db0-9644-c82320fec8c2"/>
@@ -879,7 +879,7 @@
 				<textFieldExpression><![CDATA[$F{no_tlp}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="62" y="72" width="126" height="23" uuid="2a3d6cfd-70e3-45f3-a840-fade4e27364b"/>
+				<reportElement x="62" y="72" width="153" height="23" uuid="2a3d6cfd-70e3-45f3-a840-fade4e27364b"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
@@ -891,6 +891,13 @@
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="59" width="35" height="19" uuid="e7158571-3bf9-4e10-b91f-bb56a7461abf"/>
+				<textElement>
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<text><![CDATA[Tgl]]></text>
 			</staticText>
 		</band>
 	</summary>

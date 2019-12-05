@@ -1309,6 +1309,11 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnBlankoResepRanap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
         MnBlankoResepRanap.setText("Blanko Resep Ranap");
         MnBlankoResepRanap.setName("MnBlankoResepRanap"); // NOI18N
+        MnBlankoResepRanap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnBlankoResepRanapActionPerformed(evt);
+            }
+        });
         jPopupMenu1.add(MnBlankoResepRanap);
 
         MnSuratRanapKedua.setBackground(new java.awt.Color(254, 255, 255));
@@ -3567,7 +3572,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-11-2019" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-12-2019" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -3590,7 +3595,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-11-2019" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-12-2019" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -3617,7 +3622,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(75, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-11-2019" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-12-2019" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -3640,7 +3645,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-11-2019" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-12-2019" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -3666,6 +3671,14 @@ public class DlgKamarInap extends javax.swing.JDialog {
         Scroll.setName("Scroll"); // NOI18N
         Scroll.setOpaque(true);
 
+        tbKamIn.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         tbKamIn.setToolTipText("Klik data di table, kemudian klik kanan untuk memilih menu yang diinginkan");
         tbKamIn.setComponentPopupMenu(jPopupMenu1);
         tbKamIn.setName("tbKamIn"); // NOI18N
@@ -8759,7 +8772,24 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     }//GEN-LAST:event_ppResumeBtnPrintActionPerformed
 
     private void MnRMRanapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRMRanapActionPerformed
-        if(tabMode.getRowCount()==0){
+            
+          
+                                    
+    }//GEN-LAST:event_MnRMRanapActionPerformed
+
+    private void TNoRM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNoRM1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TNoRM1ActionPerformed
+
+    private void MnSuratRanapKeduaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSuratRanapKeduaActionPerformed
+        pilihan=2;
+        DlgSakit2.setSize(550,151);
+        DlgSakit2.setLocationRelativeTo(internalFrame1);
+        DlgSakit2.setVisible(true);
+    }//GEN-LAST:event_MnSuratRanapKeduaActionPerformed
+
+    private void MnBlankoResepRanapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnBlankoResepRanapActionPerformed
+    if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
             TCari.requestFocus();
         }else if(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),0).toString().equals("")){
@@ -8819,8 +8849,6 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         param.put("chkkelrj",Sequel.cariIsi("select if(count(reg_periksa.no_rawat)>1,'V','') from reg_periksa inner join pasien "+
                                 "on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi desc ",rs2.getString("no_rkm_medis")));
                         param.put("petugas",Sequel.cariIsi("select nama from petugas where nip=?",akses.getkode()));
-
-
                         param.put("namars",akses.getnamars());
                         param.put("alamatrs",akses.getalamatrs());
                         param.put("kotars",akses.getkabupatenrs());
@@ -8828,7 +8856,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         param.put("kontakrs",akses.getkontakrs());
                         param.put("emailrs",akses.getemailrs());   
                         param.put("logo",Sequel.cariGambar("select logo from setting")); 
-                        Valid.MyReport("rptRMRanap.jasper","report","::[ Rekam Medis Rawat Inap ]::",param); 
+                        Valid.MyReport("rptResepRanap.jasper","report","::[ Blanko Resep Ranap ]::",param); 
                     }else{
                           JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
                           tbKamIn.requestFocus();
@@ -8892,16 +8920,6 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         "on pasien.no_rkm_medis=reg_periksa.no_rkm_medis where reg_periksa.no_rkm_medis=? order by reg_periksa.tgl_registrasi desc ",TNoRM.getText()));
                 param.put("petugas",Sequel.cariIsi("select nama from petugas where nip=?",akses.getkode()));
                 
-                param.put("umur",Sequel.cariIsi("select pasien.umur from pasien where pasien.no_rkm_medis=?",TNoRM.getText()));  
-                param.put("rps",Sequel.cariIsi("select pemeriksaan_ralan.keluhan from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("terapi",Sequel.cariIsi("select pemeriksaan_ralan.rtl from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("tb",Sequel.cariIsi("select pemeriksaan_ralan.tinggi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("bb",Sequel.cariIsi("select pemeriksaan_ralan.berat from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("tensi",Sequel.cariIsi("select pemeriksaan_ralan.tensi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("nadi",Sequel.cariIsi("select pemeriksaan_ralan.nadi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("respirasi",Sequel.cariIsi("select pemeriksaan_ralan.respirasi from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("suhu",Sequel.cariIsi("select pemeriksaan_ralan.suhu_tubuh from pemeriksaan_ralan where pemeriksaan_ralan.no_rawat=?",norawat.getText())); 
-                param.put("diagnosa",Sequel.cariIsi("select kamar_inap.diagnosa_awal from kamar_inap where kamar_inap.no_rawat=?",norawat.getText())); 
                 param.put("namars",akses.getnamars());
                     param.put("alamatrs",akses.getalamatrs());
                     param.put("kotars",akses.getkabupatenrs());
@@ -8909,21 +8927,9 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     param.put("kontakrs",akses.getkontakrs());
                     param.put("emailrs",akses.getemailrs());   
                     param.put("logo",Sequel.cariGambar("select logo from setting")); 
-                Valid.MyReport("rptRMRanap.jasper","report","::[ Rekam Medis Rawat Inap ]::",param); 
-        }  
-                                    
-    }//GEN-LAST:event_MnRMRanapActionPerformed
-
-    private void TNoRM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TNoRM1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TNoRM1ActionPerformed
-
-    private void MnSuratRanapKeduaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSuratRanapKeduaActionPerformed
-        pilihan=2;
-        DlgSakit2.setSize(550,151);
-        DlgSakit2.setLocationRelativeTo(internalFrame1);
-        DlgSakit2.setVisible(true);
-    }//GEN-LAST:event_MnSuratRanapKeduaActionPerformed
+                Valid.MyReport("rptResepRanap.jasper","report","::[ Blanko Resep Ranap 2]::",param); 
+        }
+    }//GEN-LAST:event_MnBlankoResepRanapActionPerformed
 
     /**
     * @param args the command line arguments
