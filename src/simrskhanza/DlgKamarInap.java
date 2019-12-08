@@ -8551,11 +8551,12 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
             param.put("emailrs",akses.getemailrs());
             param.put("TanggalAwal",Sequel.cariIsi("select DATE_FORMAT(reg_periksa.tgl_registrasi, '%e %M %Y') from reg_periksa where reg_periksa.no_rawat='"+TNoRw1.getText()+"'"));
             param.put("logo",Sequel.cariGambar("select logo from setting"));
+            
             Valid.MyReportqry("rptSuratKeteranganRawatPihak2.jasper","report","::[ Surat Sakit ]::",
-                "select pasien.namakeluarga,pasien.alamatpj,pasien.pekerjaanpj, reg_periksa.no_rkm_medis,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
+                "select kamar_inap.diagnosa_awal,pasien.namakeluarga,pasien.alamatpj,pasien.pekerjaanpj, reg_periksa.no_rkm_medis,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
                 " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,pasien.alamat" +
-                " from reg_periksa inner join pasien inner join dokter" +
-                " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter  "+
+                " from reg_periksa inner join pasien inner join dokter inner join kamar_inap" +
+                " on kamar_inap.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter  "+
                 "where reg_periksa.no_rawat='"+TNoRw1.getText()+"' ",param);
             this.setCursor(Cursor.getDefaultCursor());
             }
