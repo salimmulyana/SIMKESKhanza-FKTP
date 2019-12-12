@@ -380,42 +380,42 @@
 				<reportElement x="188" y="135" width="183" height="123" uuid="b92beba1-a5db-4c08-8b95-7e99546fe74f"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="3" y="71" width="50" height="19" uuid="a30d0154-ac3a-4fd5-acf6-46bcdd48ec48"/>
+				<reportElement x="3" y="71" width="50" height="20" uuid="a30d0154-ac3a-4fd5-acf6-46bcdd48ec48"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[No. SIP]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="85" width="50" height="19" uuid="17f1a5d6-7307-495c-9934-3dcc6319ac62"/>
+				<reportElement x="240" y="77" width="50" height="19" uuid="17f1a5d6-7307-495c-9934-3dcc6319ac62"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[No. Resep]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="98" width="50" height="19" uuid="50bf552a-d4e4-4fca-afab-c037bbd8ca6b"/>
+				<reportElement x="3" y="83" width="50" height="19" uuid="50bf552a-d4e4-4fca-afab-c037bbd8ca6b"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[No. RM]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="111" width="50" height="19" uuid="1a542edc-17c1-435f-8f12-4b69e94c8a67"/>
+				<reportElement x="3" y="96" width="50" height="19" uuid="1a542edc-17c1-435f-8f12-4b69e94c8a67"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="226" y="72" width="35" height="19" uuid="457939d9-c42b-48fd-a652-c97912482c06"/>
+				<reportElement x="241" y="95" width="35" height="19" uuid="457939d9-c42b-48fd-a652-c97912482c06"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[Umur]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="225" y="88" width="35" height="19" uuid="6b8f861d-af35-4580-bace-c4699df6bfcc"/>
+				<reportElement x="2" y="109" width="35" height="19" uuid="6b8f861d-af35-4580-bace-c4699df6bfcc"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
@@ -450,7 +450,7 @@
 				<text><![CDATA[Gangguan Ginjal]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="215" y="117" width="155" height="19" uuid="e16723e4-f1c9-473c-a733-0fdd67de3cb1"/>
+				<reportElement x="241" y="117" width="129" height="19" uuid="e16723e4-f1c9-473c-a733-0fdd67de3cb1"/>
 				<textElement textAlignment="Right">
 					<font fontName="Tahoma" size="11" isItalic="true"/>
 				</textElement>
@@ -795,42 +795,35 @@
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="53" y="84" width="10" height="19" uuid="393285ed-da4c-4247-8e57-64ad96bce9f4"/>
+				<reportElement x="290" y="76" width="10" height="19" uuid="393285ed-da4c-4247-8e57-64ad96bce9f4"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="53" y="97" width="10" height="19" uuid="f929a534-8a57-48e2-a271-210ae7ae899f"/>
+				<reportElement x="53" y="82" width="10" height="19" uuid="f929a534-8a57-48e2-a271-210ae7ae899f"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="53" y="109" width="10" height="19" uuid="7980e3a6-3b1b-47f4-8ca2-6e808efe7d46"/>
+				<reportElement x="53" y="94" width="10" height="19" uuid="7980e3a6-3b1b-47f4-8ca2-6e808efe7d46"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="282" y="59" width="96" height="20" uuid="6056b65f-9c6a-4edd-b332-386bece9b2d6"/>
-				<textElement textAlignment="Right">
+				<reportElement x="301" y="58" width="79" height="20" uuid="6056b65f-9c6a-4edd-b332-386bece9b2d6"/>
+				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tgl_registrasi}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="263" y="71" width="3" height="19" uuid="4522f207-a90c-4db0-9644-c82320fec8c2"/>
-				<textElement>
-					<font fontName="Tahoma" size="11"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="236" y="89" width="3" height="19" uuid="361acee1-f2bf-414b-ad2b-0ed8d4655280"/>
+				<reportElement x="290" y="94" width="3" height="19" uuid="4522f207-a90c-4db0-9644-c82320fec8c2"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
@@ -844,30 +837,30 @@
 				<textFieldExpression><![CDATA[$F{nm_dokter}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="65" y="96" width="100" height="19" uuid="19a89c10-fde5-4575-a6a9-17a58829ba75"/>
+				<reportElement x="62" y="83" width="100" height="19" uuid="19a89c10-fde5-4575-a6a9-17a58829ba75"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{no_rkm_medis}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="65" y="111" width="175" height="19" uuid="ac223212-60a2-429a-8136-fc778bd99a13"/>
+				<reportElement x="62" y="96" width="175" height="19" uuid="ac223212-60a2-429a-8136-fc778bd99a13"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nm_pasien}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="269" y="73" width="108" height="18" uuid="e9bd5644-819b-4729-b365-eabce610c6b4"/>
+				<reportElement x="295" y="96" width="87" height="18" uuid="e9bd5644-819b-4729-b365-eabce610c6b4"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{umur}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="268" y="89" width="108" height="27" uuid="7805f4e4-e3ea-4f48-9b9d-76c3e12af3e5"/>
+				<reportElement x="62" y="110" width="173" height="23" uuid="7805f4e4-e3ea-4f48-9b9d-76c3e12af3e5"/>
 				<textElement>
-					<font fontName="Tahoma" size="11"/>
+					<font fontName="Tahoma" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{almt_pj}]]></textFieldExpression>
 			</textField>
@@ -879,26 +872,36 @@
 				<textFieldExpression><![CDATA[$F{no_tlp}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="62" y="72" width="153" height="23" uuid="2a3d6cfd-70e3-45f3-a840-fade4e27364b"/>
+				<reportElement x="62" y="72" width="176" height="12" uuid="2a3d6cfd-70e3-45f3-a840-fade4e27364b"/>
 				<textElement>
-					<font fontName="Tahoma" size="11"/>
+					<font fontName="Tahoma" size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{no_ijn_praktek}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="262" y="88" width="3" height="19" uuid="6c38aa4a-081c-4d25-b8bd-93648eba10f5"/>
+				<reportElement x="53" y="109" width="3" height="19" uuid="6c38aa4a-081c-4d25-b8bd-93648eba10f5"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="242" y="59" width="35" height="19" uuid="e7158571-3bf9-4e10-b91f-bb56a7461abf"/>
+				<reportElement x="240" y="59" width="35" height="19" uuid="e7158571-3bf9-4e10-b91f-bb56a7461abf"/>
 				<textElement>
 					<font fontName="Tahoma" size="11"/>
 				</textElement>
 				<text><![CDATA[Tgl]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="290" y="57" width="10" height="19" uuid="baf7d434-d7f8-49a8-974f-0d11c27ecef2"/>
+				<textElement>
+					<font fontName="Tahoma" size="11"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="54" width="380" height="1" uuid="d9f73fd3-0cf3-4f38-b30e-e55236d88204"/>
+			</line>
 		</band>
 	</summary>
 </jasperReport>
