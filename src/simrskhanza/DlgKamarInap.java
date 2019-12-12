@@ -685,12 +685,14 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         MnBlankoResepRanap = new javax.swing.JMenuItem();
         MnSrtRanap = new javax.swing.JMenuItem();
+        MnSuratRanapPihak2 = new javax.swing.JMenuItem();
+        MnSrtRanap1 = new javax.swing.JMenuItem();
+        MnSuratRanapPihak3 = new javax.swing.JMenuItem();
         MnSKDPBPJS = new javax.swing.JMenuItem();
         MnPermintaan = new javax.swing.JMenu();
         MnJadwalOperasi = new javax.swing.JMenuItem();
         MnPermintaanLab = new javax.swing.JMenuItem();
         MnPermintaanRadiologi = new javax.swing.JMenuItem();
-        MnSuratRanapKedua = new javax.swing.JMenuItem();
         MnTindakan = new javax.swing.JMenu();
         MnRawatJalan = new javax.swing.JMenuItem();
         MnRawatInap = new javax.swing.JMenuItem();
@@ -1340,6 +1342,45 @@ public class DlgKamarInap extends javax.swing.JDialog {
         });
         jPopupMenu1.add(MnSrtRanap);
 
+        MnSuratRanapPihak2.setBackground(new java.awt.Color(254, 255, 255));
+        MnSuratRanapPihak2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnSuratRanapPihak2.setForeground(new java.awt.Color(50, 50, 50));
+        MnSuratRanapPihak2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnSuratRanapPihak2.setText("Surat Keterangan Rawat Pihak Ke-2");
+        MnSuratRanapPihak2.setName("MnSuratRanapPihak2"); // NOI18N
+        MnSuratRanapPihak2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnSuratRanapPihak2ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnSuratRanapPihak2);
+
+        MnSrtRanap1.setBackground(new java.awt.Color(254, 255, 255));
+        MnSrtRanap1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnSrtRanap1.setForeground(new java.awt.Color(50, 50, 50));
+        MnSrtRanap1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnSrtRanap1.setText("Surat Keterangan Rawat Sementara");
+        MnSrtRanap1.setName("MnSrtRanap1"); // NOI18N
+        MnSrtRanap1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnSrtRanap1ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnSrtRanap1);
+
+        MnSuratRanapPihak3.setBackground(new java.awt.Color(254, 255, 255));
+        MnSuratRanapPihak3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnSuratRanapPihak3.setForeground(new java.awt.Color(50, 50, 50));
+        MnSuratRanapPihak3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnSuratRanapPihak3.setText("Surat Keterangan Rawat Sementara Pihak Ke-2");
+        MnSuratRanapPihak3.setName("MnSuratRanapPihak3"); // NOI18N
+        MnSuratRanapPihak3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnSuratRanapPihak3ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnSuratRanapPihak3);
+
         MnSKDPBPJS.setBackground(new java.awt.Color(255, 255, 254));
         MnSKDPBPJS.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnSKDPBPJS.setForeground(new java.awt.Color(50, 50, 50));
@@ -1413,19 +1454,6 @@ public class DlgKamarInap extends javax.swing.JDialog {
             }
         });
         MnPermintaan.add(MnPermintaanRadiologi);
-
-        MnSuratRanapKedua.setBackground(new java.awt.Color(254, 255, 255));
-        MnSuratRanapKedua.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnSuratRanapKedua.setForeground(new java.awt.Color(50, 50, 50));
-        MnSuratRanapKedua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnSuratRanapKedua.setText("Surat Keterangan Rawat Inap Pihak Kedua");
-        MnSuratRanapKedua.setName("MnSuratRanapKedua"); // NOI18N
-        MnSuratRanapKedua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnSuratRanapKeduaActionPerformed(evt);
-            }
-        });
-        MnPermintaan.add(MnSuratRanapKedua);
 
         jPopupMenu1.add(MnPermintaan);
 
@@ -9030,13 +9058,6 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         // TODO add your handling code here:
     }//GEN-LAST:event_TNoRM1ActionPerformed
 
-    private void MnSuratRanapKeduaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSuratRanapKeduaActionPerformed
-        pilihan=2;
-        DlgSakit3.setSize(550,151);
-        DlgSakit3.setLocationRelativeTo(internalFrame1);
-        DlgSakit3.setVisible(true);
-    }//GEN-LAST:event_MnSuratRanapKeduaActionPerformed
-
     private void MnBlankoResepRanapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnBlankoResepRanapActionPerformed
     if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
@@ -9221,8 +9242,11 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 param.put("kontakrs",akses.getkontakrs());
                 param.put("emailrs",akses.getemailrs());
                 param.put("logo",Sequel.cariGambar("select logo from setting"));
-                Valid.MyReportqry("rptSuratSakit3.jasper","report","::[ Surat Sakit ]::",
-                    "select reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
+                param.put("penyakit",Sequel.cariIsi("select concat(diagnosa_pasien.kd_penyakit,' ',penyakit.nm_penyakit) from diagnosa_pasien inner join reg_periksa inner join penyakit "+
+                "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
+                "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw1.getText()));
+                Valid.MyReportqry("rptSuratRawatPihak2.jasper","report","::[ Surat Sakit ]::",
+                    "select pasien.pekerjaanpj,pasien.alamatpj,reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
                     " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
                     " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
                     " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
@@ -9242,43 +9266,43 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 param.put("propinsirs",akses.getpropinsirs());
                 param.put("kontakrs",akses.getkontakrs());
                 param.put("emailrs",akses.getemailrs());
+                param.put("logo",Sequel.cariGambar("select logo from setting"));
                 param.put("penyakit",Sequel.cariIsi("select concat(diagnosa_pasien.kd_penyakit,' ',penyakit.nm_penyakit) from diagnosa_pasien inner join reg_periksa inner join penyakit "+
-                    "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
-                    "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw1.getText()));
-            param.put("logo",Sequel.cariGambar("select logo from setting"));
-            Valid.MyReportqry("rptSuratSakit4.jasper","report","::[ Surat Sakit ]::",
-                "select reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
-                " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
-                " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
-                " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
-                "and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab "+
-                "where reg_periksa.no_rawat='"+TNoRw1.getText()+"' ",param);
-            this.setCursor(Cursor.getDefaultCursor());
-
-        }else if(pilihan==4){
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Map<String, Object> param = new HashMap<>();
-            param.put("hari",lmsakit.getText());
-            param.put("TanggalAwal",TglSakit1.getSelectedItem().toString());
-            param.put("TanggalAkhir",TglSakit2.getSelectedItem().toString());
-            param.put("namars",akses.getnamars());
-            param.put("alamatrs",akses.getalamatrs());
-            param.put("kotars",akses.getkabupatenrs());
-            param.put("propinsirs",akses.getpropinsirs());
-            param.put("kontakrs",akses.getkontakrs());
-            param.put("emailrs",akses.getemailrs());
-            param.put("penyakit",Sequel.cariIsi("select concat(diagnosa_pasien.kd_penyakit,' ',penyakit.nm_penyakit) from diagnosa_pasien inner join reg_periksa inner join penyakit "+
                 "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
                 "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw1.getText()));
-        param.put("logo",Sequel.cariGambar("select logo from setting"));
-        Valid.MyReportqry("rptSuratSakit5.jasper","report","::[ Surat Sakit ]::",
-            "select reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
-            " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
-            " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
-            " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
-            "and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab "+
-            "where reg_periksa.no_rawat='"+TNoRw1.getText()+"' ",param);
-        this.setCursor(Cursor.getDefaultCursor());
+                Valid.MyReportqry("rptSuratRawatSementara.jasper","report","::[ Surat Sakit ]::",
+                    "select reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
+                    " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
+                    " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
+                    " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
+                    "and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab "+
+                    "where reg_periksa.no_rawat='"+TNoRw1.getText()+"' ",param);
+                this.setCursor(Cursor.getDefaultCursor());
+                
+        }else if(pilihan==4){
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                Map<String, Object> param = new HashMap<>();
+                param.put("hari",lmsakit.getText());
+                param.put("TanggalAwal",TglSakit1.getSelectedItem().toString());
+                param.put("TanggalAkhir",TglSakit2.getSelectedItem().toString());
+                param.put("namars",akses.getnamars());
+                param.put("alamatrs",akses.getalamatrs());
+                param.put("kotars",akses.getkabupatenrs());
+                param.put("propinsirs",akses.getpropinsirs());
+                param.put("kontakrs",akses.getkontakrs());
+                param.put("emailrs",akses.getemailrs());
+                param.put("logo",Sequel.cariGambar("select logo from setting"));
+                param.put("penyakit",Sequel.cariIsi("select concat(diagnosa_pasien.kd_penyakit,' ',penyakit.nm_penyakit) from diagnosa_pasien inner join reg_periksa inner join penyakit "+
+                "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
+                "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw1.getText()));
+                Valid.MyReportqry("rptSuratRawatSementaraPihak2.jasper","report","::[ Surat Sakit ]::",
+                    "select pasien.pekerjaanpj,pasien.alamatpj,reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
+                    " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
+                    " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
+                    " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
+                    "and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab "+
+                    "where reg_periksa.no_rawat='"+TNoRw1.getText()+"' ",param);
+                this.setCursor(Cursor.getDefaultCursor());
 
         }else if(pilihan==5){
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -9320,6 +9344,27 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         DlgSakit3.setLocationRelativeTo(internalFrame1);
         DlgSakit3.setVisible(true);
     }//GEN-LAST:event_MnSrtRanapActionPerformed
+
+    private void MnSuratRanapPihak2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSuratRanapPihak2ActionPerformed
+        pilihan=2;
+        DlgSakit3.setSize(550,121);
+        DlgSakit3.setLocationRelativeTo(internalFrame1);
+        DlgSakit3.setVisible(true);
+    }//GEN-LAST:event_MnSuratRanapPihak2ActionPerformed
+
+    private void MnSrtRanap1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSrtRanap1ActionPerformed
+       pilihan=3;
+        DlgSakit3.setSize(550,121);
+        DlgSakit3.setLocationRelativeTo(internalFrame1);
+        DlgSakit3.setVisible(true);
+    }//GEN-LAST:event_MnSrtRanap1ActionPerformed
+
+    private void MnSuratRanapPihak3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSuratRanapPihak3ActionPerformed
+       pilihan=4;
+        DlgSakit3.setSize(550,121);
+        DlgSakit3.setLocationRelativeTo(internalFrame1);
+        DlgSakit3.setVisible(true);
+    }//GEN-LAST:event_MnSuratRanapPihak3ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -9450,6 +9495,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JMenuItem MnSehat;
     private javax.swing.JMenuItem MnSensusRanap;
     private javax.swing.JMenuItem MnSrtRanap;
+    private javax.swing.JMenuItem MnSrtRanap1;
     private javax.swing.JMenuItem MnStatusAPS;
     private javax.swing.JMenuItem MnStatusBelumLengkap;
     private javax.swing.JMenuItem MnStatusBelumPulang;
@@ -9462,7 +9508,8 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JMenuItem MnStatusSembuh;
     private javax.swing.JMenuItem MnStokObatPasien;
     private javax.swing.JMenuItem MnSuratJaminanPelayanan;
-    private javax.swing.JMenuItem MnSuratRanapKedua;
+    private javax.swing.JMenuItem MnSuratRanapPihak2;
+    private javax.swing.JMenuItem MnSuratRanapPihak3;
     private javax.swing.JMenuItem MnTeridentifikasiTB;
     private javax.swing.JMenuItem MnTilikBedah;
     private javax.swing.JMenu MnTindakan;
