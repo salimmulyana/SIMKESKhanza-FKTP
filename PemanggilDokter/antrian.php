@@ -48,7 +48,7 @@ include ('config.php');
   <?php $action = isset($_GET['action'])?$_GET['action']:null; ?>
   <?php if(!$action){ ?>
   <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center mb-4">
-    <div class="text-white display-3">ANTRIAN PASIEN RAWAT JALAN</div>
+    <div class="text-white display-3">PASIEN YANG SEDANG MENUNGGU DI PERIKSA</div>
   </div>
 
   <div class="container-fluid">
@@ -66,9 +66,7 @@ include ('config.php');
             <div class="card-body text-success">
               <div style="font-size:50px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">DAFTAR: A<span class="antrian_loket"><span></div>
             </div>
-            <div class="card-footer bg-transparent border-success display-4">
-				<div style="font-size:55px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">Loket <span class="get_loket"><span></div>
-          </div>
+            
           </div>
         </a>
         <a href="antrian.php?action=baru" style="text-decoration:none; color:#000;">

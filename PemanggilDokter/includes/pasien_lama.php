@@ -20,10 +20,10 @@ $(document).ready(function(){
 <body >
 		<audio id="suarabel" src="suara/intro.wav"></audio>
 		<audio id="suarabeel" src="suara/intro.wav"></audio>
-		<audio id="pasienlama" src="suara/antrianpendaftaran.wav"></audio>
+		<audio id="pasienlama" src="suara/sudahadapasien.wav"></audio>
 		<audio id="suarabelnomorurut" src="suara/no_urut.wav"  ></audio>
 		<audio id="p" src="suara/a.wav"  ></audio>
-		<audio id="suarabelsuarabelloket" src="suara/Diloket.wav"  ></audio>
+		<audio id="suarabelsuarabelloket" src="suara/dokterkeruangpraktek.wav"  ></audio>
 		<audio id="nol" src="suara/nol.wav"  ></audio>
 		<audio id="belas" src="suara/belas.wav"  ></audio>
 		<audio id="sebelas" src="suara/sebelas.wav"  ></audio>
@@ -31,7 +31,7 @@ $(document).ready(function(){
     <audio id="sepuluh" src="suara/sepuluh.wav"  ></audio>
     <audio id="ratus" src="suara/ratus.wav"  ></audio>
     <audio id="seratus" src="suara/seratus.wav"  ></audio>
-    <audio id="suarabelloket1" src="suara/<?php echo $loket; ?>.wav"  ></audio>
+    <audio id="suarabelloket1" src="suara/<?php echo $loket; ?>loket.wav"  ></audio>
     <audio id="suarabelloket2" src="suara/<?php echo $loket2; ?>.wav"  ></audio>
     <audio id="suarabelloket3" src="suara/<?php echo $loket3; ?>.wav"  ></audio>
 
@@ -60,7 +60,7 @@ $(document).ready(function(){
 			query("INSERT INTO `antriloket` (`loket`, `antrian`) VALUES ('1', '1')");
 		}
 		 ?>
-		<div align="center" style="font-size: 64px;color:white; text-shadow: 2px 2px 4px #000000;margin: 40px;">Sistem Antrian Pendaftaran <form method="POST" action=""><input type="submit" class="btn btn-lg" value="RESET"></form></div>
+		<div align="center" style="font-size: 64px;color:white; text-shadow: 2px 2px 4px #000000;margin: 40px;">Sistem Pemanggil Dokter <form method="POST" action=""><input type="submit" class="btn btn-lg" value="RESET"></form></div>
 
 										<div class="container text-center">
 									    <div class="row justify-content-center">
@@ -78,18 +78,7 @@ $(document).ready(function(){
 															</div>
 												    </div>
 												  </div>
-												  <div class="card" style="width: 20rem;">
-														<div class="card-header" style="font-size:41px;">Loket 2</div>
-												    <div class="card-body">
-															<h5 class="card-title" style="font-size:100px;">A<?php echo $antrian; ?></h5>
-												    </div>
-												    <div class="card-footer p-0">
-															<div class="btn-group btn-group-justified">
-															  <a href="#" class="btn btn-primary" style="font-size:41px;"><?php $q = fetch_assoc(query("SELECT MAX(noantrian) as q FROM antrian_loket WHERE type = 'Loket' AND postdate LIKE current_date()")); if(empty($q['q'])) { echo '0'; } else { echo $q['q']; } ?></a>
-															  <a href="#" class="btn btn-primary" style="font-size:41px;"><i class="fas fa-bullhorn" onclick="mulai2();"></i></a>
-															  <a href="antrian.php?action=lama&loket=2" class="btn btn-primary" style="font-size:41px;"><i class="fas fa-forward"></i></a>
-															</div>
-												    </div>
+												   </div>
 												  
 												    </div>
 												  </div>
@@ -113,7 +102,7 @@ $(document).ready(function(){
 													document.getElementById('pasienlama').currentTime=0;
 													document.getElementById('pasienlama').play();
 											}, totalwaktu);
-											totalwaktu=totalwaktu+2500;
+											totalwaktu=totalwaktu+1500;
 
 
 
@@ -144,7 +133,7 @@ $(document).ready(function(){
 															document.getElementById('suarabel0').play();
 														}, totalwaktu);
 
-													totalwaktu=totalwaktu+1000;
+													totalwaktu=totalwaktu+200;
 											<?php
 												}elseif($antrian ==10){
 													//JIKA 10 MAKA MAIKAN SUARA SEPULUH
@@ -154,7 +143,7 @@ $(document).ready(function(){
 																document.getElementById('sepuluh').currentTime=0;
 																document.getElementById('sepuluh').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+200;
 												<?php
 													}elseif($antrian ==11){
 														//JIKA 11 MAKA MAIKAN SUARA SEBELAS
@@ -164,7 +153,7 @@ $(document).ready(function(){
 																document.getElementById('sebelas').currentTime=0;
 																document.getElementById('sebelas').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+200;
 												<?php
 													}elseif($antrian < 20){
 														//JIKA 12-20 MAKA MAIKAN SUARA ANGKA2+"BELAS"
@@ -180,7 +169,7 @@ $(document).ready(function(){
 																document.getElementById('belas').currentTime=0;
 																document.getElementById('belas').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+200;
 												<?php
 													}elseif($antrian <= 99){
 														//JIKA PULUHAN MAKA MAINKAN SUARA ANGKA1+PULUH+AKNGKA2
@@ -196,13 +185,13 @@ $(document).ready(function(){
 																document.getElementById('puluh').currentTime=0;
 																document.getElementById('puluh').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+200;
 														setTimeout(function() {
 																document.getElementById('suarabel1').pause();
 																document.getElementById('suarabel1').currentTime=0;
 																document.getElementById('suarabel1').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+900;
+														totalwaktu=totalwaktu+200;
 
 														<?php
 													}elseif($antrian ==100){
