@@ -185,7 +185,7 @@ $(document).ready(function(){
 																document.getElementById('puluh').currentTime=0;
 																document.getElementById('puluh').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+200;
+														totalwaktu=totalwaktu+1000;
 														setTimeout(function() {
 																document.getElementById('suarabel1').pause();
 																document.getElementById('suarabel1').currentTime=0;
@@ -214,7 +214,7 @@ $(document).ready(function(){
 																document.getElementById('nol').currentTime=0;
 																document.getElementById('nol').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+200;
 												<?php
 													}elseif($antrian <= 109){
 														//JIKA 100 MAKA MAIKAN SUARA RATUS
@@ -236,7 +236,7 @@ $(document).ready(function(){
 																document.getElementById('suarabel2').currentTime=0;
 																document.getElementById('suarabel2').play();
 															}, totalwaktu);
-															totalwaktu=totalwaktu+1000;
+															totalwaktu=totalwaktu+200;
 
 
 												<?php
