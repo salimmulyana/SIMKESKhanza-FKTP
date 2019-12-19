@@ -10,7 +10,6 @@
  */
 
 package laporan;
-
 import fungsi.WarnaTable;
 import fungsi.koneksiDB;
 import fungsi.sekuel;
@@ -765,7 +764,7 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                     });
                 }
                  
-                Valid.MyReport("rptSensusHarianRalan.jasper","report","::[ Laporan Sensus Harian Ralan ]::",param);
+                Valid.MyReport("rptSensusHarianRalanAnc.jasper","report","::[ Laporan Sensus Harian Ralan ]::",param);
             }
         }else if(TabRawat.getSelectedIndex()==1){
             if(tabmode2.getRowCount()==0){
