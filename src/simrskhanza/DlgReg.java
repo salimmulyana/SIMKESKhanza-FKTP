@@ -819,6 +819,7 @@ public final class DlgReg extends javax.swing.JDialog {
         MnResepRegisterPoli = new javax.swing.JMenuItem();
         MnResepRanap = new javax.swing.JMenuItem();
         MnCetakSuratSakit4 = new javax.swing.JMenuItem();
+        MnCetakSuratSakit4Pihak2 = new javax.swing.JMenuItem();
         MnCetakSuratSehat2 = new javax.swing.JMenuItem();
         MnSKDPBPJS = new javax.swing.JMenuItem();
         MnDataRM = new javax.swing.JMenu();
@@ -1162,6 +1163,19 @@ public final class DlgReg extends javax.swing.JDialog {
             }
         });
         jPopupMenu1.add(MnCetakSuratSakit4);
+
+        MnCetakSuratSakit4Pihak2.setBackground(new java.awt.Color(255, 255, 254));
+        MnCetakSuratSakit4Pihak2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCetakSuratSakit4Pihak2.setForeground(new java.awt.Color(50, 50, 50));
+        MnCetakSuratSakit4Pihak2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCetakSuratSakit4Pihak2.setText("Surat Cuti Sakit Pihak Ke 2");
+        MnCetakSuratSakit4Pihak2.setName("MnCetakSuratSakit4Pihak2"); // NOI18N
+        MnCetakSuratSakit4Pihak2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCetakSuratSakit4Pihak2ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnCetakSuratSakit4Pihak2);
 
         MnCetakSuratSehat2.setBackground(new java.awt.Color(255, 255, 254));
         MnCetakSuratSehat2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -3434,7 +3448,7 @@ public final class DlgReg extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-12-2019" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-12-2019" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -3481,7 +3495,7 @@ public final class DlgReg extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-12-2019" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-12-2019" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -4500,7 +4514,7 @@ public final class DlgReg extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(60, 23));
         panelGlass7.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-12-2019" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-12-2019" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -4513,7 +4527,7 @@ public final class DlgReg extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(24, 23));
         panelGlass7.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-12-2019" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-12-2019" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -4653,7 +4667,7 @@ public final class DlgReg extends javax.swing.JDialog {
         FormInput.add(jLabel9);
         jLabel9.setBounds(165, 72, 36, 23);
 
-        DTPReg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-12-2019" }));
+        DTPReg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-12-2019" }));
         DTPReg.setDisplayFormat("dd-MM-yyyy");
         DTPReg.setName("DTPReg"); // NOI18N
         DTPReg.setOpaque(false);
@@ -5964,6 +5978,31 @@ private void BtnPrint2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
                 Valid.MyReportqry("rptSuratSakit6.jasper","report","::[ Surat Sakit ]::",
+                              "select pasien.namakeluarga,pasien.pekerjaanpj,pasien.alamatpj,reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
+                              " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
+                              " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
+                              " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
+                         "and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab "+
+                              "where reg_periksa.no_rawat='"+TNoRw.getText()+"' ",param);
+                this.setCursor(Cursor.getDefaultCursor());     
+            
+                }else if(pilihan==6){
+                this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                Map<String, Object> param = new HashMap<>();
+                param.put("hari",lmsakit.getText());
+                param.put("TanggalAwal",TglSakit1.getSelectedItem().toString());
+                param.put("TanggalAkhir",TglSakit2.getSelectedItem().toString());
+                param.put("namars",akses.getnamars());
+                param.put("alamatrs",akses.getalamatrs());
+                param.put("kotars",akses.getkabupatenrs());
+                param.put("propinsirs",akses.getpropinsirs());
+                param.put("kontakrs",akses.getkontakrs());
+                param.put("emailrs",akses.getemailrs());  
+                param.put("penyakit",Sequel.cariIsi("select concat(diagnosa_pasien.kd_penyakit,' ',penyakit.nm_penyakit) from diagnosa_pasien inner join reg_periksa inner join penyakit "+
+                    "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
+                    "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
+                param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                Valid.MyReportqry("rptSuratSakit7.jasper","report","::[ Surat Sakit ]::",
                               "select pasien.namakeluarga,pasien.pekerjaanpj,pasien.alamatpj,reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
                               " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
                               " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
@@ -9012,6 +9051,13 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
        }
     }//GEN-LAST:event_MnResepRanapActionPerformed
 
+    private void MnCetakSuratSakit4Pihak2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCetakSuratSakit4Pihak2ActionPerformed
+        pilihan=6;
+        DlgSakit.setSize(550,121);
+        DlgSakit.setLocationRelativeTo(internalFrame1);
+        DlgSakit.setVisible(true);
+    }//GEN-LAST:event_MnCetakSuratSakit4Pihak2ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -9096,6 +9142,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     private javax.swing.JMenuItem MnCetakSuratSakit2;
     private javax.swing.JMenuItem MnCetakSuratSakit3;
     private javax.swing.JMenuItem MnCetakSuratSakit4;
+    private javax.swing.JMenuItem MnCetakSuratSakit4Pihak2;
     private javax.swing.JMenuItem MnCetakSuratSakit5;
     private javax.swing.JMenuItem MnCetakSuratSehat;
     private javax.swing.JMenuItem MnCetakSuratSehat1;
