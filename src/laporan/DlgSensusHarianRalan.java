@@ -327,7 +327,7 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                 "No.","Nomor RM","Nama Pasien","Tgl.Lahir","Tgl.Daftar","Poliklinik","Dokter",
                 "J.K.","Rujukan Faskes Lain","Umur","Cara Bayar","Kecamatan","Diagnosa Utama",
                 "Diagnosa Tambahan","ICD X Utama","ICD X Tambahan","Tindakan","Hasil Akhir",
-                "Pengunjung","Jenis Kunjungan","Jenis Kasus","Nama Keluarga","Alamat","Kesimpulan"
+                "Pengunjung","Jenis Kunjungan","Jenis Kasus","Nama Keluarga","Alamat","Kesimpulan","Berat Badan","Tinggi Badan","Jenis Vaksin"
             }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -336,7 +336,7 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
         table5.setPreferredScrollableViewportSize(new Dimension(500,500));
         table5.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 24; i++) {
+        for (i = 0; i < 27; i++) {
             TableColumn column = table5.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(35);
@@ -388,6 +388,12 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                 column.setPreferredWidth(150);
             }else if(i==24){
                 column.setPreferredWidth(150);
+            }else if(i==25){
+                column.setPreferredWidth(35);
+            }else if(i==26){
+                column.setPreferredWidth(35);
+            }else if(i==27){
+                column.setPreferredWidth(35);
             }
         }
         table5.setDefaultRenderer(Object.class, new WarnaTable());
@@ -1222,7 +1228,7 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                 
                 Sequel.queryu("truncate table temporary_sensus_harian");
                 for(int r=0;r<tabmode5.getRowCount();r++){ 
-                    Sequel.menyimpan("temporary_sensus_harian","'0',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'','','','','','','','','','','','',''",24,new String[]{
+                    Sequel.menyimpan("temporary_sensus_harian","'0',?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'','','','','','','','','',''",27,new String[]{
                             tabmode5.getValueAt(r,0).toString(),tabmode5.getValueAt(r,1).toString(),tabmode5.getValueAt(r,2).toString(),
                             tabmode5.getValueAt(r,3).toString(),tabmode5.getValueAt(r,4).toString(),tabmode5.getValueAt(r,5).toString(),
                             tabmode5.getValueAt(r,6).toString(),tabmode5.getValueAt(r,7).toString(),tabmode5.getValueAt(r,8).toString(),
@@ -1230,7 +1236,8 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                             tabmode5.getValueAt(r,12).toString(),tabmode5.getValueAt(r,13).toString(),tabmode5.getValueAt(r,14).toString(),
                             tabmode5.getValueAt(r,15).toString(),tabmode5.getValueAt(r,16).toString(),tabmode5.getValueAt(r,17).toString(),
                             tabmode5.getValueAt(r,18).toString(),tabmode5.getValueAt(r,19).toString(),tabmode5.getValueAt(r,20).toString(),
-                            tabmode5.getValueAt(r,21).toString(),tabmode5.getValueAt(r,22).toString(),tabmode5.getValueAt(r,23).toString()
+                            tabmode5.getValueAt(r,21).toString(),tabmode5.getValueAt(r,22).toString(),tabmode5.getValueAt(r,23).toString(),
+                            tabmode5.getValueAt(r,24).toString(),tabmode5.getValueAt(r,25).toString(),tabmode5.getValueAt(r,26).toString()
                     });
                 }
                  
@@ -1933,7 +1940,7 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                        "pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,poliklinik.nm_poli,"+
                        "reg_periksa.p_jawab,reg_periksa.almt_pj,reg_periksa.hubunganpj,reg_periksa.biaya_reg,"+
                        "reg_periksa.stts_daftar,penjab.png_jawab,pasien.no_tlp,reg_periksa.stts,kecamatan.nm_kec,kabupaten.nm_kab,reg_periksa.status_poli, "+
-                       "pasien.namakeluarga,pasien.alamat,pemeriksaan_ralan.penilaian from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join penjab "+
+                       "pasien.namakeluarga,pasien.alamat,pemeriksaan_ralan.penilaian,pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.berat,pemeriksaan_ralan.tinggi from reg_periksa inner join dokter inner join pasien inner join poliklinik inner join penjab "+
                        "inner join kecamatan inner join kabupaten inner join pemeriksaan_ralan inner join diagnosa_pasien "+
                        "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and pemeriksaan_ralan.no_rawat=reg_periksa.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                        "and reg_periksa.kd_pj=penjab.kd_pj and reg_periksa.kd_poli=poliklinik.kd_poli "+
@@ -2000,7 +2007,9 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                         diagnosautama,diagnosasekunder,Sequel.cariIsi("select icd9.kode,icd9.deskripsi_panjang from icd9 inner join prosedur_pasien "+
                         "on icd9.kode=prosedur_pasien.kode where prosedur_pasien.no_rawat=? limit 1",rs.getString("no_rawat")),
                         rs.getString("stts"),rs.getString("stts_daftar"),rs.getString("status_poli"),
-                        Sequel.cariIsi("select status_penyakit from diagnosa_pasien where prioritas='1' and status='Ralan' and no_rawat=?",rs.getString("no_rawat")),rs.getString("namakeluarga"),rs.getString("alamat"),rs.getString("penilaian")
+                        Sequel.cariIsi("select status_penyakit from diagnosa_pasien where prioritas='1' and status='Ralan' and no_rawat=?",
+                                rs.getString("no_rawat")),rs.getString("namakeluarga"),rs.getString("alamat"),rs.getString("penilaian"),
+                                rs.getString("berat"),rs.getString("tinggi"),rs.getString("pemeriksaan")
                     });                     
                     i++;
                 }
