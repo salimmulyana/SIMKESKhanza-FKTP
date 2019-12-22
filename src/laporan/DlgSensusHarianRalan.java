@@ -1256,7 +1256,7 @@ public final class DlgSensusHarianRalan extends javax.swing.JDialog {
                     });
                 }
                  
-                Valid.MyReport("rptSensusHarianRalanImunisasiBalita.jasper","report","::[ Laporan Sensus Harian Ralan Pasien Hamil]::",param);
+                Valid.MyReport("rptSensusHarianRalanVaksinBalita.jasper","report","::[ Laporan Sensus Harian Ralan Pasien Hamil]::",param);
             }            
         
         }        
