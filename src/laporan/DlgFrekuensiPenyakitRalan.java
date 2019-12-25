@@ -381,7 +381,7 @@ public class DlgFrekuensiPenyakitRalan extends javax.swing.JDialog {
 
         ppGrafikTerbanyakBatang.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikTerbanyakBatang.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppGrafikTerbanyakBatang.setForeground(new java.awt.Color(50,50,50));
+        ppGrafikTerbanyakBatang.setForeground(new java.awt.Color(50, 50, 50));
         ppGrafikTerbanyakBatang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikTerbanyakBatang.setText("Grafik Batang 10 Penyakit Terbanyak");
         ppGrafikTerbanyakBatang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -397,7 +397,7 @@ public class DlgFrekuensiPenyakitRalan extends javax.swing.JDialog {
 
         ppGrafikTerbanyakPie.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikTerbanyakPie.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppGrafikTerbanyakPie.setForeground(new java.awt.Color(50,50,50));
+        ppGrafikTerbanyakPie.setForeground(new java.awt.Color(50, 50, 50));
         ppGrafikTerbanyakPie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikTerbanyakPie.setText("Grafik Pie 10 Penyakit Terbanyak");
         ppGrafikTerbanyakPie.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -413,7 +413,7 @@ public class DlgFrekuensiPenyakitRalan extends javax.swing.JDialog {
 
         ppGrafikTerkecilBatang.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikTerkecilBatang.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppGrafikTerkecilBatang.setForeground(new java.awt.Color(50,50,50));
+        ppGrafikTerkecilBatang.setForeground(new java.awt.Color(50, 50, 50));
         ppGrafikTerkecilBatang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikTerkecilBatang.setText("Grafik Batang 10 Penyakit Tersedikit");
         ppGrafikTerkecilBatang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -429,7 +429,7 @@ public class DlgFrekuensiPenyakitRalan extends javax.swing.JDialog {
 
         ppGrafikTerkecilPie.setBackground(new java.awt.Color(255, 255, 254));
         ppGrafikTerkecilPie.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        ppGrafikTerkecilPie.setForeground(new java.awt.Color(50,50,50));
+        ppGrafikTerkecilPie.setForeground(new java.awt.Color(50, 50, 50));
         ppGrafikTerkecilPie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/Create-Ticket24.png"))); // NOI18N
         ppGrafikTerkecilPie.setText("Grafik Pie 10 Penyakit Tersedikit");
         ppGrafikTerkecilPie.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -452,7 +452,7 @@ public class DlgFrekuensiPenyakitRalan extends javax.swing.JDialog {
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Rekap Frekuensi Penyakit Di Rawat Jalan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50,50,50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Rekap Frekuensi Penyakit Di Rawat Jalan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -828,6 +828,11 @@ public class DlgFrekuensiPenyakitRalan extends javax.swing.JDialog {
         nmkelurahan.setEditable(false);
         nmkelurahan.setName("nmkelurahan"); // NOI18N
         nmkelurahan.setPreferredSize(new java.awt.Dimension(215, 23));
+        nmkelurahan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nmkelurahanActionPerformed(evt);
+            }
+        });
         FormInput.add(nmkelurahan);
         nmkelurahan.setBounds(539, 70, 260, 23);
 
@@ -1847,6 +1852,10 @@ private void ppGrafikTerkecilPieActionPerformed(java.awt.event.ActionEvent evt) 
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnSeek7KeyPressed
 
+    private void nmkelurahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nmkelurahanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nmkelurahanActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1946,16 +1955,21 @@ private void ppGrafikTerkecilPieActionPerformed(java.awt.event.ActionEvent evt) 
                 rs=ps.executeQuery();            
                 while(rs.next()){
                     i=0;
-                    ps2=koneksi.prepareStatement("select diagnosa_pasien.no_rawat as jumlah from diagnosa_pasien inner join reg_periksa on reg_periksa.no_rawat=diagnosa_pasien.no_rawat "+
-                       "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and reg_periksa.tgl_registrasi between ? and ? and diagnosa_pasien.kd_penyakit=? group by diagnosa_pasien.no_rawat");    
+                    ps2=koneksi.prepareStatement( "select diagnosa_pasien.no_rawat as jumlah from diagnosa_pasien inner join reg_periksa inner join kabupaten inner join kecamatan inner join kelurahan inner join pasien on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and pasien.kd_kab=kabupaten.kd_kab and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kel=kelurahan.kd_kel "+
+                       "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and reg_periksa.tgl_registrasi between ? and ? and diagnosa_pasien.kd_penyakit=? and kabupaten.nm_kab like ? and kecamatan.nm_kec like ? and kelurahan.nm_kel like ? group by diagnosa_pasien.no_rawat");    
                     try {
                         ps2.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                         ps2.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                         ps2.setString(3,rs.getString("kd_penyakit"));
+                        ps2.setString(4,"%"+nmkabupaten.getText().trim()+"%");
+                        ps2.setString(5,"%"+nmkecamatan.getText().trim()+"%");
+                        ps2.setString(6,"%"+nmkelurahan.getText().trim()+"%");
+                        
                         rs2=ps2.executeQuery();
                         Sequel.queryu("delete from temporary_surveilens_penyakit");
                         while(rs2.next()){
-                            ps7=koneksi.prepareStatement("select diagnosa_pasien.kd_penyakit from diagnosa_pasien where diagnosa_pasien.prioritas<>'1' and diagnosa_pasien.status='Ralan' and diagnosa_pasien.no_rawat=?");    
+                            ps7=koneksi.prepareStatement("select diagnosa_pasien.kd_penyakit from diagnosa_pasien inner join kabupaten inner join kecamatan inner join kelurahan inner join pasien where "+
+                                    "pasien.kd_kab=kabupaten.kd_kab and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kel=kelurahan.kd_kel and diagnosa_pasien.prioritas<>'1' and diagnosa_pasien.status='Ralan' and diagnosa_pasien.no_rawat=?");    
                             try {
                                 ps7.setString(1,rs2.getString(1));
                                 rs7=ps7.executeQuery();
@@ -2014,13 +2028,17 @@ private void ppGrafikTerkecilPieActionPerformed(java.awt.event.ActionEvent evt) 
 
                     a=0;
                     ps3=koneksi.prepareStatement("select diagnosa_pasien.no_rawat as jumlah from diagnosa_pasien inner join reg_periksa inner join pasien_mati "+
-                       "inner join pasien on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                       "and pasien_mati.no_rkm_medis=pasien.no_rkm_medis where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='L' and reg_periksa.tgl_registrasi between ? and ? "+
-                       "and diagnosa_pasien.kd_penyakit=? group by diagnosa_pasien.no_rawat");  
+                       "inner join pasien inner join kabupaten inner join kecamatan inner join kelurahan on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                       "and pasien.kd_kab=kabupaten.kd_kab and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kel=kelurahan.kd_kel and pasien_mati.no_rkm_medis=pasien.no_rkm_medis where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='L' and reg_periksa.tgl_registrasi between ? and ? "+
+                       "and diagnosa_pasien.kd_penyakit=? and kabupaten.nm_kab like ? and kecamatan.nm_kec like ? and kelurahan.nm_kel like ? group by diagnosa_pasien.no_rawat");  
                     try{
                         ps3.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                         ps3.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                         ps3.setString(3,rs.getString("kd_penyakit"));
+                        ps3.setString(4,"%"+nmkabupaten.getText().trim()+"%");
+                        ps3.setString(5,"%"+nmkecamatan.getText().trim()+"%");
+                        ps3.setString(6,"%"+nmkelurahan.getText().trim()+"%");
+                        
                         rs3=ps3.executeQuery();
                         rs3.last();
                         if(rs3.getRow()>0) a=rs3.getRow();
@@ -2038,13 +2056,16 @@ private void ppGrafikTerkecilPieActionPerformed(java.awt.event.ActionEvent evt) 
 
                     b=0;
                     ps4=koneksi.prepareStatement("select diagnosa_pasien.no_rawat as jumlah from diagnosa_pasien inner join reg_periksa inner join pasien_mati "+
-                       "inner join pasien on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                       "and pasien_mati.no_rkm_medis=pasien.no_rkm_medis where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='P' and reg_periksa.tgl_registrasi between ? and ? "+
-                       "and diagnosa_pasien.kd_penyakit=? group by diagnosa_pasien.no_rawat"); 
+                       "inner join pasien inner join kabupaten inner join kecamatan inner join kelurahan on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                       "and pasien.kd_kab=kabupaten.kd_kab and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kel=kelurahan.kd_kel and pasien_mati.no_rkm_medis=pasien.no_rkm_medis where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='P' and reg_periksa.tgl_registrasi between ? and ? "+
+                       "and diagnosa_pasien.kd_penyakit=? and kabupaten.nm_kab like ? and kecamatan.nm_kec like ? and kelurahan.nm_kel like ? group by diagnosa_pasien.no_rawat");  
                     try {
                         ps4.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                         ps4.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                         ps4.setString(3,rs.getString("kd_penyakit"));
+                        ps4.setString(4,"%"+nmkabupaten.getText().trim()+"%");
+                        ps4.setString(5,"%"+nmkecamatan.getText().trim()+"%");
+                        ps4.setString(6,"%"+nmkelurahan.getText().trim()+"%");
                         rs4=ps4.executeQuery();
                         rs4.last();       
                         if(rs4.getRow()>0) b=rs4.getRow();
@@ -2061,13 +2082,16 @@ private void ppGrafikTerkecilPieActionPerformed(java.awt.event.ActionEvent evt) 
 
                     c=0;
                     ps5=koneksi.prepareStatement("select diagnosa_pasien.no_rawat as jumlah from diagnosa_pasien inner join reg_periksa "+
-                       "inner join pasien on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                       "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='L' and reg_periksa.tgl_registrasi between ? and ? "+
-                       "and diagnosa_pasien.kd_penyakit=? group by diagnosa_pasien.no_rawat");
+                       "inner join pasien inner join kabupaten inner join kecamatan inner join kelurahan on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                       "and pasien.kd_kab=kabupaten.kd_kab and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kel=kelurahan.kd_kel where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='L' and reg_periksa.tgl_registrasi between ? and ? "+
+                       "and diagnosa_pasien.kd_penyakit=? and kabupaten.nm_kab like ? and kecamatan.nm_kec like ? and kelurahan.nm_kel like ? group by diagnosa_pasien.no_rawat");
                     try{
                         ps5.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                         ps5.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                         ps5.setString(3,rs.getString("kd_penyakit"));
+                        ps5.setString(4,"%"+nmkabupaten.getText().trim()+"%");
+                        ps5.setString(5,"%"+nmkecamatan.getText().trim()+"%");
+                        ps5.setString(6,"%"+nmkelurahan.getText().trim()+"%");
                         rs5=ps5.executeQuery();
                         rs5.last();
                         if(rs5.getRow()>0)  c=rs5.getRow()-a;
@@ -2084,13 +2108,16 @@ private void ppGrafikTerkecilPieActionPerformed(java.awt.event.ActionEvent evt) 
 
                     d=0;
                     ps6=koneksi.prepareStatement("select diagnosa_pasien.no_rawat as jumlah from diagnosa_pasien inner join reg_periksa "+
-                       "inner join pasien on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                       "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='P' and reg_periksa.tgl_registrasi between ? and ? "+
-                       "and diagnosa_pasien.kd_penyakit=? group by diagnosa_pasien.no_rawat");
+                       "inner join pasien inner join kabupaten inner join kecamatan inner join kelurahan on reg_periksa.no_rawat=diagnosa_pasien.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                       "and pasien.kd_kab=kabupaten.kd_kab and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kel=kelurahan.kd_kel where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and pasien.jk='P' and reg_periksa.tgl_registrasi between ? and ? "+
+                       "and diagnosa_pasien.kd_penyakit=? and kabupaten.nm_kab like ? and kecamatan.nm_kec like ? and kelurahan.nm_kel like ? group by diagnosa_pasien.no_rawat");
                     try{
                         ps6.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                         ps6.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                         ps6.setString(3,rs.getString("kd_penyakit"));
+                        ps6.setString(4,"%"+nmkabupaten.getText().trim()+"%");
+                        ps6.setString(5,"%"+nmkecamatan.getText().trim()+"%");
+                        ps6.setString(6,"%"+nmkelurahan.getText().trim()+"%");
                         rs6=ps6.executeQuery();
                         rs6.last();
                         if(rs6.getRow()>0) d=rs6.getRow()-b;
