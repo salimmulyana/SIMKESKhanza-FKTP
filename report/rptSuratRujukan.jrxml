@@ -118,6 +118,9 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 	<field name="ambulance" class="java.lang.String"/>
 	<field name="keterangan" class="java.lang.String"/>
 	<field name="jam" class="java.lang.String"/>
+	<field name="pendamping" class="java.lang.String"/>
+	<field name="alasanrujuk" class="java.lang.String"/>
+	<field name="namapendamping" class="java.lang.String"/>
 	<variable name="jkel" class="java.lang.String">
 		<variableExpression><![CDATA[$F{jk}=="L"? "Laki-Laki":"Perempuan"]]></variableExpression>
 	</variable>
@@ -407,15 +410,15 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="292" y="248" width="269" height="14" uuid="aa0b5b9c-5f5f-44f7-b6fe-05bb25e6ee68"/>
+				<reportElement mode="Transparent" x="292" y="248" width="68" height="14" uuid="aa0b5b9c-5f5f-44f7-b6fe-05bb25e6ee68"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Pendamping: Dokter/ Perawat/ Bidan/ Tidak ada/ Keluarga]]></text>
+				<text><![CDATA[Pendamping:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="292" y="260" width="108" height="19" uuid="8cc631d7-8400-4772-ae00-8f158ccdf6e9"/>
+				<reportElement mode="Transparent" x="292" y="260" width="88" height="19" uuid="8cc631d7-8400-4772-ae00-8f158ccdf6e9"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -461,14 +464,6 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Transparent" x="109" y="271" width="184" height="17" uuid="b2a9fd56-3ecd-4b4f-99ec-a80ad2963a2c"/>
-				<textElement>
-					<font fontName="Tahoma" size="10"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Perawatan khusus/ Permintaan Khusus]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Transparent" x="2" y="288" width="88" height="21" uuid="d71eb3d3-0e8c-47e4-921f-ed858f2442dd"/>
@@ -830,6 +825,27 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 					<font fontName="Tahoma"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{pemeriksaan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="249" width="201" height="19" uuid="cd1b5e5f-319f-470c-80cc-380c1a054968"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pendamping}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="273" width="177" height="15" uuid="0767db98-4012-47ed-a56a-ffdea9e4c074"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{alasanrujuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="261" width="175" height="18" uuid="04e1779c-5646-4b67-b107-0ba78d8f822b"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namapendamping}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

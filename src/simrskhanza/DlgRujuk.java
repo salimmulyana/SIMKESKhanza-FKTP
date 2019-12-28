@@ -67,7 +67,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
 
         Object[] row={
             "No.Rujuk","No.Rawat","No.R.M.","Nama Pasien","Tempat Rujuk","Tgl.Rujuk","Jam Rujuk",
-            "Keterangan Diagnosa","Kode Dokter","Dokter Perujuk","Kategori Rujuk","Ambulance","No Kendaraan","Pendamping"
+            "Keterangan Diagnosa","Kode Dokter","Dokter Perujuk","Kategori Rujuk","Alasan Dirujuk","Ambulance","Pendamping","Nama Pendamping","No Kendaraan"
         };
         tabMode=new DefaultTableModel(null,row){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -78,7 +78,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         tbObat.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbObat.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 14; i++) {
+        for (i = 0; i < 16; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(75);
@@ -109,6 +109,10 @@ public final class DlgRujuk extends javax.swing.JDialog {
                 column.setPreferredWidth(150);
             }else if(i==13){
                 column.setPreferredWidth(150);
+            }else if(i==14){
+                column.setPreferredWidth(150);
+            }else if(i==14){
+                column.setPreferredWidth(150);
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
@@ -118,6 +122,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));
         TDiagnosa.setDocument(new batasInput((int)5000).getKata(TDiagnosa));
         ket.setDocument(new batasInput((int)5000).getKata(ket));
+        namapendamping.setDocument(new batasInput((int)5000).getKata(namapendamping));
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         KdDok.setDocument(new batasInput((byte)20).getKata(KdDok));
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -226,18 +231,22 @@ public final class DlgRujuk extends javax.swing.JDialog {
         btnDokter = new widget.Button();
         TDokter = new widget.TextBox();
         jLabel13 = new widget.Label();
-        jLabel14 = new widget.Label();
         jLabel15 = new widget.Label();
-        ket = new widget.TextBox();
+        namapendamping = new widget.TextBox();
         jLabel11 = new widget.Label();
         CmbJam = new widget.ComboBox();
         CmbMenit = new widget.ComboBox();
-        ambulance = new widget.ComboBox();
+        alasanrujuk = new widget.ComboBox();
         ChkJln = new widget.CekBox();
         CmbDetik = new widget.ComboBox();
         ktrujuk = new widget.ComboBox();
         jLabel16 = new widget.Label();
-        pendamping = new javax.swing.JComboBox<>();
+        ambulance = new widget.ComboBox();
+        jLabel17 = new widget.Label();
+        jLabel18 = new widget.Label();
+        jLabel20 = new widget.Label();
+        ket = new widget.TextBox();
+        pendamping = new widget.ComboBox();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -434,7 +443,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-12-2019" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-12-2019" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -448,7 +457,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-12-2019" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-12-2019" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -581,7 +590,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         TPasien.setBounds(340, 10, 340, 23);
 
         DTPRujuk.setForeground(new java.awt.Color(50, 70, 50));
-        DTPRujuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-12-2019" }));
+        DTPRujuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "28-12-2019" }));
         DTPRujuk.setDisplayFormat("dd-MM-yyyy");
         DTPRujuk.setName("DTPRujuk"); // NOI18N
         DTPRujuk.setOpaque(false);
@@ -652,25 +661,25 @@ public final class DlgRujuk extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(420, 70, 90, 23);
 
-        jLabel14.setText("Pendamping:");
-        jLabel14.setName("jLabel14"); // NOI18N
-        FormInput.add(jLabel14);
-        jLabel14.setBounds(690, 70, 90, 23);
-
         jLabel15.setText("No. Kendaraan");
         jLabel15.setName("jLabel15"); // NOI18N
         FormInput.add(jLabel15);
         jLabel15.setBounds(410, 130, 90, 23);
 
-        ket.setHighlighter(null);
-        ket.setName("ket"); // NOI18N
-        ket.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                ketKeyPressed(evt);
+        namapendamping.setHighlighter(null);
+        namapendamping.setName("namapendamping"); // NOI18N
+        namapendamping.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namapendampingActionPerformed(evt);
             }
         });
-        FormInput.add(ket);
-        ket.setBounds(510, 130, 170, 23);
+        namapendamping.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                namapendampingKeyPressed(evt);
+            }
+        });
+        FormInput.add(namapendamping);
+        namapendamping.setBounds(790, 40, 170, 23);
 
         jLabel11.setText("Jam :");
         jLabel11.setName("jLabel11"); // NOI18N
@@ -697,20 +706,20 @@ public final class DlgRujuk extends javax.swing.JDialog {
         FormInput.add(CmbMenit);
         CmbMenit.setBounds(526, 40, 62, 23);
 
-        ambulance.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Ambulan", "Ambulan Puskesmas", "Kendaraan Lain" }));
-        ambulance.setName("ambulance"); // NOI18N
-        ambulance.addActionListener(new java.awt.event.ActionListener() {
+        alasanrujuk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Perawatan Khusus", "Permintaan Khusus" }));
+        alasanrujuk.setName("alasanrujuk"); // NOI18N
+        alasanrujuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ambulanceActionPerformed(evt);
+                alasanrujukActionPerformed(evt);
             }
         });
-        ambulance.addKeyListener(new java.awt.event.KeyAdapter() {
+        alasanrujuk.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                ambulanceKeyPressed(evt);
+                alasanrujukKeyPressed(evt);
             }
         });
-        FormInput.add(ambulance);
-        ambulance.setBounds(510, 100, 170, 23);
+        FormInput.add(alasanrujuk);
+        alasanrujuk.setBounds(790, 70, 170, 23);
 
         ChkJln.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(195, 215, 195)));
         ChkJln.setSelected(true);
@@ -720,6 +729,11 @@ public final class DlgRujuk extends javax.swing.JDialog {
         ChkJln.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ChkJln.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         ChkJln.setName("ChkJln"); // NOI18N
+        ChkJln.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChkJlnActionPerformed(evt);
+            }
+        });
         FormInput.add(ChkJln);
         ChkJln.setBounds(657, 40, 23, 23);
 
@@ -753,11 +767,65 @@ public final class DlgRujuk extends javax.swing.JDialog {
         FormInput.add(jLabel16);
         jLabel16.setBounds(410, 100, 90, 23);
 
-        pendamping.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        pendamping.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Dokter", "Perawat", "Bidan", "Keluarga" }));
+        ambulance.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Ambulan", "Ambulan Puskesmas", "Kendaraan Lain" }));
+        ambulance.setName("ambulance"); // NOI18N
+        ambulance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ambulanceActionPerformed(evt);
+            }
+        });
+        ambulance.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ambulanceKeyPressed(evt);
+            }
+        });
+        FormInput.add(ambulance);
+        ambulance.setBounds(510, 100, 170, 23);
+
+        jLabel17.setText("Pendamping:");
+        jLabel17.setName("jLabel17"); // NOI18N
+        FormInput.add(jLabel17);
+        jLabel17.setBounds(690, 10, 90, 23);
+
+        jLabel18.setText("Nama Pendamping:");
+        jLabel18.setName("jLabel18"); // NOI18N
+        FormInput.add(jLabel18);
+        jLabel18.setBounds(680, 40, 100, 23);
+
+        jLabel20.setText("Alasan dirujuk:");
+        jLabel20.setName("jLabel20"); // NOI18N
+        FormInput.add(jLabel20);
+        jLabel20.setBounds(680, 70, 100, 23);
+
+        ket.setHighlighter(null);
+        ket.setName("ket"); // NOI18N
+        ket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ketActionPerformed(evt);
+            }
+        });
+        ket.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ketKeyPressed(evt);
+            }
+        });
+        FormInput.add(ket);
+        ket.setBounds(510, 130, 170, 23);
+
+        pendamping.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "Dokter", "Perawat", "Bidan", "Keluarga" }));
         pendamping.setName("pendamping"); // NOI18N
+        pendamping.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pendampingActionPerformed(evt);
+            }
+        });
+        pendamping.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pendampingKeyPressed(evt);
+            }
+        });
         FormInput.add(pendamping);
-        pendamping.setBounds(790, 70, 170, 23);
+        pendamping.setBounds(790, 10, 170, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -784,7 +852,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
 
         internalFrame1.add(PanelInput, java.awt.BorderLayout.PAGE_START);
 
-        getContentPane().add(internalFrame1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(internalFrame1, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -794,7 +862,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
 }//GEN-LAST:event_TNoRjKeyPressed
 
     private void TTmpRujukKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TTmpRujukKeyPressed
-        Valid.pindah(evt,CmbDetik,ket);
+        Valid.pindah(evt,CmbDetik,namapendamping);
 }//GEN-LAST:event_TTmpRujukKeyPressed
 
     private void TNoRwKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNoRwKeyPressed
@@ -807,7 +875,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
 }//GEN-LAST:event_TNoRwKeyPressed
 
     private void TDiagnosaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TDiagnosaKeyPressed
-        Valid.pindah(evt,ket,ktrujuk);
+        Valid.pindah(evt,namapendamping,ktrujuk);
 }//GEN-LAST:event_TDiagnosaKeyPressed
 
     private void TPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TPasienKeyPressed
@@ -831,10 +899,12 @@ public final class DlgRujuk extends javax.swing.JDialog {
                     TDiagnosa.getText()+"','"+
                     KdDok.getText()+"','"+
                     ktrujuk.getSelectedItem()+"','"+
+                    alasanrujuk.getSelectedItem()+"','"+
                     ambulance.getSelectedItem()+ "','"+
+                    pendamping.getSelectedItem()+ "','"+
+                    namapendamping.getText()+"','"+
                     ket.getText()+"','"+
-                    CmbJam.getSelectedItem()+":"+CmbMenit.getSelectedItem()+":"+CmbDetik.getSelectedItem()+"'","No.Rujuk")
-                    pendamping.getSelectedItem()+ "','"+;
+                    CmbJam.getSelectedItem()+":"+CmbMenit.getSelectedItem()+":"+CmbDetik.getSelectedItem()+"'","No.Rujuk");
             tampil();
             emptTeks();
         }
@@ -844,7 +914,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             BtnSimpanActionPerformed(null);
         }else{
-            Valid.pindah(evt,ambulance,BtnBatal);
+            Valid.pindah(evt,alasanrujuk,BtnBatal);
         }
 }//GEN-LAST:event_BtnSimpanKeyPressed
 
@@ -891,9 +961,11 @@ public final class DlgRujuk extends javax.swing.JDialog {
                     "',keterangan_diagnosa='"+TDiagnosa.getText()+
                     "',kd_dokter='"+KdDok.getText()+
                     "',kat_rujuk='"+ktrujuk.getSelectedItem().toString()+
+                    "',alasanrujuk='"+ktrujuk.getSelectedItem().toString()+
                     "',ambulance='"+ambulance.getSelectedItem().toString()+ 
-                    "',keterangan='"+ket.getText()+"'");
-                    "',pendamping='"+pendamping.getSelectedItem().toString()+ 
+                    "',pendamping='"+alasanrujuk.getSelectedItem().toString()+ 
+                    "',namapendamping='"+namapendamping.getText()+"'"+
+                    "',keterangan='"+ket.getText()+"'"); 
             if(tabMode.getRowCount()!=0){tampil();}
             emptTeks();
         }
@@ -1019,7 +1091,7 @@ private void KdDokKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KdD
         }else if(evt.getKeyCode()==KeyEvent.VK_UP){
             btnDokterActionPerformed(null);
         }else{            
-            Valid.pindah(evt,ktrujuk,ambulance);
+            Valid.pindah(evt,ktrujuk,alasanrujuk);
         }
 }//GEN-LAST:event_KdDokKeyPressed
 
@@ -1128,7 +1200,7 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
             param.put("anamnesa",Sequel.cariIsi("select keluhan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("pemeriksaan",Sequel.cariIsi("select pemeriksaan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             Valid.MyReportqry("rptSuratRujukan.jasper","report","::[ Surat Rujukan ]::",
-                "select rujuk.jam, rujuk.keterangan,rujuk.ambulance,rujuk.rujuk_ke,rujuk.no_rujuk,reg_periksa.no_rawat,pasien.alamat,dokter.nm_dokter, "+
+                "select rujuk.alasanrujuk,rujuk.namapendamping,rujuk.jam, rujuk.pendamping,rujuk.keterangan,rujuk.ambulance,rujuk.rujuk_ke,rujuk.no_rujuk,reg_periksa.no_rawat,pasien.alamat,dokter.nm_dokter, "+
                 "reg_periksa.no_rkm_medis,pasien.jk,pasien.keluarga,pasien.namakeluarga,DATE_FORMAT(pasien.tgl_lahir,'%d-%m-%Y') as tgl_lahir,pasien.nm_pasien,"+
                 "reg_periksa.almt_pj,pasien.umur,DATE_FORMAT(reg_periksa.tgl_registrasi,'%d-%m-%Y')as tgl_registrasi,DATE_FORMAT(rujuk.tgl_rujuk,'%d-%m-%Y') as tgl_rujuk from reg_periksa "+
                 "inner join pasien inner join rujuk inner join dokter  on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
@@ -1137,9 +1209,9 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
         }
     }//GEN-LAST:event_MnSuratRujukanActionPerformed
 
-    private void ketKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ketKeyPressed
+    private void namapendampingKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_namapendampingKeyPressed
         Valid.pindah(evt,TTmpRujuk,TDiagnosa);
-    }//GEN-LAST:event_ketKeyPressed
+    }//GEN-LAST:event_namapendampingKeyPressed
 
     private void CmbJamKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CmbJamKeyPressed
         Valid.pindah(evt,DTPRujuk,CmbMenit);
@@ -1149,9 +1221,9 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
         Valid.pindah(evt,CmbJam,CmbDetik);
     }//GEN-LAST:event_CmbMenitKeyPressed
 
-    private void ambulanceKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ambulanceKeyPressed
+    private void alasanrujukKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alasanrujukKeyPressed
         Valid.pindah(evt,KdDok,BtnSimpan);
-    }//GEN-LAST:event_ambulanceKeyPressed
+    }//GEN-LAST:event_alasanrujukKeyPressed
 
     private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInputActionPerformed
         isForm();
@@ -1176,13 +1248,45 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
         }
     }//GEN-LAST:event_tbObatKeyReleased
 
-    private void ambulanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ambulanceActionPerformed
+    private void alasanrujukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alasanrujukActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ambulanceActionPerformed
+    }//GEN-LAST:event_alasanrujukActionPerformed
 
     private void ktrujukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ktrujukActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ktrujukActionPerformed
+
+    private void namapendampingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namapendampingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namapendampingActionPerformed
+
+    private void ambulanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ambulanceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ambulanceActionPerformed
+
+    private void ambulanceKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ambulanceKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ambulanceKeyPressed
+
+    private void ketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ketActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ketActionPerformed
+
+    private void ketKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ketKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ketKeyPressed
+
+    private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkJlnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChkJlnActionPerformed
+
+    private void pendampingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pendampingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pendampingActionPerformed
+
+    private void pendampingKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pendampingKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pendampingKeyPressed
 
     /**
     * @param args the command line arguments
@@ -1231,16 +1335,19 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
     private widget.TextBox TNoRw;
     private widget.TextBox TPasien;
     private widget.TextBox TTmpRujuk;
+    private widget.ComboBox alasanrujuk;
     private widget.ComboBox ambulance;
     private widget.Button btnDokter;
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel11;
     private widget.Label jLabel12;
     private widget.Label jLabel13;
-    private widget.Label jLabel14;
     private widget.Label jLabel15;
     private widget.Label jLabel16;
+    private widget.Label jLabel17;
+    private widget.Label jLabel18;
     private widget.Label jLabel19;
+    private widget.Label jLabel20;
     private widget.Label jLabel21;
     private widget.Label jLabel3;
     private widget.Label jLabel4;
@@ -1253,9 +1360,10 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
     private javax.swing.JPopupMenu jPopupMenu1;
     private widget.TextBox ket;
     private widget.ComboBox ktrujuk;
+    private widget.TextBox namapendamping;
     private widget.panelisi panelGlass8;
     private widget.panelisi panelGlass9;
-    private javax.swing.JComboBox<String> pendamping;
+    private widget.ComboBox pendamping;
     private widget.Table tbObat;
     // End of variables declaration//GEN-END:variables
 
@@ -1263,8 +1371,8 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
         Valid.tabelKosong(tabMode);
         try{
             tgl=" rujuk.tgl_rujuk between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
-            sql="select rujuk.pendamping, rujuk.no_rujuk,rujuk.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                "rujuk.rujuk_ke,rujuk.tgl_rujuk,rujuk.jam,rujuk.keterangan_diagnosa,rujuk.kd_dokter,dokter.nm_dokter,rujuk.kat_rujuk,rujuk.ambulance,rujuk.keterangan "+
+            sql="select rujuk.no_rujuk,rujuk.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
+                "rujuk.rujuk_ke,rujuk.tgl_rujuk,rujuk.jam,rujuk.keterangan_diagnosa,rujuk.kd_dokter,dokter.nm_dokter,rujuk.kat_rujuk,rujuk.alasanrujuk,rujuk.ambulance,rujuk.pendamping,rujuk.namapendamping,rujuk.keterangan "+
                 "from rujuk inner join reg_periksa inner join pasien inner join dokter "+
                 "on rujuk.no_rawat=reg_periksa.no_rawat "+
                 "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
@@ -1295,7 +1403,10 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
                                    rs.getString(10),
                                    rs.getString(11),
                                    rs.getString(12),
-                                   rs.getString(13),};
+                                   rs.getString(13),
+                                   rs.getString(14),
+                                   rs.getString(15),
+                                   rs.getString(16)};
                     tabMode.addRow(data);
                 }
             } catch (Exception e) {
@@ -1328,9 +1439,12 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
         Valid.autoNomer("rujuk","R",9,TNoRj);
         TNoRj.requestFocus();
         ktrujuk.setSelectedIndex(0);
+        alasanrujuk.setSelectedIndex(0);
         ambulance.setSelectedIndex(0);
-        ket.setText("");
         pendamping.setSelectedIndex(0);
+        namapendamping.setText("");
+        ket.setText("");
+        
     }
 
     public void load(String param) {
@@ -1361,9 +1475,12 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
             KdDok.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
             TDokter.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
             ktrujuk.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-            ambulance.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
-            ket.setText(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
+            alasanrujuk.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
+            ambulance.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
             pendamping.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            namapendamping.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            ket.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            
         }
     }
 
