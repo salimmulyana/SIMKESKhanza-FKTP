@@ -961,10 +961,10 @@ public final class DlgRujuk extends javax.swing.JDialog {
                     "',keterangan_diagnosa='"+TDiagnosa.getText()+
                     "',kd_dokter='"+KdDok.getText()+
                     "',kat_rujuk='"+ktrujuk.getSelectedItem().toString()+
-                    "',alasanrujuk='"+ktrujuk.getSelectedItem().toString()+
+                    "',alasanrujuk='"+alasanrujuk.getSelectedItem().toString()+
                     "',ambulance='"+ambulance.getSelectedItem().toString()+ 
-                    "',pendamping='"+alasanrujuk.getSelectedItem().toString()+ 
-                    "',namapendamping='"+namapendamping.getText()+"'"+
+                    "',pendamping='"+pendamping.getSelectedItem().toString()+ 
+                    "',namapendamping='"+namapendamping.getText()+
                     "',keterangan='"+ket.getText()+"'"); 
             if(tabMode.getRowCount()!=0){tampil();}
             emptTeks();
@@ -1478,8 +1478,8 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
             alasanrujuk.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
             ambulance.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
             pendamping.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
-            namapendamping.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
-            ket.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            namapendamping.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            ket.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
             
         }
     }
