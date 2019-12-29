@@ -65,6 +65,7 @@
 	<parameter name="respirasi" class="java.lang.String"/>
 	<parameter name="anamnesa" class="java.lang.String"/>
 	<parameter name="pemeriksaan" class="java.lang.String"/>
+	<parameter name="alergi" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select rujuk.rujuk_ke,rujuk.no_rujuk,reg_periksa.no_rawat,pasien.alamat,dokter.nm_dokter, reg_periksa.no_rkm_medis,pasien.jk,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.nm_pasien,
 reg_periksa.almt_pj,pasien.umur,reg_periksa.tgl_registrasi,rujuk.tgl_rujuk from reg_periksa inner join pasien inner join rujuk inner join dokter  on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and 
@@ -130,7 +131,7 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 	<detail>
 		<band height="886" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="193" width="561" height="197" uuid="da2abd2e-6ee1-41fe-acdd-428e06480648"/>
+				<reportElement x="2" y="186" width="561" height="197" uuid="da2abd2e-6ee1-41fe-acdd-428e06480648"/>
 			</rectangle>
 			<rectangle>
 				<reportElement x="0" y="390" width="561" height="350" uuid="2eff3b8c-f9c7-4343-afae-1bbc0a76ecc8"/>
@@ -846,6 +847,17 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 					<font fontName="Tahoma"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{namapendamping}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="23" y="370" width="100" height="30" uuid="a6d244d5-bd1c-4256-a6ce-509ed074bc90"/>
+				<textFieldExpression><![CDATA[$P{pemeriksaan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="287" width="182" height="22" uuid="873c67ed-132a-465e-b2ad-2589ebddbe52"/>
+				<textElement>
+					<font fontName="Tahoma"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{alergi}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

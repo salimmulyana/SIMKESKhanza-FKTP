@@ -1199,6 +1199,7 @@ private void TDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T
             param.put("respirasi",Sequel.cariIsi("select respirasi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("anamnesa",Sequel.cariIsi("select keluhan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("pemeriksaan",Sequel.cariIsi("select pemeriksaan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("alergi",Sequel.cariIsi("select alergi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             Valid.MyReportqry("rptSuratRujukan.jasper","report","::[ Surat Rujukan ]::",
                 "select rujuk.alasanrujuk,rujuk.namapendamping,rujuk.jam, rujuk.pendamping,rujuk.keterangan,rujuk.ambulance,rujuk.rujuk_ke,rujuk.no_rujuk,reg_periksa.no_rawat,pasien.alamat,dokter.nm_dokter, "+
                 "reg_periksa.no_rkm_medis,pasien.jk,pasien.keluarga,pasien.namakeluarga,DATE_FORMAT(pasien.tgl_lahir,'%d-%m-%Y') as tgl_lahir,pasien.nm_pasien,"+
