@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>KhanzaHMS</comment> 
+    <entry key="HOST">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="DATABASE">AZHNccBwSmSho84f+X8GyQ==</entry>
+    <entry key="PORT">nioxtijcpDaKSUiUiP5FAg==</entry>
+    <entry key="USER">3fsjwvKJn8IpzysMeNu3bA==</entry>
+    <entry key="PAS">clovKZtr/x/kgYsgUnmrXg==</entry>
+    <entry key="CARICEPAT">nonaktif</entry>
+    <entry key="HOSTHYBRIDWEB">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="HYBRIDWEB">webapps2</entry>
+    <entry key="PORTWEB">80</entry>
+    <entry key="ANTRIAN">player</entry>
+    <entry key="ALARMAPOTEK">yes</entry>
+    <entry key="FORMALARMAPOTEK">ralan + ranap</entry>
+    <entry key="ALARMLAB">yes</entry>
+    <entry key="FORMALARMLAB">ralan + ranap</entry>
+    <entry key="ALARMRADIOLOGI">yes</entry>
+    <entry key="FORMALARMRADIOLOGI">ralan + ranap</entry>
+    <entry key="ALARMRSISRUTE">yes</entry>
+    <entry key="MENUTRANSPARAN">yes</entry>
+    <entry key="URLAPIBPJS">https://new-api.bpjs-kesehatan.go.id:8080/new-vclaim-rest</entry>
+    <entry key="SECRETKEYAPIBPJS">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="CONSIDAPIBPJS">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="URLAPIAPLICARE">https://new-api.bpjs-kesehatan.go.id/aplicaresws</entry>
+    <entry key="SECRETKEYAPIAPLICARE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="CONSIDAPIAPLICARE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="URLAPIPCARE">https://dvlp.bpjs-kesehatan.go.id:9081/pcare-rest-v3.0</entry>
+    <entry key="SECRETKEYAPIPCARE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="CONSIDAPIPCARE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="PASSPCARE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="USERPCARE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="DIVREGPCARE">REGIONAL V-JAWA TENGAH</entry>
+    <entry key="KACABPCARE">SURAKARTA</entry>
+    <entry key="URLAPISISRUTE">https://api.sisrute.kemkes.go.id</entry>
+    <entry key="IDSISRUTE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="PASSSISRUTE">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="URLAPISIRS">http://sirs.yankes.kemkes.go.id/sirsservice</entry>
+    <entry key="IDSIRS">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="PASSSIRS">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="URLAPISITT">http://sitt.kemkes.go.id/webapisimrs/insert_simrs.php</entry>
+    <entry key="IDSITT">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="PASSSITT">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="KABUPATENSITT">12345</entry>
+    <entry key="KAMARAKTIFRANAP"></entry>
+    <entry key="DOKTERAKTIFKASIRRALAN"></entry>
+    <entry key="POLIAKTIFKASIRRALAN"></entry>
+    <entry key="RUANGANAKTIFINVENTARIS"></entry>
+    <entry key="BASENOREG">booking</entry>
+    <entry key="URUTNOREG">dokter</entry>
+    <entry key="JADWALDOKTERDIREGISTRASI">nonaktif</entry>    
+    <entry key="IPPRINTERTRACER">10.50.150.57/label2</entry>
+    <entry key="URLAPIINHEALTH">http://dummy.inhealth.co.id/pelkesws2</entry>
+    <entry key="TOKENINHEALTH">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="PEMBULATANHARGAOBAT">no</entry>
+    <entry key="AKTIFKANBATCHOBAT">no</entry>
+    <entry key="CETAKRINCIANOBAT">no</entry>
+    <entry key="AKTIFKANBILLINGPARSIAL">no</entry>
+    <entry key="URLDUKCAPILJAKARTA">http://kependudukan.jakarta.go.id/wsrs/xml.jsp</entry>
+    <entry key="USERDUKCAPILJAKARTA">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="PASSDUKCAPILJAKARTA">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="VAR1DUKCAPILJAKARTA">RSIABK</entry>
+    <entry key="VAR2DUKCAPILJAKARTA">12</entry>
+    <entry key="URLDUKCAPIL">http://172.16.160.128:8000/dukcapil/get_json/rsia_aceh/CALL_NIK</entry>
+    <entry key="USERDUKCAPIL">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="PASSDUKCAPIL">nGfqT5JKyjDpd4jCuK76yQ==</entry>
+    <entry key="IPUSERDUKCAPIL">10.160.57.2</entry>
+    <entry key="AKTIFKANTRACKSQL">no</entry>
+</properties>
