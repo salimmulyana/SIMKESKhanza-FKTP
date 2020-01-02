@@ -310,7 +310,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         tbPemeriksaan.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbPemeriksaan.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 19; i++) {
+        for (i = 0; i < 20; i++) {
             TableColumn column = tbPemeriksaan.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(20);
@@ -1514,7 +1514,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-12-2019" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-01-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1528,7 +1528,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-12-2019" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-01-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -2003,7 +2003,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel8.setText("Keadaan umum:");
         jLabel8.setName("jLabel8"); // NOI18N
         panelGlass12.add(jLabel8);
-        jLabel8.setBounds(200, 10, 80, 23);
+        jLabel8.setBounds(170, 10, 90, 23);
 
         jLabel7.setText("Suhu (C) :");
         jLabel7.setName("jLabel7"); // NOI18N
@@ -2013,7 +2013,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel4.setText("Tensi :");
         jLabel4.setName("jLabel4"); // NOI18N
         panelGlass12.add(jLabel4);
-        jLabel4.setBounds(450, 10, 85, 23);
+        jLabel4.setBounds(550, 10, 40, 23);
 
         jLabel16.setText("Berat(Kg) :");
         jLabel16.setName("jLabel16"); // NOI18N
@@ -2023,7 +2023,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel18.setText("Nadi(/menit) :");
         jLabel18.setName("jLabel18"); // NOI18N
         panelGlass12.add(jLabel18);
-        jLabel18.setBounds(760, 10, 79, 14);
+        jLabel18.setBounds(810, 10, 79, 20);
 
         cmbImun.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13" }));
         cmbImun.setName("cmbImun"); // NOI18N
@@ -2051,15 +2051,15 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass12.add(jLabel9);
         jLabel9.setBounds(0, 100, 85, 23);
 
-        jLabel15.setText("Alergi :");
+        jLabel15.setText("Riwayat Alergi:");
         jLabel15.setName("jLabel15"); // NOI18N
         panelGlass12.add(jLabel15);
-        jLabel15.setBounds(960, 110, 40, 23);
+        jLabel15.setBounds(330, 10, 80, 23);
 
         jLabel20.setText("Respirasi(/menit) :");
         jLabel20.setName("jLabel20"); // NOI18N
         panelGlass12.add(jLabel20);
-        jLabel20.setBounds(600, 10, 100, 23);
+        jLabel20.setBounds(650, 10, 100, 23);
 
         jLabel22.setText("GCS(E,V,M) :");
         jLabel22.setName("jLabel22"); // NOI18N
@@ -2128,7 +2128,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(TTensi);
-        TTensi.setBounds(540, 10, 55, 23);
+        TTensi.setBounds(600, 10, 55, 23);
 
         TTinggi.setFocusTraversalPolicyProvider(true);
         TTinggi.setName("TTinggi"); // NOI18N
@@ -2148,7 +2148,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(TRespirasi);
-        TRespirasi.setBounds(700, 10, 55, 23);
+        TRespirasi.setBounds(750, 10, 55, 23);
 
         TBerat.setHighlighter(null);
         TBerat.setName("TBerat"); // NOI18N
@@ -2173,7 +2173,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(TNadi);
-        TNadi.setBounds(840, 10, 55, 24);
+        TNadi.setBounds(890, 10, 55, 24);
 
         TGCS.setFocusTraversalPolicyProvider(true);
         TGCS.setName("TGCS"); // NOI18N
@@ -2193,7 +2193,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(TAlergi);
-        TAlergi.setBounds(920, 130, 135, 23);
+        TAlergi.setBounds(420, 10, 135, 23);
 
         scrollPane3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         scrollPane3.setName("scrollPane3"); // NOI18N
@@ -2237,21 +2237,21 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel37.setText("Kesadaran:");
         jLabel37.setName("jLabel37"); // NOI18N
         panelGlass12.add(jLabel37);
-        jLabel37.setBounds(20, 10, 60, 23);
+        jLabel37.setBounds(0, 10, 60, 23);
 
         kesadaran.setBackground(new java.awt.Color(250, 250, 250));
         kesadaran.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         kesadaran.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Compos Mentis", "Apatis", "Somnolen", "Sopor", "Koma" }));
         kesadaran.setName("kesadaran"); // NOI18N
         panelGlass12.add(kesadaran);
-        kesadaran.setBounds(90, 10, 100, 23);
+        kesadaran.setBounds(60, 10, 100, 23);
 
         keadaanumum.setBackground(new java.awt.Color(250, 250, 250));
         keadaanumum.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         keadaanumum.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Baik", "Sedang", "Lemah" }));
         keadaanumum.setName("keadaanumum"); // NOI18N
         panelGlass12.add(keadaanumum);
-        keadaanumum.setBounds(290, 10, 64, 23);
+        keadaanumum.setBounds(260, 10, 64, 23);
 
         PanelInput.add(panelGlass12, java.awt.BorderLayout.CENTER);
 
@@ -3152,7 +3152,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-12-2019" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-01-2020" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -6139,7 +6139,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                         rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),
                         rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),
                         rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),
-                        rs.getString(16),rs.getString(17),rs.getString(18)
+                        rs.getString(16),rs.getString(17),rs.getString(18),rs.getString(19),rs.getString(20)
                     });
                 }
             } catch (Exception e) {
@@ -6241,9 +6241,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             TKeluhan.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),13).toString()); 
             TPemeriksaan.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),14).toString()); 
             TAlergi.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),15).toString()); 
-            cmbImun.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),16).toString()); 
-            TindakLanjut.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),17).toString()); 
-            TPenilaian.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),18).toString()); 
+            cmbImun.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),16).toString());
+            cmbImun.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),17).toString());
+            cmbImun.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),18).toString());            
+            TindakLanjut.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),19).toString()); 
+            TPenilaian.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),20).toString()); 
             cmbJam.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5).toString().substring(0,2));
             cmbMnt.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5).toString().substring(3,5));
             cmbDtk.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5).toString().substring(6,8));
