@@ -1231,6 +1231,16 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         TAlergi = new widget.TextBox();
         TKeluhanUtama = new widget.TextBox();
         jLabel63 = new widget.Label();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        CmbLeher = new javax.swing.JComboBox<>();
+        CmbThorax = new javax.swing.JComboBox<>();
+        CmbAbdomen = new javax.swing.JComboBox<>();
+        CmbEktremitas = new javax.swing.JComboBox<>();
+        AbKepala = new widget.TextBox();
+        AbLeher = new widget.TextBox();
+        AbThorax = new widget.TextBox();
+        AbAbdomen = new widget.TextBox();
+        AbExtremitas = new widget.TextBox();
         internalFrame6 = new widget.InternalFrame();
         Scroll4 = new widget.ScrollPane();
         tbPemeriksaanObstetri = new widget.Table();
@@ -2032,12 +2042,12 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(cmbImun);
-        cmbImun.setBounds(540, 30, 50, 23);
+        cmbImun.setBounds(380, 150, 50, 23);
 
         jLabel25.setText("Imun Ke :");
         jLabel25.setName("jLabel25"); // NOI18N
         panelGlass12.add(jLabel25);
-        jLabel25.setBounds(470, 30, 60, 23);
+        jLabel25.setBounds(380, 130, 50, 23);
 
         jLabel17.setText("TB (Cm) :");
         jLabel17.setName("jLabel17"); // NOI18N
@@ -2047,7 +2057,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel9.setText("Ekstremitas:");
         jLabel9.setName("jLabel9"); // NOI18N
         panelGlass12.add(jLabel9);
-        jLabel9.setBounds(440, 140, 70, 23);
+        jLabel9.setBounds(440, 150, 70, 23);
 
         jLabel15.setText("Riwayat Alergi:");
         jLabel15.setName("jLabel15"); // NOI18N
@@ -2057,7 +2067,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel20.setText("Respirasi(/menit) :");
         jLabel20.setName("jLabel20"); // NOI18N
         panelGlass12.add(jLabel20);
-        jLabel20.setBounds(230, 130, 100, 23);
+        jLabel20.setBounds(228, 130, 92, 23);
 
         jLabel22.setText("GCS(E,V,M) :");
         jLabel22.setName("jLabel22"); // NOI18N
@@ -2146,7 +2156,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         panelGlass12.add(TRespirasi);
-        TRespirasi.setBounds(340, 130, 55, 23);
+        TRespirasi.setBounds(325, 130, 50, 23);
 
         TBerat.setHighlighter(null);
         TBerat.setName("TBerat"); // NOI18N
@@ -2301,12 +2311,12 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel58.setText("Kepala:");
         jLabel58.setName("jLabel58"); // NOI18N
         panelGlass12.add(jLabel58);
-        jLabel58.setBounds(470, 60, 40, 23);
+        jLabel58.setBounds(470, 30, 40, 23);
 
         jLabel59.setText("Thorax:");
         jLabel59.setName("jLabel59"); // NOI18N
         panelGlass12.add(jLabel59);
-        jLabel59.setBounds(440, 100, 70, 23);
+        jLabel59.setBounds(440, 90, 70, 23);
 
         jLabel61.setText("Abdomen:");
         jLabel61.setName("jLabel61"); // NOI18N
@@ -2346,7 +2356,65 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel63.setText("Leher:");
         jLabel63.setName("jLabel63"); // NOI18N
         panelGlass12.add(jLabel63);
-        jLabel63.setBounds(470, 80, 40, 23);
+        jLabel63.setBounds(470, 60, 40, 23);
+
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Abnormal" }));
+        jComboBox1.setName("jComboBox1"); // NOI18N
+        panelGlass12.add(jComboBox1);
+        jComboBox1.setBounds(520, 30, 80, 23);
+
+        CmbLeher.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        CmbLeher.setForeground(new java.awt.Color(50, 50, 50));
+        CmbLeher.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Abnormal" }));
+        CmbLeher.setName("CmbLeher"); // NOI18N
+        panelGlass12.add(CmbLeher);
+        CmbLeher.setBounds(520, 60, 80, 23);
+
+        CmbThorax.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        CmbThorax.setForeground(new java.awt.Color(50, 50, 50));
+        CmbThorax.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Abnormal" }));
+        CmbThorax.setName("CmbThorax"); // NOI18N
+        panelGlass12.add(CmbThorax);
+        CmbThorax.setBounds(520, 90, 80, 23);
+
+        CmbAbdomen.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        CmbAbdomen.setForeground(new java.awt.Color(50, 50, 50));
+        CmbAbdomen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Abnormal" }));
+        CmbAbdomen.setName("CmbAbdomen"); // NOI18N
+        panelGlass12.add(CmbAbdomen);
+        CmbAbdomen.setBounds(520, 120, 80, 23);
+
+        CmbEktremitas.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        CmbEktremitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Abnormal" }));
+        CmbEktremitas.setName("CmbEktremitas"); // NOI18N
+        panelGlass12.add(CmbEktremitas);
+        CmbEktremitas.setBounds(520, 150, 80, 23);
+
+        AbKepala.setName("AbKepala"); // NOI18N
+        AbKepala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbKepalaActionPerformed(evt);
+            }
+        });
+        panelGlass12.add(AbKepala);
+        AbKepala.setBounds(610, 30, 130, 24);
+
+        AbLeher.setName("AbLeher"); // NOI18N
+        panelGlass12.add(AbLeher);
+        AbLeher.setBounds(610, 60, 130, 24);
+
+        AbThorax.setName("AbThorax"); // NOI18N
+        panelGlass12.add(AbThorax);
+        AbThorax.setBounds(610, 90, 130, 24);
+
+        AbAbdomen.setName("AbAbdomen"); // NOI18N
+        panelGlass12.add(AbAbdomen);
+        AbAbdomen.setBounds(610, 120, 130, 24);
+
+        AbExtremitas.setName("AbExtremitas"); // NOI18N
+        panelGlass12.add(AbExtremitas);
+        AbExtremitas.setBounds(610, 150, 130, 24);
 
         PanelInput.add(panelGlass12, java.awt.BorderLayout.CENTER);
 
@@ -5570,6 +5638,10 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         // TODO add your handling code here:
     }//GEN-LAST:event_TKeluhanUtamaKeyPressed
 
+    private void AbKepalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbKepalaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AbKepalaActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -5587,6 +5659,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private widget.TextBox AbAbdomen;
+    private widget.TextBox AbExtremitas;
+    private widget.TextBox AbKepala;
+    private widget.TextBox AbLeher;
+    private widget.TextBox AbThorax;
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
     private widget.Button BtnBerkasDigital;
@@ -5622,6 +5699,10 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.CekBox ChkInput2;
     private widget.CekBox ChkInput3;
     private widget.CekBox ChkJln;
+    private javax.swing.JComboBox<String> CmbAbdomen;
+    private javax.swing.JComboBox<String> CmbEktremitas;
+    private javax.swing.JComboBox<String> CmbLeher;
+    private javax.swing.JComboBox<String> CmbThorax;
     private widget.Tanggal DTPCari1;
     private widget.Tanggal DTPCari2;
     private widget.Tanggal DTPTgl;
@@ -5724,6 +5805,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.InternalFrame internalFrame6;
     private widget.InternalFrame internalFrame7;
     private widget.InternalFrame internalFrame8;
+    private javax.swing.JComboBox<String> jComboBox1;
     private widget.Label jLabel10;
     private widget.Label jLabel11;
     private widget.Label jLabel12;
