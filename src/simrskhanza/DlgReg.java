@@ -822,6 +822,7 @@ public final class DlgReg extends javax.swing.JDialog {
         MnCetakSuratSakit4Pihak2 = new javax.swing.JMenuItem();
         MnCetakSuratSehat2 = new javax.swing.JMenuItem();
         MnSKDPBPJS = new javax.swing.JMenuItem();
+        MnRiwayatPerawatan = new javax.swing.JMenuItem();
         MnDataRM = new javax.swing.JMenu();
         MnRMIGD = new javax.swing.JMenu();
         MnDataTriaseIGD = new javax.swing.JMenuItem();
@@ -1206,6 +1207,18 @@ public final class DlgReg extends javax.swing.JDialog {
             }
         });
         jPopupMenu1.add(MnSKDPBPJS);
+
+        MnRiwayatPerawatan.setBackground(new java.awt.Color(250, 251, 251));
+        MnRiwayatPerawatan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnRiwayatPerawatan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnRiwayatPerawatan.setText("Riwayat Perawatan Pasien Hari Ini");
+        MnRiwayatPerawatan.setName("MnRiwayatPerawatan"); // NOI18N
+        MnRiwayatPerawatan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnRiwayatPerawatanActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnRiwayatPerawatan);
 
         MnDataRM.setBackground(new java.awt.Color(250, 255, 245));
         MnDataRM.setForeground(new java.awt.Color(50, 50, 50));
@@ -9058,6 +9071,73 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         DlgSakit.setVisible(true);
     }//GEN-LAST:event_MnCetakSuratSakit4Pihak2ActionPerformed
 
+    private void MnRiwayatPerawatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRiwayatPerawatanActionPerformed
+      if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
+            TNoRM.requestFocus();
+        }else if(TPasien.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data pasien dengan menklik data pada table...!!!");
+            tbPetugas.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            Map<String, Object> param = new HashMap<>();                 
+            param.put("namars",akses.getnamars());
+            param.put("alamatrs",akses.getalamatrs());
+            param.put("kotars",akses.getkabupatenrs());
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("kontakrs",akses.getkontakrs());
+            param.put("emailrs",akses.getemailrs());   
+            param.put("logo",Sequel.cariGambar("select logo from setting"));
+            param.put("keluhanutama",Sequel.cariIsi("select keluhanutama from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("keluhantambahan",Sequel.cariIsi("select keluhantambahan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("rps",Sequel.cariIsi("select keluhan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("alergi",Sequel.cariIsi("select alergi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("keadaanumum",Sequel.cariIsi("select keadaanumum from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("kesadaran",Sequel.cariIsi("select kesadaran from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("gcs",Sequel.cariIsi("select gcs from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("nadi",Sequel.cariIsi("select nadi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("respirasi",Sequel.cariIsi("select respirasi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("suhu",Sequel.cariIsi("select suhu_tubuh from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("bb",Sequel.cariIsi("select berat from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("td",Sequel.cariIsi("select tensi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("tb",Sequel.cariIsi("select tinggi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("rtl",Sequel.cariIsi("select rtl from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("pemeriksaan",Sequel.cariIsi("select pemeriksaan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("penilaian",Sequel.cariIsi("select penilaian from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("kepala",Sequel.cariIsi("select kepala from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("leher",Sequel.cariIsi("select leher from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("thorax",Sequel.cariIsi("select thorax from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abdomen",Sequel.cariIsi("select abdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("ekstremitas",Sequel.cariIsi("select ekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abkepala",Sequel.cariIsi("select abkepala from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("ableher",Sequel.cariIsi("select ableher from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abthorax",Sequel.cariIsi("select abthorax from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("ababdomen",Sequel.cariIsi("select ababdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abekstremitas",Sequel.cariIsi("select abekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("icd",Sequel.cariIsi("select kd_penyakit from diagnosa_pasien where prioritas=1 and no_rawat=?",TNoRw.getText()));
+            Valid.MyReportqry("rptRiwayatPerawatan.jasper","report","::[ Riwayat Perawatan Pasien Hari Ini ]::",
+                    "SELECT reg_periksa.tgl_registrasi, reg_periksa.jam_reg, "+
+                    "poliklinik.nm_poli, pasien.no_rkm_medis, pasien.nm_pasien, "+
+                    "pasien.no_ktp, pasien.jk, pasien.tmp_lahir, pasien.tgl_lahir,"+
+                    "pasien.nm_ibu, concat(pasien.alamat,', ',kelurahan.nm_kel"+
+                    ",', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) AS alamat,"+
+                    "pasien.gol_darah,pasien.pekerjaan,pasien.stts_nikah,"+
+                    "pasien.agama,pasien.tgl_daftar,pasien.no_tlp,pasien.umur,"+
+                    "pasien.pnd,pasien.keluarga,pasien.namakeluarga,"+
+                    "penjab.png_jawab,pasien.pekerjaanpj,concat(pasien.alamatpj,"+
+                    "', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',"+
+                    "pasien.kabupatenpj) AS alamatpj FROM pasien INNER JOIN "+
+                    "kelurahan INNER JOIN kecamatan INNER JOIN kabupaten "+
+                    "INNER JOIN penjab ON pasien.kd_kel = kelurahan.kd_kel "+
+                    "AND pasien.kd_kec = kecamatan.kd_kec AND pasien.kd_kab = kabupaten.kd_kab "+
+                    "INNER JOIN reg_periksa ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+
+                    "AND reg_periksa.kd_pj = penjab.kd_pj INNER JOIN poliklinik "+
+                    "ON poliklinik.kd_poli = reg_periksa.kd_poli WHERE "+
+                    "reg_periksa.no_rawat ='"+TNoRw.getText()+"' ",param);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_MnRiwayatPerawatanActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -9226,6 +9306,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     private javax.swing.JMenuItem MnResepDOkter1;
     private javax.swing.JMenuItem MnResepRanap;
     private javax.swing.JMenuItem MnResepRegisterPoli;
+    private javax.swing.JMenuItem MnRiwayatPerawatan;
     private javax.swing.JMenuItem MnRujuk;
     private javax.swing.JMenuItem MnRujukMasuk;
     private javax.swing.JMenuItem MnRujukSisrute;
