@@ -284,7 +284,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         
         tabModePemeriksaan=new DefaultTableModel(null,new Object[]{
             "P","No.Rawat","No.R.M.","Nama Pasien","Tgl.Rawat","Jam Rawat","Suhu(C)","Tensi","Nadi(/menit)",
-            "Respirasi(/menit)","Tinggi(Cm)","Berat(Kg)","GCS(E,V,M)","Keluhan Utama","Keluhan Tambahan","Riwayat Penyakit Sekarang","Kepala","Leher","Thorax","Abdomen","Extremitas","Pemeriksaan","Alergi",
+            "Respirasi(/menit)","Tinggi(Cm)","Berat(Kg)","GCS(E,V,M)","Keluhan Utama","Keluhan Tambahan",
+            "Riwayat Penyakit Sekarang","Kepala","Leher","Thorax","Abdomen","Extremitas","Pemeriksaan","Alergi",
             "Imun Ke","Kesadaran","Keadaan Umum","Tindak Lanjut","Penilaian"}){
              @Override public boolean isCellEditable(int rowIndex, int colIndex){
                 boolean a = false;
@@ -299,7 +300,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
-                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                 
              };
              @Override
              public Class getColumnClass(int columnIndex) {
@@ -321,23 +324,23 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }else if(i==3){
                 column.setPreferredWidth(180);
             }else if(i==4){
-                column.setPreferredWidth(80);
+                column.setPreferredWidth(180);
             }else if(i==5){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(180);
             }else if(i==6){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(180);
             }else if(i==7){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(180);
             }else if(i==8){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(180);
             }else if(i==9){
-                column.setPreferredWidth(90);
+                column.setPreferredWidth(180);
             }else if(i==10){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(180);
             }else if(i==11){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(180);
             }else if(i==12){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(180);
             }else if(i==13){
                 column.setPreferredWidth(180);
             }else if(i==14){
@@ -347,9 +350,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }else if(i==16){
                 column.setPreferredWidth(180);
             }else if(i==17){
-                column.setPreferredWidth(130);
+                column.setPreferredWidth(180);
             }else if(i==18){
-                column.setPreferredWidth(50);
+                column.setPreferredWidth(180);
             }else if(i==19){
                 column.setPreferredWidth(180);
             }else if(i==20){
@@ -357,9 +360,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }else if(i==21){
                 column.setPreferredWidth(180);
             }else if(i==22){
-                column.setPreferredWidth(130);
+                column.setPreferredWidth(180);
             }else if(i==23){
-                column.setPreferredWidth(50);
+                column.setPreferredWidth(180);
             }else if(i==24){
                 column.setPreferredWidth(180);
             }else if(i==25){
@@ -2411,6 +2414,11 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         AbKepala.setBounds(610, 30, 150, 24);
 
         AbLeher.setName("AbLeher"); // NOI18N
+        AbLeher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbLeherActionPerformed(evt);
+            }
+        });
         panelGlass12.add(AbLeher);
         AbLeher.setBounds(610, 60, 150, 24);
 
@@ -5657,6 +5665,10 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         // TODO add your handling code here:
     }//GEN-LAST:event_AbKepalaActionPerformed
 
+    private void AbLeherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbLeherActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AbLeherActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -6476,9 +6488,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             CmbEktremitas.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),20).toString());
             TPemeriksaan.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),21).toString()); 
             TAlergi.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),22).toString()); 
-            cmbImun.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),23).toString());                       
-            TindakLanjut.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),24).toString()); 
-            TPenilaian.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),25).toString()); 
+            cmbImun.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),23).toString());
+            kesadaran.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),24).toString());
+            keadaanumum.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),25).toString());
+            TindakLanjut.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),26).toString()); 
+            TPenilaian.setText(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),27).toString()); 
             cmbJam.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5).toString().substring(0,2));
             cmbMnt.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5).toString().substring(3,5));
             cmbDtk.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaan.getSelectedRow(),5).toString().substring(6,8));
