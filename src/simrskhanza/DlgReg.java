@@ -9115,6 +9115,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             param.put("ababdomen",Sequel.cariIsi("select ababdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abekstremitas",Sequel.cariIsi("select abekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("icd",Sequel.cariIsi("select kd_penyakit from diagnosa_pasien where prioritas=1 and no_rawat=?",TNoRw.getText()));
+            param.put("no_rawat",TNoRw.getText());
             Valid.MyReportqry("rptRiwayatPerawatan.jasper","report","::[ Riwayat Perawatan Pasien Hari Ini ]::",
                     "SELECT reg_periksa.tgl_registrasi, reg_periksa.jam_reg, "+
                     "poliklinik.nm_poli, pasien.no_rkm_medis, pasien.nm_pasien, "+
