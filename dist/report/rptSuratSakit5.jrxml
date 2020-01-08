@@ -51,6 +51,7 @@
 	<field name="alamat" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="tgl_registrasi" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -274,14 +275,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{umur}]]></textFieldExpression>
 			</textField>
-			<textField pattern="dd-MM-yyyy">
-				<reportElement x="440" y="299" width="83" height="15" uuid="7306b922-04f6-42a1-9c98-28875104d6a8"/>
-				<textElement textAlignment="Center">
-					<font fontName="Tahoma" size="12"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement x="74" y="39" width="480" height="12" uuid="74394004-1023-4b3d-905f-83a3eb1ec641"/>
 				<textElement textAlignment="Left">
@@ -418,6 +411,13 @@
 				</textElement>
 				<text><![CDATA[karena sakit terhitung dari tanggal]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="441" y="300" width="109" height="15" uuid="18802bfb-6be5-4105-9849-7b2c45d311e2"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_registrasi}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<summary>
