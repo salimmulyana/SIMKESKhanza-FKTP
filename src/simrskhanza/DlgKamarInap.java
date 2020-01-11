@@ -9603,7 +9603,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
 
     private void MnKontrolTerapiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKontrolTerapiActionPerformed
         if(tabMode.getRowCount()==0){
-            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            JOptionPane.showMessageDialog(null,"Maaf, tabel masih kosong...!!!!");
             TCari.requestFocus();
         }else if(tbKamIn.getValueAt(tbKamIn.getSelectedRow(),0).toString().equals("")){
             try {
@@ -9637,7 +9637,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         param.put("kontakrs",akses.getkontakrs());
                         param.put("emailrs",akses.getemailrs());   
                         param.put("logo",Sequel.cariGambar("select logo from setting"));
-                        Valid.MyReport("rptKontrolTerapi.jasper","report","::[ Blanko Daftar Kontrol Terapi ]::",param); 
+                        Valid.MyReport("rptBlankoKontrolTerapi.jasper","report","::[ Blanko Daftar Kontrol Terapi ]::",param); 
                     }else{
                           JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
                           tbKamIn.requestFocus();
@@ -9675,7 +9675,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     param.put("kontakrs",akses.getkontakrs());
                     param.put("emailrs",akses.getemailrs());   
                     param.put("logo",Sequel.cariGambar("select logo from setting")); 
-                    Valid.MyReport("rptKontrolTerapi.jasper","report","::[ Blanko Rekam Medis Ranap ]::",param); 
+                    Valid.MyReport("rptBlankoKontrolTerapi.jasper","report","::[ Blanko Rekam Medis Ranap ]::",param); 
         }            
         // TODO add your handling code here:
     }//GEN-LAST:event_MnKontrolTerapiActionPerformed
