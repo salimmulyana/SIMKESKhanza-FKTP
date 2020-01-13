@@ -9637,6 +9637,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                         param.put("kontakrs",akses.getkontakrs());
                         param.put("emailrs",akses.getemailrs());   
                         param.put("logo",Sequel.cariGambar("select logo from setting"));
+                        param.put("dpjpdokter",tbKamIn.getValueAt(tbKamIn.getSelectedRow(),18).toString());
                         Valid.MyReport("rptBlankoKontrolTerapi.jasper","report","::[ Blanko Daftar Kontrol Terapi ]::",param); 
                     }else{
                           JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
