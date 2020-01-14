@@ -9669,6 +9669,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 param.put("jamdaftar",Sequel.cariIsi("select reg_periksa.jam_reg from reg_periksa where reg_periksa.no_rawat=?",norawat.getText()));             
                 param.put("noreg",Sequel.cariIsi("select reg_periksa.no_reg from reg_periksa where reg_periksa.no_rawat=?",norawat.getText()));             
                 param.put("alamat",tbKamIn.getValueAt(tbKamIn.getSelectedRow(),3).toString());
+                param.put("dpjpdokter",tbKamIn.getValueAt(tbKamIn.getSelectedRow(),18).toString());
                 param.put("namars",akses.getnamars());
                     param.put("alamatrs",akses.getalamatrs());
                     param.put("kotars",akses.getkabupatenrs());
