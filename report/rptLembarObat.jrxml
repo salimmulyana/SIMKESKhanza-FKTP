@@ -899,7 +899,7 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 				</textElement>
 				<textFieldExpression><![CDATA[$P{pasien}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField isStretchWithOverflow="true" pattern="dd-mm-YYYY">
 				<reportElement mode="Transparent" x="203" y="70" width="68" height="10" uuid="995a9f29-d6af-4fb0-9149-721ed2986604"/>
 				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="7"/>

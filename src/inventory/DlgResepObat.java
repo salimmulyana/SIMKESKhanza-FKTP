@@ -1345,7 +1345,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             param.put("noresep",NoResep.getText());
             param.put("jam",cmbJam.getSelectedItem()+":"+cmbMnt.getSelectedItem()+":"+cmbDtk.getSelectedItem());
             param.put("logo",Sequel.cariGambar("select logo from setting")); 
-            param.put("tgl_lahir",Sequel.cariIsi("select tgl_lahir from pasien where no_rkm_medis=?",TNoRm.getText()));
+            param.put("tgl_lahir",Sequel.cariIsi("select DATE_FORMAT(tgl_lahir,'%d-%m-%Y') from pasien where no_rkm_medis='"+TNoRm.getText()+"'"));
             param.put("umur",Sequel.cariIsi("select umur from pasien where no_rkm_medis=?",TNoRm.getText()));
             param.put("jk",Sequel.cariIsi("select jk from pasien where no_rkm_medis=?",TNoRm.getText()));
             param.put("nik",Sequel.cariIsi("select no_ktp from pasien where no_rkm_medis=?",TNoRm.getText()));
