@@ -17,7 +17,6 @@
 	<parameter name="kontakrs" class="java.lang.String"/>
 	<parameter name="emailrs" class="java.lang.String"/>
 	<parameter name="logo" class="java.io.InputStream"/>
-	<parameter name="tanggal" class="java.lang.String"/>
 	<parameter name="jam" class="java.lang.String"/>
 	<parameter name="norawat" class="java.lang.String"/>
 	<parameter name="pasien" class="java.lang.String"/>
@@ -32,6 +31,7 @@
 	<parameter name="poli" class="java.lang.String"/>
 	<parameter name="alamat" class="java.lang.String"/>
 	<parameter name="no_telp" class="java.lang.String"/>
+	<parameter name="tanggal" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select databarang.kode_brng,databarang.nama_brng,detail_pemberian_obat.jml,
 detail_pemberian_obat.biaya_obat,detail_pemberian_obat.embalase,databarang.kode_sat,
@@ -220,7 +220,7 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 				<textFieldExpression><![CDATA[$P{noresep}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="35" y="18" width="234" height="30" forecolor="#000000" uuid="1be2ab31-5dbd-4b38-9e75-46057c7a87f7"/>
+				<reportElement x="50" y="18" width="219" height="30" forecolor="#000000" uuid="1be2ab31-5dbd-4b38-9e75-46057c7a87f7"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -236,7 +236,7 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
 			</textField>
 			<image scaleImage="FillFrame">
-				<reportElement x="1" y="0" width="34" height="60" forecolor="#000000" uuid="ad5b0ec9-134c-4ffe-8d8e-d0534f0b2190"/>
+				<reportElement x="1" y="0" width="49" height="60" forecolor="#000000" uuid="ad5b0ec9-134c-4ffe-8d8e-d0534f0b2190"/>
 				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 			<line>
@@ -899,14 +899,6 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 				</textElement>
 				<textFieldExpression><![CDATA[$P{pasien}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="dd-mm-YYYY">
-				<reportElement mode="Transparent" x="203" y="70" width="68" height="10" uuid="995a9f29-d6af-4fb0-9149-721ed2986604"/>
-				<textElement textAlignment="Left">
-					<font fontName="Tahoma" size="7"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{tanggal}]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement x="64" y="95" width="77" height="11" uuid="450ca99f-f785-4520-9378-841542574c69"/>
 				<textElement>
@@ -1016,6 +1008,13 @@ where detail_pemberian_obat.tgl_perawatan=$P{tanggal} and detail_pemberian_obat.
 					<font fontName="Tahoma"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{emailrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="70" width="65" height="13" uuid="0e6b513e-46b4-4a8f-8a19-41d6c323da3b"/>
+				<textElement>
+					<font fontName="Tahoma" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggal}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
