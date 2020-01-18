@@ -111,7 +111,7 @@ public final class DlgRujuk extends javax.swing.JDialog {
                 column.setPreferredWidth(150);
             }else if(i==14){
                 column.setPreferredWidth(150);
-            }else if(i==14){
+            }else if(i==15){
                 column.setPreferredWidth(150);
             }
         }
