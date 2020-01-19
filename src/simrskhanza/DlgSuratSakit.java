@@ -19,18 +19,18 @@ import fungsi.validasi;
 import fungsi.akses;
 import java.awt.Cursor;
 import java.awt.Dimension;
-//import java.awt.event.ActionEvent;
-//import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-//import java.awt.event.WindowEvent;
-//import java.awt.event.WindowListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-//import java.util.Calendar;
+import java.util.Calendar;
 import java.util.Date;
-//import javax.swing.Timer;
+import javax.swing.Timer;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -42,14 +42,14 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * @author perpustakaan
+ * @author salimmulyana
  */
 public final class DlgSuratSakit extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
     private validasi Valid=new validasi();
-    private String diagnosa="",diagnosa2="",keluar="",status="",tgl="",sql="";
+    private String tgl="",sql="";
     private PreparedStatement psobat,ps;
     private ResultSet rs;
     private int i=0;
@@ -95,12 +95,11 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
+        
         TNoSks.setDocument(new batasInput((byte)50).getKata(TNoSks));
-        LamaSakit.setDocument(new batasInput((byte)20).getKata(LamaSakit));
-        TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));     
-        TCari.setDocument(new batasInput((byte)100).getKata(TCari));             
-
-              
+        TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));  
+        LamaSakit.setDocument(new batasInput((byte)20).getKata(LamaSakit));         
+        TCari.setDocument(new batasInput((byte)100).getKata(TCari));           
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
                 @Override
@@ -123,8 +122,9 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
                 }
             });
         }
-        
- 
+        ChkInput.setSelected(false);
+        isForm();
+    }
         
         
 
@@ -578,7 +578,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void TNoSksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNoSksKeyPressed
        Valid.pindah(evt,TCari,TanggalAwal);
 }//GEN-LAST:event_TNoSksKeyPressed
@@ -608,7 +608,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
                     TNoRw.getText()+"','"+
                     Valid.SetTgl(TanggalAwal.getSelectedItem()+"")+"','"+
                     Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")+"','"+
-                    LamaSakit.getText()+"','"+                    
+                    LamaSakit.getText()+"','","No.Surat Sakit");                 
             tampil();
             emptTeks();
         }
@@ -624,6 +624,8 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
 
     private void BtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBatalActionPerformed
         emptTeks();
+        ChkInput.setSelected(true);
+        isForm(); 
         
 }//GEN-LAST:event_BtnBatalActionPerformed
 
@@ -681,7 +683,38 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnKeluarKeyPressed
 
     private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
-        
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
+            BtnBatal.requestFocus();
+        }else if(tabMode.getRowCount()!=0){
+            Map<String, Object> param = new HashMap<>(); 
+                param.put("namars",akses.getnamars());
+                param.put("alamatrs",akses.getalamatrs());
+                param.put("kotars",akses.getkabupatenrs());
+                param.put("propinsirs",akses.getpropinsirs());
+                param.put("kontakrs",akses.getkontakrs());
+                param.put("emailrs",akses.getemailrs());   
+                param.put("logo",Sequel.cariGambar("select logo from setting")); 
+            String tgl=" rujuk.tgl_rujuk between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
+            Valid.MyReportqry("rptRujuk.jasper","report","::[ Data Rujuk Pasien ]::","select rujuk.no_rujuk,rujuk.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
+                "rujuk.rujuk_ke,rujuk.tgl_rujuk,rujuk.jam,rujuk.keterangan_diagnosa,rujuk.kd_dokter,dokter.nm_dokter,rujuk.kat_rujuk,rujuk.ambulance,rujuk.keterangan "+
+                "from rujuk inner join reg_periksa inner join pasien inner join dokter "+
+                "on rujuk.no_rawat=reg_periksa.no_rawat "+
+                "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                "and rujuk.kd_dokter=dokter.kd_dokter "+
+                "where "+tgl+"and no_rujuk like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and rujuk.no_rawat like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and rujuk.rujuk_ke like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and rujuk.tgl_rujuk like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and rujuk.keterangan_diagnosa like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and rujuk.kd_dokter like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and dokter.nm_dokter like '%"+TCari.getText().trim()+"%' "+
+                " order by rujuk.no_rujuk",param);
+        }
+        this.setCursor(Cursor.getDefaultCursor());        
 }//GEN-LAST:event_BtnPrintActionPerformed
 
     private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPrintKeyPressed
@@ -727,13 +760,14 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
             Valid.pindah(evt, BtnCari, TPasien);
         }
 }//GEN-LAST:event_BtnAllKeyPressed
-
+   
+                                  
     private void TanggalAkhirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TanggalAkhirKeyPressed
-        Valid.pindah(evt,TNoSks,LamaSakit);
+    
 }//GEN-LAST:event_TanggalAkhirKeyPressed
 
     private void TNoRMKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TNoRMKeyPressed
-        // Valid.pindah(evt, TNm, BtnSimpan);
+       
 }//GEN-LAST:event_TNoRMKeyPressed
 
     private void tbObatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbObatMouseClicked
@@ -750,7 +784,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
     }//GEN-LAST:event_LamaSakitKeyPressed
 
     private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInputActionPerformed
-       
+       isForm();
     }//GEN-LAST:event_ChkInputActionPerformed
 
     private void tbObatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbObatKeyReleased
@@ -863,7 +897,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
                                    rs.getString(4),
                                    rs.getString(5),
                                    rs.getString(6),
-                                   rs.getString(7),                                   
+                                   rs.getString(7)};                                  
                     tabMode.addRow(data);
                 }
             } catch (Exception e) {
@@ -922,7 +956,22 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         DTPCari1.setDate(tgl1);
         DTPCari2.setDate(tgl2);
         isRawat();
-        isPsien();              
+        isPsien(); 
+        ChkInput.setSelected(true);
+        isForm();
+    }
+    private void isForm(){
+        if(ChkInput.isSelected()==true){
+            ChkInput.setVisible(false);
+            PanelInput.setPreferredSize(new Dimension(WIDTH,186));
+            FormInput.setVisible(true);      
+            ChkInput.setVisible(true);
+        }else if(ChkInput.isSelected()==false){           
+            ChkInput.setVisible(false);            
+            PanelInput.setPreferredSize(new Dimension(WIDTH,20));
+            FormInput.setVisible(false);      
+            ChkInput.setVisible(true);
+        }
     }
        
     
