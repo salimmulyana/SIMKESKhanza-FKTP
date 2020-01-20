@@ -139,6 +139,8 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        MnCetakSuratSakit = new javax.swing.JMenuItem();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -176,6 +178,16 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         jLabel18 = new widget.Label();
         TanggalAwal = new widget.Tanggal();
         ChkInput = new widget.CekBox();
+
+        jPopupMenu1.setName("jPopupMenu1"); // NOI18N
+
+        MnCetakSuratSakit.setBackground(new java.awt.Color(250, 250, 250));
+        MnCetakSuratSakit.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        MnCetakSuratSakit.setForeground(new java.awt.Color(50, 50, 50));
+        MnCetakSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCetakSuratSakit.setText("Cetak Surat Sakit");
+        MnCetakSuratSakit.setName("MnCetakSuratSakit"); // NOI18N
+        jPopupMenu1.add(MnCetakSuratSakit);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -354,7 +366,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-01-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -368,7 +380,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-01-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -471,7 +483,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         TPasien.setBounds(370, 10, 340, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-01-2020" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -504,7 +516,6 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         FormInput.add(TNoRM);
         TNoRM.setBounds(240, 10, 120, 23);
 
-        LamaSakit.setText("1 (Satu)");
         LamaSakit.setHighlighter(null);
         LamaSakit.setName("LamaSakit"); // NOI18N
         LamaSakit.addActionListener(new java.awt.event.ActionListener() {
@@ -532,7 +543,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         jLabel18.setBounds(420, 70, 60, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-01-2020" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -609,7 +620,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
                     TNoRw.getText()+"','"+
                     Valid.SetTgl(TanggalAwal.getSelectedItem()+"")+"','"+
                     Valid.SetTgl(TanggalAkhir.getSelectedItem()+"")+"','"+
-                    LamaSakit.getText()+"','","No.Surat Sakit");                 
+                    LamaSakit.getText()+"'","No.Surat Sakit");                
             tampil();
             emptTeks();
         }
@@ -846,6 +857,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
     private widget.PanelBiasa FormInput;
     private widget.Label LCount;
     private widget.TextBox LamaSakit;
+    private javax.swing.JMenuItem MnCetakSuratSakit;
     private javax.swing.JPanel PanelInput;
     private widget.ScrollPane Scroll;
     private widget.TextBox TCari;
@@ -866,6 +878,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
     private widget.Label jLabel6;
     private widget.Label jLabel7;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private widget.panelisi panelGlass8;
     private widget.panelisi panelGlass9;
     private widget.Table tbObat;
@@ -876,18 +889,17 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         try{
             tgl=" suratsakit.tanggalawal between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
             sql="select suratsakit.no_sakit,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                 "suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit, "+ 
-                 
+                 "suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit "+                  
                 "from suratsakit inner join reg_periksa inner join pasien "+
                 "on suratsakit.no_rawat=reg_periksa.no_rawat "+
                 "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                 "where "+tgl+"and no_sakit like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and sakit.no_rawat like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and suratsakit.no_rawat like '%"+TCari.getText().trim()+"%' or "+
                 tgl+"and reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
                 tgl+"and pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and suratsakit.tglawal like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and suratsakit.tglakhir like '%"+TCari.getText().trim()+"%' or "+
-                " order by suratsakit.no_sakit";
+                tgl+"and suratsakit.tanggalawal like '%"+TCari.getText().trim()+"%' or "+
+                tgl+"and suratsakit.tanggalakhir like '%"+TCari.getText().trim()+"%' "+
+                "order by suratsakit.no_sakit";
             ps=koneksi.prepareStatement(sql);
             try {
                 rs=ps.executeQuery();
@@ -921,7 +933,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
     public void emptTeks() {
         TNoRw.setText("");
         TNoSks.setText("");
-        LamaSakit.setText("");
+        LamaSakit.setText("1 (Satu)");
         TanggalAwal.setDate(new Date());
         TanggalAkhir.setDate(new Date());
         Valid.autoNomer("suratsakit","SKD",4,TNoSks);
@@ -953,7 +965,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
     
     public void setNoRm(String norwt, Date tgl1, Date tgl2) {
         TNoRw.setText(norwt);
-        TCari.setText(norwt);
+        //TCari.setText(norwt);
         DTPCari1.setDate(tgl1);
         DTPCari2.setDate(tgl2);
         isRawat();
