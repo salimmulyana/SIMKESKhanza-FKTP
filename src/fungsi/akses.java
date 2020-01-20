@@ -700,6 +700,7 @@ public final class akses {
                         akses.rekap_obat_pasien=true;
                         akses.grafik_HAIs_pasienbangsal=true;
                         akses.grafik_HAIs_pasienbulan=true;
+                        akses.surat_sakit=true;
                     }else if(rs2.getRow()>=1){   
                         rs2.beforeFirst();
                         rs2.next();
@@ -1262,6 +1263,7 @@ public final class akses {
                         akses.rekap_obat_pasien=rs2.getBoolean("rekap_obat_pasien");
                         akses.grafik_HAIs_pasienbangsal=rs2.getBoolean("grafik_HAIs_pasienbangsal");
                         akses.grafik_HAIs_pasienbulan=rs2.getBoolean("grafik_HAIs_pasienbulan");
+                        akses.surat_sakit=rs2.getBoolean("surat_sakit");
                     }else if((rs.getRow()==0)&&(rs2.getRow()==0)){
                         akses.kode="";                  
                         akses.penyakit= false;
@@ -1822,6 +1824,7 @@ public final class akses {
                         akses.rekap_obat_pasien=false;
                         akses.grafik_HAIs_pasienbangsal=false;
                         akses.grafik_HAIs_pasienbulan=false;
+                        akses.surat_sakit=false;
                     }
                 } catch (Exception e) {
                     System.out.println("Notifikasi : "+e);

@@ -89,7 +89,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
             }else if(i==4){
                 column.setPreferredWidth(150);
             }else if(i==5){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(150);
             }else if(i==6){
                 column.setPreferredWidth(65);
             }
@@ -354,7 +354,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -368,7 +368,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -471,7 +471,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         TPasien.setBounds(370, 10, 340, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2020" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -504,6 +504,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         FormInput.add(TNoRM);
         TNoRM.setBounds(240, 10, 120, 23);
 
+        LamaSakit.setText("1 (Satu)");
         LamaSakit.setHighlighter(null);
         LamaSakit.setName("LamaSakit"); // NOI18N
         LamaSakit.addActionListener(new java.awt.event.ActionListener() {
@@ -531,7 +532,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         jLabel18.setBounds(420, 70, 60, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-01-2020" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-01-2020" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -923,7 +924,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         LamaSakit.setText("");
         TanggalAwal.setDate(new Date());
         TanggalAkhir.setDate(new Date());
-        Valid.autoNomer("sks","SKDSakit",20,TNoSks);
+        Valid.autoNomer("suratsakit","SKD",4,TNoSks);
         TNoSks.requestFocus();
         
     }
@@ -977,8 +978,8 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
     
     public void isCek(){
         BtnSimpan.setEnabled(akses.getsurat_sakit());
-        BtnHapus.setEnabled(akses.getsuratsakit());
-        BtnPrint.setEnabled(akses.getsuratsakit());
+        BtnHapus.setEnabled(akses.getsurat_sakit());
+        BtnPrint.setEnabled(akses.getsurat_sakit());
     }
 }
 
