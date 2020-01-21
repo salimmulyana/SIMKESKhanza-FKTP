@@ -420,11 +420,13 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        MnCetakSuratSakit4 = new javax.swing.JMenuItem();
-        MnCetakSuratSakit5 = new javax.swing.JMenuItem();
+        MnSuratSakit = new javax.swing.JMenuItem();
         MnCetakSuratSehat2 = new javax.swing.JMenuItem();
         MnSKDPBPJS = new javax.swing.JMenuItem();
         MnKeteranganKhitan = new javax.swing.JMenuItem();
+        MnLama = new javax.swing.JMenu();
+        MnCetakSuratSakit4 = new javax.swing.JMenuItem();
+        MnCetakSuratSakit5 = new javax.swing.JMenuItem();
         MnDataRM = new javax.swing.JMenu();
         MnRMIGD = new javax.swing.JMenu();
         MnDataTriaseIGD = new javax.swing.JMenuItem();
@@ -719,31 +721,18 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jPopupMenu1.setForeground(new java.awt.Color(50, 50, 50));
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
-        MnCetakSuratSakit4.setBackground(new java.awt.Color(255, 255, 254));
-        MnCetakSuratSakit4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCetakSuratSakit4.setForeground(new java.awt.Color(50, 50, 50));
-        MnCetakSuratSakit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSakit4.setText("Surat Cuti Sakit 4");
-        MnCetakSuratSakit4.setName("MnCetakSuratSakit4"); // NOI18N
-        MnCetakSuratSakit4.addActionListener(new java.awt.event.ActionListener() {
+        MnSuratSakit.setBackground(new java.awt.Color(255, 255, 254));
+        MnSuratSakit.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnSuratSakit.setForeground(new java.awt.Color(50, 50, 50));
+        MnSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnSuratSakit.setText("Surat Keterangan Sakit");
+        MnSuratSakit.setName("MnSuratSakit"); // NOI18N
+        MnSuratSakit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCetakSuratSakit4ActionPerformed(evt);
+                MnSuratSakitActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(MnCetakSuratSakit4);
-
-        MnCetakSuratSakit5.setBackground(new java.awt.Color(254, 255, 255));
-        MnCetakSuratSakit5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCetakSuratSakit5.setForeground(new java.awt.Color(50, 50, 50));
-        MnCetakSuratSakit5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSakit5.setText("Surat Cuti Sakit Pihak Ke 2");
-        MnCetakSuratSakit5.setName("MnCetakSuratSakit5"); // NOI18N
-        MnCetakSuratSakit5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCetakSuratSakit5ActionPerformed(evt);
-            }
-        });
-        jPopupMenu1.add(MnCetakSuratSakit5);
+        jPopupMenu1.add(MnSuratSakit);
 
         MnCetakSuratSehat2.setBackground(new java.awt.Color(255, 255, 254));
         MnCetakSuratSehat2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -786,6 +775,40 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             }
         });
         jPopupMenu1.add(MnKeteranganKhitan);
+
+        MnLama.setBackground(new java.awt.Color(255, 255, 254));
+        MnLama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnLama.setText("Menu Lama");
+        MnLama.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnLama.setName("MnLama"); // NOI18N
+
+        MnCetakSuratSakit4.setBackground(new java.awt.Color(255, 255, 254));
+        MnCetakSuratSakit4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCetakSuratSakit4.setForeground(new java.awt.Color(50, 50, 50));
+        MnCetakSuratSakit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCetakSuratSakit4.setText("Surat Cuti Sakit 4");
+        MnCetakSuratSakit4.setName("MnCetakSuratSakit4"); // NOI18N
+        MnCetakSuratSakit4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCetakSuratSakit4ActionPerformed(evt);
+            }
+        });
+        MnLama.add(MnCetakSuratSakit4);
+
+        MnCetakSuratSakit5.setBackground(new java.awt.Color(254, 255, 255));
+        MnCetakSuratSakit5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCetakSuratSakit5.setForeground(new java.awt.Color(50, 50, 50));
+        MnCetakSuratSakit5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCetakSuratSakit5.setText("Surat Cuti Sakit Pihak Ke 2");
+        MnCetakSuratSakit5.setName("MnCetakSuratSakit5"); // NOI18N
+        MnCetakSuratSakit5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCetakSuratSakit5ActionPerformed(evt);
+            }
+        });
+        MnLama.add(MnCetakSuratSakit5);
+
+        jPopupMenu1.add(MnLama);
 
         MnDataRM.setBackground(new java.awt.Color(250, 255, 245));
         MnDataRM.setForeground(new java.awt.Color(50, 50, 50));
@@ -4034,7 +4057,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-01-2020" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-01-2020" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -4081,7 +4104,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-01-2020" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-01-2020" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -4353,7 +4376,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(70, 23));
         panelGlass8.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-01-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-01-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -4366,7 +4389,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(23, 23));
         panelGlass8.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-01-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-01-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -8054,6 +8077,27 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
        }
     }//GEN-LAST:event_MnKeteranganKhitanActionPerformed
 
+    private void MnSuratSakitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSuratSakitActionPerformed
+       if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbKasirRalan.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DlgSuratSakit DlgSuratSakit=new DlgSuratSakit(null,false);
+            DlgSuratSakit.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
+            DlgSuratSakit.setLocationRelativeTo(internalFrame1);
+            DlgSuratSakit.emptTeks();
+            DlgSuratSakit.isCek();
+            DlgSuratSakit.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate());
+            DlgSuratSakit.tampil();
+            DlgSuratSakit.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_MnSuratSakitActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -8189,6 +8233,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem MnLabelTracker1;
     private javax.swing.JMenuItem MnLabelTracker2;
     private javax.swing.JMenuItem MnLabelTracker3;
+    private javax.swing.JMenu MnLama;
     private javax.swing.JMenuItem MnLembarRalan;
     private javax.swing.JMenuItem MnMeninggal;
     private javax.swing.JMenuItem MnNoResep;
@@ -8244,6 +8289,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem MnStatusBaru;
     private javax.swing.JMenuItem MnStatusLama;
     private javax.swing.JMenuItem MnSudah;
+    private javax.swing.JMenuItem MnSuratSakit;
     private javax.swing.JMenuItem MnTeridentifikasiTB;
     private javax.swing.JMenuItem MnTeridentifikasiTB1;
     private javax.swing.JMenu MnTindakan;
