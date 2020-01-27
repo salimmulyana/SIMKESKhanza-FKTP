@@ -26717,6 +26717,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 btnGrafikHAIsPasienBulanActionPerformed(evt);
             }
         });
+        
     }
 
 }

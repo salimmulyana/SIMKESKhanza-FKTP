@@ -79,7 +79,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         for (i = 0; i < 7; i++) {
             TableColumn column = tbObat.getColumnModel().getColumn(i);
             if(i==0){
-                column.setPreferredWidth(75);
+                column.setPreferredWidth(105);
             }else if(i==1){
                 column.setPreferredWidth(105);
             }else if(i==2){
@@ -729,7 +729,7 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
 }//GEN-LAST:event_BtnKeluarKeyPressed
 
     private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+       this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
             BtnBatal.requestFocus();
@@ -742,25 +742,30 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
                 param.put("kontakrs",akses.getkontakrs());
                 param.put("emailrs",akses.getemailrs());   
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
-            String tgl=" rujuk.tgl_rujuk between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
-            Valid.MyReportqry("rptRujuk.jasper","report","::[ Data Rujuk Pasien ]::","select rujuk.no_rujuk,rujuk.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                "rujuk.rujuk_ke,rujuk.tgl_rujuk,rujuk.jam,rujuk.keterangan_diagnosa,rujuk.kd_dokter,dokter.nm_dokter,rujuk.kat_rujuk,rujuk.ambulance,rujuk.keterangan "+
-                "from rujuk inner join reg_periksa inner join pasien inner join dokter "+
-                "on rujuk.no_rawat=reg_periksa.no_rawat "+
-                "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                "and rujuk.kd_dokter=dokter.kd_dokter "+
-                "where "+tgl+"and no_rujuk like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and rujuk.no_rawat like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and rujuk.rujuk_ke like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and rujuk.tgl_rujuk like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and rujuk.keterangan_diagnosa like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and rujuk.kd_dokter like '%"+TCari.getText().trim()+"%' or "+
-                tgl+"and dokter.nm_dokter like '%"+TCari.getText().trim()+"%' "+
-                " order by rujuk.no_rujuk",param);
-        }
-        this.setCursor(Cursor.getDefaultCursor());        
+            tgl=" suratsakit.tanggalawal between '"+Valid.SetTgl(DTPCari1.getSelectedItem()+"")+"' and '"+Valid.SetTgl(DTPCari2.getSelectedItem()+"")+"' ";
+            if(TCari.getText().trim().equals("")){
+                Valid.MyReportqry("rptDataSuratSakit.jasper","report","::[ Data Surat Sakit Pasien ]::",
+                     "select suratsakit.no_sakit,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
+                     "suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit "+                  
+                     "from suratsakit inner join reg_periksa on suratsakit.no_rawat=reg_periksa.no_rawat "+
+                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                     "where "+tgl+"order by suratsakit.no_sakit",param);
+            }else{
+                Valid.MyReportqry("rptDataSuratSakit.jasper","report","::[ Data Surat Sakit Pasien ]::",
+                     "select suratsakit.no_sakit,suratsakit.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
+                     "suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit "+                  
+                     "from suratsakit inner join reg_periksa on suratsakit.no_rawat=reg_periksa.no_rawat "+
+                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                     "where "+tgl+"and no_sakit like '%"+TCari.getText().trim()+"%' or "+
+                     tgl+"and suratsakit.no_rawat like '%"+TCari.getText().trim()+"%' or "+
+                     tgl+"and reg_periksa.no_rkm_medis like '%"+TCari.getText().trim()+"%' or "+
+                     tgl+"and pasien.nm_pasien like '%"+TCari.getText().trim()+"%' or "+
+                     tgl+"and suratsakit.tanggalawal like '%"+TCari.getText().trim()+"%' or "+
+                     tgl+"and suratsakit.tanggalakhir like '%"+TCari.getText().trim()+"%' "+
+                     "order by suratsakit.no_sakit",param);
+            }    
+             }
+        this.setCursor(Cursor.getDefaultCursor()); 
 }//GEN-LAST:event_BtnPrintActionPerformed
 
     private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPrintKeyPressed
@@ -1060,15 +1065,27 @@ public final class DlgSuratSakit extends javax.swing.JDialog {
         LCount.setText(""+b);
     }
 
+    //public void emptTeks() {
+      //  TNoRw.setText("");
+        //TNoSks.setText("");
+        //LamaSakit.setText("1 (Satu)");
+        //TanggalAwal.setDate(new Date());
+        //TanggalAkhir.setDate(new Date());
+        //Valid.autoNomer("suratsakit","SKD",4,TNoSks);
+        //TNoSks.requestFocus();
+        
+   // }
     public void emptTeks() {
         TNoRw.setText("");
+        TNoRM.setText("");
+        TPasien.setText("");
         TNoSks.setText("");
         LamaSakit.setText("1 (Satu)");
         TanggalAwal.setDate(new Date());
         TanggalAkhir.setDate(new Date());
-        Valid.autoNomer("suratsakit","SKD",4,TNoSks);
+        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_sakit,3),signed)),0) from suratsakit where tanggalawal='"+Valid.SetTgl(TanggalAwal.getSelectedItem()+"")+"' ",
+                "SKD"+TanggalAwal.getSelectedItem().toString().substring(6,10)+TanggalAwal.getSelectedItem().toString().substring(3,5)+TanggalAwal.getSelectedItem().toString().substring(0,2),3,TNoSks); 
         TNoSks.requestFocus();
-        
     }
 
  
