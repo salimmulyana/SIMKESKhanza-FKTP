@@ -6319,6 +6319,13 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }
     
     public void isCek(){
+        if(akses.getjml2()>=1){
+            kdptg.setText(akses.getkode());
+            Sequel.cariIsi("select nama from petugas where nip=?", TPerawat,kdptg.getText());
+        }else{
+            kdptg.setText("");
+            TPerawat.setText("");
+        }
         BtnSimpan.setEnabled(akses.gettindakan_ralan());
         BtnHapus.setEnabled(akses.gettindakan_ralan());
         BtnEdit.setEnabled(akses.gettindakan_ralan());
