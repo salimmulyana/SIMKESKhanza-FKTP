@@ -36,16 +36,4 @@ CREATE TABLE `antrics` (
 ALTER TABLE `antrics`
   ADD KEY `loket` (`loket`) USING BTREE,
   ADD KEY `antrian` (`antrian`) USING BTREE;
-  
-## Tambahkan antriapotek
-
-~~~~sql
-CREATE TABLE `antriapotek` (
-  `loket` int(11) NOT NULL,
-  `antrian` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-ALTER TABLE `antriapotek`
-  ADD KEY `loket` (`loket`) USING BTREE,
-  ADD KEY `antrian` (`antrian`) USING BTREE;
 ~~~~

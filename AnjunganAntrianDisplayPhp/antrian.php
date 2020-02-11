@@ -61,7 +61,7 @@ include ('config.php');
         </div>
       </div>
       <div class="col-3 ">
-        <a href="antrian.php?action=lama" style="text-decoration:none; color:#000;">
+        <a href="antrian.php?action=loket" style="text-decoration:none; color:#000;">
           <div class="card border-success mb-4">
             <div class="card-body text-success">
               <div style="font-size:50px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">DAFTAR: A<span class="antrian_loket"><span></div>
@@ -71,7 +71,7 @@ include ('config.php');
           </div>
           </div>
         </a>
-        <a href="antrian.php?action=baru" style="text-decoration:none; color:#000;">
+        <a href="antrian.php?action=kasir" style="text-decoration:none; color:#000;">
           <div class="card border-success mb-4">
             <div class="card-body text-success">
               <div style="font-size:55px;font-weight:lighter;padding:0;margin-top:-15px;margin-bottom:-15px;">KASIR: B<span class="antrian_cs"><span></div>
@@ -110,11 +110,11 @@ include ('config.php');
     </div>
   </div>
 <?php } ?>
-<?php if($action == 'baru') { ?>
-<?php include('includes/pasien_baru.php'); ?>
+<?php if($action == 'kasir') { ?>
+<?php include('includes/pasien_kasir.php'); ?>
 <?php } ?>
-<?php if($action == 'lama') { ?>
-<?php include('includes/pasien_lama.php'); ?>
+<?php if($action == 'loket') { ?>
+<?php include('includes/pasien_loket.php'); ?>
 <?php } ?>
 <?php if($action == 'apotek') { ?>
 <?php include('includes/pasien_apotek.php'); ?>

@@ -57,9 +57,10 @@ $(document).ready(function(){
 		if($_SERVER['REQUEST_METHOD'] == "POST") {
 			query("DELETE FROM `antriapotek`");
 			query("INSERT INTO `antriapotek` (`loket`, `antrian`) VALUES ('1', '1')");
+			query("UPDATE antriapotek SET antrian ='{$_POST['antrian']}'");
 		}
 		 ?>
-		<div align="center" style="font-size: 64px;color:white; text-shadow: 2px 2px 4px #000000;margin: 40px;">Sistem Antrian Apotek <form method="POST" action=""><input type="submit" class="btn btn-lg" value="Reset"></form></div>
+		<div align="center" style="font-size: 64px;color:white; text-shadow: 2px 2px 4px #000000;margin: 40px;">Sistem Antrian Apotek </div>
 
 										<div class="container text-center">
 									    <div class="row justify-content-center">
@@ -75,6 +76,14 @@ $(document).ready(function(){
 															  <a href="#" class="btn btn-primary" style="font-size:41px;" style="font-size:41px;"><i class="fas fa-bullhorn" onclick="mulai4();"></i></a>
 															  <a href="antrian.php?action=apotek&loket=4" class="btn btn-primary" style="font-size:41px;" style="font-size:41px;" style="font-size:41px;"><i class="fas fa-forward"></i></a>
 															</div>
+															</div>
+															<div class="input-group input-group-lg">     
+														    <div class="form-line">
+														    <form method="POST" action="">
+                                                            <input type="text" name="antrian" placeholder="Input No.Urut Manual">	
+														    <input type="submit" id="antrian" class="btn btn-success" value="Simpan">
+														    </form>	
+														    </div>	
 												    </div>
 												  </div>
 												  
