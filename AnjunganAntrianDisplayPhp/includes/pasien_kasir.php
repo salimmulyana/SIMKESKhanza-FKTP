@@ -57,7 +57,7 @@ $(document).ready(function(){
 		if($_SERVER['REQUEST_METHOD'] == "POST") {
 			query("DELETE FROM `antrics`");
 			query("INSERT INTO `antrics` (`loket`, `antrian`) VALUES ('1', '1')");
-			query("UPDATE antrics SET antrian ='{$_POST['antrian']}'");
+                        query("UPDATE antrics SET antrian ='{$_POST['antrian']}'"); 
 		}
 		 ?>
 		<div align="center" style="font-size: 64px;color:white; text-shadow: 2px 2px 4px #000000;margin: 40px;">Sistem Antrian Kasir </div>
@@ -76,14 +76,15 @@ $(document).ready(function(){
 															  <a href="#" class="btn btn-primary" style="font-size:41px;" style="font-size:41px;"><i class="fas fa-bullhorn" onclick="mulai4();"></i></a>
 															  <a href="antrian.php?action=kasir&loket=4" class="btn btn-primary" style="font-size:41px;" style="font-size:41px;" style="font-size:41px;"><i class="fas fa-forward"></i></a>
 															</div>
-															</div>
+</div>
 															<div class="input-group input-group-lg">     
 														    <div class="form-line">
 														    <form method="POST" action="">
-                                                            <input type="text" name="antrian" placeholder="Input No.Urut Manual">	
+                                                                                                                   <input type="text" name="antrian" placeholder="Input No.Urut Manual">	
 														    <input type="submit" id="antrian" class="btn btn-success" value="Simpan">
 														    </form>	
 														    </div>	
+
 												    </div>
 												  </div>
 												  </div>
@@ -96,9 +97,9 @@ $(document).ready(function(){
 										<script type="text/javascript">
 										function mulai4(){
 											//MAINKAN SUARA BEL PADA SAAT AWAL
-											document.getElementById('suarabel').pause();
-											document.getElementById('suarabel').currentTime=0;
-											document.getElementById('suarabel').play();
+											//document.getElementById('suarabel').pause();
+											//document.getElementById('suarabel').currentTime=0;
+											//document.getElementById('suarabel').play();
 
 											//SET DELAY UNTUK MEMAINKAN REKAMAN NOMOR URUT
 											totalwaktu=document.getElementById('suarabel').duration*1200;
@@ -488,9 +489,9 @@ $(document).ready(function(){
 															}, totalwaktu);
 															totalwaktu=totalwaktu+1000;
 												setTimeout(function() {
-																document.getElementById('suarabeel').pause();
-																document.getElementById('suarabeel').currentTime=0;
-																document.getElementById('suarabeel').play();
+																//document.getElementById('suarabeel').pause();
+																//document.getElementById('suarabeel').currentTime=0;
+																//document.getElementById('suarabeel').play();
 															}, totalwaktu);
 										}
 

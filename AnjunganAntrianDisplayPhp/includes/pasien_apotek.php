@@ -97,9 +97,9 @@ $(document).ready(function(){
 										<script type="text/javascript">
 										function mulai4(){
 											//MAINKAN SUARA BEL PADA SAAT AWAL
-											document.getElementById('suarabel').pause();
-											document.getElementById('suarabel').currentTime=0;
-											document.getElementById('suarabel').play();
+											//document.getElementById('suarabel').pause();
+											//document.getElementById('suarabel').currentTime=0;
+											//document.getElementById('suarabel').play();
 
 											//SET DELAY UNTUK MEMAINKAN REKAMAN NOMOR URUT
 											totalwaktu=document.getElementById('suarabel').duration*1200;
@@ -489,9 +489,9 @@ $(document).ready(function(){
 															}, totalwaktu);
 															totalwaktu=totalwaktu+1000;
 												setTimeout(function() {
-																document.getElementById('suarabeel').pause();
-																document.getElementById('suarabeel').currentTime=0;
-																document.getElementById('suarabeel').play();
+																//document.getElementById('suarabeel').pause();
+																//document.getElementById('suarabeel').currentTime=0;
+																//document.getElementById('suarabeel').play();
 															}, totalwaktu);
 										}
 
@@ -891,9 +891,9 @@ $(document).ready(function(){
 															}, totalwaktu);
 										totalwaktu=totalwaktu+1000;
 												setTimeout(function() {
-																document.getElementById('suarabeel').pause();
-																document.getElementById('suarabeel').currentTime=0;
-																document.getElementById('suarabeel').play();
+																//document.getElementById('suarabeel').pause();
+																//document.getElementById('suarabeel').currentTime=0;
+																//document.getElementById('suarabeel').play();
 															}, totalwaktu);
 										}
 
