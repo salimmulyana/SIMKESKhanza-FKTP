@@ -97,9 +97,9 @@ $(document).ready(function(){
 										<script type="text/javascript">
 										function mulai4(){
 											//MAINKAN SUARA BEL PADA SAAT AWAL
-											//document.getElementById('suarabel').pause();
-											//document.getElementById('suarabel').currentTime=0;
-											//document.getElementById('suarabel').play();
+											document.getElementById('suarabel').pause();
+											document.getElementById('suarabel').currentTime=0;
+											document.getElementById('suarabel').play();
 
 											//SET DELAY UNTUK MEMAINKAN REKAMAN NOMOR URUT
 											totalwaktu=document.getElementById('suarabel').duration*1200;
@@ -109,7 +109,7 @@ $(document).ready(function(){
 													document.getElementById('pasienlama').currentTime=0;
 													document.getElementById('pasienlama').play();
 											}, totalwaktu);
-											totalwaktu=totalwaktu+3000;
+											totalwaktu=totalwaktu+1500;
 
 
 
@@ -121,13 +121,13 @@ $(document).ready(function(){
 											}, totalwaktu);
 											totalwaktu=totalwaktu+1000;
 
-											//MAINKAN SUARA P
+											//MAINKAN SUARA C
 											setTimeout(function() {
 													document.getElementById('b').pause();
 													document.getElementById('b').currentTime=0;
 													document.getElementById('b').play();
 											}, totalwaktu);
-											totalwaktu=totalwaktu+1000;
+											totalwaktu=totalwaktu+500;
 
 											<?php
 												//JIKA KURANG DARI 10 MAKA MAIKAN SUARA ANGKA1
@@ -140,7 +140,7 @@ $(document).ready(function(){
 															document.getElementById('suarabel0').play();
 														}, totalwaktu);
 
-													totalwaktu=totalwaktu+1000;
+													totalwaktu=totalwaktu+500;
 											<?php
 												}elseif($antrian ==10){
 													//JIKA 10 MAKA MAIKAN SUARA SEPULUH
@@ -150,7 +150,7 @@ $(document).ready(function(){
 																document.getElementById('sepuluh').currentTime=0;
 																document.getElementById('sepuluh').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 												<?php
 													}elseif($antrian ==11){
 														//JIKA 11 MAKA MAIKAN SUARA SEBELAS
@@ -160,7 +160,7 @@ $(document).ready(function(){
 																document.getElementById('sebelas').currentTime=0;
 																document.getElementById('sebelas').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 												<?php
 													}elseif($antrian < 20){
 														//JIKA 12-20 MAKA MAIKAN SUARA ANGKA2+"BELAS"
@@ -170,13 +170,13 @@ $(document).ready(function(){
 																document.getElementById('suarabel1').currentTime=0;
 																document.getElementById('suarabel1').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('belas').pause();
 																document.getElementById('belas').currentTime=0;
 																document.getElementById('belas').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 												<?php
 													}elseif($antrian <= 99){
 														//JIKA PULUHAN MAKA MAINKAN SUARA ANGKA1+PULUH+AKNGKA2
@@ -186,19 +186,19 @@ $(document).ready(function(){
 																document.getElementById('suarabel0').currentTime=0;
 																document.getElementById('suarabel0').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('puluh').pause();
 																document.getElementById('puluh').currentTime=0;
 																document.getElementById('puluh').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel1').pause();
 																document.getElementById('suarabel1').currentTime=0;
 																document.getElementById('suarabel1').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+900;
+														totalwaktu=totalwaktu+500;
 
 														<?php
 													}elseif($antrian ==100){
@@ -209,19 +209,19 @@ $(document).ready(function(){
 																document.getElementById('suarabel0').currentTime=0;
 																document.getElementById('suarabel0').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('nol').pause();
 																document.getElementById('nol').currentTime=0;
 																document.getElementById('nol').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('nol').pause();
 																document.getElementById('nol').currentTime=0;
 																document.getElementById('nol').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 												<?php
 													}elseif($antrian <= 109){
 														//JIKA 100 MAKA MAIKAN SUARA RATUS
@@ -231,19 +231,19 @@ $(document).ready(function(){
 																document.getElementById('suarabel0').currentTime=0;
 																document.getElementById('suarabel0').play();
 															}, totalwaktu);
-															totalwaktu=totalwaktu+1000;
+															totalwaktu=totalwaktu+500;
 															setTimeout(function() {
 																document.getElementById('nol').pause();
 																document.getElementById('nol').currentTime=0;
 																document.getElementById('nol').play();
 															}, totalwaktu);
-															totalwaktu=totalwaktu+1000;
+															totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel2').pause();
 																document.getElementById('suarabel2').currentTime=0;
 																document.getElementById('suarabel2').play();
 															}, totalwaktu);
-															totalwaktu=totalwaktu+1000;
+															totalwaktu=totalwaktu+500;
 
 
 												<?php
@@ -255,19 +255,19 @@ $(document).ready(function(){
 																document.getElementById('suarabel0').currentTime=0;
 																document.getElementById('suarabel0').play();
 															}, totalwaktu);
-															totalwaktu=totalwaktu+1000;
+															totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel1').pause();
 																document.getElementById('suarabel1').currentTime=0;
 																document.getElementById('suarabel1').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('nol').pause();
 																document.getElementById('nol').currentTime=0;
 																document.getElementById('nol').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 
 														<?php
 														}elseif($antrian ==111){
@@ -278,19 +278,19 @@ $(document).ready(function(){
 																document.getElementById('suarabel0').currentTime=0;
 																document.getElementById('suarabel0').play();
 															}, totalwaktu);
-															totalwaktu=totalwaktu+1000;
+															totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel1').pause();
 																document.getElementById('suarabel1').currentTime=0;
 																document.getElementById('suarabel1').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel2').pause();
 																document.getElementById('suarabel2').currentTime=0;
 																document.getElementById('suarabel2').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 
 														<?php
 														}elseif($antrian > 111){
@@ -301,19 +301,19 @@ $(document).ready(function(){
 																document.getElementById('suarabel0').currentTime=0;
 																document.getElementById('suarabel0').play();
 															}, totalwaktu);
-															totalwaktu=totalwaktu+1000;
+															totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel1').pause();
 																document.getElementById('suarabel1').currentTime=0;
 																document.getElementById('suarabel1').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel2').pause();
 																document.getElementById('suarabel2').currentTime=0;
 																document.getElementById('suarabel2').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 
 														<?php
 														}elseif($antrian ==120 or $antrian ==130 or $antrian ==140 or $antrian ==150 or $antrian ==160 or $antrian ==170 or $antrian ==180 or $antrian ==190){
@@ -324,19 +324,19 @@ $(document).ready(function(){
 																document.getElementById('suarabel0').currentTime=0;
 																document.getElementById('suarabel0').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('suarabel1').pause();
 																document.getElementById('suarabel1').currentTime=0;
 																document.getElementById('suarabel1').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 														setTimeout(function() {
 																document.getElementById('nol').pause();
 																document.getElementById('nol').currentTime=0;
 																document.getElementById('nol').play();
 															}, totalwaktu);
-														totalwaktu=totalwaktu+1000;
+														totalwaktu=totalwaktu+500;
 
 														<?php
 														}elseif($antrian ==200 or $antrian ==300){
