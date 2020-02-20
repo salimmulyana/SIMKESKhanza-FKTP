@@ -111,11 +111,11 @@ public class DlgPasien extends javax.swing.JDialog {
         initComponents();
 
         tabMode=new DefaultTableModel(null,new Object[]{
-              "P","No.R.M","Nama Pasien","No.SIM/KTP","J.K.","Tmp.Lahir","Tgl.Lahir","Nama Ibu","Alamat",
+              "P","No.R.M","Nama Pasien","No.SIM/KTP","No.Kartu Keluarga","J.K.","Tmp.Lahir","Tgl.Lahir","Nama Ibu","Alamat",
               "G.D.","Pekerjaan","Stts.Nikah","Agama","Tgl.Daftar","No.Telp/HP","Umur","Pendidikan",
-              "Keluarga","Nama Keluarga","Asuransi/Askes","No.Peserta","Daftar","Pekerjaan P.J.","Alamat P.J.",
+              "Keluarga","Nama Keluarga","Tempat Lahir PJ","Tanggal Lahir PJ","Umur PJ","Asuransi/Askes","No.Peserta","Daftar","Pekerjaan P.J.","Perusahaan PJ","Alamat P.J.",
               "ID Suku","Suku/Bangsa","ID Bahasa","Bahasa","ID Peru","Instansi/Perusahaan","NIP/NRP","Email",
-              "Id Cacat","Cacat Fisik"
+              "Id Cacat","Cacat Fisik","Alergi"
             }){
              @Override public boolean isCellEditable(int rowIndex, int colIndex){
                 boolean a = false;
@@ -133,7 +133,8 @@ public class DlgPasien extends javax.swing.JDialog {
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
-                 java.lang.Object.class,java.lang.Object.class
+                 java.lang.Object.class,java.lang.Object.class,java.lang.Object.class,java.lang.Object.class,
+                 java.lang.Object.class,java.lang.Object.class,java.lang.Object.class,java.lang.Object.class
              };
              @Override
              public Class getColumnClass(int columnIndex) {
@@ -146,7 +147,7 @@ public class DlgPasien extends javax.swing.JDialog {
         tbPasien.setPreferredScrollableViewportSize(new Dimension(800,800));
         tbPasien.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (z = 0; z < 34; z++) {
+        for (z = 0; z < 40; z++) {
             TableColumn column = tbPasien.getColumnModel().getColumn(z);
             if(z==0){
                 column.setPreferredWidth(20);
@@ -200,15 +201,25 @@ public class DlgPasien extends javax.swing.JDialog {
                 column.setPreferredWidth(100);
             }else if(z==27){
                 column.setPreferredWidth(100);
-            }else if(z==29){
+            }else if(z==28){
                 column.setPreferredWidth(140);
             }else if(z==30){
                 column.setPreferredWidth(90);
             }else if(z==31){
                 column.setPreferredWidth(120);
-            }else if(z==33){
+            }else if(z==32){
                 column.setPreferredWidth(120);
-            }else if((z==24)||(z==26)||(z==28)||(z==32)){
+            }else if(z==34){
+                column.setPreferredWidth(100);
+            }else if(z==35){
+                column.setPreferredWidth(100);
+            }else if(z==36){
+                column.setPreferredWidth(140);            
+            }else if(z==38){
+                column.setPreferredWidth(120);
+            }else if(z==39){
+                column.setPreferredWidth(120);
+            }else if((z==29)||(z==31)||(z==33)||(z==37)){
                 column.setMinWidth(0);
                 column.setMaxWidth(0);
             }
@@ -449,14 +460,18 @@ public class DlgPasien extends javax.swing.JDialog {
         TNm.setDocument(new batasInput((byte)40).getKata(TNm));
         NmIbu.setDocument(new batasInput((byte)40).getKata(NmIbu));
         TKtp.setDocument(new batasInput((byte)20).getKata(TKtp));
+        TKartuKeluarga.setDocument(new batasInput((byte)20).getKata(TKartuKeluarga));
         Kdpnj.setDocument(new batasInput((byte)3).getKata(Kdpnj));
         TTlp.setDocument(new batasInput((int)40).getKata(TTlp));
         TTmp.setDocument(new batasInput((byte)15).getKata(TTmp));
+        TTmpPj.setDocument(new batasInput((byte)15).getKata(TTmpPj));
         Alamat.setDocument(new batasInput((int)200).getFilter(Alamat));
         AlamatPj.setDocument(new batasInput((int)100).getFilter(AlamatPj));
+        TAlergi.setDocument(new batasInput((byte)20).getKata(TAlergi));
         Pekerjaan.setDocument(new batasInput((byte)15).getKata(Pekerjaan));
         PekerjaanPj.setDocument(new batasInput((byte)15).getKata(PekerjaanPj));
         TUmurTh.setDocument(new batasInput((byte)5).getOnlyAngka(TUmurTh));
+        TUmurThPj.setDocument(new batasInput((byte)5).getOnlyAngka(TUmurThPj));
         Saudara.setDocument(new batasInput((byte)50).getKata(Saudara));
         Kabupaten.setDocument(new batasInput((byte)60).getFilter(Kabupaten));
         Kecamatan.setDocument(new batasInput((byte)60).getFilter(Kecamatan));
@@ -8317,13 +8332,13 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         try{
             if(cmbHlm.getSelectedItem().toString().equals("Semua")){
                  if(Carialamat.getText().trim().equals("")&&TCari.getText().trim().equals("")){
-                      ps=koneksi.prepareStatement("select pasien.no_rkm_medis, pasien.nm_pasien, pasien.no_ktp, pasien.jk, "+
+                      ps=koneksi.prepareStatement("select pasien.no_rkm_medis, pasien.nm_pasien, pasien.no_ktp, pasien.no_kk, pasien.jk, "+
                            "pasien.tmp_lahir, pasien.tgl_lahir,pasien.nm_ibu, concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) as alamat,"+
                            "pasien.gol_darah, pasien.pekerjaan,pasien.stts_nikah,pasien.agama,pasien.tgl_daftar,pasien.no_tlp,pasien.umur,"+
-                           "pasien.pnd, pasien.keluarga, pasien.namakeluarga,penjab.png_jawab,pasien.no_peserta,pasien.pekerjaanpj,"+
-                           "concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj,', ',pasien.propinsipj),"+
+                           "pasien.pnd, pasien.keluarga, pasien.namakeluarga, pasien.tmp_lahirpj, pasien.tgl_lahirpj, pasien.umurpj, penjab.png_jawab,pasien.no_peserta,pasien.pekerjaanpj,"+
+                           "pasien.perusahaan_pj, concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj,', ',pasien.propinsipj),"+
                            "perusahaan_pasien.kode_perusahaan,perusahaan_pasien.nama_perusahaan,pasien.bahasa_pasien,"+
-                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik from pasien "+
+                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik,pasien.alergi from pasien "+
                            "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
                            "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab inner join perusahaan_pasien on perusahaan_pasien.kode_perusahaan=pasien.perusahaan_pasien "+
                            "inner join cacat_fisik on pasien.cacat_fisik=cacat_fisik.id inner join propinsi on pasien.kd_prop=propinsi.kd_prop "+
