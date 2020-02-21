@@ -121,7 +121,7 @@ public final class akses {
             item_apotek_industrifarmasi=false,obat10_terbanyak_poli=false,grafik_pengajuan_aset_urgensi=false,grafik_pengajuan_aset_status=false,
             grafik_pengajuan_aset_departemen=false,rekap_pengajuan_aset_departemen=false,grafik_kelompok_jabatanpegawai=false,grafik_resiko_kerjapegawai=false,
             grafik_emergency_indexpegawai=false,grafik_inventaris_ruang=false,harian_HAIs2=false,grafik_inventaris_jenis=false,data_resume_pasien=false,
-            perkiraan_biaya_ranap=false,rekap_obat_poli=false,rekap_obat_pasien=false,grafik_HAIs_pasienbangsal=false,grafik_HAIs_pasienbulan=false,surat_sakit=false;
+            perkiraan_biaya_ranap=false,rekap_obat_poli=false,rekap_obat_pasien=false,grafik_HAIs_pasienbangsal=false,grafik_HAIs_pasienbulan=false,surat_sakit=false,sepuluh_besar_penyakit=false;
     
     public static void setData(String user, String pass) {
        try {                
@@ -2127,6 +2127,7 @@ public final class akses {
     public static boolean getgrafik_kunjungan_pertahun(){return akses.grafik_kunjungan_pertahun;}
     public static boolean getberkas_digital_perawatan(){return akses.berkas_digital_perawatan;}
     public static boolean getpenyakit_menular_ranap(){return akses.penyakit_menular_ranap;}
+    public static boolean getsepuluh_besar_penyakit(){return akses.sepuluh_besar_penyakit;}
     public static boolean getpenyakit_menular_ralan(){return akses.penyakit_menular_ralan;}
     public static boolean getgrafik_kunjungan_perbulan(){return akses.grafik_kunjungan_perbulan;}
     public static boolean getgrafik_kunjungan_pertanggal(){return akses.grafik_kunjungan_pertanggal;}

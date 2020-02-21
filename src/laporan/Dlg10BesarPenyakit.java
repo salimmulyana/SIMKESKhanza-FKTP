@@ -41,9 +41,9 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps,ps2;
     private ResultSet rs,rs2;
-    private int i=0,kr1l=0,kr1p=0,th1s4l=0,th1s4p=0,th5s14l=0,th5s14p=0,th15s44l=0,th15S44p=0,
-                th45s64l=0,th45s64p=0,th65plusl=0,th65plusp=0,totall=0,totalp=0,totaljml=0,matil=0,matip=0,
-                tkr1l=0,tkr1p=0,tth1s4l=0,tth1s4p=0,tth5s14l=0,tth5s14p=0,tth15s44l=0,tth15S44p=0,
+    private int i=0,kr1l=0,kr1p=0,th1s4l=0,th1s4p=0,th5s14l=0,th5s14p=0,th15s24l=0,th15s24p=0,
+                th25s44l=0,th25s44p=0,th45s64l=0,th45s64p=0,th65plusl=0,th65plusp=0,totall=0,totalp=0,totaljml=0,matil=0,matip=0,
+                tkr1l=0,tkr1p=0,tth1s4l=0,tth1s4p=0,tth5s14l=0,tth5s14p=0,tth15s24l=0,tth15s24p=0,tth25s44l=0,tth25s44p=0,
                 tth45s64l=0,tth45s64p=0,tth65plusl=0,tth65plusp=0,ttotall=0,ttotalp=0,ttotaljml=0,tmatil=0,tmatip=0;
    
     /* i --> no urut
@@ -58,7 +58,7 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
         this.setLocation(8,1);
         setSize(885,674);
 
-        Object[] rowRwJlDr={"No.","ICD 10","Jenis Penyakit","< 1(L)","< 1(P)","1-4(L)","1-4(P)","5-14(L)","5-14(P)","15-44(L)","15-44(P)",
+        Object[] rowRwJlDr={"No.","ICD 10","Jenis Penyakit","< 1(L)","< 1(P)","1-4(L)","1-4(P)","5-14(L)","5-14(P)","15-24(L)","15-24(P)","25-44(L)","25-44(P)",
                             "45-64(L)","45-64(P)",">65(L)",">65(P)","Total(L)","Total(P)","Total(Jml)","Meninggal(L)","Meninggal(P)"};
         tabMode=new DefaultTableModel(null,rowRwJlDr){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
@@ -68,7 +68,7 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
         tbBangsal.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbBangsal.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 20; i++) {
+        for (i = 0; i < 22; i++) {
             TableColumn column = tbBangsal.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(30);
@@ -76,11 +76,11 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
                 column.setPreferredWidth(60);
             }else if(i==2){
                 column.setPreferredWidth(200);
-            }else if(i==17){
-                column.setPreferredWidth(70);
-            }else if(i==18){
-                column.setPreferredWidth(75);
             }else if(i==19){
+                column.setPreferredWidth(70);
+            }else if(i==20){
+                column.setPreferredWidth(75);
+            }else if(i==21){
                 column.setPreferredWidth(75);
             }else{
                 column.setPreferredWidth(47);
@@ -92,11 +92,11 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
         try {
             ps=koneksi.prepareStatement("select diagnosa_pasien.kd_penyakit,SUBSTRING(penyakit.nm_penyakit,1,80) as nm_penyakit from diagnosa_pasien inner join penyakit "+
                     "inner join reg_periksa on diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit and reg_periksa.no_rawat=diagnosa_pasien.no_rawat "+
-                    "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? and left(upper(diagnosa_pasien.kd_penyakit),1)='A' or "+
-                    "diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? and left(upper(diagnosa_pasien.kd_penyakit),1)='B' group by diagnosa_pasien.kd_penyakit ");
+                    "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? or "+
+                    "diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? group by diagnosa_pasien.kd_penyakit ");
             ps2=koneksi.prepareStatement("select concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur) as umur,pasien.jk,pasien.no_rkm_medis from pasien inner join reg_periksa inner join diagnosa_pasien "+
                     "on pasien.no_rkm_medis=reg_periksa.no_rkm_medis and reg_periksa.no_rawat=diagnosa_pasien.no_rawat where "+
-                    "diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and reg_periksa.tgl_registrasi between ? and ? and diagnosa_pasien.kd_penyakit=? "+
+                    "diagnosa_pasien.prioritas='1' and reg_periksa.tgl_registrasi between ? and ? and diagnosa_pasien.kd_penyakit=? "+
                     "group by diagnosa_pasien.no_rawat");
         } catch (Exception e) {
             System.out.println(e);
@@ -138,13 +138,21 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Penyakit Menular di Rawat Jalan ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data 10 Besar Penyakit Rawat Jalan dan Rawat Inap Berdasarkan Umur ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
-        internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
+        internalFrame1.setLayout(new java.awt.BorderLayout());
 
         Scroll.setName("Scroll"); // NOI18N
         Scroll.setOpaque(true);
 
+        tbBangsal.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         tbBangsal.setName("tbBangsal"); // NOI18N
         tbBangsal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -245,6 +253,7 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
         internalFrame1.add(panelGlass5, java.awt.BorderLayout.PAGE_END);
 
         getContentPane().add(internalFrame1, java.awt.BorderLayout.CENTER);
+        internalFrame1.getAccessibleContext().setAccessibleName("::[ Data 10 Besar Penyakit Rawat Jalan dan Rawat Inap Berdasarkan Umur ]::");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,7 +269,8 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
             param.put("tkr1l",(tkr1l+tkr1p)); //parameter untuk direport
             param.put("tth1s4l",(tth1s4l+tth1s4p));
             param.put("tth5s14l",(tth5s14l+th5s14p));
-            param.put("tth15s44l",(tth15s44l+tth15S44p));
+            param.put("tth15s24l",(tth15s24l+tth15s24p));
+            param.put("tth25s44l",(tth25s44l+tth25s44p));
             param.put("tth45s64l",(tth45s64l+tth45s64p));
             param.put("tth65plusl",(tth65plusl+tth65plusp));
             param.put("tanggal",Tgl2.getDate());
@@ -296,7 +306,9 @@ public final class Dlg10BesarPenyakit extends javax.swing.JDialog {
                                     tabMode.getValueAt(r,16).toString().replaceAll("'","`")+"','"+
                                     tabMode.getValueAt(r,17).toString().replaceAll("'","`")+"','"+
                                     tabMode.getValueAt(r,18).toString().replaceAll("'","`")+"','"+
-                                    tabMode.getValueAt(r,19).toString().replaceAll("'","`")+"','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
+                                    tabMode.getValueAt(r,19).toString().replaceAll("'","`")+"','"+
+                                    tabMode.getValueAt(r,20).toString().replaceAll("'","`")+"','"+
+                                    tabMode.getValueAt(r,21).toString().replaceAll("'","`")+"','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
             }
                
             Valid.MyReport("rptDkkPenyakitMenularRalan.jasper","report","::[ Penyakit Menular Rawat Jalan ]::",param);
@@ -403,10 +415,10 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
             ps.setString(4,Valid.SetTgl(Tgl2.getSelectedItem()+""));
             rs=ps.executeQuery();
             i=1;
-            tkr1l=0;tkr1p=0;tth1s4l=0;tth1s4p=0;tth5s14l=0;tth5s14p=0;tth15s44l=0;tth15S44p=0;tth45s64l=0;
+            tkr1l=0;tkr1p=0;tth1s4l=0;tth1s4p=0;tth5s14l=0;tth5s14p=0;tth15s24l=0;tth15s24p=0;tth25s44l=0;tth25s44p=0;tth45s64l=0;
             tth45s64p=0;tth65plusl=0;tth65plusp=0;ttotall=0;ttotalp=0;ttotaljml=0;tmatil=0;tmatip=0;
             while(rs.next()){
-                kr1l=0;kr1p=0;th1s4l=0;th1s4p=0;th5s14l=0;th5s14p=0;th15s44l=0;th15S44p=0;th45s64l=0;th45s64p=0;th65plusl=0;th65plusp=0;totall=0;totalp=0;totaljml=0;matil=0;matip=0;
+                kr1l=0;kr1p=0;th1s4l=0;th1s4p=0;th5s14l=0;th5s14p=0;th15s24l=0;th15s24p=0;th25s44l=0;th25s44p=0;th45s64l=0;th45s64p=0;th65plusl=0;th65plusp=0;totall=0;totalp=0;totaljml=0;matil=0;matip=0;
                 ps2.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                 ps2.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                 ps2.setString(3,rs.getString("kd_penyakit"));
@@ -457,15 +469,26 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                                     tth5s14p=tth5s14p+1;
                                     break;
                             }
-                        }else if(Valid.SetAngka(rs2.getString("umur").replaceAll(" Th","").replaceAll("Th","").replaceAll(" ",""))<=44){
+                        }else if(Valid.SetAngka(rs2.getString("umur").replaceAll(" Th","").replaceAll("Th","").replaceAll(" ",""))<=24){
                             switch (rs2.getString("jk")) {
                                 case "L":
-                                    th15s44l=th15s44l+1;
-                                    tth15s44l=tth15s44l+1;
+                                    th15s24l=th15s24l+1;
+                                    tth15s24l=tth15s24l+1;
                                     break;
                                 case "P":
-                                    th15S44p=th15S44p+1;
-                                    tth15S44p=tth15S44p+1;
+                                    th15s24p=th15s24p+1;
+                                    tth15s24p=tth15s24p+1;
+                                    break;
+                            }
+                          }else if(Valid.SetAngka(rs2.getString("umur").replaceAll(" Th","").replaceAll("Th","").replaceAll(" ",""))<=44){
+                            switch (rs2.getString("jk")) {
+                                case "L":
+                                    th25s44l=th25s44l+1;
+                                    tth25s44l=tth25s44l+1;
+                                    break;
+                                case "P":
+                                    th25s44p=th25s44p+1;
+                                    tth25s44p=tth25s44p+1;
                                     break;
                             }
                         }else if(Valid.SetAngka(rs2.getString("umur").replaceAll(" Th","").replaceAll("Th","").replaceAll(" ",""))<=64){
@@ -493,19 +516,19 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         }
                     }
                 }
-                totall=kr1l+th1s4l+th5s14l+th15s44l+th45s64l+th65plusl;
-                totalp=kr1p+th1s4p+th5s14p+th15S44p+th45s64p+th65plusp;
+                totall=kr1l+th1s4l+th5s14l+th15s24l+th25s44l+th45s64l+th65plusl;
+                totalp=kr1p+th1s4p+th5s14p+th15s24p+th25s44p+th45s64p+th65plusp;
                 totaljml=totall+totalp;
-                ttotall=ttotall+kr1l+th1s4l+th5s14l+th15s44l+th45s64l+th65plusl;
-                ttotalp=ttotalp+kr1p+th1s4p+th5s14p+th15S44p+th45s64p+th65plusp;
+                ttotall=ttotall+kr1l+th1s4l+th5s14l+th15s24l+th25s44l+th45s64l+th65plusl;
+                ttotalp=ttotalp+kr1p+th1s4p+th5s14p+th15s24p+th25s44p+th45s64p+th65plusp;
                 ttotaljml=ttotall+ttotalp;
                 tabMode.addRow(new Object[]{
-                   i,rs.getString("kd_penyakit"),rs.getString("nm_penyakit"),kr1l,kr1p,th1s4l,th1s4p,th5s14l,th5s14p,th15s44l,th15S44p,th45s64l,th45s64p,th65plusl,th65plusp,totall,totalp,totaljml,matil,matip
+                   i,rs.getString("kd_penyakit"),rs.getString("nm_penyakit"),kr1l,kr1p,th1s4l,th1s4p,th5s14l,th5s14p,th15s24l,th15s24p,th25s44l,th25s44p,th45s64l,th45s64p,th65plusl,th65plusp,totall,totalp,totaljml,matil,matip
                 });
                 i++;                
             } 
             tabMode.addRow(new Object[]{
-                   "","","RUMAH SAKIT",tkr1l,tkr1p,tth1s4l,tth1s4p,tth5s14l,tth5s14p,tth15s44l,tth15S44p,tth45s64l,tth45s64p,tth65plusl,tth65plusp,ttotall,ttotalp,ttotaljml,tmatil,tmatip
+                   "","","RUMAH SAKIT",tkr1l,tkr1p,tth1s4l,tth1s4p,tth5s14l,tth5s14p,tth15s24l,tth15s24p,tth25s44l,tth25s44p,tth45s64l,tth45s64p,tth65plusl,tth65plusp,ttotall,ttotalp,ttotaljml,tmatil,tmatip
             });
                 
             this.setCursor(Cursor.getDefaultCursor());

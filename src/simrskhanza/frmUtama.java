@@ -330,6 +330,7 @@ import keuangan.DlgRincianPiutangPasien;
 import laporan.DlgBulananHAIs;
 import laporan.DlgCekEntryRalan;
 import laporan.DlgDkkPenyakitMenularRalan;
+import laporan.Dlg10BesarPenyakit;
 import laporan.DlgDkkPenyakitMenularRanap;
 import laporan.DlgDkkPenyakitTidakMenularRanap;
 import laporan.DlgHarianHAIs;
@@ -11739,7 +11740,18 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         aplikasi.setVisible(true);
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_btnPnyMenularRalanActionPerformed
-
+    
+    private void btn10BesarPenyakitActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        isTutup();
+        DlgHome.dispose();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        Dlg10BesarPenyakit aplikasi=new Dlg10BesarPenyakit(this,false);
+        aplikasi.tampil();
+        aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
+        aplikasi.setLocationRelativeTo(PanelUtama);
+        aplikasi.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }                                             
     private void btnGrafikKunjunganPerBulanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrafikKunjunganPerBulanActionPerformed
         isTutup();
         DlgHome.dispose();
@@ -17140,6 +17152,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
 
             if(akses.getpenyakit_menular_ranap()==true){
                 Panelmenu.add(btnPnyMenularRanap);
+                jmlmenu++;
+            }
+            
+            if(akses.getsepuluh_besar_penyakit()==true){
+                Panelmenu.add(btn10BesarPenyakit);
                 jmlmenu++;
             }
 
