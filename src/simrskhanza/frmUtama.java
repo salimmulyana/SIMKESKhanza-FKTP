@@ -101,7 +101,6 @@ import laporan.DlgFrekuensiPenyakitRanap;
 import laporan.DlgFrekuensiPenyakitRalan;
 import laporan.DlgDkkSurveilansRanap;
 import laporan.DlgDkkPenyakitTidakMenularRalan;
-import laporan.Dlg10BesarPenyakit;
 import laporan.DlgDkkSurveilansPD3I;
 import setting.DlgVakum;
 import setting.DlgUser;
@@ -331,7 +330,6 @@ import keuangan.DlgRincianPiutangPasien;
 import laporan.DlgBulananHAIs;
 import laporan.DlgCekEntryRalan;
 import laporan.DlgDkkPenyakitMenularRalan;
-import laporan.Dlg10BesarPenyakit;
 import laporan.DlgDkkPenyakitMenularRanap;
 import laporan.DlgDkkPenyakitTidakMenularRanap;
 import laporan.DlgHarianHAIs;
@@ -11741,8 +11739,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         aplikasi.setVisible(true);
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_btnPnyMenularRalanActionPerformed
-    
-    
+
     private void btnGrafikKunjunganPerBulanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrafikKunjunganPerBulanActionPerformed
         isTutup();
         DlgHome.dispose();
@@ -15384,17 +15381,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         this.setCursor(Cursor.getDefaultCursor());
     }
     
-    private void btn10BesarPenyakitActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        isTutup();
-        DlgHome.dispose();
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        Dlg10BesarPenyakit aplikasi=new Dlg10BesarPenyakit(this,false);       
-        aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
-        aplikasi.setLocationRelativeTo(PanelUtama);
-        aplikasi.setVisible(true);
-        this.setCursor(Cursor.getDefaultCursor());
-    }                                             
-    
     /**
     * @param args the command line arguments
     */
@@ -15981,7 +15967,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             btnGrafikItemApotekPerKategori,btnGrafikItemApotekPerGolongan,btnGrafikItemApotekPerIndustriFarmasi,btn10BesarObatPoli,btnGrafikPengajuanAsetUrgensi,
             btnGrafikPengajuanAsetStatus,btnGrafikPengajuanAsetDepartemen,btnRekapPengajuanAsetDepartemen,btnGrafikKelompokJabatanPegawai,
             btnGrafikResikoKerjaPegawai,btnGrafikEmergencyIndexPegawai,btnGrafikInventarisRuang,btnHarianHAIs2,btnGrafikInventarisJenis,btnResumePasien,
-            btnPerkiraanBiayaRanap,btnRekapObatPoli,btnRekapObatPasien,btnGrafikHAIsPasienRuang,btnGrafikHAIsPasienBulan,btn10BesarPenyakit;
+            btnPerkiraanBiayaRanap,btnRekapObatPoli,btnRekapObatPasien,btnGrafikHAIsPasienRuang,btnGrafikHAIsPasienBulan;
     
     public void isWall(){
         try{            
@@ -17154,11 +17140,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
 
             if(akses.getpenyakit_menular_ranap()==true){
                 Panelmenu.add(btnPnyMenularRanap);
-                jmlmenu++;
-            }
-            
-            if(akses.getsepuluh_besar_penyakit()==true){
-                Panelmenu.add(btn10BesarPenyakit);
                 jmlmenu++;
             }
 
@@ -18624,11 +18605,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             
             if(akses.getgrafik_HAIs_pasienbulan()==true){
                 Panelmenu.add(btnGrafikHAIsPasienBulan);
-                jmlmenu++;
-            }
-            
-            if(akses.getsepuluh_besar_penyakit()==true){
-                Panelmenu.add(btn10BesarPenyakit);
                 jmlmenu++;
             }
         }else if(cmbMenu.getSelectedIndex()==14){
@@ -21408,10 +21384,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         
         if(akses.getgrafik_HAIs_pasienbulan()==true){
             Panelmenu.add(btnGrafikHAIsPasienBulan);
-            jmlmenu++;
-        }
-        if(akses.getsepuluh_besar_penyakit()==true){
-            Panelmenu.add(btn10BesarPenyakit);
             jmlmenu++;
         }
 
@@ -25198,13 +25170,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             }                
         }
         
-        if(akses.getsepuluh_besar_penyakit()==true){
-            if(btn10BesarPenyakit.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
-                Panelmenu.add(btn10BesarPenyakit);
-                jmlmenu++;
-            }                
-        }
-        
         if(akses.getsurat_indeks()==true){
             if(btnSuratIndeks.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
                 Panelmenu.add(btnSuratIndeks);
@@ -26750,18 +26715,6 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         btnGrafikHAIsPasienBulan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGrafikHAIsPasienBulanActionPerformed(evt);
-            }
-        });
-        
-        btn10BesarPenyakit = new widget.ButtonBig();
-        btn10BesarPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/1491582080_6.png"))); 
-        btn10BesarPenyakit.setText("Sepuluh Besar Penyakit Berdasarkan Umur");
-        btn10BesarPenyakit.setIconTextGap(0);
-        btn10BesarPenyakit.setName("btn10BesarPenyakit"); 
-        btn10BesarPenyakit.setPreferredSize(new java.awt.Dimension(200, 90));
-        btn10BesarPenyakit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn10BesarPenyakitActionPerformed(evt);
             }
         });
         
