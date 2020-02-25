@@ -150,7 +150,7 @@ public class DlgUser extends javax.swing.JDialog {
                     "[N]Pengajuan Aset Per Departemen","[F]Rekap Pengajuan Aset Departemen","[N]Pegawai Per Kelompok Jabatan","[N]Pegawai Per Resiko Kerja",
                     "[N]Pegawai Per Emergency Index","[N]Jumlah Inventaris Per Ruang","[I]Harian HAIs 2","[N]Jumlah Inventaris Per Jenis","[L]Data Resume Pasien",
                     "[A]Perkiraan Biaya Ranap","[D]Rekap Obat Per Poli","[D]Rekap Obat Per Pasien","[F]Permintaan Perbaikan Inventaris","[N]Pasien HAIs Per Ruang",
-                    "[N]Pasien HAIs Per Bulan","Surat Sakit"
+                    "[N]Pasien HAIs Per Bulan","Surat Sakit","[I]Surveilans Terpadu"
         };
         
         tabMode=new DefaultTableModel(null,row){
@@ -308,7 +308,7 @@ public class DlgUser extends javax.swing.JDialog {
                 java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
                 java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
                 java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class, java.lang.Boolean.class,
-                java.lang.Boolean.class
+                java.lang.Boolean.class, java.lang.Boolean.class
              };
              @Override
              public Class getColumnClass(int columnIndex) {
@@ -1079,6 +1079,8 @@ public class DlgUser extends javax.swing.JDialog {
                 column.setPreferredWidth(129);
             }else if(i==560){
                 column.setPreferredWidth(130);
+            }else if(i==561){
+                column.setPreferredWidth(150);
             }else{
                 column.setPreferredWidth(131);
                        
@@ -1573,7 +1575,7 @@ public class DlgUser extends javax.swing.JDialog {
                     "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false',"+
                     "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false',"+
                     "'false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false','false',"+
-                    "'false','false','false'","User")==true){
+                    "'false','false','false','false'","User")==true){
                 tampil();
                 emptTeks();
             }            
@@ -2176,7 +2178,8 @@ public class DlgUser extends javax.swing.JDialog {
                     "permintaan_perbaikan_inventaris='"+tbUser.getValueAt(i,557).toString()+"',"+
                     "grafik_HAIs_pasienbangsal='"+tbUser.getValueAt(i,558).toString()+"',"+
                     "grafik_HAIs_pasienbulan='"+tbUser.getValueAt(i,559).toString()+"',"+
-                    "surat_sakit='"+tbUser.getValueAt(i,560).toString()+"'");
+                    "surat_sakit='"+tbUser.getValueAt(i,560).toString()+"',"+
+                    "surveilan_terpadu='"+tbUser.getValueAt(i,561).toString()+"'");
                      
             }            
             tampil();
