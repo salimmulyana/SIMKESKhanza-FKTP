@@ -2129,8 +2129,7 @@ public final class akses {
     public static boolean getgrafik_kunjungan_perpendidikan(){return akses.grafik_kunjungan_perpendidikan;}
     public static boolean getgrafik_kunjungan_pertahun(){return akses.grafik_kunjungan_pertahun;}
     public static boolean getberkas_digital_perawatan(){return akses.berkas_digital_perawatan;}
-    public static boolean getpenyakit_menular_ranap(){return akses.penyakit_menular_ranap;}
-    public static boolean getsepuluh_besar_penyakit(){return akses.sepuluh_besar_penyakit;}
+    public static boolean getpenyakit_menular_ranap(){return akses.penyakit_menular_ranap;}   
     public static boolean getpenyakit_menular_ralan(){return akses.penyakit_menular_ralan;}
     public static boolean getgrafik_kunjungan_perbulan(){return akses.grafik_kunjungan_perbulan;}
     public static boolean getgrafik_kunjungan_pertanggal(){return akses.grafik_kunjungan_pertanggal;}

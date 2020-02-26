@@ -512,6 +512,7 @@ import laporan.DlgRekapMutasiBerkas;
 import laporan.DlgRekapPermintaanDiet;
 import laporan.RekapKunjunganRuangPerTahun;
 import laporan.RekapSkriningPernapasanRalanPerTahun;
+import laporan.DlgSurveilansTerpaduPenyakit;
 import perpustakaan.PerpustakaanAnggota;
 import perpustakaan.PerpustakaanBayarDenda;
 import perpustakaan.PerpustakaanCariEbook;
@@ -15381,6 +15382,28 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         this.setCursor(Cursor.getDefaultCursor());
     }
     
+    private void btnSuratSakitActionPerformed(java.awt.event.ActionEvent evt) {
+        isTutup();
+        DlgHome.dispose();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgSuratSakit aplikasi=new DlgSuratSakit(this,true);
+        aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
+        aplikasi.setLocationRelativeTo(PanelUtama);
+        aplikasi.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }
+    
+    private void btnSurveilanTerpaduActionPerformed(java.awt.event.ActionEvent evt) {
+        isTutup();
+        DlgHome.dispose();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgSurveilansTerpaduPenyakit aplikasi=new DlgSurveilansTerpaduPenyakit(this,true);
+        aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
+        aplikasi.setLocationRelativeTo(PanelUtama);
+        aplikasi.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }
+    
     /**
     * @param args the command line arguments
     */
@@ -15967,7 +15990,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             btnGrafikItemApotekPerKategori,btnGrafikItemApotekPerGolongan,btnGrafikItemApotekPerIndustriFarmasi,btn10BesarObatPoli,btnGrafikPengajuanAsetUrgensi,
             btnGrafikPengajuanAsetStatus,btnGrafikPengajuanAsetDepartemen,btnRekapPengajuanAsetDepartemen,btnGrafikKelompokJabatanPegawai,
             btnGrafikResikoKerjaPegawai,btnGrafikEmergencyIndexPegawai,btnGrafikInventarisRuang,btnHarianHAIs2,btnGrafikInventarisJenis,btnResumePasien,
-            btnPerkiraanBiayaRanap,btnRekapObatPoli,btnRekapObatPasien,btnGrafikHAIsPasienRuang,btnGrafikHAIsPasienBulan;
+            btnPerkiraanBiayaRanap,btnRekapObatPoli,btnRekapObatPasien,btnGrafikHAIsPasienRuang,btnGrafikHAIsPasienBulan,btnSuratSakit,btnSurveilanTerpadu;
     
     public void isWall(){
         try{            
@@ -18605,6 +18628,16 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             
             if(akses.getgrafik_HAIs_pasienbulan()==true){
                 Panelmenu.add(btnGrafikHAIsPasienBulan);
+                jmlmenu++;
+            }
+            
+            if(akses.getsurat_sakit()==true){
+                Panelmenu.add(btnSuratSakit);
+                jmlmenu++;
+            }
+            
+            if(akses.getsurveilan_terpadu()==true){
+                Panelmenu.add(btnSurveilanTerpadu);
                 jmlmenu++;
             }
         }else if(cmbMenu.getSelectedIndex()==14){
@@ -21384,6 +21417,16 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         
         if(akses.getgrafik_HAIs_pasienbulan()==true){
             Panelmenu.add(btnGrafikHAIsPasienBulan);
+            jmlmenu++;
+        }
+        
+        if(akses.getsurat_sakit()==true){
+            Panelmenu.add(btnSuratSakit);
+            jmlmenu++;
+        }
+        
+        if(akses.getsurveilan_terpadu()==true){
+            Panelmenu.add(btnSurveilanTerpadu);
             jmlmenu++;
         }
 
@@ -25170,6 +25213,20 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             }                
         }
         
+        if(akses.getsurat_sakit()==true){
+            if(btnSuratSakit.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnSuratSakit);
+                jmlmenu++;
+            }                
+        }
+        
+        if(akses.getsurveilan_terpadu()==true){
+            if(btnSurveilanTerpadu.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnSurveilanTerpadu);
+                jmlmenu++;
+            }                
+        }
+        
         if(akses.getsurat_indeks()==true){
             if(btnSuratIndeks.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
                 Panelmenu.add(btnSuratIndeks);
@@ -26715,6 +26772,30 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         btnGrafikHAIsPasienBulan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGrafikHAIsPasienBulanActionPerformed(evt);
+            }
+        });
+        
+        btnSuratSakit = new widget.ButtonBig();
+        btnSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/1491582015_11.png"))); 
+        btnSuratSakit.setText("Data Surat Sakit");
+        btnSuratSakit.setIconTextGap(0);
+        btnSuratSakit.setName("btnSuratSakit"); 
+        btnSuratSakit.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnSuratSakit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuratSakitActionPerformed(evt);
+            }
+        });
+        
+        btnSurveilanTerpadu = new widget.ButtonBig();
+        btnSurveilanTerpadu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/1491582015_11.png"))); 
+        btnSurveilanTerpadu.setText("Surveilans Terpadu");
+        btnSurveilanTerpadu.setIconTextGap(0);
+        btnSurveilanTerpadu.setName("btnSurveilanTerpadu"); 
+        btnSurveilanTerpadu.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnSurveilanTerpadu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSurveilanTerpaduActionPerformed(evt);
             }
         });
         
