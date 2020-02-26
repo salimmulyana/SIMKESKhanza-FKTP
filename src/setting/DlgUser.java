@@ -2822,7 +2822,8 @@ public class DlgUser extends javax.swing.JDialog {
                                     "permintaan_perbaikan_inventaris='"+tbUser.getValueAt(barisdicopy,557).toString()+"',"+
                                     "grafik_HAIs_pasienbangsal='"+tbUser.getValueAt(barisdicopy,558).toString()+"',"+
                                     "grafik_HAIs_pasienbulan='"+tbUser.getValueAt(barisdicopy,559).toString()+"',"+
-                                    "surat_sakit='"+tbUser.getValueAt(barisdicopy,560).toString()+"'");
+                                    "surat_sakit='"+tbUser.getValueAt(barisdicopy,560).toString()+"',"+
+                                    "surveilan_terpadu='"+tbUser.getValueAt(barisdicopy,561).toString()+"'");
                             }    
                             userdicopy="";
                             copyhakakses="";
@@ -3125,7 +3126,7 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         "grafik_pengajuan_aset_status,grafik_pengajuan_aset_departemen,rekap_pengajuan_aset_departemen,grafik_kelompok_jabatanpegawai,"+
                         "grafik_resiko_kerjapegawai,grafik_emergency_indexpegawai,grafik_inventaris_ruang,harian_HAIs2,grafik_inventaris_jenis,"+
                         "data_resume_pasien,perkiraan_biaya_ranap,rekap_obat_poli,rekap_obat_pasien,permintaan_perbaikan_inventaris,grafik_HAIs_pasienbangsal,"+
-                        "grafik_HAIs_pasienbulan,surat_sakit from user order by AES_DECRYPT(id_user,'nur')");
+                        "grafik_HAIs_pasienbulan,surat_sakit,surveilan_terpadu from user order by AES_DECRYPT(id_user,'nur')");
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
@@ -3698,7 +3699,8 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                                rs.getBoolean("permintaan_perbaikan_inventaris"),
                                rs.getBoolean("grafik_HAIs_pasienbangsal"),
                                rs.getBoolean("grafik_HAIs_pasienbulan"),
-                               rs.getBoolean("surat_sakit")
+                               rs.getBoolean("surat_sakit"),
+                               rs.getBoolean("surveilan_terpadu")
                             });
                         }   
                     } catch (Exception e) {
@@ -4260,7 +4262,8 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                            rs.getBoolean("permintaan_perbaikan_inventaris"),
                            rs.getBoolean("grafik_HAIs_pasienbangsal"),
                            rs.getBoolean("grafik_HAIs_pasienbulan"),
-                           rs.getBoolean("surat_sakit")
+                           rs.getBoolean("surat_sakit"),
+                           rs.getBoolean("surveilan_terpadu")
                         });
                     }                                             
                  }

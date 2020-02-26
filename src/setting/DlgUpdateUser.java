@@ -2638,6 +2638,13 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                 if("[Q]Password Asuransi".equals(tbUser.getValueAt(i,1).toString())){
                     Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","password_asuransi='"+tbUser.getValueAt(i,2).toString()+"'");
                 }
+                
+                if("Surat Sakit".equals(tbUser.getValueAt(i,1).toString())){
+                    Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_sakit='"+tbUser.getValueAt(i,2).toString()+"'");
+                }
+                if("Surveilan Terpadu".equals(tbUser.getValueAt(i,1).toString())){
+                    Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surveilan_terpadu='"+tbUser.getValueAt(i,2).toString()+"'");
+                }
             }
             JOptionPane.showMessageDialog(null,"Proses update hak akses selesai..!!");
         }
@@ -2862,7 +2869,7 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                         "grafik_pengajuan_aset_status,grafik_pengajuan_aset_departemen,rekap_pengajuan_aset_departemen,grafik_kelompok_jabatanpegawai,"+
                         "grafik_resiko_kerjapegawai,grafik_emergency_indexpegawai,grafik_inventaris_ruang,harian_HAIs2,grafik_inventaris_jenis,"+
                         "data_resume_pasien,perkiraan_biaya_ranap,rekap_obat_poli,rekap_obat_pasien,permintaan_perbaikan_inventaris,"+
-                        "grafik_HAIs_pasienbangsal,grafik_HAIs_pasienbulan from user where id_user=AES_ENCRYPT(?,'nur')");
+                        "grafik_HAIs_pasienbangsal,grafik_HAIs_pasienbulan,surat_sakit,surveilan_terpadu from user where id_user=AES_ENCRYPT(?,'nur')");
             try {
                 ps.setString(1,user);
                 rs=ps.executeQuery();
@@ -5089,6 +5096,16 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                     
                     if("[Q]Password Asuransi".toLowerCase().contains(TCari.getText().toLowerCase())){
                         tabMode.addRow(new Object[]{false,"[Q]Password Asuransi",rs.getBoolean("password_asuransi")});
+                        
+                    }
+                    
+                    if("Surat Sakit".toLowerCase().contains(TCari.getText().toLowerCase())){
+                        tabMode.addRow(new Object[]{false,"Surat Sakit",rs.getBoolean("surat_sakit")});
+                        
+                    }
+                    if("Surveilan Terpadu".toLowerCase().contains(TCari.getText().toLowerCase())){
+                        tabMode.addRow(new Object[]{false,"Surveilan Terpadu",rs.getBoolean("surveilan_terpadu")});
+                        
                     }
                 }       
                 LCount.setText(""+tabMode.getRowCount());
