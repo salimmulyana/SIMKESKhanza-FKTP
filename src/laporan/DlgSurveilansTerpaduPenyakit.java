@@ -266,7 +266,7 @@ public final class DlgSurveilansTerpaduPenyakit extends javax.swing.JDialog {
                 param.put("alamatrs",akses.getalamatrs());
                 param.put("kotars",akses.getkabupatenrs());
                 param.put("propinsirs",akses.getpropinsirs());
-            Valid.MyReport("rptSurveilansRalan.jasper","report","::[ Surveilans PD3I ]::",param);
+            Valid.MyReport("rptSurveilansTerpadu.jasper","report","::[ Surveilan Terpadu Penyakit Berbasis Puskesmas Sentinel ]::",param);
         }
         this.setCursor(Cursor.getDefaultCursor());
 }//GEN-LAST:event_BtnPrintActionPerformed

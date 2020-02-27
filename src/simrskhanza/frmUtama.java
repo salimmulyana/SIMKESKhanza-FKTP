@@ -26776,7 +26776,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         });
         
         btnSuratSakit = new widget.ButtonBig();
-        btnSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/1491582015_11.png"))); 
+        btnSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/if_email_3327.png"))); 
         btnSuratSakit.setText("Data Surat Sakit");
         btnSuratSakit.setIconTextGap(0);
         btnSuratSakit.setName("btnSuratSakit"); 
@@ -26788,7 +26788,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         });
         
         btnSurveilanTerpadu = new widget.ButtonBig();
-        btnSurveilanTerpadu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/1491582015_11.png"))); 
+        btnSurveilanTerpadu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/Gnome-X-Office-Address-Book-48.png"))); 
         btnSurveilanTerpadu.setText("Surveilans Terpadu");
         btnSurveilanTerpadu.setIconTextGap(0);
         btnSurveilanTerpadu.setName("btnSurveilanTerpadu"); 
