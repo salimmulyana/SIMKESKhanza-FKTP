@@ -26776,7 +26776,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         });
         
         btnSuratSakit = new widget.ButtonBig();
-        btnSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/if_email_3327.png"))); 
+        btnSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/suratsakit.png"))); 
         btnSuratSakit.setText("Data Surat Sakit");
         btnSuratSakit.setIconTextGap(0);
         btnSuratSakit.setName("btnSuratSakit"); 
