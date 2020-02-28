@@ -4545,7 +4545,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     DTPDaftar.getSelectedItem().toString().substring(6,10)+"-"+DTPDaftar.getSelectedItem().toString().substring(3,5)+"-"+DTPDaftar.getSelectedItem().toString().substring(0,2),
                     TTlp.getText(),TUmurTh.getText()+" Th "+TUmurBl.getText()+" Bl "+TUmurHr.getText()+" Hr",CMbPnd.getSelectedItem().toString(),klg,Saudara.getText(),TTmpPj.getText(),Valid.SetTgl(DTPLahirPj.getSelectedItem()+""),
                     TUmurThPj.getText()+" Th "+TUmurBlPj.getText()+" Bl "+TUmurHrPj.getText()+" Hr",Kdpnj.getText(),TNoPeserta.getText(),
-                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),kdperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
+                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),nmperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
                     kdsuku.getText(),kdbahasa.getText(),kdcacat.getText(),EMail.getText(),NIP.getText(),kdprop,PropinsiPj.getText(),TAlergi.getText()
                 })==true){
                 if(akses.getform().equals("DlgReg")){
@@ -4577,7 +4577,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     DTPDaftar.getSelectedItem().toString().substring(6,10)+"-"+DTPDaftar.getSelectedItem().toString().substring(3,5)+"-"+DTPDaftar.getSelectedItem().toString().substring(0,2),
                     TTlp.getText(),TUmurTh.getText()+" Th "+TUmurBl.getText()+" Bl "+TUmurHr.getText()+" Hr",CMbPnd.getSelectedItem().toString(),klg,Saudara.getText(),TTmpPj.getText(),Valid.SetTgl(DTPLahirPj.getSelectedItem()+""),
                     TUmurThPj.getText()+" Th "+TUmurBlPj.getText()+" Bl "+TUmurHrPj.getText()+" Hr",Kdpnj.getText(),TNoPeserta.getText(),
-                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),kdperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
+                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),nmperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
                     kdsuku.getText(),kdbahasa.getText(),kdcacat.getText(),EMail.getText(),NIP.getText(),kdprop,PropinsiPj.getText(),TAlergi.getText()
                     })==true){
                     if(akses.getform().equals("DlgReg")){
@@ -4609,7 +4609,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     DTPDaftar.getSelectedItem().toString().substring(6,10)+"-"+DTPDaftar.getSelectedItem().toString().substring(3,5)+"-"+DTPDaftar.getSelectedItem().toString().substring(0,2),
                     TTlp.getText(),TUmurTh.getText()+" Th "+TUmurBl.getText()+" Bl "+TUmurHr.getText()+" Hr",CMbPnd.getSelectedItem().toString(),klg,Saudara.getText(),TTmpPj.getText(),Valid.SetTgl(DTPLahirPj.getSelectedItem()+""),
                     TUmurThPj.getText()+" Th "+TUmurBlPj.getText()+" Bl "+TUmurHrPj.getText()+" Hr",Kdpnj.getText(),TNoPeserta.getText(),
-                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),kdperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
+                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),nmperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
                     kdsuku.getText(),kdbahasa.getText(),kdcacat.getText(),EMail.getText(),NIP.getText(),kdprop,PropinsiPj.getText(),TAlergi.getText()
                         })==true){
                         if(akses.getform().equals("DlgReg")){
@@ -4641,7 +4641,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     DTPDaftar.getSelectedItem().toString().substring(6,10)+"-"+DTPDaftar.getSelectedItem().toString().substring(3,5)+"-"+DTPDaftar.getSelectedItem().toString().substring(0,2),
                     TTlp.getText(),TUmurTh.getText()+" Th "+TUmurBl.getText()+" Bl "+TUmurHr.getText()+" Hr",CMbPnd.getSelectedItem().toString(),klg,Saudara.getText(),TTmpPj.getText(),Valid.SetTgl(DTPLahirPj.getSelectedItem()+""),
                     TUmurThPj.getText()+" Th "+TUmurBlPj.getText()+" Bl "+TUmurHrPj.getText()+" Hr",Kdpnj.getText(),TNoPeserta.getText(),
-                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),kdperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
+                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),nmperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
                     kdsuku.getText(),kdbahasa.getText(),kdcacat.getText(),EMail.getText(),NIP.getText(),kdprop,PropinsiPj.getText(),TAlergi.getText()
                             })==true){
                             if(akses.getform().equals("DlgReg")){
@@ -4673,7 +4673,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     DTPDaftar.getSelectedItem().toString().substring(6,10)+"-"+DTPDaftar.getSelectedItem().toString().substring(3,5)+"-"+DTPDaftar.getSelectedItem().toString().substring(0,2),
                     TTlp.getText(),TUmurTh.getText()+" Th "+TUmurBl.getText()+" Bl "+TUmurHr.getText()+" Hr",CMbPnd.getSelectedItem().toString(),klg,Saudara.getText(),TTmpPj.getText(),Valid.SetTgl(DTPLahirPj.getSelectedItem()+""),
                     TUmurThPj.getText()+" Th "+TUmurBlPj.getText()+" Bl "+TUmurHrPj.getText()+" Hr",Kdpnj.getText(),TNoPeserta.getText(),
-                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),kdperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
+                    kdkel,kdkec,kdkab,PekerjaanPj.getText(),nmperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),KabupatenPj.getText(),kdperusahaan.getText(),
                     kdsuku.getText(),kdbahasa.getText(),kdcacat.getText(),EMail.getText(),NIP.getText(),kdprop,PropinsiPj.getText(),TAlergi.getText()
                                 })==true){
                                 if(akses.getform().equals("DlgReg")){
@@ -4884,7 +4884,7 @@ private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                     Sequel.cariIsi("select kelurahan.kd_kel from kelurahan where kelurahan.nm_kel=?",Kelurahan.getText()),
                     Sequel.cariIsi("select kecamatan.kd_kec from kecamatan where kecamatan.nm_kec=?",Kecamatan.getText()),
                     Sequel.cariIsi("select kabupaten.kd_kab from kabupaten where kabupaten.nm_kab=?",Kabupaten.getText()), 
-                    NmIbu.getText(),PekerjaanPj.getText(),kdperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),
+                    NmIbu.getText(),PekerjaanPj.getText(),nmperusahaanpj.getText(),AlamatPj.getText(),KelurahanPj.getText(),KecamatanPj.getText(),
                     KabupatenPj.getText(),kdperusahaan.getText(),kdsuku.getText(),kdbahasa.getText(),kdcacat.getText(),EMail.getText(),NIP.getText(),
                     Sequel.cariIsi("select propinsi.kd_prop from propinsi where propinsi.nm_prop=?",Propinsi.getText()),
                     PropinsiPj.getText(),TAlergi.getText(),Kd2.getText()
@@ -8533,7 +8533,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),
                         rs.getString(15),rs.getString(16),rs.getString(17),rs.getString(18),rs.getString(19),
                         rs.getString(20),rs.getString(21),rs.getString(22),rs.getString(23),rs.getString(24),
-                        "Klik Kanan, Tampilkan Banyak Daftar Yo",rs.getString(25),rs.getString("nama_perusahaan"),rs.getString(27),
+                        "Klik Kanan, Tampilkan Banyak Daftar Yo",rs.getString(25),rs.getString(26),rs.getString(27),
                         rs.getString("suku_bangsa"),rs.getString("nama_suku_bangsa"),rs.getString("bahasa_pasien"),
                         rs.getString("nama_bahasa"),rs.getString("kode_perusahaan"),rs.getString("nama_perusahaan"),
                         rs.getString("nip"),rs.getString("email"),rs.getString("cacat_fisik"),rs.getString("nama_cacat"),rs.getString(38),
@@ -9282,6 +9282,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             nmbahasa.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),32).toString());
             kdperusahaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),33).toString());
             nmperusahaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),34).toString());
+            nmperusahaanpj.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),27).toString());
             NIP.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),35).toString());
             EMail.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),36).toString());
             kdcacat.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),37).toString());
