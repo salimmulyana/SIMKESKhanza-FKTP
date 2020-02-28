@@ -4874,7 +4874,7 @@ private void BtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                 "tgl_lahir=?,alamat=?,gol_darah=?,pekerjaan=?,stts_nikah=?,agama=?,tgl_daftar=?,no_tlp=?,umur=?"+
                 ",pnd=?,keluarga=?,namakeluarga=?,tmp_lahirpj=?,tgl_lahirpj=?,umurpj=?,kd_pj=?,no_peserta=?,kd_kel=?,kd_kec=?,kd_kab=?,nm_ibu=?,pekerjaanpj=?,"+
                 "perusahaan_pj=?,alamatpj=?,kelurahanpj=?,kecamatanpj=?,kabupatenpj=?,perusahaan_pasien=?,suku_bangsa=?,bahasa_pasien=?,"+
-                "cacat_fisik=?,email=?,nip=?,kd_prop=?,propinsipj=?,alergi=?",42,
+                "cacat_fisik=?,email=?,nip=?,kd_prop=?,propinsipj=?,alergi=?",43,
                 new String[]{TNo.getText(),TNm.getText(),TKtp.getText(),TKartuKeluarga.getText(),CmbJk.getSelectedItem().toString().substring(0,1),TTmp.getText(),
                     Valid.SetTgl(DTPLahir.getSelectedItem()+""),
                     Alamat.getText(),CMbGd.getSelectedItem().toString(),Pekerjaan.getText(),CmbStts.getSelectedItem().toString(),cmbAgama.getSelectedItem().toString(),
@@ -8351,7 +8351,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                            "pasien.pnd, pasien.keluarga, pasien.namakeluarga, pasien.tmp_lahirpj, pasien.tgl_lahirpj, pasien.umurpj, penjab.png_jawab,pasien.no_peserta,pasien.pekerjaanpj,"+
                            "pasien.perusahaan_pj, concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj,', ',pasien.propinsipj),"+
                            "perusahaan_pasien.kode_perusahaan,perusahaan_pasien.nama_perusahaan,pasien.bahasa_pasien,"+
-                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik from pasien "+
+                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik,pasien.alergi from pasien "+
                            "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
                            "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab inner join perusahaan_pasien on perusahaan_pasien.kode_perusahaan=pasien.perusahaan_pasien "+
                            "inner join cacat_fisik on pasien.cacat_fisik=cacat_fisik.id inner join propinsi on pasien.kd_prop=propinsi.kd_prop "+
@@ -8387,7 +8387,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                            "pasien.pnd, pasien.keluarga, pasien.namakeluarga, pasien.tmp_lahirpj, pasien.tgl_lahirpj, pasien.umurpj, penjab.png_jawab,pasien.no_peserta,pasien.pekerjaanpj,"+
                            "pasien.perusahaan_pj, concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj,', ',pasien.propinsipj),"+
                            "perusahaan_pasien.kode_perusahaan,perusahaan_pasien.nama_perusahaan,pasien.bahasa_pasien,"+
-                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik from pasien "+
+                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik,pasien.alergi from pasien "+
                            "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
                            "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab inner join perusahaan_pasien on perusahaan_pasien.kode_perusahaan=pasien.perusahaan_pasien "+
                            "inner join cacat_fisik on pasien.cacat_fisik=cacat_fisik.id inner join propinsi on pasien.kd_prop=propinsi.kd_prop "+
@@ -8400,7 +8400,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                            "pasien.pnd, pasien.keluarga, pasien.namakeluarga, pasien.tmp_lahirpj, pasien.tgl_lahirpj, pasien.umurpj, penjab.png_jawab,pasien.no_peserta,pasien.pekerjaanpj,"+
                            "pasien.perusahaan_pj, concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj,', ',pasien.propinsipj),"+
                            "perusahaan_pasien.kode_perusahaan,perusahaan_pasien.nama_perusahaan,pasien.bahasa_pasien,"+
-                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik from pasien "+
+                           "bahasa_pasien.nama_bahasa,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,pasien.nip,pasien.email,cacat_fisik.nama_cacat,pasien.cacat_fisik,pasien.alergi from pasien "+
                            "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
                            "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab inner join perusahaan_pasien on perusahaan_pasien.kode_perusahaan=pasien.perusahaan_pasien "+
                            "inner join cacat_fisik on pasien.cacat_fisik=cacat_fisik.id inner join propinsi on pasien.kd_prop=propinsi.kd_prop "+
@@ -8533,10 +8533,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),
                         rs.getString(15),rs.getString(16),rs.getString(17),rs.getString(18),rs.getString(19),
                         rs.getString(20),rs.getString(21),rs.getString(22),rs.getString(23),rs.getString(24),
-                        "Klik Kanan, Tampilkan Banyak Daftar",rs.getString(25),rs.getString(26),rs.getString(27),
+                        "Klik Kanan, Tampilkan Banyak Daftar Yo",rs.getString(25),rs.getString("nama_perusahaan"),rs.getString(27),
                         rs.getString("suku_bangsa"),rs.getString("nama_suku_bangsa"),rs.getString("bahasa_pasien"),
                         rs.getString("nama_bahasa"),rs.getString("kode_perusahaan"),rs.getString("nama_perusahaan"),
-                        rs.getString("nip"),rs.getString("email"),rs.getString("cacat_fisik"),rs.getString("nama_cacat"),rs.getString(35),
+                        rs.getString("nip"),rs.getString("email"),rs.getString("cacat_fisik"),rs.getString("nama_cacat"),rs.getString(38),
                     });
                 }          
             }catch(Exception e){
@@ -9193,8 +9193,9 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                 Kd2.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),1).toString());
                 TNm.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),2).toString());
                 TKtp.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),3).toString());
+                TKartuKeluarga.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),4).toString());
 
-                switch (tbPasien.getValueAt(tbPasien.getSelectedRow(),4).toString()) {
+                switch (tbPasien.getValueAt(tbPasien.getSelectedRow(),5).toString()) {
                     case "L":
                         CmbJk.setSelectedItem("LAKI-LAKI");
                         break;
@@ -9203,7 +9204,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         break;
                 }
 
-                TTmp.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),5).toString());
+                TTmp.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),6).toString());
                 
                 pscariwilayah=koneksi.prepareStatement(
                         "select pasien.alamat,kelurahan.nm_kel,kecamatan.nm_kec,kabupaten.nm_kab,propinsi.nm_prop,pasien.pekerjaanpj,"+
@@ -9239,18 +9240,19 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                     }
                 }
                             
-                CMbGd.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),9).toString());
-                Pekerjaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),10).toString());
-                CmbStts.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),11).toString());
-                cmbAgama.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),12).toString());
-                TTlp.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),14).toString());
-                Saudara.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),18).toString());
+                CMbGd.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),10).toString());
+                Pekerjaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),11).toString());
+                CmbStts.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),12).toString());
+                cmbAgama.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),13).toString());
+                TTlp.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),15).toString());
+                Saudara.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),19).toString());
+                TTmpPj.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),20).toString());                              
                 Sequel.cariIsi("select kd_pj from pasien where no_rkm_medis='"+TNo.getText()+"'",Kdpnj);
-                nmpnj.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),19).toString());
-                TNoPeserta.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),20).toString());
-                NmIbu.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),7).toString());
-                CMbPnd.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),16).toString());
-                switch (tbPasien.getValueAt(tbPasien.getSelectedRow(),17).toString()) {
+                nmpnj.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),23).toString());
+                TNoPeserta.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),24).toString());
+                NmIbu.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),8).toString());
+                CMbPnd.setSelectedItem(tbPasien.getValueAt(tbPasien.getSelectedRow(),17).toString());
+                switch (tbPasien.getValueAt(tbPasien.getSelectedRow(),18).toString()) {
                     case "AYAH":
                         R1.setSelected(true);
                         break;
@@ -9274,16 +9276,17 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             } catch (Exception ex) {
             }   
             
-            kdsuku.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),24).toString());
-            nmsukubangsa.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),25).toString());
-            kdbahasa.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),26).toString());
-            nmbahasa.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),27).toString());
-            kdperusahaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),28).toString());
-            nmperusahaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),29).toString());
-            NIP.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),30).toString());
-            EMail.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),31).toString());
-            kdcacat.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),32).toString());
-            nmcacat.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),33).toString());
+            kdsuku.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),29).toString());
+            nmsukubangsa.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),30).toString());
+            kdbahasa.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),31).toString());
+            nmbahasa.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),32).toString());
+            kdperusahaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),33).toString());
+            nmperusahaan.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),34).toString());
+            NIP.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),35).toString());
+            EMail.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),36).toString());
+            kdcacat.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),37).toString());
+            nmcacat.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),38).toString());
+            TAlergi.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),39).toString());
             
             chkTNI.setSelected(false);
             kdgolongantni.setText("");
@@ -9312,8 +9315,9 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             BtnJabatanTNI.setEnabled(false);
             BtnPangkatTNI.setEnabled(false);
             
-            Valid.SetTgl(DTPLahir,tbPasien.getValueAt(tbPasien.getSelectedRow(),6).toString());
-            Valid.SetTgl(DTPDaftar,tbPasien.getValueAt(tbPasien.getSelectedRow(),13).toString());  
+            Valid.SetTgl(DTPLahir,tbPasien.getValueAt(tbPasien.getSelectedRow(),7).toString());
+            Valid.SetTgl(DTPLahirPj,tbPasien.getValueAt(tbPasien.getSelectedRow(),21).toString());
+            Valid.SetTgl(DTPDaftar,tbPasien.getValueAt(tbPasien.getSelectedRow(),14).toString());  
         }
     }
     
