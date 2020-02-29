@@ -354,7 +354,6 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         scrollPane1 = new widget.ScrollPane();
         tbDokter = new widget.Table();
         PanelInput = new javax.swing.JPanel();
-        ChkInput = new widget.CekBox();
         FormInput = new widget.PanelBiasa();
         label12 = new widget.Label();
         NoRm = new widget.TextBox();
@@ -421,6 +420,11 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         PekerjaanAyah = new widget.TextBox();
         label70 = new widget.Label();
         KtpAyah = new widget.TextBox();
+        jLabel25 = new widget.Label();
+        UmurKehamilan = new widget.TextBox();
+        comboBox1 = new widget.ComboBox();
+        jLabel26 = new widget.Label();
+        ChkInput = new widget.CekBox();
 
         Popup.setName("Popup"); // NOI18N
 
@@ -1626,6 +1630,11 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         scrollPane1.setComponentPopupMenu(Popup);
         scrollPane1.setName("scrollPane1"); // NOI18N
         scrollPane1.setOpaque(true);
+        scrollPane1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                scrollPane1FocusLost(evt);
+            }
+        });
 
         tbDokter.setAutoCreateRowSorter(true);
         tbDokter.setModel(new javax.swing.table.DefaultTableModel(
@@ -1658,32 +1667,11 @@ public class DlgIKBBayi extends javax.swing.JDialog {
 
         PanelInput.setName("PanelInput"); // NOI18N
         PanelInput.setOpaque(false);
-        PanelInput.setPreferredSize(new java.awt.Dimension(560, 279));
+        PanelInput.setPreferredSize(new java.awt.Dimension(560, 330));
         PanelInput.setLayout(new java.awt.BorderLayout(1, 1));
 
-        ChkInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
-        ChkInput.setMnemonic('I');
-        ChkInput.setText(".: Input Data");
-        ChkInput.setToolTipText("Alt+I");
-        ChkInput.setBorderPainted(true);
-        ChkInput.setBorderPaintedFlat(true);
-        ChkInput.setFocusable(false);
-        ChkInput.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ChkInput.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        ChkInput.setName("ChkInput"); // NOI18N
-        ChkInput.setPreferredSize(new java.awt.Dimension(192, 20));
-        ChkInput.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
-        ChkInput.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/145.png"))); // NOI18N
-        ChkInput.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/145.png"))); // NOI18N
-        ChkInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChkInputActionPerformed(evt);
-            }
-        });
-        PanelInput.add(ChkInput, java.awt.BorderLayout.PAGE_END);
-
         FormInput.setName("FormInput"); // NOI18N
-        FormInput.setPreferredSize(new java.awt.Dimension(560, 208));
+        FormInput.setPreferredSize(new java.awt.Dimension(560, 330));
         FormInput.setLayout(null);
 
         label12.setText("No.RM Bayi :");
@@ -1706,19 +1694,19 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         label18.setName("label18"); // NOI18N
         label18.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label18);
-        label18.setBounds(250, 130, 70, 23);
+        label18.setBounds(700, 190, 70, 23);
 
         label22.setText("J.K.Bayi :");
         label22.setName("label22"); // NOI18N
         label22.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label22);
-        label22.setBounds(0, 190, 85, 23);
+        label22.setBounds(220, 70, 85, 23);
 
         label24.setText("Panjang Badan :");
         label24.setName("label24"); // NOI18N
         label24.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label24);
-        label24.setBounds(475, 12, 98, 23);
+        label24.setBounds(150, 100, 80, 23);
 
         Proses.setName("Proses"); // NOI18N
         Proses.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1728,7 +1716,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Proses);
-        Proses.setBounds(577, 222, 300, 23);
+        Proses.setBounds(140, 280, 300, 23);
 
         Anakke.setName("Anakke"); // NOI18N
         Anakke.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1738,13 +1726,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Anakke);
-        Anakke.setBounds(782, 72, 95, 23);
+        Anakke.setBounds(80, 190, 150, 23);
 
         label25.setText("Kelahiran Ke :");
         label25.setName("label25"); // NOI18N
         label25.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label25);
-        label25.setBounds(679, 72, 100, 23);
+        label25.setBounds(0, 190, 70, 23);
 
         LingkarKepala.setName("LingkarKepala"); // NOI18N
         LingkarKepala.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1754,19 +1742,19 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(LingkarKepala);
-        LingkarKepala.setBounds(782, 12, 95, 23);
+        LingkarKepala.setBounds(100, 130, 80, 23);
 
         label27.setText("Keterangan :");
         label27.setName("label27"); // NOI18N
         label27.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label27);
-        label27.setBounds(475, 102, 98, 23);
+        label27.setBounds(470, 220, 98, 23);
 
         label28.setText("Tgl.Daftar :");
         label28.setName("label28"); // NOI18N
         label28.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label28);
-        label28.setBounds(475, 72, 98, 23);
+        label28.setBounds(748, 10, 60, 23);
 
         JKel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "LAKI-LAKI", "PEREMPUAN" }));
         JKel.setName("JKel"); // NOI18N
@@ -1777,19 +1765,19 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(JKel);
-        JKel.setBounds(90, 190, 130, 23);
+        JKel.setBounds(310, 70, 80, 23);
 
         label23.setText("Berat Bayi(gram) :");
         label23.setName("label23"); // NOI18N
         label23.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label23);
-        label23.setBounds(240, 190, 117, 23);
+        label23.setBounds(0, 100, 90, 23);
 
         label30.setText("Tgl. Lahir :");
         label30.setName("label30"); // NOI18N
         label30.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label30);
-        label30.setBounds(0, 220, 85, 23);
+        label30.setBounds(0, 40, 85, 23);
 
         Lahir.setDisplayFormat("dd-MM-yyyy");
         Lahir.setName("Lahir"); // NOI18N
@@ -1805,13 +1793,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Lahir);
-        Lahir.setBounds(90, 220, 95, 23);
+        Lahir.setBounds(90, 40, 95, 23);
 
         label31.setText("Diagnosa :");
         label31.setName("label31"); // NOI18N
         label31.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label31);
-        label31.setBounds(475, 162, 98, 23);
+        label31.setBounds(450, 40, 98, 23);
 
         Diagnosa.setName("Diagnosa"); // NOI18N
         Diagnosa.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1821,7 +1809,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Diagnosa);
-        Diagnosa.setBounds(577, 162, 120, 23);
+        Diagnosa.setBounds(550, 40, 120, 23);
 
         Nmibu.setName("Nmibu"); // NOI18N
         Nmibu.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1831,19 +1819,19 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Nmibu);
-        Nmibu.setBounds(89, 42, 230, 23);
+        Nmibu.setBounds(80, 160, 230, 23);
 
         label26.setText("Lingkar Kepala :");
         label26.setName("label26"); // NOI18N
         label26.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label26);
-        label26.setBounds(679, 12, 100, 23);
+        label26.setBounds(20, 130, 80, 23);
 
         label19.setText("Nama Ayah :");
         label19.setName("label19"); // NOI18N
         label19.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label19);
-        label19.setBounds(0, 100, 85, 23);
+        label19.setBounds(450, 160, 85, 23);
 
         NmAyah.setName("NmAyah"); // NOI18N
         NmAyah.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1853,13 +1841,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(NmAyah);
-        NmAyah.setBounds(90, 100, 230, 23);
+        NmAyah.setBounds(540, 160, 230, 23);
 
         label20.setText("Umur Ibu :");
         label20.setName("label20"); // NOI18N
         label20.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label20);
-        label20.setBounds(292, 42, 100, 23);
+        label20.setBounds(320, 160, 60, 23);
 
         UmurIbu.setName("UmurIbu"); // NOI18N
         UmurIbu.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1869,13 +1857,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(UmurIbu);
-        UmurIbu.setBounds(395, 42, 70, 23);
+        UmurIbu.setBounds(380, 160, 70, 23);
 
         label21.setText("Alamat Ibu :");
         label21.setName("label21"); // NOI18N
         label21.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label21);
-        label21.setBounds(0, 160, 85, 23);
+        label21.setBounds(535, 130, 70, 23);
 
         AlamatIbu.setName("AlamatIbu"); // NOI18N
         AlamatIbu.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1885,13 +1873,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(AlamatIbu);
-        AlamatIbu.setBounds(90, 160, 376, 23);
+        AlamatIbu.setBounds(610, 130, 376, 23);
 
         label32.setText("Jam Lahir :");
         label32.setName("label32"); // NOI18N
         label32.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label32);
-        label32.setBounds(190, 250, 80, 23);
+        label32.setBounds(195, 40, 60, 23);
 
         jam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
         jam.setName("jam"); // NOI18N
@@ -1902,7 +1890,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(jam);
-        jam.setBounds(270, 250, 62, 23);
+        jam.setBounds(260, 40, 62, 23);
 
         menit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
         menit.setName("menit"); // NOI18N
@@ -1913,7 +1901,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(menit);
-        menit.setBounds(340, 250, 62, 23);
+        menit.setBounds(330, 40, 62, 23);
 
         detik.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
         detik.setName("detik"); // NOI18N
@@ -1924,13 +1912,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(detik);
-        detik.setBounds(400, 250, 62, 23);
+        detik.setBounds(390, 40, 62, 23);
 
         label34.setText("Proses Kelahiran :");
         label34.setName("label34"); // NOI18N
         label34.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label34);
-        label34.setBounds(475, 222, 98, 23);
+        label34.setBounds(40, 280, 98, 23);
 
         Berat.setName("Berat"); // NOI18N
         Berat.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1940,7 +1928,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Berat);
-        Berat.setBounds(370, 190, 100, 23);
+        Berat.setBounds(90, 100, 50, 23);
 
         Panjang.setName("Panjang"); // NOI18N
         Panjang.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1950,7 +1938,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Panjang);
-        Panjang.setBounds(577, 12, 95, 23);
+        Panjang.setBounds(230, 100, 60, 23);
 
         Daftar.setDisplayFormat("dd-MM-yyyy");
         Daftar.setName("Daftar"); // NOI18N
@@ -1960,7 +1948,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Daftar);
-        Daftar.setBounds(577, 72, 95, 23);
+        Daftar.setBounds(810, 10, 95, 23);
 
         scrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         scrollPane2.setName("scrollPane2"); // NOI18N
@@ -1976,7 +1964,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         scrollPane2.setViewportView(keterangan);
 
         FormInput.add(scrollPane2);
-        scrollPane2.setBounds(577, 102, 300, 52);
+        scrollPane2.setBounds(570, 220, 300, 52);
 
         NmBayi.setName("NmBayi"); // NOI18N
         NmBayi.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -1992,7 +1980,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         label35.setName("label35"); // NOI18N
         label35.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label35);
-        label35.setBounds(290, 100, 100, 23);
+        label35.setBounds(740, 160, 100, 23);
 
         UmurAyah.setName("UmurAyah"); // NOI18N
         UmurAyah.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2002,13 +1990,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(UmurAyah);
-        UmurAyah.setBounds(400, 100, 70, 23);
+        UmurAyah.setBounds(850, 160, 70, 23);
 
         label36.setText("Umur Bayi :");
         label36.setName("label36"); // NOI18N
         label36.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label36);
-        label36.setBounds(475, 42, 98, 23);
+        label36.setBounds(300, 100, 60, 23);
 
         UmurBayi.setName("UmurBayi"); // NOI18N
         UmurBayi.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2018,13 +2006,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(UmurBayi);
-        UmurBayi.setBounds(577, 42, 95, 23);
+        UmurBayi.setBounds(360, 100, 60, 23);
 
         label37.setText("Penyulit Kehamilan :");
         label37.setName("label37"); // NOI18N
         label37.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label37);
-        label37.setBounds(473, 192, 100, 23);
+        label37.setBounds(40, 250, 100, 23);
 
         PenyulitKehamilan.setName("PenyulitKehamilan"); // NOI18N
         PenyulitKehamilan.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2034,13 +2022,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(PenyulitKehamilan);
-        PenyulitKehamilan.setBounds(577, 192, 300, 23);
+        PenyulitKehamilan.setBounds(140, 250, 300, 23);
 
         label38.setText("Ketuban :");
         label38.setName("label38"); // NOI18N
         label38.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label38);
-        label38.setBounds(697, 162, 57, 23);
+        label38.setBounds(670, 40, 57, 23);
 
         Ketuban.setName("Ketuban"); // NOI18N
         Ketuban.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2050,13 +2038,13 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(Ketuban);
-        Ketuban.setBounds(757, 162, 120, 23);
+        Ketuban.setBounds(730, 40, 120, 23);
 
         label39.setText("Lingkar Dada :");
         label39.setName("label39"); // NOI18N
         label39.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label39);
-        label39.setBounds(679, 42, 100, 23);
+        label39.setBounds(180, 130, 70, 23);
 
         LingkarDada.setName("LingkarDada"); // NOI18N
         LingkarDada.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2066,7 +2054,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(LingkarDada);
-        LingkarDada.setBounds(782, 42, 95, 23);
+        LingkarDada.setBounds(260, 130, 70, 23);
 
         LingkarPerut.setName("LingkarPerut"); // NOI18N
         LingkarPerut.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2076,19 +2064,19 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(LingkarPerut);
-        LingkarPerut.setBounds(370, 220, 95, 23);
+        LingkarPerut.setBounds(440, 130, 95, 23);
 
         label40.setText("Lingkar Perut :");
         label40.setName("label40"); // NOI18N
         label40.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label40);
-        label40.setBounds(270, 220, 85, 23);
+        label40.setBounds(340, 130, 85, 23);
 
         label41.setText("Jenis Kelahiran:");
         label41.setName("label41"); // NOI18N
         label41.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label41);
-        label41.setBounds(0, 250, 85, 23);
+        label41.setBounds(0, 70, 85, 23);
 
         NoSKL.setName("NoSKL"); // NOI18N
         NoSKL.setPreferredSize(new java.awt.Dimension(207, 23));
@@ -2098,12 +2086,12 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(NoSKL);
-        NoSKL.setBounds(90, 280, 160, 23);
+        NoSKL.setBounds(580, 10, 160, 23);
 
-        jLabel24.setText("Penolong :");
+        jLabel24.setText("Jenis Persalinan:");
         jLabel24.setName("jLabel24"); // NOI18N
         FormInput.add(jLabel24);
-        jLabel24.setBounds(490, 250, 85, 23);
+        jLabel24.setBounds(240, 190, 90, 23);
 
         KdPenolong.setHighlighter(null);
         KdPenolong.setName("KdPenolong"); // NOI18N
@@ -2113,12 +2101,12 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(KdPenolong);
-        KdPenolong.setBounds(580, 250, 100, 23);
+        KdPenolong.setBounds(550, 100, 100, 23);
 
         NmPenolong.setEditable(false);
         NmPenolong.setName("NmPenolong"); // NOI18N
         FormInput.add(NmPenolong);
-        NmPenolong.setBounds(690, 250, 190, 23);
+        NmPenolong.setBounds(660, 100, 190, 23);
 
         BtnPenjab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnPenjab.setMnemonic('1');
@@ -2130,7 +2118,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnPenjab);
-        BtnPenjab.setBounds(930, 250, 28, 23);
+        BtnPenjab.setBounds(850, 100, 28, 23);
 
         BtnKelurahan1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/011.png"))); // NOI18N
         BtnKelurahan1.setMnemonic('2');
@@ -2148,52 +2136,98 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         label66.setName("label66"); // NOI18N
         label66.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label66);
-        label66.setBounds(0, 280, 85, 23);
+        label66.setBounds(490, 10, 85, 23);
 
         JenisKelahiran.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tunggal", "Kembar 2", "Kembar 3", "Lainnya" }));
         JenisKelahiran.setName("JenisKelahiran"); // NOI18N
         FormInput.add(JenisKelahiran);
-        JenisKelahiran.setBounds(90, 250, 120, 23);
+        JenisKelahiran.setBounds(90, 70, 120, 23);
 
         label67.setText("Ibu Bayi :");
         label67.setName("label67"); // NOI18N
         label67.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label67);
-        label67.setBounds(0, 42, 85, 23);
+        label67.setBounds(10, 160, 60, 23);
 
         PekerjaanIbu.setName("PekerjaanIbu"); // NOI18N
         FormInput.add(PekerjaanIbu);
-        PekerjaanIbu.setBounds(90, 70, 160, 24);
+        PekerjaanIbu.setBounds(550, 70, 160, 24);
 
         label68.setText("Pekerjaan Ayah:");
         label68.setName("label68"); // NOI18N
         label68.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label68);
-        label68.setBounds(0, 130, 85, 23);
+        label68.setBounds(450, 190, 85, 23);
 
         KtpIbu.setName("KtpIbu"); // NOI18N
         FormInput.add(KtpIbu);
-        KtpIbu.setBounds(320, 70, 150, 24);
+        KtpIbu.setBounds(790, 70, 150, 24);
 
         label69.setText("Pekerjaan Ibu:");
         label69.setName("label69"); // NOI18N
         label69.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label69);
-        label69.setBounds(0, 70, 85, 23);
+        label69.setBounds(460, 70, 85, 23);
 
         PekerjaanAyah.setName("PekerjaanAyah"); // NOI18N
         FormInput.add(PekerjaanAyah);
-        PekerjaanAyah.setBounds(90, 130, 160, 24);
+        PekerjaanAyah.setBounds(540, 190, 160, 24);
 
         label70.setText("No. KTP Ibu:");
         label70.setName("label70"); // NOI18N
         label70.setPreferredSize(new java.awt.Dimension(65, 23));
         FormInput.add(label70);
-        label70.setBounds(255, 70, 60, 23);
+        label70.setBounds(720, 70, 60, 23);
 
         KtpAyah.setName("KtpAyah"); // NOI18N
         FormInput.add(KtpAyah);
-        KtpAyah.setBounds(330, 130, 140, 24);
+        KtpAyah.setBounds(780, 190, 140, 24);
+
+        jLabel25.setText("Penolong :");
+        jLabel25.setName("jLabel25"); // NOI18N
+        FormInput.add(jLabel25);
+        jLabel25.setBounds(460, 100, 85, 23);
+
+        UmurKehamilan.setName("UmurKehamilan"); // NOI18N
+        UmurKehamilan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UmurKehamilanActionPerformed(evt);
+            }
+        });
+        FormInput.add(UmurKehamilan);
+        UmurKehamilan.setBounds(150, 220, 300, 24);
+
+        comboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Normal", "Dirujuk" }));
+        comboBox1.setName("comboBox1"); // NOI18N
+        FormInput.add(comboBox1);
+        comboBox1.setBounds(330, 190, 90, 23);
+
+        jLabel26.setText("Umur Kehamilan Saat Lahir :");
+        jLabel26.setName("jLabel26"); // NOI18N
+        FormInput.add(jLabel26);
+        jLabel26.setBounds(0, 220, 140, 23);
+
+        ChkInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
+        ChkInput.setMnemonic('I');
+        ChkInput.setText(".: Input Data");
+        ChkInput.setToolTipText("Alt+I");
+        ChkInput.setBorderPainted(true);
+        ChkInput.setBorderPaintedFlat(true);
+        ChkInput.setFocusable(false);
+        ChkInput.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ChkInput.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        ChkInput.setName("ChkInput"); // NOI18N
+        ChkInput.setPreferredSize(new java.awt.Dimension(192, 20));
+        ChkInput.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
+        ChkInput.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/145.png"))); // NOI18N
+        ChkInput.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/145.png"))); // NOI18N
+        ChkInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChkInputActionPerformed(evt);
+            }
+        });
+        FormInput.add(ChkInput);
+        ChkInput.setBounds(0, 310, 898, 20);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -3600,6 +3634,14 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_MnSKL2ActionPerformed
 
+    private void UmurKehamilanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UmurKehamilanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UmurKehamilanActionPerformed
+
+    private void scrollPane1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_scrollPane1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scrollPane1FocusLost
+
     /**
     * @param args the command line arguments
     */
@@ -3700,16 +3742,20 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private widget.TextBox UmurAyah2;
     private widget.TextBox UmurBayi;
     private widget.TextBox UmurIbu;
+    private widget.TextBox UmurKehamilan;
     private widget.TextBox UmurPelapor;
     private widget.TextBox UmurSaksi1;
     private widget.TextBox UmurSaksi2;
     private widget.CekBox ckTglCari;
     private widget.ComboBox cmbCrJk;
     private widget.ComboBox cmbHlm;
+    private widget.ComboBox comboBox1;
     private widget.ComboBox detik;
     private widget.InternalFrame internalFrame1;
     private widget.InternalFrame internalFrame3;
     private widget.Label jLabel24;
+    private widget.Label jLabel25;
+    private widget.Label jLabel26;
     private widget.Label jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -3950,7 +3996,7 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private void isForm(){
         if(ChkInput.isSelected()==true){
             ChkInput.setVisible(false);
-            PanelInput.setPreferredSize(new Dimension(WIDTH,279));
+            PanelInput.setPreferredSize(new Dimension(WIDTH,330));
             FormInput.setVisible(true);      
             ChkInput.setVisible(true);
         }else if(ChkInput.isSelected()==false){           
