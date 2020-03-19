@@ -3567,7 +3567,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="150" y="220" width="300" height="-1"/>
+                      <AbsoluteConstraints x="150" y="220" width="170" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -3589,12 +3589,12 @@
                 </Component>
                 <Component class="widget.Label" name="jLabel26">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Umur Kehamilan Saat Lahir :"/>
+                    <Property name="text" type="java.lang.String" value="Minggu"/>
                     <Property name="name" type="java.lang.String" value="jLabel26" noResource="true"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="220" width="140" height="23"/>
+                      <AbsoluteConstraints x="320" y="220" width="40" height="23"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -3631,6 +3631,17 @@
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="0" y="310" width="898" height="-1"/>
+                    </Constraint>
+                  </Constraints>
+                </Component>
+                <Component class="widget.Label" name="jLabel27">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Umur Kehamilan Saat Lahir :"/>
+                    <Property name="name" type="java.lang.String" value="jLabel27" noResource="true"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                      <AbsoluteConstraints x="0" y="220" width="140" height="23"/>
                     </Constraint>
                   </Constraints>
                 </Component>

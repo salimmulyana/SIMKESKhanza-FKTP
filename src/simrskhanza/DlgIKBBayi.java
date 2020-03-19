@@ -425,6 +425,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         JenisPersalinan = new widget.ComboBox();
         jLabel26 = new widget.Label();
         ChkInput = new widget.CekBox();
+        jLabel27 = new widget.Label();
 
         Popup.setName("Popup"); // NOI18N
 
@@ -2195,17 +2196,17 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             }
         });
         FormInput.add(UmurKehamilan);
-        UmurKehamilan.setBounds(150, 220, 300, 24);
+        UmurKehamilan.setBounds(150, 220, 170, 24);
 
         JenisPersalinan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Normal", "Dirujuk" }));
         JenisPersalinan.setName("JenisPersalinan"); // NOI18N
         FormInput.add(JenisPersalinan);
         JenisPersalinan.setBounds(240, 190, 90, 23);
 
-        jLabel26.setText("Umur Kehamilan Saat Lahir :");
+        jLabel26.setText("Minggu");
         jLabel26.setName("jLabel26"); // NOI18N
         FormInput.add(jLabel26);
-        jLabel26.setBounds(0, 220, 140, 23);
+        jLabel26.setBounds(320, 220, 40, 23);
 
         ChkInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
         ChkInput.setMnemonic('I');
@@ -2228,6 +2229,11 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         });
         FormInput.add(ChkInput);
         ChkInput.setBounds(0, 310, 898, 20);
+
+        jLabel27.setText("Umur Kehamilan Saat Lahir :");
+        jLabel27.setName("jLabel27"); // NOI18N
+        FormInput.add(jLabel27);
+        jLabel27.setBounds(0, 220, 140, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -2683,7 +2689,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 Sequel.queryu4("insert into kabupaten values(?,?)",2,new String[]{"0","-"});
                 Sequel.queryu4("insert into propinsi values(?,?)",2,new String[]{"0","-"});
                 Sequel.queryu4("insert into bahasa_pasien values(?,?)",2,new String[]{"0","-"});
-                Sequel.queryu4("insert into suku_bangsa values(?,?)",2,new String[]{"0","-"});
+                Sequel.queryu4("insert into suku_bangsa values(?,?)",2,new String[]{"1","-"});
                 Sequel.queryu4("insert into perusahaan_pasien values(?,?,?,?,?)",2,new String[]{"-","-","-","-","-"});
                 if(Sequel.menyimpantf("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",42,new String[]{
                     NoRm.getText(),NmBayi.getText(),"-","0",
@@ -2716,8 +2722,8 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                             LingkarPerut.getText()+"','"+LingkarDada.getText()+"','"+
                             JenisKelahiran.getSelectedItem()+"','"+JenisPersalinan.getSelectedItem()+"','"+
                             UmurKehamilan.getText()+"','"+PekerjaanAyah.getText()+"','"+
-                            PekerjaanIbu.getText()+"','"+KtpIbu.getText()+"','"+
-                            KtpAyah.getText()+"','"+
+                            PekerjaanIbu.getText()+"','"+KtpAyah.getText()+"','"+
+                            KtpIbu.getText()+"','"+
                             KdPenolong.getText()+"','"+NoSKL.getText()+"'","No.RM/No.SKL")==true){
                                 Sequel.queryu2("delete from set_no_rkm_medis");
                                 Sequel.queryu2("insert into set_no_rkm_medis values(?)",1,new String[]{NoRm.getText()}); 
@@ -2729,38 +2735,42 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 }else{
                     autoNomor();
                     autoSKL();
-                    if(Sequel.menyimpantf("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",36,new String[]{
-                            NoRm.getText(),NmBayi.getText(),"-",
+                    if(Sequel.menyimpantf("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",42,new String[]{
+                            NoRm.getText(),NmBayi.getText(),"-","0",
                             JKel.getSelectedItem().toString().substring(0,1),"-",
                             Valid.SetTgl(Lahir.getSelectedItem()+""),
                             Nmibu.getText(),AlamatIbu.getText(),"-","-","BELUM MENIKAH","-",
                             Valid.SetTgl(Daftar.getSelectedItem()+""),"0",UmurBayi.getText(),
-                            "-","AYAH",NmAyah.getText(),"-","-",
+                            "-","AYAH",NmAyah.getText(),"-","0000-00-00","0","-","-",
                             Sequel.cariIsi("select kelurahan.kd_kel from kelurahan where kelurahan.nm_kel=?","-"),
                             Sequel.cariIsi("select kecamatan.kd_kec from kecamatan where kecamatan.nm_kec=?","-"),
                             Sequel.cariIsi("select kabupaten.kd_kab from kabupaten where kabupaten.nm_kab=?","-"),
-                            "-",AlamatIbu.getText(),"-","-","-","-",
+                            "-","-","-",AlamatIbu.getText(),"-","-","-","-",
                             Sequel.cariIsi("select suku_bangsa.id from suku_bangsa where suku_bangsa.nama_suku_bangsa=?","-"),
                             Sequel.cariIsi("select bahasa_pasien.id from bahasa_pasien where bahasa_pasien.nama_bahasa=?","-"),
                             Sequel.cariIsi("select cacat_fisik.id from cacat_fisik where cacat_fisik.nama_cacat=?","-"),
-                            "-","-",Sequel.cariIsi("select propinsi.kd_prop from propinsi where propinsi.nm_prop=?","-"),"-"
+                            "-","-",Sequel.cariIsi("select propinsi.kd_prop from propinsi where propinsi.nm_prop=?","-"),"-","-"
                         })==true){
                             if(Sequel.menyimpantf("pasien_bayi","'"+NoRm.getText()+"','"+
-                                UmurIbu.getText()+"','"+
-                                NmAyah.getText()+"','"+
-                                UmurAyah.getText()+"','"+
-                                Berat.getText()+"','"+
-                                Panjang.getText()+"','"+
-                                LingkarKepala.getText()+"','"+
-                                Proses.getText()+"','"+
-                                Anakke.getText()+"','"+
-                                jam.getSelectedItem()+":"+menit.getSelectedItem()+":"+detik.getSelectedItem()+"','"+
-                                keterangan.getText()+"','"+Diagnosa.getText()+"','"+
-                                PenyulitKehamilan.getText()+"','"+Ketuban.getText()+"','"+
-                                LingkarPerut.getText()+"','"+LingkarDada.getText()+"','"+
-                                KdPenolong.getText()+"','"+NoSKL.getText()+"'","No.RM/No.SKL")==true){
-                                    Sequel.queryu2("delete from set_no_rkm_medis");
-                                    Sequel.queryu2("insert into set_no_rkm_medis values(?)",1,new String[]{NoRm.getText()}); 
+                            UmurIbu.getText()+"','"+
+                            NmAyah.getText()+"','"+
+                            UmurAyah.getText()+"','"+
+                            Berat.getText()+"','"+
+                            Panjang.getText()+"','"+
+                            LingkarKepala.getText()+"','"+
+                            Proses.getText()+"','"+
+                            Anakke.getText()+"','"+
+                            jam.getSelectedItem()+":"+menit.getSelectedItem()+":"+detik.getSelectedItem()+"','"+
+                            keterangan.getText()+"','"+Diagnosa.getText()+"','"+
+                            PenyulitKehamilan.getText()+"','"+Ketuban.getText()+"','"+
+                            LingkarPerut.getText()+"','"+LingkarDada.getText()+"','"+
+                            JenisKelahiran.getSelectedItem()+"','"+JenisPersalinan.getSelectedItem()+"','"+
+                            UmurKehamilan.getText()+"','"+PekerjaanAyah.getText()+"','"+
+                            PekerjaanIbu.getText()+"','"+KtpAyah.getText()+"','"+
+                            KtpIbu.getText()+"','"+
+                            KdPenolong.getText()+"','"+NoSKL.getText()+"'","No.RM/No.SKL")==true){
+                                Sequel.queryu2("delete from set_no_rkm_medis");
+                                Sequel.queryu2("insert into set_no_rkm_medis values(?)",1,new String[]{NoRm.getText()}); 
                             }  
                             Sequel.queryu2("delete from set_no_rkm_medis");
                             Sequel.queryu2("insert into set_no_rkm_medis values(?)",1,new String[]{NoRm.getText()});
@@ -2770,21 +2780,21 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                     }else{
                         autoNomor();
                         autoSKL();
-                        if(Sequel.menyimpantf("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",36,new String[]{
-                                NoRm.getText(),NmBayi.getText(),"-",
+                        if(Sequel.menyimpantf("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",42,new String[]{
+                                NoRm.getText(),NmBayi.getText(),"-","0",
                                 JKel.getSelectedItem().toString().substring(0,1),"-",
                                 Valid.SetTgl(Lahir.getSelectedItem()+""),
                                 Nmibu.getText(),AlamatIbu.getText(),"-","-","BELUM MENIKAH","-",
                                 Valid.SetTgl(Daftar.getSelectedItem()+""),"0",UmurBayi.getText(),
-                                "-","AYAH",NmAyah.getText(),"-","-",
+                                "-","AYAH",NmAyah.getText(),"-","0000-00-00","0","-","-",
                                 Sequel.cariIsi("select kelurahan.kd_kel from kelurahan where kelurahan.nm_kel=?","-"),
                                 Sequel.cariIsi("select kecamatan.kd_kec from kecamatan where kecamatan.nm_kec=?","-"),
                                 Sequel.cariIsi("select kabupaten.kd_kab from kabupaten where kabupaten.nm_kab=?","-"),
-                                "-",AlamatIbu.getText(),"-","-","-","-",
+                                "-","-","-",AlamatIbu.getText(),"-","-","-","-",
                                 Sequel.cariIsi("select suku_bangsa.id from suku_bangsa where suku_bangsa.nama_suku_bangsa=?","-"),
                                 Sequel.cariIsi("select bahasa_pasien.id from bahasa_pasien where bahasa_pasien.nama_bahasa=?","-"),
                                 Sequel.cariIsi("select cacat_fisik.id from cacat_fisik where cacat_fisik.nama_cacat=?","-"),
-                                "-","-",Sequel.cariIsi("select propinsi.kd_prop from propinsi where propinsi.nm_prop=?","-"),"-"
+                                "-","-",Sequel.cariIsi("select propinsi.kd_prop from propinsi where propinsi.nm_prop=?","-"),"-","-"
                             })==true){
                                 if(Sequel.menyimpantf("pasien_bayi","'"+NoRm.getText()+"','"+
                                     UmurIbu.getText()+"','"+
@@ -2799,6 +2809,10 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                                     keterangan.getText()+"','"+Diagnosa.getText()+"','"+
                                     PenyulitKehamilan.getText()+"','"+Ketuban.getText()+"','"+
                                     LingkarPerut.getText()+"','"+LingkarDada.getText()+"','"+
+                                    JenisKelahiran.getSelectedItem()+"','"+JenisPersalinan.getSelectedItem()+"','"+
+                                    UmurKehamilan.getText()+"','"+PekerjaanAyah.getText()+"','"+
+                                    PekerjaanIbu.getText()+"','"+KtpAyah.getText()+"','"+
+                                    KtpIbu.getText()+"','"+
                                     KdPenolong.getText()+"','"+NoSKL.getText()+"'","No.RM/No.SKL")==true){
                                         Sequel.queryu2("delete from set_no_rkm_medis");
                                         Sequel.queryu2("insert into set_no_rkm_medis values(?)",1,new String[]{NoRm.getText()}); 
@@ -2814,19 +2828,23 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
                 
             }else{
                 if(Sequel.menyimpantf("pasien_bayi","'"+NoRm.getText()+"','"+
-                        UmurIbu.getText()+"','"+
-                        NmAyah.getText()+"','"+
-                        UmurAyah.getText()+"','"+
-                        Berat.getText()+"','"+
-                        Panjang.getText()+"','"+
-                        LingkarKepala.getText()+"','"+
-                        Proses.getText()+"','"+
-                        Anakke.getText()+"','"+
-                        jam.getSelectedItem()+":"+menit.getSelectedItem()+":"+detik.getSelectedItem()+"','"+
-                        keterangan.getText()+"','"+Diagnosa.getText()+"','"+
-                        PenyulitKehamilan.getText()+"','"+Ketuban.getText()+"','"+
-                        LingkarPerut.getText()+"','"+LingkarDada.getText()+"','"+
-                        KdPenolong.getText()+"','"+NoSKL.getText()+"'","No.RM/No.SKL")==true){
+                            UmurIbu.getText()+"','"+
+                            NmAyah.getText()+"','"+
+                            UmurAyah.getText()+"','"+
+                            Berat.getText()+"','"+
+                            Panjang.getText()+"','"+
+                            LingkarKepala.getText()+"','"+
+                            Proses.getText()+"','"+
+                            Anakke.getText()+"','"+
+                            jam.getSelectedItem()+":"+menit.getSelectedItem()+":"+detik.getSelectedItem()+"','"+
+                            keterangan.getText()+"','"+Diagnosa.getText()+"','"+
+                            PenyulitKehamilan.getText()+"','"+Ketuban.getText()+"','"+
+                            LingkarPerut.getText()+"','"+LingkarDada.getText()+"','"+
+                            JenisKelahiran.getSelectedItem()+"','"+JenisPersalinan.getSelectedItem()+"','"+
+                            UmurKehamilan.getText()+"','"+PekerjaanAyah.getText()+"','"+
+                            PekerjaanIbu.getText()+"','"+KtpAyah.getText()+"','"+
+                            KtpIbu.getText()+"','"+
+                            KdPenolong.getText()+"','"+NoSKL.getText()+"'","No.RM/No.SKL")==true){
                             tampil();
                             emptTeks();
                 }             
@@ -3237,7 +3255,7 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                         Sequel.queryu4("insert into bahasa_pasien values(?,?)",2,new String[]{"0","-"});
                         Sequel.queryu4("insert into suku_bangsa values(?,?)",2,new String[]{"0","-"});
                         Sequel.queryu4("insert into perusahaan_pasien values(?,?,?,?,?)",2,new String[]{"-","-","-","-","-"});
-                        if(Sequel.menyimpantf2("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",36,new String[]{
+                        if(Sequel.menyimpantf2("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",42,new String[]{
                                 NoRm.getText(),NmBayi.getText(),"-",
                                 JKel.getSelectedItem().toString().substring(0,1),"-",
                                 Valid.SetTgl(Lahir.getSelectedItem()+""),
@@ -3276,7 +3294,7 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                         }else{
                             autoNomor();
                             autoSKL();
-                            if(Sequel.menyimpantf2("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",36,new String[]{
+                            if(Sequel.menyimpantf2("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",42,new String[]{
                                     NoRm.getText(),NmBayi.getText(),"-",
                                     JKel.getSelectedItem().toString().substring(0,1),"-",
                                     Valid.SetTgl(Lahir.getSelectedItem()+""),
@@ -3315,7 +3333,7 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                             }else{
                                 autoNomor();
                                 autoSKL();
-                                if(Sequel.menyimpantf2("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",36,new String[]{
+                                if(Sequel.menyimpantf2("pasien","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rekam Medis Pasien",42,new String[]{
                                         NoRm.getText(),NmBayi.getText(),"-",
                                         JKel.getSelectedItem().toString().substring(0,1),"-",
                                         Valid.SetTgl(Lahir.getSelectedItem()+""),
@@ -3760,6 +3778,7 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private widget.Label jLabel24;
     private widget.Label jLabel25;
     private widget.Label jLabel26;
+    private widget.Label jLabel27;
     private widget.Label jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
