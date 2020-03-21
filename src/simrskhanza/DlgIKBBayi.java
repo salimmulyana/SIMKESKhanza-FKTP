@@ -77,7 +77,8 @@ public class DlgIKBBayi extends javax.swing.JDialog {
             "Umur Ayah","Alamat Ibu","Berat Bayi","Panjang Badan",
             "Lk.Kepala","Proses Lahir","Kelahiran Ke","Keterangan",
             "Diagnosa","Penyulit Kehamilan","Ketuban","Lk.Perut",
-            "Lk.Dada","Penolong","No.SKL"
+            "Lk.Dada","Jenis Kelahiran","Jenis Persalinan","Umur Kehamilan",
+            "Pekerjaan Ayah","Pekerjaan Ibu","No.KTP Ayah","No. KTP Ibu","Penolong","No.SKL"
         }){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -86,7 +87,7 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         tbDokter.setPreferredScrollableViewportSize(new Dimension(800,800));
         tbDokter.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 32; i++) {
             TableColumn column = tbDokter.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(80);
@@ -138,6 +139,20 @@ public class DlgIKBBayi extends javax.swing.JDialog {
                 column.setPreferredWidth(150);
             }else if(i==24){
                 column.setPreferredWidth(150);
+            }else if(i==25){
+                column.setPreferredWidth(150);
+            }else if(i==26){
+                column.setPreferredWidth(150);
+            }else if(i==27){
+                column.setPreferredWidth(150);
+            }else if(i==28){
+                column.setPreferredWidth(150);
+            }else if(i==29){
+                column.setPreferredWidth(150);
+            }else if(i==30){
+                column.setPreferredWidth(150);
+            }else if(i==31){
+                column.setPreferredWidth(150);
             }
         }
         tbDokter.setDefaultRenderer(Object.class, new WarnaTable());
@@ -167,6 +182,10 @@ public class DlgIKBBayi extends javax.swing.JDialog {
         BPJSAyah.setDocument(new batasInput((byte)40).getKata(BPJSAyah));
         BPJSIbu.setDocument(new batasInput((byte)40).getKata(BPJSIbu));
         BPJSBayi.setDocument(new batasInput((byte)40).getKata(BPJSBayi));
+        UmurKehamilan.setDocument(new batasInput((byte)40).getKata(UmurKehamilan));
+        PekerjaanAyah.setDocument(new batasInput((byte)50).getKata(PekerjaanAyah));
+        PekerjaanIbu.setDocument(new batasInput((byte)50).getKata(PekerjaanIbu));
+        
         
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -3891,7 +3910,9 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                    "pasien_bayi.berat_badan,pasien_bayi.panjang_badan, pasien_bayi.lingkar_kepala, "+
                    "pasien_bayi.proses_lahir,pasien_bayi.anakke, pasien_bayi.keterangan, "+
                    "pasien_bayi.diagnosa,pasien_bayi.penyulit_kehamilan,pasien_bayi.ketuban,"+
-                   "pasien_bayi.lingkar_perut,pasien_bayi.lingkar_dada,pegawai.nama,"+
+                   "pasien_bayi.lingkar_perut,pasien_bayi.lingkar_dada,pasien_bayi.jenis_kelahiran,"+ 
+                   "pasien_bayi.jenis_persalinan,pasien_bayi.umur_kehamilan,pasien_bayi.pekerjaan_ayah,"+ 
+                   "pasien_bayi.pekerjaan_ibu,pasien_bayi.ktp_ayah,pasien_bayi.ktp_ibu,pegawai.nama,"+
                    "pasien_bayi.no_skl from pasien inner join pegawai inner join pasien_bayi "+
                    "inner join kelurahan inner join kecamatan inner join kabupaten "+
                    "on pasien.no_rkm_medis=pasien_bayi.no_rkm_medis and pasien_bayi.penolong=pegawai.nik "+
@@ -3917,7 +3938,9 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                         rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),
                         rs.getString(17),rs.getString(18),rs.getString(19),rs.getString(20),
                         rs.getString(21),rs.getString(22),rs.getString(23),rs.getString(24),
-                        rs.getString(25)
+                        rs.getString(25),rs.getString(26),rs.getString(27),rs.getString(28),
+                        rs.getString(28),rs.getString(29),rs.getString(30),rs.getString(31),
+                        rs.getString(32)
                     });
                 }
             } catch (Exception e) {
@@ -3963,6 +3986,14 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         PenyulitKehamilan.setText("");
         Ketuban.setText("");
         keterangan.setText("");
+        JenisKelahiran.setSelectedIndex(0);
+        JenisPersalinan.setSelectedIndex(0);
+        UmurKehamilan.setText("");
+        PekerjaanAyah.setText("");
+        PekerjaanIbu.setText("");
+        KtpAyah.setText("");
+        KtpIbu.setText("");
+        
         autoNomor();        
         autoSKL();
         NoRm.requestFocus();
@@ -4000,9 +4031,16 @@ private void MnKartuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
             PenyulitKehamilan.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),19).toString());    
             Ketuban.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),20).toString());    
             LingkarPerut.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),21).toString());    
-            LingkarDada.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),22).toString());    
-            NmPenolong.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),23).toString());  
-            NoSKL.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),24).toString());
+            LingkarDada.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),22).toString());          
+            JenisKelahiran.setSelectedItem(tbDokter.getValueAt(tbDokter.getSelectedRow(),23).toString());
+            JenisPersalinan.setSelectedItem(tbDokter.getValueAt(tbDokter.getSelectedRow(),24).toString());
+            UmurKehamilan.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),25).toString());
+            PekerjaanAyah.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),26).toString());
+            PekerjaanIbu.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),27).toString());
+            KtpAyah.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),29).toString());
+            KtpIbu.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),30).toString());
+            NmPenolong.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),31).toString());  
+            NoSKL.setText(tbDokter.getValueAt(tbDokter.getSelectedRow(),32).toString());
             Sequel.cariIsi("select penolong from pasien_bayi where no_rkm_medis=?",KdPenolong,tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString());
         }
     }
