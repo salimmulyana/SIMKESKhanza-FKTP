@@ -710,6 +710,11 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
 
         NoResep.setHighlighter(null);
         NoResep.setName("NoResep"); // NOI18N
+        NoResep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoResepActionPerformed(evt);
+            }
+        });
         NoResep.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 NoResepKeyPressed(evt);
@@ -717,6 +722,7 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
         });
         FormInput.add(NoResep);
         NoResep.setBounds(528, 72, 130, 23);
+        NoResep.getAccessibleContext().setAccessibleName("");
 
         jLabel8.setText("Tgl.Resep :");
         jLabel8.setName("jLabel8"); // NOI18N
@@ -724,7 +730,7 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
         jLabel8.setBounds(0, 42, 72, 23);
 
         DTPBeri.setForeground(new java.awt.Color(50, 70, 50));
-        DTPBeri.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-09-2019" }));
+        DTPBeri.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2020" }));
         DTPBeri.setDisplayFormat("dd-MM-yyyy");
         DTPBeri.setName("DTPBeri"); // NOI18N
         DTPBeri.setOpaque(false);
@@ -776,6 +782,11 @@ public final class DlgPeresepanDokter extends javax.swing.JDialog {
         ChkRM.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 ChkRMItemStateChanged(evt);
+            }
+        });
+        ChkRM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChkRMActionPerformed(evt);
             }
         });
         FormInput.add(ChkRM);
@@ -1352,6 +1363,14 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_ppStok1ActionPerformed
 
+    private void NoResepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoResepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoResepActionPerformed
+
+    private void ChkRMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkRMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChkRMActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1633,7 +1652,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 DTPBeri.getSelectedItem().toString().substring(6,10)+DTPBeri.getSelectedItem().toString().substring(3,5)+DTPBeri.getSelectedItem().toString().substring(0,2),4,NoResep);        
         } 
     }
-
+    
     public JTable getTable(){
         return tbResep;
     }
