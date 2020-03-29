@@ -2360,9 +2360,10 @@ public class DlgIKBBayi extends javax.swing.JDialog {
                 param.put("kontakrs",akses.getkontakrs());
                 param.put("emailrs",akses.getemailrs());   
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                param.put("periode","PERIODE TANGGAL "+DTPCari1.getSelectedItem()+" s.d "+DTPCari2.getSelectedItem());
 
             String sql="select pasien.no_rkm_medis, pasien.nm_pasien, pasien.jk,pasien_bayi.umur_kehamilan, "+
-                   "pasien.tgl_lahir,pasien_bayi.jam_lahir, pasien.umur,pasien.no_kk,pasien_bayi.jenis_persalinan, "+
+                   "DATE_FORMAT(pasien.tgl_lahir,'%d-%m-%Y') as tgl_lahir,pasien_bayi.jam_lahir, pasien.umur,pasien.no_kk,pasien_bayi.jenis_persalinan, "+
                    "pasien.tgl_daftar,pasien.nm_ibu,pasien_bayi.umur_ibu, "+
                    "pasien_bayi.nama_ayah,pasien_bayi.umur_ayah,"+
                    "concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat, "+
