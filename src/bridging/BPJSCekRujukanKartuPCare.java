@@ -76,7 +76,7 @@ public final class BPJSCekRujukanKartuPCare extends javax.swing.JDialog {
     private BPJSCekReferensiPropinsi propinsikll=new BPJSCekReferensiPropinsi(null,false);
     private BPJSCekReferensiKabupaten kabupatenkll=new BPJSCekReferensiKabupaten(null,false);
     private BPJSCekReferensiKecamatan kecamatankll=new BPJSCekReferensiKecamatan(null,false);
-    private BPJSApi api=new BPJSApi();
+    private ApiBPJS api=new ApiBPJS();
     private int pilih=0,p_no_ktp=0,p_tmp_lahir=0,p_nm_ibu=0,p_alamat=0,
             p_pekerjaan=0,p_no_tlp=0,p_umur=0,p_namakeluarga=0,p_no_peserta=0,
             p_kelurahan=0,p_kecamatan=0,p_kabupaten=0,p_pekerjaanpj=0,
@@ -6170,7 +6170,8 @@ public final class BPJSCekRujukanKartuPCare extends javax.swing.JDialog {
             status="Lama";
         }
         if(JenisPelayanan.getSelectedIndex()==1){
-            isNumber();isPoli();
+            isPoli();
+            isNumber();
             if(Sequel.menyimpantf2("reg_periksa","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rawat",19,
                     new String[]{TNoReg.getText(),TNoRw.getText(),Valid.SetTgl(TanggalSEP.getSelectedItem()+""),TanggalSEP.getSelectedItem().toString().substring(11,19),
                     kddokter.getText(),TNo.getText(),kdpoli.getText(),Saudara.getText(),AlamatPj.getText()+", "+KelurahanPj.getText()+", "+KecamatanPj.getText()+", "+KabupatenPj.getText(),
@@ -6298,7 +6299,7 @@ public final class BPJSCekRujukanKartuPCare extends javax.swing.JDialog {
                                     "\"catatan\":\""+Catatan.getText()+"\"," +
                                     "\"diagAwal\":\""+KdPenyakit.getText()+"\"," +
                                     "\"poli\": {" +
-                                        "\"tujuan\": \""+KdPoli.getText()+"\"," +
+                                        "\"tujuan\": \""+((JenisPelayanan.getSelectedIndex()==0)?"":KdPoli.getText())+"\"," +
                                         "\"eksekutif\": \""+Eksekutif.getSelectedItem().toString().substring(0,1)+"\"" +
                                     "},"+
                                     "\"cob\": {" +

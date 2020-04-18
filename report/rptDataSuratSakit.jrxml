@@ -30,7 +30,7 @@ suratsakit.tanggalawal,suratsakit.tanggalakhir,suratsakit.lamasakit
 from suratsakit inner join reg_periksa on suratsakit.no_rawat=reg_periksa.no_rawat 
 inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis]]>
 	</queryString>
-	<field name="no_sakit" class="java.lang.String">
+	<field name="no_surat" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="no_surat"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="suratsakit"/>
 	</field>
@@ -201,7 +201,7 @@ inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis]]>
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{no_sakit}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{no_surat}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement x="73" y="0" width="75" height="10" uuid="5d9ac5e4-8103-4b5c-89f5-6493a0053fc6"/>

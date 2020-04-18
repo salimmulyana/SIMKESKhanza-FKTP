@@ -1048,10 +1048,10 @@ public class PanelDiagnosa extends widget.panelisi {
                 param.put("emailrs",akses.getemailrs());
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
                 Valid.MyReportqry("rptDiagnosa.jasper","report","::[ Data Diagnosa Pasien ]::",
-                        "select pemeriksaan_ralan.penilaian,reg_periksa.tgl_registrasi,diagnosa_pasien.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
+                        "select reg_periksa.tgl_registrasi,diagnosa_pasien.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
                         "diagnosa_pasien.kd_penyakit,penyakit.nm_penyakit, diagnosa_pasien.status,diagnosa_pasien.status_penyakit "+
-                        "from pemeriksaan_ralan inner join diagnosa_pasien inner join reg_periksa inner join pasien inner join penyakit "+
-                        "on pemeriksaan_ralan.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                        "from diagnosa_pasien inner join reg_periksa inner join pasien inner join penyakit "+
+                        "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                         "and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
                         "where reg_periksa.tgl_registrasi between '"+tanggal1+"' and '"+tanggal2+"' and reg_periksa.no_rkm_medis like '%"+norm+"%' and reg_periksa.tgl_registrasi like '%"+keyword+"%' or "+
                         "reg_periksa.tgl_registrasi between '"+tanggal1+"' and '"+tanggal2+"' and reg_periksa.no_rkm_medis like '%"+norm+"%' and diagnosa_pasien.no_rawat like '%"+keyword+"%' or "+

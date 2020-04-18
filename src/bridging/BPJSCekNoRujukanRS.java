@@ -30,7 +30,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -43,7 +42,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 import javax.swing.JOptionPane;
 import keuangan.DlgKamar;
 import org.springframework.http.HttpEntity;
@@ -91,7 +89,7 @@ public final class BPJSCekNoRujukanRS extends javax.swing.JDialog {
     private DlgPilihanCetakDokumen pilihan=new DlgPilihanCetakDokumen(null,false);
             
     private DlgPenanggungJawab penjab=new DlgPenanggungJawab(null,false);
-    private BPJSApi api=new BPJSApi();
+    private ApiBPJS api=new ApiBPJS();
     public  DlgPropinsi propin=new DlgPropinsi(null,false);
     public  DlgPerusahaan perusahaan=new DlgPerusahaan(null,false);
     public  DlgBahasa bahasa=new DlgBahasa(null,false);
@@ -6051,7 +6049,8 @@ public final class BPJSCekNoRujukanRS extends javax.swing.JDialog {
             status="Lama";
         }
         if(JenisPelayanan.getSelectedIndex()==1){
-            isNumber();isPoli();
+            isPoli();
+            isNumber();
             if(Sequel.menyimpantf2("reg_periksa","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rawat",19,
                     new String[]{TNoReg.getText(),TNoRw.getText(),Valid.SetTgl(TanggalSEP.getSelectedItem()+""),TanggalSEP.getSelectedItem().toString().substring(11,19),
                     kddokter.getText(),TNo.getText(),kdpoli.getText(),Saudara.getText(),AlamatPj.getText()+", "+KelurahanPj.getText()+", "+KecamatanPj.getText()+", "+KabupatenPj.getText(),
@@ -6171,7 +6170,7 @@ public final class BPJSCekNoRujukanRS extends javax.swing.JDialog {
                                     "\"catatan\":\""+Catatan.getText()+"\"," +
                                     "\"diagAwal\":\""+KdPenyakit.getText()+"\"," +
                                     "\"poli\": {" +
-                                        "\"tujuan\": \""+KdPoli.getText()+"\"," +
+                                        "\"tujuan\": \""+((JenisPelayanan.getSelectedIndex()==0)?"":KdPoli.getText())+"\"," +
                                         "\"eksekutif\": \""+Eksekutif.getSelectedItem().toString().substring(0,1)+"\"" +
                                     "},"+
                                     "\"cob\": {" +

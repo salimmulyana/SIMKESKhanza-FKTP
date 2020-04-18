@@ -30,7 +30,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -43,7 +42,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Properties;
 import javax.swing.JOptionPane;
 import keuangan.DlgKamar;
 import org.springframework.http.HttpEntity;
@@ -108,7 +106,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
     private BPJSCekReferensiPropinsi propinsikll=new BPJSCekReferensiPropinsi(null,false);
     private BPJSCekReferensiKabupaten kabupatenkll=new BPJSCekReferensiKabupaten(null,false);
     private BPJSCekReferensiKecamatan kecamatankll=new BPJSCekReferensiKecamatan(null,false);
-    private BPJSApi api=new BPJSApi();
+    private ApiBPJS api=new ApiBPJS();
     private Calendar cal = Calendar.getInstance();
     private int day = cal.get(Calendar.DAY_OF_WEEK);
     private int pilih=0,p_no_ktp=0,p_tmp_lahir=0,p_nm_ibu=0,p_alamat=0,
@@ -6049,7 +6047,8 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
             status="Lama";
         }
         if(JenisPelayanan.getSelectedIndex()==1){
-            isNumber();isPoli();
+            isPoli();
+            isNumber();
             if(Sequel.menyimpantf2("reg_periksa","?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?","No.Rawat",19,
                     new String[]{TNoReg.getText(),TNoRw.getText(),Valid.SetTgl(TanggalSEP.getSelectedItem()+""),TanggalSEP.getSelectedItem().toString().substring(11,19),
                     kddokter.getText(),TNo.getText(),kdpoli.getText(),Saudara.getText(),AlamatPj.getText()+", "+KelurahanPj.getText()+", "+KecamatanPj.getText()+", "+KabupatenPj.getText(),
@@ -6169,7 +6168,7 @@ public final class BPJSCekNoRujukanPCare extends javax.swing.JDialog {
                                     "\"catatan\":\""+Catatan.getText()+"\"," +
                                     "\"diagAwal\":\""+KdPenyakit.getText()+"\"," +
                                     "\"poli\": {" +
-                                        "\"tujuan\": \""+KdPoli.getText()+"\"," +
+                                        "\"tujuan\": \""+((JenisPelayanan.getSelectedIndex()==0)?"":KdPoli.getText())+"\"," +
                                         "\"eksekutif\": \""+Eksekutif.getSelectedItem().toString().substring(0,1)+"\"" +
                                     "},"+
                                     "\"cob\": {" +
