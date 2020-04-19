@@ -5341,13 +5341,9 @@ public final class DlgReg extends javax.swing.JDialog {
         pasien.satuantni.dispose();
         pasien.suku.dispose();
         dokter.dispose();
-        dokter.dokter.dispose();
-        dokter2.dokter.dispose();
         poli.dispose();
         poli2.dispose();
-        dlgrjk.dispose();
-        rujukmasuk.WindowPerujuk.dispose();   
-        DlgSakit.dispose();
+        rujukmasuk.WindowPerujuk.dispose();  
         DlgSakit2.dispose();
         DlgDemografi.dispose();
         DlgCatatan.dispose();
@@ -5681,7 +5677,7 @@ private void MnKamarInapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                         dlgki.setLocationRelativeTo(internalFrame1);
                         dlgki.emptTeks();
                         dlgki.isCek();
-                        dlgki.setNoRm(TNoRw.getText());   
+                        dlgki.setNoRm(TNoRw.getText(),TNoRM.getText(),TPasien.getText());   
                         dlgki.setVisible(true);
                         this.setCursor(Cursor.getDefaultCursor());
                     }
@@ -7765,7 +7761,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                         dlgki.setLocationRelativeTo(internalFrame1);
                         dlgki.emptTeks();
                         dlgki.isCek();
-                        dlgki.setNoRm(tbPetugas2.getValueAt(tbPetugas2.getSelectedRow(),1).toString());   
+                        dlgki.setNoRm(tbPetugas2.getValueAt(tbPetugas2.getSelectedRow(),1).toString(),tbPetugas2.getValueAt(tbPetugas2.getSelectedRow(),6).toString(),tbPetugas2.getValueAt(tbPetugas2.getSelectedRow(),7).toString());   
                         dlgki.setVisible(true);
                         this.setCursor(Cursor.getDefaultCursor());
                     } 
@@ -8970,7 +8966,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     }//GEN-LAST:event_MnDataTriaseIGDActionPerformed
 
     private void ppResumeBtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppResumeBtnPrintActionPerformed
-        if(tabMode.getRowCount()==0){
+         if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
             TNoRw.requestFocus();
         }else if(TPasien.getText().trim().equals("")){
@@ -8983,7 +8979,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 resume.isCek();
                 resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                 resume.setLocationRelativeTo(internalFrame1);
-                resume.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate());
+                resume.setNoRm(TNoRw.getText(),DTPCari2.getDate());
                 resume.tampil();
                 resume.setVisible(true);
                 this.setCursor(Cursor.getDefaultCursor());
