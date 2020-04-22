@@ -2216,7 +2216,7 @@ public class DlgBilingRalan extends javax.swing.JDialog {
 
                     i = 0;
                     try{
-                          biaya = (String)JOptionPane.showInputDialog(null,"Silahkan pilih nota yang mau dicetak!","Nota",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Nota", "Kwitansi", "Nota & Kwitansi"},"Nota");
+                          biaya = (String)JOptionPane.showInputDialog(null,"Silahkan pilih nota yang mau dicetak!","Nota",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Nota", "Kwitansi", "Nota & Kwitansi","Kwitansi PJ"},"Kwitansi");
                           switch (biaya) {
                                 case "Nota":
                                       i=1;
@@ -2226,6 +2226,9 @@ public class DlgBilingRalan extends javax.swing.JDialog {
                                       break;
                                 case "Nota & Kwitansi":
                                       i=3;
+                                      break;
+                                case "Kwitansi PJ":
+                                      i=4;
                                       break;
                           }
                     }catch(Exception e){
@@ -2253,7 +2256,15 @@ public class DlgBilingRalan extends javax.swing.JDialog {
                             }else if(piutang<=0){
                                 Valid.panggilUrl("billing/LaporanBilling5.php?petugas="+akses.getkode().replaceAll(" ","_")+"&nonota="+Sequel.cariIsi("select count(reg_periksa.no_rawat) from reg_periksa "+
                                         "where reg_periksa.kd_pj='"+kd_pj+"' and reg_periksa.tgl_registrasi like '%"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,7)+"%'")+"/RJ/"+kd_pj+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(5,7)+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,4));
-                            }                                
+                            }  
+                            }else if(i==4){
+                            if(piutang>0){
+                                Valid.panggilUrl("billing/LaporanBilling7pj.php?petugas="+akses.getkode().replaceAll(" ","_")+"&nonota="+Sequel.cariIsi("select count(reg_periksa.no_rawat) from reg_periksa "+
+                                        "where reg_periksa.kd_pj='"+kd_pj+"' and reg_periksa.tgl_registrasi like '%"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,7)+"%'")+"/RJ/"+kd_pj+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(5,7)+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,4)); 
+                            }else if(piutang<=0){
+                                Valid.panggilUrl("billing/LaporanBilling5pj.php?petugas="+akses.getkode().replaceAll(" ","_")+"&nonota="+Sequel.cariIsi("select count(reg_periksa.no_rawat) from reg_periksa "+
+                                        "where reg_periksa.kd_pj='"+kd_pj+"' and reg_periksa.tgl_registrasi like '%"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,7)+"%'")+"/RJ/"+kd_pj+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(5,7)+"/"+Valid.SetTgl(DTPTgl.getSelectedItem()+"").substring(0,4));
+                            }
                         }
                         this.setCursor(Cursor.getDefaultCursor());
                     }
