@@ -550,6 +550,7 @@ import laporan.LaporanKedatanganPasienPerJam;
 import laporan.LaporanRegistrasiPoliPerTanggal;
 import laporan.LaporanRekapKunjunganRuangPerTahun;
 import laporan.LaporanRekapSkriningPernapasanRalanPerTahun;
+import laporan.DlgSurveilansTerpaduPenyakit;
 import perpustakaan.PerpustakaanAnggota;
 import perpustakaan.PerpustakaanBayarDenda;
 import perpustakaan.PerpustakaanCariEbook;
@@ -10133,7 +10134,17 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         aplikasi.setVisible(true);
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_btnSurveilansRanapActionPerformed
-
+    private void btnSurveilansTerpaduPenyakitActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        isTutup();
+        DlgHome.dispose();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgSurveilansTerpaduPenyakit aplikasi=new DlgSurveilansTerpaduPenyakit(this,false);
+        aplikasi.tampil();
+        aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
+        aplikasi.setLocationRelativeTo(PanelUtama);
+        aplikasi.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }       
     private void btnPnyTakMenularRanapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPnyTakMenularRanapActionPerformed
         isTutup();
         DlgHome.dispose();
@@ -16686,7 +16697,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
     private widget.ScrollPane scrollPane2;
     private widget.Tanggal tanggal;
     // End of variables declaration//GEN-END:variables
-    private widget.ButtonBig btnKategoriPerpustakaan,btnRuangPerpustakaan,btnJenisPerpustakaan,btnPengarangPerpustakaan,btnPenerbitPerpustakaan,
+    private widget.ButtonBig btnSurveilansTerpaduPenyakit,btnKategoriPerpustakaan,btnRuangPerpustakaan,btnJenisPerpustakaan,btnPengarangPerpustakaan,btnPenerbitPerpustakaan,
             btnKoleksiPerpustakaan,btnInventarisPerpustakaan,btnPengaturanPeminjamanPerpustakaan,btnDendaPerpustakaan,btnAnggotaPerpustakaan,
             btnPeminjamanPerpustakaan,btnBayarDendaPerpustakaan,btnPenelitianPerpustakaan,btnEbookPerpustakaan,btnCariEbook,btnPestControl,
             btnMutuAirLimbah,btnCariInventarisPerpustakaan,btnJenisCideraK3,btnPenyebabKecelakaanK3,btnJenisLukaK3,btnLokasiKejadianK3,btnDampakCideraK3,
@@ -17912,6 +17923,12 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 Panelmenu.add(btnSurveilansRanap);
                 jmlmenu++;
             }
+            
+            if(akses.getsurveilans_terpadu_penyakit()==true){
+                Panelmenu.add(btnSurveilansTerpaduPenyakit);
+                jmlmenu++;
+            }
+            
 
             if(akses.getpny_takmenular_ralan()==true){
                 Panelmenu.add(btnPnyTakMenularRalan);
@@ -20965,6 +20982,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
 
         if(akses.getsurveilans_ranap()==true){
             Panelmenu.add(btnSurveilansRanap);
+            jmlmenu++;
+        }
+        
+        if(akses.getsurveilans_terpadu_penyakit()==true){
+            Panelmenu.add(btnSurveilansTerpaduPenyakit);
             jmlmenu++;
         }
 
@@ -24444,6 +24466,13 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 jmlmenu++;
             }                
         }
+        
+        if(akses.getsurveilans_terpadu_penyakit()==true){
+            if(btnSurveilansTerpaduPenyakit.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnSurveilansTerpaduPenyakit);
+                jmlmenu++;
+            }                
+        }
 
         if(akses.getpny_takmenular_ralan()==true){
             if(btnPnyTakMenularRalan.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
@@ -27191,6 +27220,18 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         btnKategoriPerpustakaan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKategoriPerpustakaanActionPerformed(evt);
+            }
+        });
+        
+        btnSurveilansTerpaduPenyakit = new widget.ButtonBig();
+        btnSurveilansTerpaduPenyakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/Gnome-X-Office-Address-Book-48.png")));
+        btnSurveilansTerpaduPenyakit.setText("Surveilans Terpadu");
+        btnSurveilansTerpaduPenyakit.setIconTextGap(0);
+        btnSurveilansTerpaduPenyakit.setName("btnSurveilansTerpaduPenyakit");
+        btnSurveilansTerpaduPenyakit.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnSurveilansTerpaduPenyakit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSurveilansTerpaduPenyakitActionPerformed(evt);
             }
         });
         

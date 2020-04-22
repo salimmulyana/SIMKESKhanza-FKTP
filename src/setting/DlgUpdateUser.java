@@ -559,7 +559,7 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                         "setup_embalase, tracer_login, display, set_harga_obat, set_penggunaan_tarif, set_oto_ralan, biaya_harian, "+
                         "biaya_masuk_sekali, set_no_rm, billing_ralan, billing_ranap, jm_ranap_dokter, igd, barcoderalan, barcoderanap, "+
                         "set_harga_obat_ralan,set_harga_obat_ranap,penyakit_pd3i,surveilans_pd3i,surveilans_ralan,diagnosa_pasien, "+
-                        "surveilans_ranap,pny_takmenular_ranap,pny_takmenular_ralan,kunjungan_ralan,rl32,rl33,rl37,rl38,harian_tindakan_dokter,sms, "+
+                        "surveilans_ranap,surveilans_terpadu_penyakit,pny_takmenular_ranap,pny_takmenular_ralan,kunjungan_ralan,rl32,rl33,rl37,rl38,harian_tindakan_dokter,sms, "+
                         "sidikjari,jam_masuk,jadwal_pegawai,parkir_barcode,set_nota,dpjp_ranap,mutasi_barang,rl34,rl36,"+
                         "fee_visit_dokter,fee_bacaan_ekg,fee_rujukan_rontgen,fee_rujukan_ranap,fee_ralan,akun_bayar,bayar_pemesanan_obat,"+
                         "obat_per_dokter_peresep,ipsrs_jenis_barang,pemasukan_lain,pengaturan_rekening,closing_kasir,keterlambatan_presensi,"+
@@ -1557,6 +1557,10 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                     
                     if("[I]Surveilans Ranap".toLowerCase().contains(TCari.getText().toLowerCase())){
                         tabMode.addRow(new Object[]{false,"[I]Surveilans Ranap",rs.getBoolean("surveilans_ranap")});
+                    }
+                    
+                    if("[I]Surveilans Terpadu Penyakit".toLowerCase().contains(TCari.getText().toLowerCase())){
+                        tabMode.addRow(new Object[]{false,"[I]Surveilans Terpadu Penyakit",rs.getBoolean("surveilans_terpadu_penyakit")});
                     }
                     
                     if("[I]Pny.Tdk Menular Ranap".toLowerCase().contains(TCari.getText().toLowerCase())){
@@ -4020,6 +4024,10 @@ public class DlgUpdateUser extends javax.swing.JDialog {
 
             if("[I]Surveilans Ranap".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surveilans_ranap='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("[I]Surveilans Terpadu Penyakit".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surveilans_terpadu_penyakit='"+tbUser.getValueAt(i,2).toString()+"'");
             }
 
             if("[I]Pny.Tdk Menular Ranap".equals(tbUser.getValueAt(i,1).toString())){

@@ -39,7 +39,7 @@ public final class akses {
             cashflow=false,keuangan=false,pengeluaran=false,setup_pjlab=false,setup_otolokasi=false,setup_jam_kamin=false,setup_embalase=false,tracer_login=false,
             display=false,set_harga_obat=false,set_penggunaan_tarif=false,set_oto_ralan=false,biaya_harian=false,biaya_masuk_sekali=false,set_no_rm=false,
             billing_ralan=false,billing_ranap=false,status=false,jm_ranap_dokter=false,igd=false,barcoderalan=false,barcoderanap=false,set_harga_obat_ralan=false,
-            set_harga_obat_ranap=false,penyakit_pd3i=false,surveilans_pd3i=false,surveilans_ralan=false,diagnosa_pasien=false,surveilans_ranap=false,
+            set_harga_obat_ranap=false,penyakit_pd3i=false,surveilans_pd3i=false,surveilans_ralan=false,diagnosa_pasien=false,surveilans_ranap=false,surveilans_terpadu_penyakit=false,
             pny_takmenular_ranap=false,pny_takmenular_ralan=false,kunjungan_ralan=false,rl32=false,rl33=false,rl37=false,rl38=false,harian_tindakan_dokter=false,
             sms=false,sidikjari=false,jam_masuk=false,jadwal_pegawai=false,parkir_barcode=false,set_nota=false,dpjp_ranap=false,mutasi_barang=false,rl34=false,rl36=false,
             fee_visit_dokter=false,fee_bacaan_ekg=false,fee_rujukan_rontgen=false,fee_rujukan_ranap=false,fee_ralan=false,akun_bayar=false,bayar_pemesanan_obat=false,
@@ -283,6 +283,7 @@ public final class akses {
                         akses.vakum=true;
                         akses.aplikasi=true;
                         akses.surveilans_ranap=true;
+                        akses.surveilans_terpadu_penyakit=true;
                         akses.pny_takmenular_ranap=true;
                         akses.pny_takmenular_ralan=true;
                         akses.kunjungan_ralan=true;
@@ -895,6 +896,7 @@ public final class akses {
                         akses.surveilans_ralan=rs2.getBoolean("surveilans_ralan");
                         akses.diagnosa_pasien=rs2.getBoolean("diagnosa_pasien");
                         akses.surveilans_ranap=rs2.getBoolean("surveilans_ranap");
+                        akses.surveilans_terpadu_penyakit=rs2.getBoolean("surveilans_terpadu_penyakit");
                         akses.admin=false;
                         akses.user=false;
                         akses.vakum=false;
@@ -1513,6 +1515,7 @@ public final class akses {
                         akses.surveilans_ralan=false;
                         akses.diagnosa_pasien=false;
                         akses.surveilans_ranap=false;
+                        akses.surveilans_terpadu_penyakit=false;
                         akses.pny_takmenular_ranap=false;
                         akses.pny_takmenular_ralan=false;
                         akses.kunjungan_ralan=false;
@@ -2160,6 +2163,7 @@ public final class akses {
     public static boolean getsurveilans_ralan(){return akses.surveilans_ralan;}  
     public static boolean getdiagnosa_pasien(){return akses.diagnosa_pasien;}  
     public static boolean getsurveilans_ranap(){return akses.surveilans_ranap;}  
+    public static boolean getsurveilans_terpadu_penyakit(){return akses.surveilans_terpadu_penyakit;} 
     public static boolean getpny_takmenular_ranap(){return akses.pny_takmenular_ranap;}  
     public static boolean getpny_takmenular_ralan(){return akses.pny_takmenular_ralan;}
     public static void setnamars(String namars){akses.namars=namars;}
