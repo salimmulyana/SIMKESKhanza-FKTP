@@ -62,7 +62,7 @@
                                     <tr>
                                        <td><font color='333333' size='3'  face='Tahoma'>Telah terima dari</font></td>
                                        <td><font color='333333' size='3'  face='Tahoma'>:</font></td>
-                                       <td><font color='333333' size='3'  face='Tahoma'>".getOne("select p_jawab from reg_periksa where no_rawat='$norawat'")."</font></td>
+                                       <td><font color='333333' size='3'  face='Tahoma'>".getOne("select substring(temp2,3,20) from temporary_bayar_ralan where temp9='$petugas' and temp1='Nama Pasien'")."</font></td>
                                     </tr>
                                     <tr valign='top'>
                                        <td><font color='333333' size='3'  face='Tahoma'>Uang Sebanyak</font></td>
