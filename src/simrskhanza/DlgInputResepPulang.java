@@ -493,7 +493,7 @@ private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
             Sequel.RollBack();
         }
         Sequel.AutoComitTrue();
-        if(sukses==true){
+        if(sukses==true){            
             dispose();
             ppBersihkanActionPerformed(null);
         }

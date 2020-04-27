@@ -793,6 +793,11 @@ public final class DlgCariObat extends javax.swing.JDialog {
                 ChkNoResepItemStateChanged(evt);
             }
         });
+        ChkNoResep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChkNoResepActionPerformed(evt);
+            }
+        });
         FormInput.add(ChkNoResep);
         ChkNoResep.setBounds(608, 40, 100, 23);
 
@@ -803,7 +808,7 @@ public final class DlgCariObat extends javax.swing.JDialog {
         jLabel8.setBounds(4, 40, 65, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2019" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-04-2020" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -1911,6 +1916,10 @@ private void JeniskelasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:even
         ceksetok.setVisible(true);
         this.setCursor(Cursor.getDefaultCursor());  
     }//GEN-LAST:event_ppStok1ActionPerformed
+
+    private void ChkNoResepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkNoResepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChkNoResepActionPerformed
 
     /**
     * @param args the command line arguments
