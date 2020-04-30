@@ -1,0 +1,50 @@
+sik
+akses.java
+frmutama.java
+database.xml
+DlgKamarinap
+DlgPermintaanLab
+DlgReg
+DlgPasien
+DlgSKDP
+DlgRalan
+dlgrujukankeluar
+dlgfrekuensipenyakitralan
+DlgKelahiranbayi
+webapps
+khanzaantrianapotek
+
+Tinggal sik.sql
+frmUtama
+dlguser
+dlgupdateuser
+akses.java
+
+Query update ke versi 18 april 2020
+surat sakit di bikin kolom no_surat dulu nanti isinya copy dari no_sakit lalu hapus kolom no_sakit
+hapus yang duplicate di table mutasibarang
+hapus yang duplicate di table opname
+pcare_obat_diberikan hapus contrains
+reseppulang hapus constrain
+set akun hapus contrain
+utdpengambilan medis hapus contrain
+
+
+satuan besar samakan dengan satuan kecil
+UPDATE `rawat_jl_dr` SET `tgl_perawatan`=LEFT(`no_rawat`,10) WHERE `tgl_perawatan` is Null;
+UPDATE `rawat_jl_dr` SET `kso`= 0 WHERE `kso` is Null;
+UPDATE `rawat_jl_dr` SET `menejemen`= 0 WHERE `menejemen` is Null;
+UPDATE `rawat_jl_dr` SET `stts_bayar`= 'Belum' WHERE `stts_bayar` is Null;
+UPDATE rawat_jl_dr,reg_periksa SET rawat_jl_dr.jam_rawat = reg_periksa.jam_reg WHERE rawat_jl_dr.no_rawat = reg_periksa.no_rawat AND rawat_jl_dr.jam_rawat is Null;
+
+UPDATE `rawat_jl_pr` SET `tgl_perawatan`=LEFT(`no_rawat`,10) WHERE `tgl_perawatan` is Null;
+UPDATE `rawat_jl_pr` SET `kso`= 0 WHERE `kso` is Null;
+UPDATE `rawat_jl_pr` SET `menejemen`= 0 WHERE `menejemen` is Null;
+UPDATE `rawat_jl_pr` SET `stts_bayar`= 'Belum' WHERE `stts_bayar` is Null;
+UPDATE rawat_jl_pr,reg_periksa SET rawat_jl_pr.jam_rawat = reg_periksa.jam_reg WHERE rawat_jl_pr.no_rawat = reg_periksa.no_rawat AND rawat_jl_pr.jam_rawat is Null;
+
+UPDATE `rawat_jl_drpr` SET `tgl_perawatan`=LEFT(`no_rawat`,10) WHERE `tgl_perawatan` is Null;
+UPDATE `rawat_jl_drpr` SET `kso`= 0 WHERE `kso` is Null;
+UPDATE `rawat_jl_drpr` SET `menejemen`= 0 WHERE `menejemen` is Null;
+UPDATE `rawat_jl_drpr` SET `stts_bayar`= 'Belum' WHERE `stts_bayar` is Null;
+UPDATE rawat_jl_drpr,reg_periksa SET rawat_jl_drpr.jam_rawat = reg_periksa.jam_reg WHERE rawat_jl_drpr.no_rawat = reg_periksa.no_rawat AND rawat_jl_drpr.jam_rawat is Null;
