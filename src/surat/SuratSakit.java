@@ -155,6 +155,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         BtnCari = new widget.Button();
         jLabel7 = new widget.Label();
         LCount = new widget.Label();
+        jLabel22 = new widget.Label();
         PanelInput = new javax.swing.JPanel();
         FormInput = new widget.PanelBiasa();
         jLabel3 = new widget.Label();
@@ -416,7 +417,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-01-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -430,7 +431,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-01-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -478,6 +479,12 @@ public final class SuratSakit extends javax.swing.JDialog {
         LCount.setName("LCount"); // NOI18N
         LCount.setPreferredSize(new java.awt.Dimension(50, 23));
         panelGlass9.add(LCount);
+
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("s.d.");
+        jLabel22.setName("jLabel22"); // NOI18N
+        jLabel22.setPreferredSize(new java.awt.Dimension(23, 23));
+        panelGlass9.add(jLabel22);
 
         jPanel3.add(panelGlass9, java.awt.BorderLayout.PAGE_START);
 
@@ -534,7 +541,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         TPasien.setBounds(355, 10, 365, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-01-2020" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -589,7 +596,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         jLabel18.setBounds(540, 40, 70, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-01-2020" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -1088,6 +1095,7 @@ public final class SuratSakit extends javax.swing.JDialog {
     private widget.Label jLabel18;
     private widget.Label jLabel19;
     private widget.Label jLabel21;
+    private widget.Label jLabel22;
     private widget.Label jLabel3;
     private widget.Label jLabel4;
     private widget.Label jLabel6;

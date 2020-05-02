@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="144" pageHeight="165" columnWidth="134" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="6a03bcef-cde7-4861-8117-d67a8948b929">
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="144" pageHeight="165" columnWidth="134" leftMargin="5" rightMargin="5" topMargin="5" bottomMargin="5" uuid="087b0893-328c-4de0-9f7e-c54cd7741cca">
 	<property name="ireport.zoom" value="3.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="4"/>
-	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="0"/>
-	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="1000"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="koneksi"/>
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="namars" class="java.lang.String"/>
 	<parameter name="alamatrs" class="java.lang.String"/>
 	<parameter name="kotars" class="java.lang.String"/>
@@ -15,8 +11,7 @@
 	<parameter name="kontakrs" class="java.lang.String"/>
 	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
-		<![CDATA[select resep_obat.no_resep,resep_obat.tgl_perawatan,resep_obat.jam, resep_obat.no_rawat,pasien.no_rkm_medis,
-pasien.tgl_lahir,pasien.nm_pasien,databarang.nama_brng,aturan_pakai.aturan,detail_pemberian_obat.jml,
+		<![CDATA[select resep_obat.no_resep,resep_obat.tgl_perawatan,resep_obat.jam, resep_obat.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,aturan_pakai.aturan,detail_pemberian_obat.jml,
 kodesatuan.satuan from resep_obat inner join reg_periksa inner join pasien inner join aturan_pakai inner join databarang inner join detail_pemberian_obat inner join kodesatuan on resep_obat.no_rawat=reg_periksa.no_rawat  and reg_periksa.no_rkm_medis=pasien.no_rkm_medis  and databarang.kode_brng=aturan_pakai.kode_brng and detail_pemberian_obat.kode_brng=databarang.kode_brng
 and resep_obat.no_rawat=aturan_pakai.no_rawat and resep_obat.tgl_perawatan=aturan_pakai.tgl_perawatan and
 resep_obat.jam=aturan_pakai.jam
@@ -24,57 +19,33 @@ and resep_obat.no_rawat=detail_pemberian_obat.no_rawat and resep_obat.tgl_perawa
 resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode_sat]]>
 	</queryString>
 	<field name="no_resep" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_resep"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="resep_obat"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="tgl_perawatan" class="java.sql.Date">
-		<property name="com.jaspersoft.studio.field.label" value="tgl_perawatan"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="resep_obat"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="jam" class="java.sql.Time">
-		<property name="com.jaspersoft.studio.field.label" value="jam"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="resep_obat"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="no_rawat" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_rawat"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="resep_obat"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="no_rkm_medis" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="no_rkm_medis"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pasien"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="tgl_lahir" class="java.sql.Date">
-		<property name="com.jaspersoft.studio.field.label" value="tgl_lahir"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pasien"/>
-	</field>
 	<field name="nm_pasien" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nm_pasien"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="pasien"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="nama_brng" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nama_brng"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="databarang"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="aturan" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="aturan"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="aturan_pakai"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="jml" class="java.lang.Double">
-		<property name="com.jaspersoft.studio.field.label" value="jml"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="detail_pemberian_obat"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="satuan" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="satuan"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="kodesatuan"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<background>
@@ -83,25 +54,25 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 	<detail>
 		<band height="155" splitType="Stretch">
 			<componentElement>
-				<reportElement x="2" y="64" width="130" height="10" uuid="eea1bdc5-b910-464c-8516-ad933782faaf"/>
+				<reportElement x="2" y="64" width="130" height="10" uuid="fe04949c-f84e-4d82-8f82-46508ed61c91"/>
 				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false" barWidth="1" barHeight="0">
 					<jr:codeExpression><![CDATA[$F{no_resep}]]></jr:codeExpression>
 				</jr:barbecue>
 			</componentElement>
 			<line>
-				<reportElement x="1" y="0" width="132" height="1" forecolor="#006666" uuid="04fef8e0-e12d-4ea5-8c49-dcea4a60cd41"/>
+				<reportElement x="1" y="0" width="132" height="1" forecolor="#006666" uuid="4f06c72b-b3f6-42e2-bb0b-af480c334be0"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement x="1" y="36" width="132" height="1" forecolor="#006666" uuid="d2c3aec1-3707-41ef-9adc-1fa4122fbd3c"/>
+				<reportElement x="1" y="36" width="132" height="1" forecolor="#006666" uuid="1cf2ae0e-b509-470d-81aa-3b9690e0e1e9"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="2" y="46" width="130" height="17" uuid="91e17ca2-6d01-41c9-98c5-a09e263c516b"/>
+				<reportElement x="2" y="46" width="130" height="17" uuid="c66d6884-772c-49a0-b61d-6d10eda28ea9"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -109,13 +80,13 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA["No. "+$F{no_resep}+" Tgl. "+$F{tgl_perawatan}+" "+$F{jam}]]></textFieldExpression>
 			</textField>
 			<line direction="BottomUp">
-				<reportElement x="0" y="1" width="1" height="153" forecolor="#006666" uuid="e54f2acb-4ad3-4356-8d83-661228db9026"/>
+				<reportElement x="0" y="1" width="1" height="153" forecolor="#006666" uuid="9b49a5f6-2d70-4e48-be32-91a2f52ad463"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="3" y="84" width="25" height="9" uuid="4029622a-3f40-4f93-9526-bcdc434b4f78"/>
+				<reportElement x="3" y="84" width="25" height="9" uuid="d238d458-8999-4f07-a380-0752fbf6f3cb"/>
 				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -123,13 +94,13 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<text><![CDATA[No. RM]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="154" width="132" height="1" forecolor="#006666" uuid="e4d7f6aa-ce22-40cc-8e88-d1434fc8967b"/>
+				<reportElement x="1" y="154" width="132" height="1" forecolor="#006666" uuid="14b19d69-f77c-43bb-8771-0bed226bf58b"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="26" y="13" width="107" height="14" uuid="2c9802cf-1ecb-45ec-ba2e-7a078bb2469a"/>
+				<reportElement x="26" y="13" width="107" height="14" uuid="89ff2096-03c2-4b3f-a434-cd5144f99949"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -137,7 +108,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$P{alamatrs}+", "+$P{kotars}+", "+$P{propinsirs}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="26" y="1" width="107" height="12" uuid="04ee7bba-0764-441e-b12e-9bc9570a0c47"/>
+				<reportElement x="26" y="1" width="107" height="12" uuid="1e1f3786-209c-4d24-8aaf-896a2ea1a6e1"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -145,11 +116,11 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
 			</textField>
 			<image scaleImage="FillFrame" onErrorType="Blank">
-				<reportElement x="2" y="2" width="24" height="26" uuid="72950034-efed-4d2a-ba26-fb7c12bedce1"/>
+				<reportElement x="2" y="2" width="24" height="26" uuid="bc25f025-5b88-4ad4-b2dc-e5608d760398"/>
 				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="2" y="37" width="130" height="9" uuid="d1582da2-a8c4-4769-8d51-ef340401a9d4"/>
+				<reportElement x="2" y="37" width="130" height="9" uuid="787ee92c-e170-4122-829d-d9f56264cbd3"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -157,7 +128,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<text><![CDATA[INSTALASI FARMASI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="27" y="84" width="4" height="9" uuid="5bc3e9be-4732-48dd-8fad-d3efdd06c542"/>
+				<reportElement x="27" y="84" width="4" height="9" uuid="50dcdef2-2365-4d4a-a3ba-40aaa73c56cd"/>
 				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -165,7 +136,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="27" y="92" width="4" height="9" uuid="fb4775fd-b645-4461-b668-ec23329a09b1"/>
+				<reportElement x="27" y="92" width="4" height="9" uuid="b166c96a-ca93-4f6c-9b77-d2b9cbb6cf28"/>
 				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -173,7 +144,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="30" y="84" width="60" height="9" uuid="68cf36eb-3a7f-4ed7-8fc0-57ffcb8c80c5"/>
+				<reportElement x="30" y="84" width="102" height="9" uuid="1357dfaf-0da9-44b1-96ca-f4f83d251361"/>
 				<textElement>
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -181,7 +152,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$F{no_rkm_medis}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="30" y="92" width="102" height="15" uuid="cad5f77b-99f0-4c62-8927-25d037b8a513"/>
+				<reportElement x="30" y="92" width="102" height="15" uuid="3476bbc6-1466-4531-88f8-ae8f7d67f186"/>
 				<textElement>
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -189,7 +160,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$F{nm_pasien}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="2" y="75" width="130" height="9" uuid="3b6959aa-1f51-4ea9-8855-4dc7601c5d5c"/>
+				<reportElement x="2" y="75" width="130" height="9" uuid="75b8c960-82fe-43d8-928c-f3dc4ac2ec6d"/>
 				<textElement textAlignment="Right">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -197,13 +168,13 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$F{no_rawat}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="2" y="107" width="131" height="1" forecolor="#006666" uuid="5c5adf66-319b-48c8-9ff6-30ab4812d1a4"/>
+				<reportElement x="2" y="107" width="131" height="1" forecolor="#006666" uuid="88efd673-fd1e-4939-85b7-6392bacad666"/>
 				<graphicElement>
 					<pen lineWidth="0.25" lineStyle="Solid"/>
 				</graphicElement>
 			</line>
 			<textField>
-				<reportElement x="2" y="134" width="130" height="19" uuid="bd2ddf42-612b-4934-a9c5-413fb78f18f2"/>
+				<reportElement x="2" y="134" width="130" height="19" uuid="f42e97f7-bd31-4bb1-8758-540196e3b36d"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -211,7 +182,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$F{aturan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="2" y="109" width="130" height="15" uuid="f80f2466-a283-4309-a671-085d315304b9"/>
+				<reportElement x="2" y="109" width="130" height="15" uuid="c3d2e540-c71d-45c9-b527-470ee05ee53b"/>
 				<textElement>
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -219,7 +190,7 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$F{nama_brng}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="96" y="124" width="36" height="9" uuid="46685a4b-f2ea-4200-9783-1498d9b4e401"/>
+				<reportElement x="96" y="124" width="36" height="9" uuid="42ffe776-42c4-423e-9310-254124a67534"/>
 				<textElement textAlignment="Right">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -227,13 +198,13 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<textFieldExpression><![CDATA[$F{jml}+" "+$F{satuan}]]></textFieldExpression>
 			</textField>
 			<line direction="BottomUp">
-				<reportElement x="133" y="1" width="1" height="153" forecolor="#006666" uuid="4d09725e-0708-480f-8a6c-e382f07f90c2"/>
+				<reportElement x="133" y="1" width="1" height="153" forecolor="#006666" uuid="a208f14c-9497-4b39-8bf4-211c54970b6b"/>
 				<graphicElement>
 					<pen lineStyle="Solid"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="3" y="92" width="25" height="9" uuid="b037dafb-90f6-4088-8d94-ed6c658f3cee"/>
+				<reportElement x="3" y="92" width="25" height="9" uuid="34b9d887-793b-4775-8410-c58faefbb965"/>
 				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -241,20 +212,12 @@ resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="26" y="27" width="107" height="9" uuid="4761653c-c4d4-45fe-9276-190baac2c9af"/>
+				<reportElement x="26" y="27" width="107" height="9" uuid="497e4956-de9c-4e11-b75b-bb36c9d37453"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="6" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{kontakrs}]]></textFieldExpression>
-			</textField>
-			<textField pattern="dd/MM/yyyy">
-				<reportElement x="94" y="84" width="38" height="9" uuid="e99d7b17-1f97-42eb-9d4e-1bbd8be84269"/>
-				<textElement textAlignment="Right" verticalAlignment="Top">
-					<font fontName="Tahoma" size="6"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{tgl_lahir}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

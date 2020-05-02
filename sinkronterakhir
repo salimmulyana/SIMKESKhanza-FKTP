@@ -1,36 +1,16 @@
-sik
-akses.java
-frmutama.java
-database.xml
-DlgKamarinap
-DlgPermintaanLab
-DlgReg
-DlgPasien
-DlgSKDP
-DlgRalan
-dlgrujukankeluar
-dlgfrekuensipenyakitralan
-DlgKelahiranbayi
-webapps
-khanzaantrianapotek
-
-Tinggal sik.sql
-frmUtama
-dlguser
-dlgupdateuser
-akses.java
-
 Query update ke versi 18 april 2020
-surat sakit di bikin kolom no_surat dulu nanti isinya copy dari no_sakit lalu hapus kolom no_sakit
+surat sakit di bikin kolom no_surat dulu nanti isinya copy dari no_sakit lalu hapus kolom no_sakit --
 hapus yang duplicate di table mutasibarang
 hapus yang duplicate di table opname
-pcare_obat_diberikan hapus contrains
-reseppulang hapus constrain
-set akun hapus contrain
+pcare_obat_diberikan hapus contrains --
+reseppulang hapus constrain --
+set akun hapus contrain — --
 utdpengambilan medis hapus contrain
 
 
 satuan besar samakan dengan satuan kecil
+UPDATE `databarang` SET `sat besar`=`sat`
+UPDATE `databarang` SET `dasar`=`h_beli`
 UPDATE `rawat_jl_dr` SET `tgl_perawatan`=LEFT(`no_rawat`,10) WHERE `tgl_perawatan` is Null;
 UPDATE `rawat_jl_dr` SET `kso`= 0 WHERE `kso` is Null;
 UPDATE `rawat_jl_dr` SET `menejemen`= 0 WHERE `menejemen` is Null;
