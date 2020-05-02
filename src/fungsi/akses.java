@@ -127,7 +127,7 @@ public final class akses {
             inhealth_mapping_tindakan_ranap=false,inhealth_mapping_tindakan_radiologi=false,inhealth_mapping_tindakan_laborat=false,
             inhealth_mapping_tindakan_operasi=false,hibah_obat_bhp=false,asal_hibah=false,asuhan_gizi=false,inhealth_kirim_tagihan=false,
             sirkulasi_obat4=false,sirkulasi_obat5=false,sirkulasi_non_medis2=false,monitoring_asuhan_gizi=false,penerimaan_obat_perbulan=false,
-            rekap_kunjungan=false,surat_sakit=false,penilaian_awal_keperawatan_ralan=false,permintaan_diet=false,master_masalah_keperawatan=false,
+            rekap_kunjungan=false,surat_sakit=false,surat_hamil=false,penilaian_awal_keperawatan_ralan=false,permintaan_diet=false,master_masalah_keperawatan=false,
             pengajuan_cuti=false,kedatangan_pasien=false,utd_pendonor=false,toko_suplier=false,toko_jenis=false,toko_set_harga=false,
             toko_barang=false,penagihan_piutang_pasien=false,akun_penagihan_piutang=false,stok_opname_toko=false,toko_riwayat_barang=false,
             toko_surat_pemesanan=false,toko_pengajuan_barang=false,toko_penerimaan_barang=false,toko_pengadaan_barang=false,toko_hutang=false,
@@ -737,6 +737,7 @@ public final class akses {
                         akses.penerimaan_obat_perbulan=true;
                         akses.rekap_kunjungan=true;
                         akses.surat_sakit=true;
+                        akses.surat_hamil=true;
                         akses.penilaian_awal_keperawatan_ralan=true;
                         akses.permintaan_diet=true;
                         akses.master_masalah_keperawatan=true;
@@ -1354,6 +1355,7 @@ public final class akses {
                         akses.penerimaan_obat_perbulan=rs2.getBoolean("penerimaan_obat_perbulan");
                         akses.rekap_kunjungan=rs2.getBoolean("rekap_kunjungan");
                         akses.surat_sakit=rs2.getBoolean("surat_sakit");
+                        akses.surat_hamil=rs2.getBoolean("surat_hamil");
                         akses.penilaian_awal_keperawatan_ralan=rs2.getBoolean("penilaian_awal_keperawatan_ralan");
                         akses.permintaan_diet=rs2.getBoolean("permintaan_diet");
                         akses.master_masalah_keperawatan=rs2.getBoolean("master_masalah_keperawatan");
@@ -1969,6 +1971,7 @@ public final class akses {
                         akses.penerimaan_obat_perbulan=false;
                         akses.rekap_kunjungan=false;
                         akses.surat_sakit=false;
+                        akses.surat_hamil=false;
                         akses.penilaian_awal_keperawatan_ralan=false;
                         akses.permintaan_diet=false;
                         akses.master_masalah_keperawatan=false;
@@ -2638,6 +2641,7 @@ public final class akses {
     public static boolean getpenerimaan_obat_perbulan(){return akses.penerimaan_obat_perbulan;}
     public static boolean getrekap_kunjungan(){return akses.rekap_kunjungan;}
     public static boolean getsurat_sakit(){return akses.surat_sakit;}
+    public static boolean getsurat_hamil(){return akses.surat_hamil;}
     public static boolean getpenilaian_awal_keperawatan_ralan(){return akses.penilaian_awal_keperawatan_ralan;}
     public static boolean getpermintaan_diet(){return akses.permintaan_diet;}
     public static boolean getmaster_masalah_keperawatan(){return akses.master_masalah_keperawatan;}
