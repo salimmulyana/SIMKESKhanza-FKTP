@@ -2351,7 +2351,15 @@ public class DlgUser extends javax.swing.JDialog {
                     "ipsrs_returbeli='"+tbUser.getValueAt(i,609).toString()+"',"+
                     "ipsrs_riwayat_barang='"+tbUser.getValueAt(i,610).toString()+"',"+
                     "pasien_corona='"+tbUser.getValueAt(i,611).toString()+"',"+
-                    "toko_pendapatan_harian='"+tbUser.getValueAt(i,612).toString()+"'");
+                    "toko_pendapatan_harian='"+tbUser.getValueAt(i,612).toString()+"',"+
+                    "diagnosa_pasien_corona='"+tbUser.getValueAt(i,613).toString()+"',"+
+                    "perawatan_pasien_corona='"+tbUser.getValueAt(i,614).toString()+"',"+
+                    "penilaian_awal_keperawatan_gigi='"+tbUser.getValueAt(i,615).toString()+"',"+
+                    "master_masalah_keperawatan_gigi='"+tbUser.getValueAt(i,616).toString()+"',"+
+                    "toko_bayar_piutang='"+tbUser.getValueAt(i,617).toString()+"',"+
+                    "toko_piutang_harian='"+tbUser.getValueAt(i,618).toString()+"',"+
+                    "toko_penjualan_harian='"+tbUser.getValueAt(i,619).toString()+"',"+
+                    "deteksi_corona='"+tbUser.getValueAt(i,620).toString()+"'");
             }            
             tampil();
             emptTeks();
@@ -3045,7 +3053,15 @@ public class DlgUser extends javax.swing.JDialog {
                                     "ipsrs_returbeli='"+tbUser.getValueAt(barisdicopy,609).toString()+"',"+
                                     "ipsrs_riwayat_barang='"+tbUser.getValueAt(barisdicopy,610).toString()+"',"+
                                     "pasien_corona='"+tbUser.getValueAt(barisdicopy,611).toString()+"',"+
-                                    "toko_pendapatan_harian='"+tbUser.getValueAt(barisdicopy,612).toString()+"'");
+                                     "toko_pendapatan_harian='"+tbUser.getValueAt(barisdicopy,612).toString()+"',"+
+                                    "diagnosa_pasien_corona='"+tbUser.getValueAt(barisdicopy,613).toString()+"',"+
+                                    "perawatan_pasien_corona='"+tbUser.getValueAt(barisdicopy,614).toString()+"',"+
+                                    "penilaian_awal_keperawatan_gigi='"+tbUser.getValueAt(barisdicopy,615).toString()+"',"+
+                                    "master_masalah_keperawatan_gigi='"+tbUser.getValueAt(barisdicopy,616).toString()+"',"+
+                                    "toko_bayar_piutang='"+tbUser.getValueAt(barisdicopy,617).toString()+"',"+
+                                    "toko_piutang_harian='"+tbUser.getValueAt(barisdicopy,618).toString()+"',"+
+                                    "toko_penjualan_harian='"+tbUser.getValueAt(barisdicopy,619).toString()+"',"+
+                                    "deteksi_corona='"+tbUser.getValueAt(barisdicopy,620).toString()+"'");
                             }    
                             userdicopy="";
                             copyhakakses="";
@@ -3356,7 +3372,9 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         "pengajuan_cuti,kedatangan_pasien,utd_pendonor,toko_suplier,toko_jenis,toko_set_harga,toko_barang,penagihan_piutang_pasien,"+
                         "akun_penagihan_piutang,stok_opname_toko,toko_riwayat_barang,toko_surat_pemesanan,toko_pengajuan_barang,toko_penerimaan_barang,"+
                         "toko_pengadaan_barang,toko_hutang,toko_bayar_pemesanan,toko_member,toko_penjualan,registrasi_poli_per_tanggal,"+
-                        "toko_piutang,toko_retur_beli,ipsrs_returbeli,ipsrs_riwayat_barang,pasien_corona,toko_pendapatan_harian from user order by AES_DECRYPT(id_user,'nur')");
+                        "toko_piutang,toko_retur_beli,ipsrs_returbeli,ipsrs_riwayat_barang,pasien_corona,toko_pendapatan_harian,"+
+                        "diagnosa_pasien_corona,perawatan_pasien_corona,penilaian_awal_keperawatan_gigi,master_masalah_keperawatan_gigi,"+
+                        "toko_bayar_piutang,toko_piutang_harian,toko_penjualan_harian,deteksi_corona from user order by AES_DECRYPT(id_user,'nur')");
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
@@ -3981,7 +3999,15 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                                rs.getBoolean("ipsrs_returbeli"),
                                rs.getBoolean("ipsrs_riwayat_barang"),
                                rs.getBoolean("pasien_corona"),
-                               rs.getBoolean("toko_pendapatan_harian")
+                               rs.getBoolean("toko_pendapatan_harian"),
+                               rs.getBoolean("diagnosa_pasien_corona"),
+                               rs.getBoolean("perawatan_pasien_corona"),
+                               rs.getBoolean("penilaian_awal_keperawatan_gigi"),
+                               rs.getBoolean("master_masalah_keperawatan_gigi"),
+                               rs.getBoolean("toko_bayar_piutang"),
+                               rs.getBoolean("toko_piutang_harian"),
+                               rs.getBoolean("toko_penjualan_harian"),
+                               rs.getBoolean("deteksi_corona")
                             });
                         }   
                     } catch (Exception e) {
@@ -4595,7 +4621,15 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                            rs.getBoolean("ipsrs_returbeli"),
                            rs.getBoolean("ipsrs_riwayat_barang"),
                            rs.getBoolean("pasien_corona"),
-                           rs.getBoolean("toko_pendapatan_harian")
+                            rs.getBoolean("toko_pendapatan_harian"),
+                           rs.getBoolean("diagnosa_pasien_corona"),
+                           rs.getBoolean("perawatan_pasien_corona"),
+                           rs.getBoolean("penilaian_awal_keperawatan_gigi"),
+                           rs.getBoolean("master_masalah_keperawatan_gigi"),
+                           rs.getBoolean("toko_bayar_piutang"),
+                           rs.getBoolean("toko_piutang_harian"),
+                           rs.getBoolean("toko_penjualan_harian"),
+                           rs.getBoolean("deteksi_corona")
                         });
                     }                                             
                  }

@@ -149,10 +149,10 @@ public final class DlgInputResepPulang extends javax.swing.JDialog {
         ppBersihkan = new javax.swing.JMenuItem();
         TNoRw = new widget.TextBox();
         TKdPny = new widget.TextBox();
-        Tanggal = new widget.TextBox();
         Jam = new widget.TextBox();
         KdPj = new widget.TextBox();
         kelas = new widget.TextBox();
+        Tanggal = new widget.TextBox();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbKamar = new widget.Table();
@@ -190,9 +190,6 @@ public final class DlgInputResepPulang extends javax.swing.JDialog {
 
         TKdPny.setName("TKdPny"); // NOI18N
 
-        Tanggal.setHighlighter(null);
-        Tanggal.setName("Tanggal"); // NOI18N
-
         Jam.setHighlighter(null);
         Jam.setName("Jam"); // NOI18N
 
@@ -211,6 +208,9 @@ public final class DlgInputResepPulang extends javax.swing.JDialog {
                 kelasKeyPressed(evt);
             }
         });
+
+        Tanggal.setHighlighter(null);
+        Tanggal.setName("Tanggal"); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -440,7 +440,7 @@ public final class DlgInputResepPulang extends javax.swing.JDialog {
     }//GEN-LAST:event_BtnTambahActionPerformed
 
 private void BtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSimpanActionPerformed
-    if(aktifkanbatch.equals("yes")){
+if(aktifkanbatch.equals("yes")){
         index=0;
         jml=tbKamar.getRowCount();
         for(i=0;i<jml;i++){
