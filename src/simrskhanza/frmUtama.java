@@ -22688,7 +22688,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         }
         
         if(akses.getsurat_hamil()==true){
-            Panelmenu.add(btnSurathamil);
+            Panelmenu.add(btnSuratHamil);
             jmlmenu++;
         }
         
