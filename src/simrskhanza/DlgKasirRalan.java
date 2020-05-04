@@ -61,6 +61,7 @@ import permintaan.DlgPermintaanRadiologi;
 import rekammedis.RMPenilaianAwalKeperawatanRalan;
 import rekammedis.RMTriaseIGD;
 import surat.SuratSakit;
+import surat.SuratTidakHamil;
 
 /**
  *
@@ -429,6 +430,7 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
         MnCetakSuratSehat2 = new javax.swing.JMenuItem();
         MnSKDPBPJS = new javax.swing.JMenuItem();
         MnKeteranganKhitan = new javax.swing.JMenuItem();
+        MnSuratHamil = new javax.swing.JMenuItem();
         MnLama = new javax.swing.JMenu();
         MnCetakSuratSakit4 = new javax.swing.JMenuItem();
         MnCetakSuratSakit5 = new javax.swing.JMenuItem();
@@ -780,6 +782,19 @@ public final class DlgKasirRalan extends javax.swing.JDialog {
             }
         });
         jPopupMenu1.add(MnKeteranganKhitan);
+
+        MnSuratHamil.setBackground(new java.awt.Color(255, 255, 254));
+        MnSuratHamil.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnSuratHamil.setForeground(new java.awt.Color(50, 50, 50));
+        MnSuratHamil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnSuratHamil.setText("Surat Keterangan Hamil/ Tidak");
+        MnSuratHamil.setName("MnSuratHamil"); // NOI18N
+        MnSuratHamil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnSuratHamilActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnSuratHamil);
 
         MnLama.setBackground(new java.awt.Color(255, 255, 254));
         MnLama.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
@@ -8099,17 +8114,38 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
             tbKasirRalan.requestFocus();
         }else{
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            DlgSuratSakit DlgSuratSakit=new DlgSuratSakit(null,false);
-            DlgSuratSakit.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
-            DlgSuratSakit.setLocationRelativeTo(internalFrame1);
-            DlgSuratSakit.emptTeks();
-            DlgSuratSakit.isCek();
-            DlgSuratSakit.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate());
-            DlgSuratSakit.tampil();
-            DlgSuratSakit.setVisible(true);
+            SuratSakit SuratSakit=new SuratSakit(null,false);
+            SuratSakit.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
+            SuratSakit.setLocationRelativeTo(internalFrame1);
+            SuratSakit.emptTeks();
+            SuratSakit.isCek();
+            SuratSakit.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate());
+            SuratSakit.tampil();
+            SuratSakit.setVisible(true);
             this.setCursor(Cursor.getDefaultCursor());
         }
     }//GEN-LAST:event_MnSuratSakitActionPerformed
+
+    private void MnSuratHamilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSuratHamilActionPerformed
+     if(tabModekasir.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
+            TCari.requestFocus();
+        }else if(TNoRw.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu dengan menklik data pada table...!!!");
+            tbKasirRalan.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            SuratTidakHamil SuratTidakHamil=new SuratTidakHamil(null,false);
+            SuratTidakHamil.setSize(internalFrame1.getWidth(),internalFrame1.getHeight());
+            SuratTidakHamil.setLocationRelativeTo(internalFrame1);
+            SuratTidakHamil.emptTeks();
+            SuratTidakHamil.isCek();
+            SuratTidakHamil.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate());
+            SuratTidakHamil.tampil();
+            SuratTidakHamil.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+    }//GEN-LAST:event_MnSuratHamilActionPerformed
 
     /**
     * @param args the command line arguments
@@ -8302,6 +8338,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
     private javax.swing.JMenuItem MnStatusBaru;
     private javax.swing.JMenuItem MnStatusLama;
     private javax.swing.JMenuItem MnSudah;
+    private javax.swing.JMenuItem MnSuratHamil;
     private javax.swing.JMenuItem MnSuratSakit;
     private javax.swing.JMenuItem MnTeridentifikasiTB;
     private javax.swing.JMenuItem MnTeridentifikasiTB1;

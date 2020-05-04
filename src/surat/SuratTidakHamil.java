@@ -766,7 +766,7 @@ public final class SuratTidakHamil extends javax.swing.JDialog {
                 param.put("emailrs",akses.getemailrs());            
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
                 Valid.MyReportqry("rptSuratTidakHamil.jasper","report","::[ Surat Keterangan Hamil/ Tidak Hamil ]::",
-                              "select surat_hamil.no_surat,surat_hamil.hasilperiksa,DATE_FORMAT(surat_hamil.tanggalperiksa,'%d-%m-%Y')as tanggalperiksa,perusahaan_pasien.nama_perusahaan,dokter.nm_dokter,pasien.tgl_lahir," +
+                              "select surat_hamil.no_surat,surat_hamil.hasilperiksa,DATE_FORMAT(surat_hamil.tanggalperiksa,'%d-%m-%Y')as tanggalperiksa,perusahaan_pasien.nama_perusahaan,dokter.nm_dokter,DATE_FORMAT(pasien.tgl_lahir,'%d-%m-%Y')as tgl_lahir," +
                               " pasien.nm_pasien,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
                               " from reg_periksa inner join surat_hamil inner join pasien inner join dokter inner join kelurahan inner join perusahaan_pasien inner join kecamatan inner join kabupaten" +
                               " on surat_hamil.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
