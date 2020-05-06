@@ -987,13 +987,6 @@ public final class validasi {
                 StringBuilder cmd = new StringBuilder();
                 for(i=0; i<browsers.length; i++) cmd.append(i==0  ? "" : " || ").append(browsers[i]).append(" \"").append("http://").append(koneksiDB.HOSTHYBRIDWEB()+":"+prop.getProperty("PORTWEB")).append("/").append(prop.getProperty("HYBRIDWEB")).append("/").append(url).append( "\" ");
                 rt.exec(new String[] { "sh", "-c", cmd.toString() });
-            }else if (os.contains("bsd")) {
-                String[] browsers = {"x-www-browser","epiphany", "firefox", "mozilla", "konqueror","chrome","chromium","netscape","opera","links","lynx","midori"};
-                // Build a command string which looks like "browser1 "url" || browser2 "url" ||..."
-                StringBuilder cmd = new StringBuilder();
-                for(i=0; i<browsers.length; i++) cmd.append(i==0  ? "" : " || ").append(browsers[i]).append(" \"").append("http://").append(koneksiDB.HOSTHYBRIDWEB()+":"+prop.getProperty("PORTWEB")).append("/").append(prop.getProperty("HYBRIDWEB")).append("/").append(url).append( "\" ");
-                rt.exec(new String[] { "sh", "-c", cmd.toString() });
-            
             } 
         }catch (Exception e){
             System.out.println("Notif Browser : "+e);
@@ -1046,6 +1039,15 @@ public final class validasi {
         s = "";
         try {
             s=original.substring(6,10)+"-"+original.substring(3,5)+"-"+original.substring(0,2);
+        }catch (Exception e) {
+        }   
+        return s;
+    }
+    
+    public String SetTglJam(String original){
+        s = "";
+        try {
+            s=original.substring(6,10)+"-"+original.substring(3,5)+"-"+original.substring(0,2)+" "+original.substring(11,19);
         }catch (Exception e) {
         }   
         return s;
