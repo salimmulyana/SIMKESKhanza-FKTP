@@ -9246,14 +9246,20 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             param.put("leher",Sequel.cariIsi("select leher from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("thorax",Sequel.cariIsi("select thorax from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abdomen",Sequel.cariIsi("select abdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("genital",Sequel.cariIsi("select genital from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("rektum",Sequel.cariIsi("select rektum from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("ekstremitas",Sequel.cariIsi("select ekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abkepala",Sequel.cariIsi("select abkepala from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("ableher",Sequel.cariIsi("select ableher from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abthorax",Sequel.cariIsi("select abthorax from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("ababdomen",Sequel.cariIsi("select ababdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abgenital",Sequel.cariIsi("select abgenital from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abrektal",Sequel.cariIsi("select abrektal from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abekstremitas",Sequel.cariIsi("select abekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("icd",Sequel.cariIsi("select kd_penyakit from diagnosa_pasien where prioritas=1 and no_rawat=?",TNoRw.getText()));
             param.put("no_rawat",TNoRw.getText());
+            param.put("tanggal",Sequel.cariIsi("select tgl_peresepan from resep_obat where no_rawat=?",TNoRw.getText()));
+            param.put("jam",Sequel.cariIsi("select jam_peresepan from resep_obat where no_rawat=?",TNoRw.getText()));             
             Valid.MyReportqry("rptRiwayatPerawatan.jasper","report","::[ Riwayat Perawatan Pasien Hari Ini ]::",
                     "SELECT reg_periksa.tgl_registrasi, reg_periksa.jam_reg, "+
                     "poliklinik.nm_poli, pasien.no_rkm_medis, pasien.nm_pasien, "+

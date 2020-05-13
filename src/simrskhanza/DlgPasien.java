@@ -3325,6 +3325,11 @@ public class DlgPasien extends javax.swing.JDialog {
         R1.setText("Ayah");
         R1.setName("R1"); // NOI18N
         R1.setPreferredSize(new java.awt.Dimension(40, 20));
+        R1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                R1ActionPerformed(evt);
+            }
+        });
         FormInput.add(R1);
         R1.setBounds(101, 192, 100, 23);
 
@@ -8009,6 +8014,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private void kdperusahaanpjKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kdperusahaanpjKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_kdperusahaanpjKeyPressed
+
+    private void R1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_R1ActionPerformed
 
     /**
      * @data args the command line arguments
