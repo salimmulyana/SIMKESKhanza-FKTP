@@ -9254,7 +9254,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             param.put("abthorax",Sequel.cariIsi("select abthorax from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("ababdomen",Sequel.cariIsi("select ababdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abgenital",Sequel.cariIsi("select abgenital from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
-            param.put("abrektal",Sequel.cariIsi("select abrektal from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abrektum",Sequel.cariIsi("select abrektum from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abekstremitas",Sequel.cariIsi("select abekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("icd",Sequel.cariIsi("select kd_penyakit from diagnosa_pasien where prioritas=1 and no_rawat=?",TNoRw.getText()));
             param.put("no_rawat",TNoRw.getText());
