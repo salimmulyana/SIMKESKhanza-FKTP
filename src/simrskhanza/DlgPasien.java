@@ -3131,7 +3131,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(0, 280, 95, 23);
 
-        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-05-2020" }));
+        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-07-2020" }));
         DTPLahir.setDisplayFormat("dd-MM-yyyy");
         DTPLahir.setName("DTPLahir"); // NOI18N
         DTPLahir.setOpaque(false);
@@ -3268,7 +3268,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TKtp);
         TKtp.setBounds(712, 132, 130, 23);
 
-        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-05-2020" }));
+        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-07-2020" }));
         DTPDaftar.setDisplayFormat("dd-MM-yyyy");
         DTPDaftar.setName("DTPDaftar"); // NOI18N
         DTPDaftar.setOpaque(false);
@@ -4180,7 +4180,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TTmpPj);
         TTmpPj.setBounds(100, 280, 190, 24);
 
-        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-05-2020" }));
+        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-07-2020" }));
         DTPLahirPj.setDisplayFormat("dd-MM-yyyy");
         DTPLahirPj.setName("DTPLahirPj"); // NOI18N
         DTPLahirPj.addItemListener(new java.awt.event.ItemListener() {
@@ -7820,7 +7820,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             PanelAccor.setVisible(false);
         }else{
             PanelAccor.setVisible(true);
-            ChkAccor.setSelected(false);
+            ChkAccor.setSelected(true);
             isPhoto();
         }
         if(!TCari.getText().equals("")){
@@ -9452,6 +9452,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         BtnSatuanTNI.setEnabled(false);
         BtnJabatanTNI.setEnabled(false);
         BtnPangkatTNI.setEnabled(false);
+        PanelAccor.setVisible(false);
         autoNomor();
         TNm.requestFocus();
     }
