@@ -1629,6 +1629,23 @@ public class DlgPasien extends javax.swing.JDialog {
         internalFrame6 = new widget.InternalFrame();
         Scroll3 = new widget.ScrollPane();
         tbPasien3 = new widget.Table();
+        PanelAccor = new widget.PanelBiasa();
+        ChkAccor = new widget.CekBox();
+        FormMenu = new widget.PanelBiasa();
+        jLabel50 = new widget.Label();
+        NoRekamMedisDipilih = new widget.TextBox();
+        NamaPasienDipilih = new widget.TextBox();
+        FormPhotoPass = new widget.PanelBiasa();
+        FormPhoto = new widget.PanelBiasa();
+        FormPass2 = new widget.PanelBiasa();
+        btnAmbilPhoto = new widget.Button();
+        BtnRefreshPhoto = new widget.Button();
+        Scroll4 = new widget.ScrollPane();
+        LoadHTML = new widget.editorpane();
+        FormPass = new widget.PanelBiasa();
+        FormPass1 = new widget.PanelBiasa();
+        btnUbahPassword = new widget.Button();
+        PasswordPasien = new widget.TextArea();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
@@ -3114,7 +3131,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(0, 280, 95, 23);
 
-        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-05-2020" }));
+        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-05-2020" }));
         DTPLahir.setDisplayFormat("dd-MM-yyyy");
         DTPLahir.setName("DTPLahir"); // NOI18N
         DTPLahir.setOpaque(false);
@@ -3251,7 +3268,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TKtp);
         TKtp.setBounds(712, 132, 130, 23);
 
-        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-05-2020" }));
+        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-05-2020" }));
         DTPDaftar.setDisplayFormat("dd-MM-yyyy");
         DTPDaftar.setName("DTPDaftar"); // NOI18N
         DTPDaftar.setOpaque(false);
@@ -4163,7 +4180,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TTmpPj);
         TTmpPj.setBounds(100, 280, 190, 24);
 
-        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-05-2020" }));
+        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "13-05-2020" }));
         DTPLahirPj.setDisplayFormat("dd-MM-yyyy");
         DTPLahirPj.setName("DTPLahirPj"); // NOI18N
         DTPLahirPj.addItemListener(new java.awt.event.ItemListener() {
@@ -4377,6 +4394,156 @@ public class DlgPasien extends javax.swing.JDialog {
         TabRawat.addTab("Data Pasien POLRI", internalFrame6);
 
         internalFrame1.add(TabRawat, java.awt.BorderLayout.CENTER);
+
+        PanelAccor.setBackground(new java.awt.Color(255, 255, 255));
+        PanelAccor.setName("PanelAccor"); // NOI18N
+        PanelAccor.setPreferredSize(new java.awt.Dimension(245, 43));
+        PanelAccor.setLayout(new java.awt.BorderLayout(1, 1));
+
+        ChkAccor.setBackground(new java.awt.Color(255, 250, 248));
+        ChkAccor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kiri.png"))); // NOI18N
+        ChkAccor.setSelected(true);
+        ChkAccor.setFocusable(false);
+        ChkAccor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ChkAccor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ChkAccor.setName("ChkAccor"); // NOI18N
+        ChkAccor.setPreferredSize(new java.awt.Dimension(15, 20));
+        ChkAccor.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kiri.png"))); // NOI18N
+        ChkAccor.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kanan.png"))); // NOI18N
+        ChkAccor.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/kanan.png"))); // NOI18N
+        ChkAccor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChkAccorActionPerformed(evt);
+            }
+        });
+        PanelAccor.add(ChkAccor, java.awt.BorderLayout.WEST);
+
+        FormMenu.setBackground(new java.awt.Color(255, 255, 255));
+        FormMenu.setBorder(null);
+        FormMenu.setName("FormMenu"); // NOI18N
+        FormMenu.setPreferredSize(new java.awt.Dimension(115, 73));
+        FormMenu.setLayout(null);
+
+        jLabel50.setText("No.Rekam Medis :");
+        jLabel50.setName("jLabel50"); // NOI18N
+        jLabel50.setPreferredSize(new java.awt.Dimension(95, 23));
+        FormMenu.add(jLabel50);
+        jLabel50.setBounds(4, 10, 95, 23);
+
+        NoRekamMedisDipilih.setEditable(false);
+        NoRekamMedisDipilih.setHighlighter(null);
+        NoRekamMedisDipilih.setName("NoRekamMedisDipilih"); // NOI18N
+        NoRekamMedisDipilih.setPreferredSize(new java.awt.Dimension(130, 23));
+        FormMenu.add(NoRekamMedisDipilih);
+        NoRekamMedisDipilih.setBounds(103, 10, 130, 23);
+
+        NamaPasienDipilih.setEditable(false);
+        NamaPasienDipilih.setHighlighter(null);
+        NamaPasienDipilih.setName("NamaPasienDipilih"); // NOI18N
+        NamaPasienDipilih.setPreferredSize(new java.awt.Dimension(130, 23));
+        FormMenu.add(NamaPasienDipilih);
+        NamaPasienDipilih.setBounds(11, 40, 222, 23);
+
+        PanelAccor.add(FormMenu, java.awt.BorderLayout.NORTH);
+
+        FormPhotoPass.setBackground(new java.awt.Color(255, 255, 255));
+        FormPhotoPass.setBorder(null);
+        FormPhotoPass.setName("FormPhotoPass"); // NOI18N
+        FormPhotoPass.setPreferredSize(new java.awt.Dimension(115, 73));
+        FormPhotoPass.setLayout(new java.awt.GridLayout(2, 0));
+
+        FormPhoto.setBackground(new java.awt.Color(255, 255, 255));
+        FormPhoto.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), " Photo Pasien : ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        FormPhoto.setName("FormPhoto"); // NOI18N
+        FormPhoto.setPreferredSize(new java.awt.Dimension(115, 73));
+        FormPhoto.setLayout(new java.awt.BorderLayout());
+
+        FormPass2.setBackground(new java.awt.Color(255, 255, 255));
+        FormPass2.setBorder(null);
+        FormPass2.setName("FormPass2"); // NOI18N
+        FormPass2.setPreferredSize(new java.awt.Dimension(115, 40));
+
+        btnAmbilPhoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/plus_16.png"))); // NOI18N
+        btnAmbilPhoto.setMnemonic('U');
+        btnAmbilPhoto.setText("Ambil");
+        btnAmbilPhoto.setToolTipText("Alt+U");
+        btnAmbilPhoto.setName("btnAmbilPhoto"); // NOI18N
+        btnAmbilPhoto.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnAmbilPhoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAmbilPhotoActionPerformed(evt);
+            }
+        });
+        FormPass2.add(btnAmbilPhoto);
+
+        BtnRefreshPhoto.setMnemonic('U');
+        BtnRefreshPhoto.setText("Refresh");
+        BtnRefreshPhoto.setToolTipText("Alt+U");
+        BtnRefreshPhoto.setName("BtnRefreshPhoto"); // NOI18N
+        BtnRefreshPhoto.setPreferredSize(new java.awt.Dimension(100, 30));
+        BtnRefreshPhoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRefreshPhotoActionPerformed(evt);
+            }
+        });
+        FormPass2.add(BtnRefreshPhoto);
+
+        FormPhoto.add(FormPass2, java.awt.BorderLayout.PAGE_END);
+
+        Scroll4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Scroll4.setName("Scroll4"); // NOI18N
+        Scroll4.setOpaque(true);
+        Scroll4.setPreferredSize(new java.awt.Dimension(200, 200));
+
+        LoadHTML.setBorder(null);
+        LoadHTML.setName("LoadHTML"); // NOI18N
+        Scroll4.setViewportView(LoadHTML);
+
+        FormPhoto.add(Scroll4, java.awt.BorderLayout.CENTER);
+
+        FormPhotoPass.add(FormPhoto);
+
+        FormPass.setBackground(new java.awt.Color(255, 255, 255));
+        FormPass.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), " Password EPasien : ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        FormPass.setName("FormPass"); // NOI18N
+        FormPass.setPreferredSize(new java.awt.Dimension(115, 73));
+        FormPass.setLayout(new java.awt.BorderLayout());
+
+        FormPass1.setBackground(new java.awt.Color(255, 255, 255));
+        FormPass1.setBorder(null);
+        FormPass1.setName("FormPass1"); // NOI18N
+        FormPass1.setPreferredSize(new java.awt.Dimension(115, 40));
+
+        btnUbahPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/inventaris.png"))); // NOI18N
+        btnUbahPassword.setMnemonic('U');
+        btnUbahPassword.setText("Ubah");
+        btnUbahPassword.setToolTipText("Alt+U");
+        btnUbahPassword.setName("btnUbahPassword"); // NOI18N
+        btnUbahPassword.setPreferredSize(new java.awt.Dimension(100, 30));
+        btnUbahPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUbahPasswordActionPerformed(evt);
+            }
+        });
+        FormPass1.add(btnUbahPassword);
+
+        FormPass.add(FormPass1, java.awt.BorderLayout.PAGE_END);
+
+        PasswordPasien.setColumns(20);
+        PasswordPasien.setRows(5);
+        PasswordPasien.setName("PasswordPasien"); // NOI18N
+        PasswordPasien.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordPasienKeyPressed(evt);
+            }
+        });
+        FormPass.add(PasswordPasien, java.awt.BorderLayout.CENTER);
+
+        FormPhotoPass.add(FormPass);
+
+        PanelAccor.add(FormPhotoPass, java.awt.BorderLayout.CENTER);
+
+        internalFrame1.add(PanelAccor, java.awt.BorderLayout.EAST);
 
         getContentPane().add(internalFrame1, java.awt.BorderLayout.CENTER);
 
@@ -7649,6 +7816,13 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     }//GEN-LAST:event_tbPasien3KeyPressed
 
     private void TabRawatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabRawatMouseClicked
+        if(TabRawat.getSelectedIndex()==0){
+            PanelAccor.setVisible(false);
+        }else{
+            PanelAccor.setVisible(true);
+            ChkAccor.setSelected(false);
+            isPhoto();
+        }
         if(!TCari.getText().equals("")){
             pilihantampil();
         }
@@ -8019,6 +8193,74 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         // TODO add your handling code here:
     }//GEN-LAST:event_R1ActionPerformed
 
+    private void ChkAccorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkAccorActionPerformed
+        switch (TabRawat.getSelectedIndex()) {
+            case 1:
+            if(tbPasien.getSelectedRow()!= -1){
+                isPhoto();
+                panggilPhoto();
+            }else{
+                ChkAccor.setSelected(false);
+                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data yang mau ditampilkan...!!!!");
+            }
+            break;
+            case 2:
+            if(tbPasien2.getSelectedRow()!= -1){
+                isPhoto();
+                panggilPhoto();
+            }else{
+                ChkAccor.setSelected(false);
+                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data yang mau ditampilkan...!!!!");
+            }
+            break;
+            case 3:
+            if(tbPasien3.getSelectedRow()!= -1){
+                isPhoto();
+                panggilPhoto();
+            }else{
+                ChkAccor.setSelected(false);
+                JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data yang mau ditampilkan...!!!!");
+            }
+            break;
+            default:
+            break;
+        }
+    }//GEN-LAST:event_ChkAccorActionPerformed
+
+    private void btnAmbilPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAmbilPhotoActionPerformed
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        if(NoRekamMedisDipilih.getText().equals("")||NamaPasienDipilih.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data pasien terlebih dahulu...!!!!");
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            Sequel.menyimpan2("personal_pasien","?,'',''",1,new String[]{NoRekamMedisDipilih.getText()});
+            Valid.panggilUrl("photopasien/login.php?act=login&usere=admin&passwordte=akusayangsamakamu&norm="+NoRekamMedisDipilih.getText());
+            this.setCursor(Cursor.getDefaultCursor());
+        }
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_btnAmbilPhotoActionPerformed
+
+    private void BtnRefreshPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRefreshPhotoActionPerformed
+        panggilPhoto();
+    }//GEN-LAST:event_BtnRefreshPhotoActionPerformed
+
+    private void btnUbahPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahPasswordActionPerformed
+        if(NoRekamMedisDipilih.getText().equals("")||NamaPasienDipilih.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, silahkan pilih data pasien terlebih dahulu...!!!!");
+        }else{
+            if(Sequel.menyimpantf("personal_pasien","?,'',aes_encrypt(?,'windi')",2,new String[]{NoRekamMedisDipilih.getText(),PasswordPasien.getText()},"no_rkm_medis=?","password=aes_encrypt(?,'windi')",2,new String[]{PasswordPasien.getText(),NoRekamMedisDipilih.getText()})==true){
+                JOptionPane.showMessageDialog(null,"Update password pasien berhasil..!!");
+            }else{
+                JOptionPane.showMessageDialog(null,"Update password pasien gagal..!!");
+                PasswordPasien.requestFocus();
+            }
+        }
+    }//GEN-LAST:event_btnUbahPasswordActionPerformed
+
+    private void PasswordPasienKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordPasienKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PasswordPasienKeyPressed
+
     /**
      * @data args the command line arguments
      */
@@ -8096,6 +8338,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.Button BtnPrint2;
     private widget.Button BtnPrint3;
     private widget.Button BtnPropinsi;
+    private widget.Button BtnRefreshPhoto;
     private widget.Button BtnSatuanPolri;
     private widget.Button BtnSatuanTNI;
     private widget.Button BtnSeek10;
@@ -8108,6 +8351,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.ComboBox CMbGd;
     private widget.ComboBox CMbPnd;
     private widget.TextBox Carialamat;
+    private widget.CekBox ChkAccor;
     private widget.CekBox ChkDaftar;
     private widget.CekBox ChkRM;
     private widget.ComboBox CmbJk;
@@ -8118,6 +8362,12 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private javax.swing.JDialog DlgDemografi;
     private widget.TextBox EMail;
     private widget.PanelBiasa FormInput;
+    private widget.PanelBiasa FormMenu;
+    private widget.PanelBiasa FormPass;
+    private widget.PanelBiasa FormPass1;
+    private widget.PanelBiasa FormPass2;
+    private widget.PanelBiasa FormPhoto;
+    private widget.PanelBiasa FormPhotoPass;
     private widget.TextBox Kabupaten;
     private widget.TextBox Kabupaten2;
     private widget.TextBox KabupatenPj;
@@ -8139,6 +8389,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.Label LabelPangkatTNI;
     private widget.Label LabelSatuanPolri;
     private widget.Label LabelSatuanTNI;
+    private widget.editorpane LoadHTML;
     private javax.swing.JMenu MenuBPJS;
     private javax.swing.JMenu MenuIdentitas;
     private javax.swing.JMenuItem MnBarcodeRM;
@@ -8189,10 +8440,14 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private javax.swing.JMenuItem MnViaDukcapilNikAceh;
     private javax.swing.JMenuItem MnViaDukcapilNikDKI;
     private widget.TextBox NIP;
+    private widget.TextBox NamaPasienDipilih;
     private widget.TextBox NmIbu;
     private widget.TextBox NmPasienTujuan;
+    private widget.TextBox NoRekamMedisDipilih;
     private widget.TextBox NoRm;
     private widget.TextBox NoRmTujuan;
+    private widget.PanelBiasa PanelAccor;
+    private widget.TextArea PasswordPasien;
     private widget.TextBox Pekerjaan;
     private widget.TextBox PekerjaanPj;
     private widget.TextBox Propinsi;
@@ -8209,6 +8464,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.ScrollPane Scroll1;
     private widget.ScrollPane Scroll2;
     private widget.ScrollPane Scroll3;
+    private widget.ScrollPane Scroll4;
     private widget.TextBox TAlergi;
     private widget.TextBox TCari;
     private widget.TextBox TKartuKeluarga;
@@ -8227,7 +8483,9 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.TextBox TUmurThPj;
     private javax.swing.JTabbedPane TabRawat;
     private javax.swing.JDialog WindowGabungRM;
+    private widget.Button btnAmbilPhoto;
     private widget.Button btnPropinsiPj;
+    private widget.Button btnUbahPassword;
     private javax.swing.ButtonGroup buttonGroup1;
     private widget.CekBox chkPolri;
     private widget.CekBox chkTNI;
@@ -8282,6 +8540,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.Label jLabel47;
     private widget.Label jLabel48;
     private widget.Label jLabel49;
+    private widget.Label jLabel50;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
     private widget.Label jLabel8;
@@ -9203,6 +9462,8 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                 TNo.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),1).toString());
                 Kd2.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),1).toString());
                 TNm.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),2).toString());
+                NoRekamMedisDipilih.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),1).toString());
+                NamaPasienDipilih.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),2).toString());
                 TKtp.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),3).toString());
                 TKartuKeluarga.setText(tbPasien.getValueAt(tbPasien.getSelectedRow(),4).toString());
 
@@ -9690,5 +9951,53 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         }
         this.TNoPeserta.setText(NoKartuJKN);
         this.TKtp.setText(NIK);
+    }
+ private void isPhoto(){
+        if(ChkAccor.isSelected()==true){
+            ChkAccor.setVisible(false);
+            PanelAccor.setPreferredSize(new Dimension(245,HEIGHT));
+            FormMenu.setVisible(true);  
+            FormPhotoPass.setVisible(true);  
+            ChkAccor.setVisible(true);
+        }else if(ChkAccor.isSelected()==false){    
+            ChkAccor.setVisible(false);
+            PanelAccor.setPreferredSize(new Dimension(15,HEIGHT));
+            FormMenu.setVisible(false);  
+            FormPhotoPass.setVisible(false);
+            ChkAccor.setVisible(true);
+        }
+    }
+    private void panggilPhoto() {
+        if(FormPhotoPass.isVisible()==true){
+            try {
+                ps=koneksi.prepareStatement("select gambar,aes_decrypt(password,'windi') as password from personal_pasien where no_rkm_medis=?");
+                try {
+                    ps.setString(1,NoRekamMedisDipilih.getText());
+                    rs=ps.executeQuery();
+                    if(rs.next()){
+                        if(rs.getString("gambar").equals("")||rs.getString("gambar").equals("-")){
+                            LoadHTML.setText("<html><body><center><br><br><font face='tahoma' size='2' color='#434343'>Kosong</font></center></body></html>");
+                        }else{
+                            LoadHTML.setText("<html><body><center><img src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/photopasien/"+rs.getString("gambar")+"' alt='photo' width='200' height='200'/></center></body></html>");
+                        }  
+                        PasswordPasien.setText(rs.getString("password"));
+                    }else{
+                        LoadHTML.setText("<html><body><center><br><br><font face='tahoma' size='2' color='#434343'>Kosong</font></center></body></html>");
+                        PasswordPasien.setText("");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Notif : "+e);
+                } finally{
+                    if(rs!=null){
+                        rs.close();
+                    }
+                    if(ps!=null){
+                        ps.close();
+                    }
+                }
+            } catch (Exception e) {
+                System.out.println("Notif : "+e);
+            } 
+        }
     }
 }
