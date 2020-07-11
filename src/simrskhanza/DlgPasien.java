@@ -52,6 +52,9 @@ import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.event.DocumentEvent;
+import javax.swing.text.Document;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
 
 
 /**
@@ -1342,6 +1345,25 @@ public class DlgPasien extends javax.swing.JDialog {
             TabRawat.remove(internalFrame5);
             TabRawat.remove(internalFrame6);
         }
+        PanelAccor.setVisible(false);
+        HTMLEditorKit kit = new HTMLEditorKit();
+        LoadHTML.setEditable(true);
+        LoadHTML.setEditorKit(kit);
+        StyleSheet styleSheet = kit.getStyleSheet();
+        styleSheet.addRule(
+                ".isi td{border-right: 1px solid #e2e7dd;font: 8.5px tahoma;height:12px;border-bottom: 1px solid #e2e7dd;background: #ffffff;color:#323232;}"+
+                ".isi2 td{font: 8.5px tahoma;border:none;height:12px;background: #ffffff;color:#323232;}"+
+                ".isi3 td{border-right: 1px solid #e2e7dd;font: 8.5px tahoma;height:12px;border-top: 1px solid #e2e7dd;background: #ffffff;color:#323232;}"+
+                ".isi4 td{font: 11px tahoma;height:12px;border-top: 1px solid #e2e7dd;background: #ffffff;color:#323232;}"+
+                ".isi5 td{font: 8.5px tahoma;border:none;height:12px;background: #ffffff;color:#AA0000;}"+
+                ".isi6 td{font: 8.5px tahoma;border:none;height:12px;background: #ffffff;color:#FF0000;}"+
+                ".isi7 td{font: 8.5px tahoma;border:none;height:12px;background: #ffffff;color:#C8C800;}"+
+                ".isi8 td{font: 8.5px tahoma;border:none;height:12px;background: #ffffff;color:#00AA00;}"+
+                ".isi9 td{font: 8.5px tahoma;border:none;height:12px;background: #ffffff;color:#969696;}"
+        );
+        
+        Document doc = kit.createDefaultDocument();
+        LoadHTML.setDocument(doc);
     }
     
 
@@ -9591,7 +9613,8 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             
             Valid.SetTgl(DTPLahir,tbPasien.getValueAt(tbPasien.getSelectedRow(),7).toString());
             Valid.SetTgl(DTPLahirPj,tbPasien.getValueAt(tbPasien.getSelectedRow(),21).toString());
-            Valid.SetTgl(DTPDaftar,tbPasien.getValueAt(tbPasien.getSelectedRow(),14).toString());  
+            Valid.SetTgl(DTPDaftar,tbPasien.getValueAt(tbPasien.getSelectedRow(),14).toString());
+            panggilPhoto();
         }
     }
     
@@ -9705,7 +9728,8 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             chkTNIActionPerformed(null);
             
             Valid.SetTgl(DTPLahir,tbPasien2.getValueAt(tbPasien2.getSelectedRow(),6).toString());
-            Valid.SetTgl(DTPDaftar,tbPasien2.getValueAt(tbPasien2.getSelectedRow(),13).toString());                        
+            Valid.SetTgl(DTPDaftar,tbPasien2.getValueAt(tbPasien2.getSelectedRow(),13).toString()); 
+            panggilPhoto();
         }
     }
     
@@ -9819,7 +9843,8 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
             chkPolriActionPerformed(null);
             
             Valid.SetTgl(DTPLahir,tbPasien3.getValueAt(tbPasien3.getSelectedRow(),6).toString());
-            Valid.SetTgl(DTPDaftar,tbPasien3.getValueAt(tbPasien3.getSelectedRow(),13).toString());                        
+            Valid.SetTgl(DTPDaftar,tbPasien3.getValueAt(tbPasien3.getSelectedRow(),13).toString()); 
+            panggilPhoto();
         }
     }
     
