@@ -93,7 +93,7 @@ public class DlgPasien extends javax.swing.JDialog {
     private String kdkel="",kdkec="",kdkab="",kdprop="",klg="SAUDARA",say="",pengurutan="",asalform="",bulan="",tahun="",awalantahun="",awalanbulan="",posisitahun="",
             no_ktp="",tmp_lahir="",nm_ibu="",alamat="",pekerjaan="",no_tlp="",
             umur="",namakeluarga="",no_peserta="",kelurahan="",kecamatan="",
-            kabupaten="",pekerjaanpj="",alamatpj="",kelurahanpj="",kecamatanpj="",
+            kabupaten="",pekerjaanpj="",alamatpj="",kelurahanpj="",kecamatanpj="",isi="",
             kabupatenpj="",propinsi="",propinsipj="",tampilkantni=Sequel.cariIsi("select tampilkan_tni_polri from set_tni_polri");
     private PreparedStatement ps,pscariwilayah,pssetalamat,pskelengkapan;
     private ResultSet rs;
@@ -1426,6 +1426,7 @@ public class DlgPasien extends javax.swing.JDialog {
         MnPengantarHemodalisa = new javax.swing.JMenuItem();
         MnCover = new javax.swing.JMenuItem();
         MnCover1 = new javax.swing.JMenuItem();
+        MnCover2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         ppGrafikPerAgama = new javax.swing.JMenuItem();
         ppGrafikPerPekerjaan = new javax.swing.JMenuItem();
@@ -2338,6 +2339,20 @@ public class DlgPasien extends javax.swing.JDialog {
         });
         jMenu1.add(MnCover1);
 
+        MnCover2.setBackground(new java.awt.Color(255, 255, 254));
+        MnCover2.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCover2.setForeground(new java.awt.Color(50, 50, 50));
+        MnCover2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCover2.setText("Cover Rekam Medis 3");
+        MnCover2.setName("MnCover2"); // NOI18N
+        MnCover2.setPreferredSize(new java.awt.Dimension(300, 26));
+        MnCover2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCover2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MnCover2);
+
         jPopupMenu1.add(jMenu1);
 
         jMenu2.setBackground(new java.awt.Color(250, 255, 245));
@@ -3153,7 +3168,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(0, 280, 95, 23);
 
-        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-07-2020" }));
+        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
         DTPLahir.setDisplayFormat("dd-MM-yyyy");
         DTPLahir.setName("DTPLahir"); // NOI18N
         DTPLahir.setOpaque(false);
@@ -3290,7 +3305,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TKtp);
         TKtp.setBounds(712, 132, 130, 23);
 
-        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-07-2020" }));
+        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
         DTPDaftar.setDisplayFormat("dd-MM-yyyy");
         DTPDaftar.setName("DTPDaftar"); // NOI18N
         DTPDaftar.setOpaque(false);
@@ -4202,7 +4217,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TTmpPj);
         TTmpPj.setBounds(100, 280, 190, 24);
 
-        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-07-2020" }));
+        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
         DTPLahirPj.setDisplayFormat("dd-MM-yyyy");
         DTPLahirPj.setName("DTPLahirPj"); // NOI18N
         DTPLahirPj.addItemListener(new java.awt.event.ItemListener() {
@@ -8283,6 +8298,35 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordPasienKeyPressed
 
+    private void MnCover2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCover2ActionPerformed
+        if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
+            TNo.requestFocus();
+        }else if(TNm.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data pasien dengan menklik data pada table...!!!");
+            tbPasien.requestFocus();
+        }else{
+            Map<String, Object> param = new HashMap<>(); 
+            isi = "http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/photopasien/"+Sequel.cariIsi("select gambar from personal_pasien where no_rkm_medis='"+NoRekamMedisDipilih.getText()+"'")+"";
+            param.put("lokasi", isi);
+            param.put("namars",akses.getnamars());
+            param.put("alamatrs",akses.getalamatrs());
+            param.put("kotars",akses.getkabupatenrs());
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("kontakrs",akses.getkontakrs());
+            param.put("emailrs",akses.getemailrs());   
+            param.put("logo",Sequel.cariGambar("select logo from setting")); 
+            Valid.MyReportqry("rptCoverMap3.jasper","report","::[ Cover Rekam Medis ]::","select pasien.no_rkm_medis, pasien.nm_pasien, pasien.no_ktp, pasien.jk, "+
+                   "pasien.tmp_lahir, pasien.tgl_lahir,pasien.nm_ibu, pasien.alamat,kelurahan.nm_kel,kecamatan.nm_kec,kabupaten.nm_kab,propinsi.nm_prop, pasien.gol_darah, pasien.pekerjaan,"+
+                   "pasien.stts_nikah,pasien.agama,pasien.tgl_daftar,pasien.no_tlp,pasien.umur,pasien.no_peserta,pasien.suku_bangsa,suku_bangsa.nama_suku_bangsa,"+
+                   "pasien.pnd, pasien.keluarga, pasien.namakeluarga,penjab.png_jawab,pasien.pekerjaanpj,"+
+                   "concat(pasien.alamatpj,', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',pasien.kabupatenpj,', ',pasien.propinsipj) as alamatpj from pasien "+
+                   "inner join kelurahan inner join kecamatan inner join kabupaten inner join suku_bangsa "+
+                   "inner join penjab inner join propinsi on pasien.kd_prop=propinsi.kd_prop and pasien.kd_pj=penjab.kd_pj and pasien.kd_kel=kelurahan.kd_kel "+
+                   "and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab  where pasien.no_rkm_medis='"+TNo.getText()+"' ",param);
+        }
+    }//GEN-LAST:event_MnCover2ActionPerformed
+
     /**
      * @data args the command line arguments
      */
@@ -8431,6 +8475,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private javax.swing.JMenuItem MnCopyResep;
     private javax.swing.JMenuItem MnCover;
     private javax.swing.JMenuItem MnCover1;
+    private javax.swing.JMenuItem MnCover2;
     private javax.swing.JMenuItem MnFormulirPendaftaran;
     private javax.swing.JMenuItem MnIdentitas;
     private javax.swing.JMenuItem MnIdentitas2;
