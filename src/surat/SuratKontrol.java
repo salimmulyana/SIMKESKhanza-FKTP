@@ -315,12 +315,6 @@ public class SuratKontrol extends javax.swing.JDialog {
         BtnPoli = new widget.Button();
         jLabel5 = new widget.Label();
         Alasan1 = new widget.TextBox();
-        Alasan2 = new widget.TextBox();
-        jLabel8 = new widget.Label();
-        jLabel12 = new widget.Label();
-        Rtl1 = new widget.TextBox();
-        jLabel13 = new widget.Label();
-        Rtl2 = new widget.TextBox();
         TanggalPeriksa = new widget.Tanggal();
         jLabel15 = new widget.Label();
         NoSurat = new widget.TextBox();
@@ -359,7 +353,7 @@ public class SuratKontrol extends javax.swing.JDialog {
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ SKDP BPJS ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[Surat Kontrol ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -745,7 +739,7 @@ public class SuratKontrol extends javax.swing.JDialog {
         TPasien.setBounds(185, 10, 190, 23);
 
         TanggalSurat.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalSurat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-07-2020 05:38:19" }));
+        TanggalSurat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-07-2020 06:58:34" }));
         TanggalSurat.setDisplayFormat("dd-MM-yyyy hh:mm:ss");
         TanggalSurat.setName("TanggalSurat"); // NOI18N
         TanggalSurat.setOpaque(false);
@@ -755,7 +749,7 @@ public class SuratKontrol extends javax.swing.JDialog {
             }
         });
         FormInput.add(TanggalSurat);
-        TanggalSurat.setBounds(474, 10, 132, 23);
+        TanggalSurat.setBounds(610, 10, 132, 23);
 
         Status.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Menunggu", "Sudah Periksa", "Batal Periksa" }));
         Status.setName("Status"); // NOI18N
@@ -767,10 +761,10 @@ public class SuratKontrol extends javax.swing.JDialog {
         FormInput.add(Status);
         Status.setBounds(610, 160, 130, 23);
 
-        jLabel10.setText("Tanggal Surat :");
+        jLabel10.setText("Tanggal Kunjungan Terakhir :");
         jLabel10.setName("jLabel10"); // NOI18N
         FormInput.add(jLabel10);
-        jLabel10.setBounds(375, 10, 95, 23);
+        jLabel10.setBounds(375, 10, 230, 23);
 
         KdDokter.setEditable(false);
         KdDokter.setHighlighter(null);
@@ -834,7 +828,7 @@ public class SuratKontrol extends javax.swing.JDialog {
         FormInput.add(BtnPoli);
         BtnPoli.setBounds(712, 130, 28, 23);
 
-        jLabel5.setText("Alasan 1 :");
+        jLabel5.setText("Keterangan :");
         jLabel5.setName("jLabel5"); // NOI18N
         FormInput.add(jLabel5);
         jLabel5.setBounds(0, 70, 92, 23);
@@ -849,53 +843,8 @@ public class SuratKontrol extends javax.swing.JDialog {
         FormInput.add(Alasan1);
         Alasan1.setBounds(96, 70, 279, 23);
 
-        Alasan2.setHighlighter(null);
-        Alasan2.setName("Alasan2"); // NOI18N
-        Alasan2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Alasan2KeyPressed(evt);
-            }
-        });
-        FormInput.add(Alasan2);
-        Alasan2.setBounds(474, 70, 266, 23);
-
-        jLabel8.setText("Alasan 2 :");
-        jLabel8.setName("jLabel8"); // NOI18N
-        FormInput.add(jLabel8);
-        jLabel8.setBounds(375, 70, 95, 23);
-
-        jLabel12.setText("Tindak Lanjut 1 :");
-        jLabel12.setName("jLabel12"); // NOI18N
-        FormInput.add(jLabel12);
-        jLabel12.setBounds(0, 100, 92, 23);
-
-        Rtl1.setHighlighter(null);
-        Rtl1.setName("Rtl1"); // NOI18N
-        Rtl1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Rtl1KeyPressed(evt);
-            }
-        });
-        FormInput.add(Rtl1);
-        Rtl1.setBounds(96, 100, 279, 23);
-
-        jLabel13.setText("Tindak Lanjut 2 :");
-        jLabel13.setName("jLabel13"); // NOI18N
-        FormInput.add(jLabel13);
-        jLabel13.setBounds(375, 100, 95, 23);
-
-        Rtl2.setHighlighter(null);
-        Rtl2.setName("Rtl2"); // NOI18N
-        Rtl2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Rtl2KeyPressed(evt);
-            }
-        });
-        FormInput.add(Rtl2);
-        Rtl2.setBounds(474, 100, 266, 23);
-
         TanggalPeriksa.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-07-2020 05:38:20" }));
+        TanggalPeriksa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "21-07-2020 06:58:34" }));
         TanggalPeriksa.setDisplayFormat("dd-MM-yyyy hh:mm:ss");
         TanggalPeriksa.setName("TanggalPeriksa"); // NOI18N
         TanggalPeriksa.setOpaque(false);
@@ -955,7 +904,7 @@ public class SuratKontrol extends javax.swing.JDialog {
             }
         });
         FormInput.add(Terapi);
-        Terapi.setBounds(474, 40, 266, 23);
+        Terapi.setBounds(474, 40, 266, 80);
 
         NoReg.setHighlighter(null);
         NoReg.setName("NoReg"); // NOI18N
@@ -972,7 +921,7 @@ public class SuratKontrol extends javax.swing.JDialog {
         FormInput.add(jLabel18);
         jLabel18.setBounds(375, 160, 95, 23);
 
-        jLabel19.setText("Periksa Kembali :");
+        jLabel19.setText("Tanggal Kontrol :");
         jLabel19.setName("jLabel19"); // NOI18N
         FormInput.add(jLabel19);
         jLabel19.setBounds(0, 160, 92, 23);
@@ -1310,18 +1259,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         Valid.pindah(evt,Terapi,Alasan2);
     }//GEN-LAST:event_Alasan1KeyPressed
 
-    private void Alasan2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Alasan2KeyPressed
-        Valid.pindah(evt,Alasan1,Rtl1);
-    }//GEN-LAST:event_Alasan2KeyPressed
-
-    private void Rtl1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Rtl1KeyPressed
-        Valid.pindah(evt,Alasan2,Rtl2);
-    }//GEN-LAST:event_Rtl1KeyPressed
-
-    private void Rtl2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Rtl2KeyPressed
-        Valid.pindah(evt,Rtl1,BtnDokter);
-    }//GEN-LAST:event_Rtl2KeyPressed
-
     private void TanggalPeriksaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TanggalPeriksaKeyPressed
         Valid.pindah(evt,BtnPoli,NoSurat);
     }//GEN-LAST:event_TanggalPeriksaKeyPressed
@@ -1459,7 +1396,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private widget.TextBox Alasan1;
-    private widget.TextBox Alasan2;
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
@@ -1489,8 +1425,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.RadioButton R1;
     private widget.RadioButton R2;
     private widget.RadioButton R3;
-    private widget.TextBox Rtl1;
-    private widget.TextBox Rtl2;
     private widget.ScrollPane Scroll;
     private widget.ComboBox Status;
     private widget.TextBox TCari;
@@ -1503,8 +1437,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel10;
     private widget.Label jLabel11;
-    private widget.Label jLabel12;
-    private widget.Label jLabel13;
     private widget.Label jLabel15;
     private widget.Label jLabel16;
     private widget.Label jLabel17;
@@ -1517,7 +1449,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Label jLabel5;
     private widget.Label jLabel6;
     private widget.Label jLabel7;
-    private widget.Label jLabel8;
     private widget.Label jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
