@@ -20,7 +20,7 @@ import bridging.BPJSNik;
 import bridging.BPJSPeserta;
 import bridging.CoronaPasien;
 import bridging.DlgDataTB;
-import bridging.DlgSKDPBPJS;
+import surat.SuratKontrol;
 import bridging.INACBGPerawatanCorona;
 import bridging.SisruteRujukanKeluar;
 import laporan.DlgDiagnosaPenyakit;
@@ -8524,7 +8524,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                       psanak.setString(1,tbKamIn.getValueAt(tbKamIn.getSelectedRow()-1,0).toString());
                       rs2=psanak.executeQuery();
                       if(rs2.next()){
-                            DlgSKDPBPJS form=new DlgSKDPBPJS(null,false);
+                            SuratKontrol form=new SuratKontrol(null,false);
                             form.isCek();
                             form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                             form.setLocationRelativeTo(internalFrame1);
@@ -8549,7 +8549,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 System.out.println(e);
             }                
         }else{
-            DlgSKDPBPJS form=new DlgSKDPBPJS(null,false);
+            SuratKontrol form=new SuratKontrol(null,false);
             form.isCek();
             form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
             form.setLocationRelativeTo(internalFrame1);

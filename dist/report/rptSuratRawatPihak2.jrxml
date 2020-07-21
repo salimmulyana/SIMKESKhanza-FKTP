@@ -94,7 +94,7 @@
 				<text><![CDATA[Pemeriksa]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="464" y="247" width="60" height="21" uuid="e6bdbd41-b93b-440c-a88a-0e1f58d78c7c"/>
+				<reportElement x="464" y="256" width="60" height="21" uuid="e6bdbd41-b93b-440c-a88a-0e1f58d78c7c"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -102,7 +102,7 @@
 				<textFieldExpression><![CDATA[$P{hari}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd MMMMM yyyy">
-				<reportElement x="189" y="247" width="68" height="21" uuid="64356205-3deb-46c9-85d7-ca00499e88bb"/>
+				<reportElement x="189" y="256" width="68" height="21" uuid="64356205-3deb-46c9-85d7-ca00499e88bb"/>
 				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -110,7 +110,7 @@
 				<textFieldExpression><![CDATA[$P{TanggalAwal}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="257" y="246" width="87" height="21" uuid="75772f25-5466-4b1a-b79b-47a4aaf29f8d"/>
+				<reportElement x="257" y="255" width="87" height="21" uuid="75772f25-5466-4b1a-b79b-47a4aaf29f8d"/>
 				<textElement textAlignment="Center">
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -118,7 +118,7 @@
 				<text><![CDATA[sampai dengan]]></text>
 			</staticText>
 			<textField pattern="dd MMMMM yyyy">
-				<reportElement x="346" y="247" width="75" height="21" uuid="7e847ec8-621c-4860-8375-de3da8319d61"/>
+				<reportElement x="346" y="256" width="75" height="21" uuid="7e847ec8-621c-4860-8375-de3da8319d61"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -176,7 +176,7 @@
 				<text><![CDATA[SURAT KETERANGAN RAWAT INAP ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="91" y="247" width="99" height="21" uuid="16b89316-8b69-4d0e-8138-b1558188be41"/>
+				<reportElement x="91" y="256" width="99" height="21" uuid="16b89316-8b69-4d0e-8138-b1558188be41"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -184,7 +184,7 @@
 				<text><![CDATA[Mulai dari tanggal]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="526" y="247" width="27" height="21" uuid="cc094e23-69db-48be-a3d1-4aa1a00c6271"/>
+				<reportElement x="526" y="256" width="27" height="21" uuid="cc094e23-69db-48be-a3d1-4aa1a00c6271"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -192,7 +192,7 @@
 				<text><![CDATA[hari]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="276" width="554" height="21" uuid="2a6a0f25-49f6-4c7f-94ff-b01d6399b5d7"/>
+				<reportElement x="0" y="285" width="554" height="14" uuid="2a6a0f25-49f6-4c7f-94ff-b01d6399b5d7"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -248,7 +248,7 @@
 				<text><![CDATA[berkepentingan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="247" width="78" height="21" uuid="3486cdbf-ab14-4207-bc47-9117c73cbd1c"/>
+				<reportElement x="0" y="256" width="78" height="21" uuid="3486cdbf-ab14-4207-bc47-9117c73cbd1c"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -256,7 +256,7 @@
 				<text><![CDATA[Keterangan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="78" y="247" width="7" height="21" uuid="3b124a0a-85a5-4cb8-b0b7-1e3824f96ffb"/>
+				<reportElement x="78" y="256" width="7" height="21" uuid="3b124a0a-85a5-4cb8-b0b7-1e3824f96ffb"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -264,7 +264,7 @@
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="421" y="247" width="43" height="21" uuid="f68f811d-cb77-464c-a555-6403774fcdbc"/>
+				<reportElement x="421" y="256" width="43" height="21" uuid="f68f811d-cb77-464c-a555-6403774fcdbc"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -272,7 +272,7 @@
 				<text><![CDATA[selama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="93" y="259" width="74" height="21" uuid="9623ffcd-e5c2-491e-95c5-5fdcd65a9de8"/>
+				<reportElement x="93" y="268" width="74" height="21" uuid="9623ffcd-e5c2-491e-95c5-5fdcd65a9de8"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -280,7 +280,7 @@
 				<text><![CDATA[rawat inap di]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="167" y="259" width="170" height="17" uuid="2a56badc-3667-4627-894c-b315b11a62c2"/>
+				<reportElement x="167" y="268" width="170" height="17" uuid="2a56badc-3667-4627-894c-b315b11a62c2"/>
 				<textElement textAlignment="Left">
 					<font fontName="Tahoma" size="10" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -567,6 +567,29 @@
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Yang bertanda tangan dibawah ini menerangkan bahwa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="121" y="241" width="261" height="15" uuid="76aa2a18-0cf0-49f0-a630-e420e9937743"/>
+				<textElement>
+					<font fontName="Tahoma&#xA;" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{penyakit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="241" width="78" height="16" uuid="957c3579-28b0-4d64-87bb-f9e102552ab1"/>
+				<textElement>
+					<font fontName="Tahoma" size="10"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Diagnosa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="241" width="7" height="21" uuid="cd28733d-c333-4290-b88c-18463405e9f7"/>
+				<textElement>
+					<font fontName="Tahoma" size="10"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
 			</staticText>
 		</band>
 	</detail>
