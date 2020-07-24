@@ -134,7 +134,15 @@ public final class akses {
             toko_bayar_pemesanan=false,toko_member=false,toko_penjualan=false,registrasi_poli_per_tanggal=false,toko_piutang=false,toko_retur_beli=false,
             ipsrs_returbeli=false,ipsrs_riwayat_barang=false,pasien_corona=false,toko_pendapatan_harian=false,diagnosa_pasien_corona=false,
             perawatan_pasien_corona=false,penilaian_awal_keperawatan_gigi=false,master_masalah_keperawatan_gigi=false,toko_bayar_piutang=false,
-            toko_piutang_harian=false,toko_penjualan_harian=false,deteksi_corona=false;
+            toko_piutang_harian=false,toko_penjualan_harian=false,deteksi_corona=false,penilaian_awal_keperawatan_kebidanan=false,pengumuman_epasien=false,
+            set_tarif_online=false,booking_periksa=false,toko_sirkulasi=false,toko_retur_jual=false,toko_retur_piutang=false,
+            toko_sirkulasi2=false,toko_keuntungan_barang=false,zis_pengeluaran_penerima_dankes=false,zis_penghasilan_penerima_dankes=false,
+            zis_ukuran_rumah_penerima_dankes=false,zis_dinding_rumah_penerima_dankes=false,zis_lantai_rumah_penerima_dankes=false,
+            zis_atap_rumah_penerima_dankes=false,zis_kepemilikan_rumah_penerima_dankes=false,zis_kamar_mandi_penerima_dankes=false,
+            zis_dapur_rumah_penerima_dankes=false,zis_kursi_rumah_penerima_dankes=false,zis_kategori_phbs_penerima_dankes=false,
+            zis_elektronik_penerima_dankes=false,zis_ternak_penerima_dankes=false,zis_jenis_simpanan_penerima_dankes=false,penilaian_awal_keperawatan_anak=false,
+            zis_kategori_asnaf_penerima_dankes=false,master_masalah_keperawatan_anak=false,master_imunisasi=false,zis_patologis_penerima_dankes=false,
+            pcare_cek_kartu=false,surat_bebas_narkoba=false,surat_keterangan_covid=false;
     
     public static void setData(String user, String pass) {
        try {                
@@ -2705,4 +2713,36 @@ public final class akses {
     public static boolean gettoko_piutang_harian(){return akses.toko_piutang_harian;}
     public static boolean gettoko_penjualan_harian(){return akses.toko_penjualan_harian;}
     public static boolean getdeteksi_corona(){return akses.deteksi_corona;}
+    public static boolean getpenilaian_awal_keperawatan_kebidanan(){return akses.penilaian_awal_keperawatan_kebidanan;}
+    public static boolean getpengumuman_epasien(){return akses.pengumuman_epasien;}
+   // public static boolean getsurat_hamil(){return akses.surat_hamil;}
+    public static boolean getset_tarif_online(){return akses.set_tarif_online;}
+    public static boolean getbooking_periksa(){return akses.booking_periksa;}
+    public static boolean gettoko_sirkulasi(){return akses.toko_sirkulasi;}
+    public static boolean gettoko_retur_jual(){return akses.toko_retur_jual;}
+    public static boolean gettoko_retur_piutang(){return akses.toko_retur_piutang;}
+    public static boolean gettoko_sirkulasi2(){return akses.toko_sirkulasi2;}
+    public static boolean gettoko_keuntungan_barang(){return akses.toko_keuntungan_barang;}
+    public static boolean getzis_pengeluaran_penerima_dankes(){return akses.zis_pengeluaran_penerima_dankes;}
+    public static boolean getzis_penghasilan_penerima_dankes(){return akses.zis_penghasilan_penerima_dankes;}
+    public static boolean getzis_ukuran_rumah_penerima_dankes(){return akses.zis_ukuran_rumah_penerima_dankes;}
+    public static boolean getzis_dinding_rumah_penerima_dankes(){return akses.zis_dinding_rumah_penerima_dankes;}
+    public static boolean getzis_lantai_rumah_penerima_dankes(){return akses.zis_lantai_rumah_penerima_dankes;}
+    public static boolean getzis_atap_rumah_penerima_dankes(){return akses.zis_atap_rumah_penerima_dankes;}
+    public static boolean getzis_kepemilikan_rumah_penerima_dankes(){return akses.zis_kepemilikan_rumah_penerima_dankes;}
+    public static boolean getzis_kamar_mandi_penerima_dankes(){return akses.zis_kamar_mandi_penerima_dankes;}
+    public static boolean getzis_dapur_rumah_penerima_dankes(){return akses.zis_dapur_rumah_penerima_dankes;}
+    public static boolean getzis_kursi_rumah_penerima_dankes(){return akses.zis_kursi_rumah_penerima_dankes;}
+    public static boolean getzis_kategori_phbs_penerima_dankes(){return akses.zis_kategori_phbs_penerima_dankes;}
+    public static boolean getzis_elektronik_penerima_dankes(){return akses.zis_elektronik_penerima_dankes;}
+    public static boolean getzis_ternak_penerima_dankes(){return akses.zis_ternak_penerima_dankes;}
+    public static boolean getzis_jenis_simpanan_penerima_dankes(){return akses.zis_jenis_simpanan_penerima_dankes;}
+    public static boolean getpenilaian_awal_keperawatan_anak(){return akses.penilaian_awal_keperawatan_anak;}
+    public static boolean getzis_kategori_asnaf_penerima_dankes(){return akses.zis_kategori_asnaf_penerima_dankes;}
+    public static boolean getmaster_masalah_keperawatan_anak(){return akses.master_masalah_keperawatan_anak;}
+    public static boolean getmaster_imunisasi(){return akses.master_imunisasi;}
+    public static boolean getzis_patologis_penerima_dankes(){return akses.zis_patologis_penerima_dankes;}
+    public static boolean getpcare_cek_kartu(){return akses.pcare_cek_kartu;}
+    public static boolean getsurat_bebas_narkoba(){return akses.surat_bebas_narkoba;}
+    public static boolean getsurat_keterangan_covid(){return akses.surat_keterangan_covid;}
 }   
