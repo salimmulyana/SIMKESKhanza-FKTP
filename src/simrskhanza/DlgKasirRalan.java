@@ -8182,6 +8182,7 @@ private void MnDataPemberianObatActionPerformed(java.awt.event.ActionEvent evt) 
                 resume.setLocationRelativeTo(internalFrame1);
                 resume.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate());
                 resume.tampil();
+                resume.nomorSurat();
                 resume.setVisible(true);
                 this.setCursor(Cursor.getDefaultCursor());
             }
