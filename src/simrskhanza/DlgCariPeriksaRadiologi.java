@@ -1381,7 +1381,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
             Sequel.cariIsi("select no_rkm_medis from reg_periksa where no_rawat=? ",NoRM,Kd2.getText());
             Sequel.cariIsi("select jk from pasien where no_rkm_medis=? ",Jk,NoRM.getText());
             Sequel.cariIsi("select umur from pasien where no_rkm_medis=?",Umur,NoRM.getText());
-            Sequel.cariIsi("select alamat from pasien where no_rkm_medis=? ",Alamat,NoRM.getText());
+            Sequel.cariIsi("select almt_pj from reg_periksa where no_rawat=? ",Alamat,Kd2.getText());
             
             kamar=Sequel.cariIsi("select ifnull(kd_kamar,'') from kamar_inap where no_rawat='"+Kd2.getText()+"' order by tgl_masuk desc limit 1");
             if(!kamar.equals("")){

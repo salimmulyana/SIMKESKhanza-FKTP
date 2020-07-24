@@ -119,9 +119,6 @@ public class SuratKontrol extends javax.swing.JDialog {
         Diagnosa.setDocument(new batasInput((int)50).getKata(Diagnosa));
         Terapi.setDocument(new batasInput((int)50).getKata(Terapi));
         Alasan1.setDocument(new batasInput((int)50).getKata(Alasan1));
-        Alasan2.setDocument(new batasInput((int)50).getKata(Alasan2));
-        Rtl1.setDocument(new batasInput((int)50).getKata(Rtl1));
-        Rtl2.setDocument(new batasInput((int)50).getKata(Rtl2));
         NoReg.setDocument(new batasInput((byte)6).getKata(NoReg));
         KdDokter.setDocument(new batasInput((byte)20).getKata(KdDokter));
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -1165,7 +1162,7 @@ private void BtnDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event
     if(evt.getKeyCode()==KeyEvent.VK_SPACE){
         BtnDokterActionPerformed(null);
     }else{
-        Valid.pindah(evt,Rtl2,BtnPoli);
+        Valid.pindah(evt,Alasan1,BtnPoli);
     }        
 }//GEN-LAST:event_BtnDokterKeyPressed
 
@@ -1208,7 +1205,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             if(tbObat.getSelectedRow()!= -1){
                 if(Sequel.mengedittf("skdp_bpjs","tahun=? and no_antrian=?","tahun=?,no_rkm_medis=?,diagnosa=?,terapi=?,alasan1=?,alasan2=?,rtl1=?,rtl2=?,tanggal_datang=?,tanggal_rujukan=?,no_antrian=?,kd_dokter=?,status=?",15,new String[]{
                         TanggalPeriksa.getSelectedItem().toString().substring(6,10),TNoRM.getText(),Diagnosa.getText(),Terapi.getText(),
-                        Alasan1.getText(),Alasan2.getText(),Rtl1.getText(),Rtl2.getText(),Valid.SetTgl(TanggalPeriksa.getSelectedItem()+""),
+                        Alasan1.getText(),Valid.SetTgl(TanggalPeriksa.getSelectedItem()+""),
                         Valid.SetTgl(TanggalSurat.getSelectedItem()+""),NoSurat.getText(),KdDokter.getText(),Status.getSelectedItem().toString(),
                         tbObat.getValueAt(tbObat.getSelectedRow(),0).toString(),tbObat.getValueAt(tbObat.getSelectedRow(),11).toString()
                   })==true){
@@ -1256,7 +1253,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_DTPCari4ItemStateChanged
 
     private void Alasan1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Alasan1KeyPressed
-        Valid.pindah(evt,Terapi,Alasan2);
+        Valid.pindah(evt,Terapi,Alasan1);
     }//GEN-LAST:event_Alasan1KeyPressed
 
     private void TanggalPeriksaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TanggalPeriksaKeyPressed
@@ -1547,9 +1544,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         KdPoli.setText("");
         NmPoli.setText("");
         Alasan1.setText("");
-        Alasan2.setText("");
-        Rtl1.setText("");
-        Rtl2.setText("");
         Terapi.setText("");
         Diagnosa.setText("");
         TanggalSurat.setDate(new Date());
@@ -1583,9 +1577,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             Diagnosa.setText(tbObat.getValueAt(tbObat.getSelectedRow(),3).toString());
             Terapi.setText(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString());
             Alasan1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),5).toString());
-            Alasan2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());
-            Rtl1.setText(tbObat.getValueAt(tbObat.getSelectedRow(),7).toString());
-            Rtl2.setText(tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
             Valid.SetTgl(TanggalPeriksa,tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
             Valid.SetTgl(TanggalSurat,tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
             NoSurat.setText(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
@@ -1648,7 +1639,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private void isBooking(){
         if(Sequel.menyimpantf("skdp_bpjs","?,?,?,?,?,?,?,?,?,?,?,?,?","Tahun dan nomor surat",13,new String[]{
              TanggalPeriksa.getSelectedItem().toString().substring(6,10),TNoRM.getText(),Diagnosa.getText(),Terapi.getText(),
-             Alasan1.getText(),Alasan2.getText(),Rtl1.getText(),Rtl2.getText(),Valid.SetTgl(TanggalPeriksa.getSelectedItem()+""),
+             Alasan1.getText(),Valid.SetTgl(TanggalPeriksa.getSelectedItem()+""),
              Valid.SetTgl(TanggalSurat.getSelectedItem()+""),NoSurat.getText(),KdDokter.getText(),Status.getSelectedItem().toString()
          })==true){
              Sequel.menyimpan2("booking_registrasi","?,?,?,?,?,?,?,?,?,?,?","Pasien dan Tanggal",11,new String[]{
