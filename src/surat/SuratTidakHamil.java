@@ -43,7 +43,7 @@ public final class SuratTidakHamil extends javax.swing.JDialog {
     private PreparedStatement ps;
     private ResultSet rs;
     private int i=0;
-    private String tgl;
+    private String tgl, bln_angka = "", bln_romawi = "";
     /** Creates new form DlgRujuk
      * @param parent
      * @param modal */
@@ -81,7 +81,7 @@ public final class SuratTidakHamil extends javax.swing.JDialog {
             }
         }
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());        
-        NoSurat.setDocument(new batasInput((byte)25).getKata(NoSurat));
+        NoSurat.setDocument(new batasInput((byte)100).getKata(NoSurat));
         TNoRw.setDocument(new batasInput((byte)25).getKata(TNoRw));           
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));           
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -894,8 +894,9 @@ public final class SuratTidakHamil extends javax.swing.JDialog {
         TPasien.setText("");
         NoSurat.setText("");
         TanggalPeriksa.setDate(new Date());
-        Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_surat,3),signed)),0) from surat_hamil where tanggalperiksa='"+Valid.SetTgl(TanggalPeriksa.getSelectedItem()+"")+"' ",
-                "SKH"+TanggalPeriksa.getSelectedItem().toString().substring(6,10)+TanggalPeriksa.getSelectedItem().toString().substring(3,5)+TanggalPeriksa.getSelectedItem().toString().substring(0,2),3,NoSurat); 
+       // Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_surat,3),signed)),0) from surat_hamil where tanggalperiksa='"+Valid.SetTgl(TanggalPeriksa.getSelectedItem()+"")+"' ",
+         //       "SKH"+TanggalPeriksa.getSelectedItem().toString().substring(6,10)+TanggalPeriksa.getSelectedItem().toString().substring(3,5)+TanggalPeriksa.getSelectedItem().toString().substring(0,2),3,NoSurat); 
+        nomorSurat();
         NoSurat.requestFocus();
     }
 
@@ -949,6 +950,41 @@ public final class SuratTidakHamil extends javax.swing.JDialog {
         BtnSimpan.setEnabled(akses.getsurat_hamil());
         BtnHapus.setEnabled(akses.getsurat_hamil());
         BtnEdit.setEnabled(akses.getsurat_hamil());
+    }
+public void nomorSurat() {
+        bln_angka = "";
+        bln_romawi = "";
+        
+        bln_angka = TanggalPeriksa.getSelectedItem().toString().substring(3,5);
+        
+        if (bln_angka.equals("01")) {
+            bln_romawi = "I";
+        } else if (bln_angka.equals("02")) {
+            bln_romawi = "II";
+        } else if (bln_angka.equals("03")) {
+            bln_romawi = "III";
+        } else if (bln_angka.equals("04")) {
+            bln_romawi = "IV";
+        } else if (bln_angka.equals("05")) {
+            bln_romawi = "V";
+        } else if (bln_angka.equals("06")) {
+            bln_romawi = "VI";
+        } else if (bln_angka.equals("07")) {
+            bln_romawi = "VII";
+        } else if (bln_angka.equals("08")) {
+            bln_romawi = "VIII";
+        } else if (bln_angka.equals("09")) {
+            bln_romawi = "IX";
+        } else if (bln_angka.equals("10")) {
+            bln_romawi = "X";
+        } else if (bln_angka.equals("11")) {
+            bln_romawi = "XI";
+        } else if (bln_angka.equals("12")) {
+            bln_romawi = "XII";
+        }
+
+        Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_surat,3),signed)),0) from surat_hamil where "
+                + "tanggalperiksa='" + Valid.SetTgl(TanggalPeriksa.getSelectedItem()+"") + "' ", "/SKH/" + bln_romawi + "/" + TanggalPeriksa.getSelectedItem().toString().substring(6,10), 3, NoSurat);
     }
 }
 
