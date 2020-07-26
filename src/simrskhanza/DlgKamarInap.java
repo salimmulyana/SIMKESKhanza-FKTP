@@ -9936,7 +9936,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                 System.out.println(e);
             }
       }else{
-                DlgSuratSakit dlgsakit=new DlgSuratSakit(null,false);
+                SuratSakit dlgsakit=new SuratSakit(null,false);
                 dlgsakit.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                 dlgsakit.setLocationRelativeTo(internalFrame1);
                 dlgsakit.emptTeks();
