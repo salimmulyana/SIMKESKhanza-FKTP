@@ -66,6 +66,7 @@ import permintaan.DlgPermintaanLaboratorium;
 import permintaan.DlgPermintaanRadiologi;
 import rekammedis.RMDataAsuhanGizi;
 import rekammedis.RMDataMonitoringAsuhanGizi;
+import surat.SuratSakit;
 
 /**
  *
@@ -9909,14 +9910,14 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     psanak.setString(1,tbKamIn.getValueAt(tbKamIn.getSelectedRow()-1,0).toString());
                     rs2=psanak.executeQuery();
                     if(rs2.next()){
-                        DlgSuratSakit dlgsakit=new DlgSuratSakit(null,false);
-                        dlgsakit.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
-                        dlgsakit.setLocationRelativeTo(internalFrame1);
-                        dlgsakit.emptTeks();
-                        dlgsakit.isCek();
-                        dlgsakit.setNoRm(rs2.getString("no_rawat2"),DTPCari1.getDate(),DTPCari2.getDate()); 
-                        dlgsakit.tampil();
-                        dlgsakit.setVisible(true);
+                        SuratSakit SuratSakit=new SuratSakit(null,false);
+                        SuratSakit.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+                        SuratSakit.setLocationRelativeTo(internalFrame1);
+                        SuratSakit.emptTeks();
+                        SuratSakit.isCek();
+                        SuratSakit.setNoRm(rs2.getString("no_rawat2"),DTPCari1.getDate(),DTPCari2.getDate()); 
+                        SuratSakit.tampil();
+                        SuratSakit.setVisible(true);
                     }else{
                           JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
                           tbKamIn.requestFocus();
