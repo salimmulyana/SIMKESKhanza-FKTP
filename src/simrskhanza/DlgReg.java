@@ -9458,6 +9458,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
             form.setLocationRelativeTo(internalFrame1);
             form.emptTeks();
+            form.nomorSurat();
             form.isCek();
             form.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate()); 
             form.tampil();
@@ -9526,6 +9527,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                 SuratBebasNarkoba resume=new SuratBebasNarkoba(null,false);
                 resume.isCek();
                 resume.emptTeks();
+                resume.nomorSurat();
                 resume.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                 resume.setLocationRelativeTo(internalFrame1);
                 resume.setNoRm(TNoRw.getText(),DTPCari1.getDate(),DTPCari2.getDate());

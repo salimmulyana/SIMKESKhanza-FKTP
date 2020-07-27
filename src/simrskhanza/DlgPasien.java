@@ -3168,7 +3168,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(0, 280, 95, 23);
 
-        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
+        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-07-2020" }));
         DTPLahir.setDisplayFormat("dd-MM-yyyy");
         DTPLahir.setName("DTPLahir"); // NOI18N
         DTPLahir.setOpaque(false);
@@ -3305,7 +3305,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TKtp);
         TKtp.setBounds(712, 132, 130, 23);
 
-        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
+        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-07-2020" }));
         DTPDaftar.setDisplayFormat("dd-MM-yyyy");
         DTPDaftar.setName("DTPDaftar"); // NOI18N
         DTPDaftar.setOpaque(false);
@@ -4217,7 +4217,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TTmpPj);
         TTmpPj.setBounds(100, 280, 190, 24);
 
-        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
+        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-07-2020" }));
         DTPLahirPj.setDisplayFormat("dd-MM-yyyy");
         DTPLahirPj.setName("DTPLahirPj"); // NOI18N
         DTPLahirPj.addItemListener(new java.awt.event.ItemListener() {
@@ -4264,6 +4264,11 @@ public class DlgPasien extends javax.swing.JDialog {
         jLabel47.setBounds(280, 310, 30, 23);
 
         TUmurThPj.setName("TUmurThPj"); // NOI18N
+        TUmurThPj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TUmurThPjActionPerformed(evt);
+            }
+        });
         FormInput.add(TUmurThPj);
         TUmurThPj.setBounds(100, 310, 40, 24);
 
@@ -8327,6 +8332,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         }
     }//GEN-LAST:event_MnCover2ActionPerformed
 
+    private void TUmurThPjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TUmurThPjActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TUmurThPjActionPerformed
+
     /**
      * @data args the command line arguments
      */
@@ -8714,6 +8723,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.agama like ? "+
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.nm_ibu like ? "+
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.tgl_daftar like ? "+
+                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_kk like ? "+
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_tlp like ?  order by pasien.no_rkm_medis desc");  
                  }    
             }else{
@@ -8763,6 +8773,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.agama like ? "+
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.nm_ibu like ? "+
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.tgl_daftar like ? "+
+                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_kk like ? "+
                             "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_tlp like ?  order by pasien.no_rkm_medis desc LIMIT ? ");    
                 }       
             }          
@@ -8811,6 +8822,8 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         ps.setString(40, "%"+TCari.getText().trim()+"%");
                         ps.setString(41,"%"+Carialamat.getText().trim()+"%");
                         ps.setString(42, "%"+TCari.getText().trim()+"%");
+                        ps.setString(43,"%"+Carialamat.getText().trim()+"%");
+                        ps.setString(44, "%"+TCari.getText().trim()+"%");
                     }
                         
                 }else{
@@ -8859,7 +8872,9 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         ps.setString(40, "%"+TCari.getText().trim()+"%");
                         ps.setString(41,"%"+Carialamat.getText().trim()+"%");
                         ps.setString(42, "%"+TCari.getText().trim()+"%");
-                        ps.setInt(43,Integer.parseInt(cmbHlm.getSelectedItem().toString()));
+                        ps.setString(43,"%"+Carialamat.getText().trim()+"%");
+                        ps.setString(44, "%"+TCari.getText().trim()+"%");
+                        ps.setInt(45,Integer.parseInt(cmbHlm.getSelectedItem().toString()));
                     }
                 }
                 rs=ps.executeQuery();
@@ -8958,6 +8973,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.agama like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.nm_ibu like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.tgl_daftar like ? "+
+                           "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_kk like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_tlp like ?   order by pasien.no_rkm_medis desc");  
                 }
                     
@@ -9021,6 +9037,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.agama like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.nm_ibu like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.tgl_daftar like ? "+
+                           "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_kk like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_tlp like ?  order by pasien.no_rkm_medis desc LIMIT ? "); 
                 }   
             }             
@@ -9077,6 +9094,8 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         ps.setString(48, "%"+TCari.getText().trim()+"%");
                         ps.setString(49,"%"+Carialamat.getText().trim()+"%");
                         ps.setString(50, "%"+TCari.getText().trim()+"%");
+                        ps.setString(51,"%"+Carialamat.getText().trim()+"%");
+                        ps.setString(52, "%"+TCari.getText().trim()+"%");
                     }   
                 }else{
                     if(Carialamat.getText().trim().equals("")&&TCari.getText().trim().equals("")){
@@ -9132,7 +9151,9 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         ps.setString(48, "%"+TCari.getText().trim()+"%");
                         ps.setString(49,"%"+Carialamat.getText().trim()+"%");
                         ps.setString(50, "%"+TCari.getText().trim()+"%");
-                        ps.setInt(51,Integer.parseInt(cmbHlm.getSelectedItem().toString()));
+                        ps.setString(51,"%"+Carialamat.getText().trim()+"%");
+                        ps.setString(52, "%"+TCari.getText().trim()+"%");
+                        ps.setInt(53,Integer.parseInt(cmbHlm.getSelectedItem().toString()));
                     }
                 }
                 rs=ps.executeQuery();
@@ -9232,6 +9253,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.agama like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.nm_ibu like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.tgl_daftar like ? "+
+                           "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_kk like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_tlp like ?   order by pasien.no_rkm_medis desc");  
                  }
                     
@@ -9295,6 +9317,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.agama like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.nm_ibu like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.tgl_daftar like ? "+
+                           "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_kk like ? "+
                            "or  concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab,', ',propinsi.nm_prop) like ?  and pasien.no_tlp like ?  order by pasien.no_rkm_medis desc LIMIT ? ");  
                  }
              }
@@ -9352,6 +9375,8 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         ps.setString(48, "%"+TCari.getText().trim()+"%");
                         ps.setString(49,"%"+Carialamat.getText().trim()+"%");
                         ps.setString(50, "%"+TCari.getText().trim()+"%");
+                        ps.setString(51,"%"+Carialamat.getText().trim()+"%");
+                        ps.setString(52, "%"+TCari.getText().trim()+"%");
                     }   
                 }else{
                     if(Carialamat.getText().trim().equals("")&&TCari.getText().trim().equals("")){
@@ -9407,7 +9432,9 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
                         ps.setString(48, "%"+TCari.getText().trim()+"%");
                         ps.setString(49,"%"+Carialamat.getText().trim()+"%");
                         ps.setString(50, "%"+TCari.getText().trim()+"%");
-                        ps.setInt(51,Integer.parseInt(cmbHlm.getSelectedItem().toString()));
+                        ps.setString(51,"%"+Carialamat.getText().trim()+"%");
+                        ps.setString(52, "%"+TCari.getText().trim()+"%");
+                        ps.setInt(53,Integer.parseInt(cmbHlm.getSelectedItem().toString()));
                     }   
                 }
                 rs=ps.executeQuery();
