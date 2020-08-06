@@ -79,7 +79,7 @@ public final class akses {
             grafik_kunjungan_per_agama=false,grafik_kunjungan_per_umur=false,suku_bangsa=false,bahasa_pasien=false,golongan_tni=false,satuan_tni=false,
             jabatan_tni=false,pangkat_tni=false,golongan_polri=false,satuan_polri=false,jabatan_polri=false,pangkat_polri=false,cacat_fisik=false,
             grafik_kunjungan_suku=false,grafik_kunjungan_bahasa=false,booking_operasi=false,mapping_poli_bpjs=false,grafik_kunjungan_per_cacat=false,
-            barang_cssd=false,skdp_bpjs=false,booking_registrasi=false,bpjs_cek_propinsi=false,bpjs_cek_kabupaten=false,bpjs_cek_kecamatan=false,
+            barang_cssd=false,skdp_bpjs=false,surat_kontrol=false,booking_registrasi=false,bpjs_cek_propinsi=false,bpjs_cek_kabupaten=false,bpjs_cek_kecamatan=false,
             bpjs_cek_dokterdpjp=false,bpjs_cek_riwayat_rujukanrs=false,bpjs_cek_tanggal_rujukan=false,permintaan_lab=false,permintaan_radiologi=false,
             surat_indeks=false,surat_map=false,surat_almari=false,surat_rak=false,surat_ruang=false,surat_klasifikasi=false,surat_status=false,
             surat_sifat=false,surat_balas=false,surat_masuk=false,pcare_cek_dokter=false,pcare_cek_poli=false,pcare_cek_provider=false,
@@ -523,6 +523,7 @@ public final class akses {
                         akses.grafik_kunjungan_per_cacat=true;
                         akses.barang_cssd=true;
                         akses.skdp_bpjs=true;
+                        akses.surat_kontrol=true;
                         akses.booking_registrasi=true;
                         akses.bpjs_cek_propinsi=true;
                         akses.bpjs_cek_kabupaten=true;
@@ -1185,6 +1186,7 @@ public final class akses {
                         akses.grafik_kunjungan_per_cacat=rs2.getBoolean("grafik_kunjungan_per_cacat");
                         akses.barang_cssd=rs2.getBoolean("barang_cssd");
                         akses.skdp_bpjs=rs2.getBoolean("skdp_bpjs");
+                        akses.surat_kontrol=rs2.getBoolean("surat_kontrol");
                         akses.booking_registrasi=rs2.getBoolean("booking_registrasi");
                         akses.bpjs_cek_propinsi=rs2.getBoolean("bpjs_cek_propinsi");
                         akses.bpjs_cek_kabupaten=rs2.getBoolean("bpjs_cek_kabupaten");
@@ -1845,6 +1847,7 @@ public final class akses {
                         akses.grafik_kunjungan_per_cacat=false;
                         akses.barang_cssd=false;
                         akses.skdp_bpjs=false;
+                        akses.surat_kontrol=false;
                         akses.booking_registrasi=false;
                         akses.bpjs_cek_propinsi=false;
                         akses.bpjs_cek_kabupaten=false;
@@ -2553,6 +2556,7 @@ public final class akses {
     public static boolean getgrafik_kunjungan_per_cacat(){return akses.grafik_kunjungan_per_cacat;}
     public static boolean getbarang_cssd(){return akses.barang_cssd;}
     public static boolean getskdp_bpjs(){return akses.skdp_bpjs;}
+    public static boolean getsurat_kontrol(){return akses.surat_kontrol;}
     public static boolean getbooking_registrasi(){return akses.booking_registrasi;}
     public static boolean getbpjs_cek_propinsi(){return akses.bpjs_cek_propinsi;}
     public static boolean getbpjs_cek_kabupaten(){return akses.bpjs_cek_kabupaten;}
