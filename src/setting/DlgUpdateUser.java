@@ -598,7 +598,7 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                         "piutang_akun_piutang,grafik_kunjungan_per_agama,grafik_kunjungan_per_umur,suku_bangsa,bahasa_pasien,"+
                         "golongan_tni,satuan_tni,jabatan_tni,pangkat_tni,golongan_polri,satuan_polri,jabatan_polri,pangkat_polri, "+
                         "cacat_fisik,grafik_kunjungan_suku,grafik_kunjungan_bahasa,booking_operasi,mapping_poli_bpjs,grafik_kunjungan_per_cacat, "+
-                        "barang_cssd,skdp_bpjs,booking_registrasi,bpjs_cek_propinsi,bpjs_cek_kabupaten,bpjs_cek_kecamatan, "+
+                        "barang_cssd,skdp_bpjs,surat_kontrol,booking_registrasi,bpjs_cek_propinsi,bpjs_cek_kabupaten,bpjs_cek_kecamatan, "+
                         "bpjs_cek_dokterdpjp,bpjs_cek_riwayat_rujukanrs,bpjs_cek_tanggal_rujukan,permintaan_lab,permintaan_radiologi, "+
                         "surat_indeks,surat_map,surat_almari,surat_rak,surat_ruang,surat_klasifikasi,surat_status,surat_sifat,surat_balas,"+
                         "surat_masuk,pcare_cek_dokter,pcare_cek_poli,pcare_cek_provider,pcare_cek_statuspulang,pcare_cek_spesialis,"+
@@ -648,7 +648,7 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                         "toko_pengadaan_barang,toko_hutang,toko_bayar_pemesanan,toko_member,toko_penjualan,registrasi_poli_per_tanggal,"+
                         "toko_piutang,toko_retur_beli,ipsrs_returbeli,ipsrs_riwayat_barang,pasien_corona,toko_pendapatan_harian,"+
                         "diagnosa_pasien_corona,perawatan_pasien_corona,penilaian_awal_keperawatan_gigi,master_masalah_keperawatan_gigi,"+
-                        "toko_bayar_piutang,toko_piutang_harian,toko_penjualan_harian,deteksi_corona from user where id_user=AES_ENCRYPT(?,'nur')");
+                        "toko_bayar_piutang,toko_piutang_harian,toko_penjualan_harian,deteksi_corona,surat_kontrol from user where id_user=AES_ENCRYPT(?,'nur')");
             try {
                 ps.setString(1,user);
                 rs=ps.executeQuery();
@@ -2075,6 +2075,9 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                     
                     if("[K]SKDP BPJS".toLowerCase().contains(TCari.getText().toLowerCase())){
                         tabMode.addRow(new Object[]{false,"[K]SKDP BPJS",rs.getBoolean("skdp_bpjs")});
+                    }
+                    if("Surat Kontrol".toLowerCase().contains(TCari.getText().toLowerCase())){
+                        tabMode.addRow(new Object[]{false,"Surat Kontrol",rs.getBoolean("surat_kontrol")});
                     }
                     
                     if("[K]Referensi Propinsi VClaim".toLowerCase().contains(TCari.getText().toLowerCase())){
@@ -4550,6 +4553,10 @@ public class DlgUpdateUser extends javax.swing.JDialog {
 
             if("[K]SKDP BPJS".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","skdp_bpjs='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("Surat Kontrol".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_kontrol='"+tbUser.getValueAt(i,2).toString()+"'");
             }
 
             if("[K]Referensi Propinsi VClaim".equals(tbUser.getValueAt(i,1).toString())){

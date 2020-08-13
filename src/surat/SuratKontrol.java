@@ -331,7 +331,7 @@ public class SuratKontrol extends javax.swing.JDialog {
         MnSurat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnSurat.setForeground(new java.awt.Color(50, 50, 50));
         MnSurat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnSurat.setText("Surat SKDP BPJS");
+        MnSurat.setText("Cetak Surat Kontrol");
         MnSurat.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnSurat.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnSurat.setName("MnSurat"); // NOI18N
@@ -1376,18 +1376,18 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     tabMode.getValueAt(tbObat.getSelectedRow(),5).toString()+"','"+
                     tabMode.getValueAt(tbObat.getSelectedRow(),6).toString()+"','"+
                     tabMode.getValueAt(tbObat.getSelectedRow(),7).toString()+"','"+
-                    tabMode.getValueAt(tbObat.getSelectedRow(),8).toString()+"','"+
+                   
                     TanggalPeriksa.getSelectedItem()+"','"+
                     TanggalSurat.getSelectedItem()+"','"+
+                    tabMode.getValueAt(tbObat.getSelectedRow(),10).toString()+"','"+
                     tabMode.getValueAt(tbObat.getSelectedRow(),11).toString()+"','"+
                     tabMode.getValueAt(tbObat.getSelectedRow(),12).toString()+"','"+
                     tabMode.getValueAt(tbObat.getSelectedRow(),13).toString()+"','"+
+                    //tabMode.getValueAt(tbObat.getSelectedRow(),15).toString()+"','"+
                     tabMode.getValueAt(tbObat.getSelectedRow(),14).toString()+"','"+
-                    tabMode.getValueAt(tbObat.getSelectedRow(),15).toString()+"','"+
-                    tabMode.getValueAt(tbObat.getSelectedRow(),16).toString()+"','"+
-                    tabMode.getValueAt(tbObat.getSelectedRow(),17).toString()+"','','','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
+                    tabMode.getValueAt(tbObat.getSelectedRow(),15).toString()+"','','','','','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
 
-                Valid.MyReport("rptSuratSKDPBPJS.jasper","report","::[ Surat SKDP BPJS ]::",param); 
+                Valid.MyReport("rptSuratKontrol.jasper","report","::[ Surat Kontrol ]::",param); 
                 this.setCursor(Cursor.getDefaultCursor());
             }else{
                 JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih terlebih dulu data yang mau anda hapus...\n Klik data pada table untuk memilih data...!!!!");
@@ -1596,6 +1596,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         TanggalPeriksa.setDate(new Date());
         TanggalSurat.requestFocus();
         isNomer();
+        nomorSurat();
+        
     }
     
     private void isNomer(){
@@ -1615,8 +1617,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
         //nomorSurat();
            Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_antrian,6),signed)),0) from surat_kontrol where tahun='"+TanggalPeriksa.getSelectedItem().toString().substring(6,10)+"' ","",6,NoAntrian);  
-           Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_antrian,3),signed)),0) from surat_kontrol where "              
-              + "tanggal_datang like '%" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "").substring(0, 7) + "%' ", "/SKTRL/" + bln_romawi + "/" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "").substring(0, 4), 3, NoSurat);
+           //Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_surat,3),signed)),0) from surat_kontrol where "              
+           //    + "tanggal_datang like '%" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "").substring(0, 7) + "%' ", "/SKTRL/" + bln_romawi + "/" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "").substring(0, 4), 3, NoSurat);
            NoSurat.requestFocus();       
     }
       public void nomorSurat() {
@@ -1649,7 +1651,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             bln_romawi = "XII";
         }
        //Valid.autoNomer3("select ifnull(MAX(CONVERT(RIGHT(no_antrian,6),signed)),0) from skdp_bpjs where tahun='"+TanggalPeriksa.getSelectedItem().toString().substring(6,10)+"' ","",6,NoAntrian);  
-       Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_antrian,3),signed)),0) from surat_kontrol where "              
+       Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_surat,3),signed)),0) from surat_kontrol where "              
               + "tanggal_datang like '%" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "").substring(0, 7) + "%' ", "/SKTRL/" + bln_romawi + "/" + Valid.SetTgl(TanggalPeriksa.getSelectedItem() + "").substring(0, 4), 3, NoSurat);
     //NoAntrian.requestFocus();     
      }

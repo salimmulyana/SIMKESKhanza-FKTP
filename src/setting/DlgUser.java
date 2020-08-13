@@ -112,7 +112,7 @@ public class DlgUser extends javax.swing.JDialog {
                     "[L]Insiden Keselamatan Pasien","[N]Kejadian IKP Per Tahun","[N]Kejadian IKP Per Bulan","[N]Kejadian IKP Per Tanggal","[D]Riwayat Batch","[N]Kejadian IKP Per Jenis",
                     "[N]Kejadian IKP Per Dampak","[H]Piutang Per Akun Piutang","[N]Registrasi Per Agama","[N]Registrasi Per Umur","[L]Suku/Bangsa Pasien","[L]Bahasa Pasien","[L]Golongan TNI",
                     "[L]Satuan TNI","[L]Jabatan TNI","[L]Pangkat TNI","[L]Golongan POLRI","[L]Satuan POLRI","[L]Jabatan POLRI","[L]Pangkat POLRI","[L]Cacat Fisik","[N]Registrasi Per Suku/Bangsa",
-                    "[N]Registrasi Per Bahasa","[A]Jadwal Operasi","[K]Mapping Poli VClaim","[N]Registrasi Per Cacat Fisik","[F]Barang CSSD","[K]SKDP BPJS","[A]Booking Registrasi",
+                    "[N]Registrasi Per Bahasa","[A]Jadwal Operasi","[K]Mapping Poli VClaim","[N]Registrasi Per Cacat Fisik","[F]Barang CSSD","[K]SKDP BPJS","Surat Kontrol","[A]Booking Registrasi",
                     "[K]Referensi Propinsi VClaim","[K]Referensi Kabupaten VClaim","[K]Referensi Kecamatan VClaim","[K]Referensi Dokter DPJP VClaim","[K]Riwayat Rujukan RS di VClaim",
                     "[K]Tanggal Rujukan di VClaim","[A]Permintaan Lab","[A]Permintaan Radiologi","[O]Indeks Surat","[O]Map Surat","[O]Almari Surat","[O]Rak Surat","[O]Ruang Surat",
                     "[O]Klasifikasi Surat","[O]Status Surat","[O]Sifat Surat","[O]Stts Balas Surat","[O]Surat Masuk","[K]Referensi Dokter PCare","[K]Referensi Poli PCare",
@@ -2817,7 +2817,8 @@ public class DlgUser extends javax.swing.JDialog {
                     "toko_bayar_piutang='"+tbUser.getValueAt(i,617).toString()+"',"+
                     "toko_piutang_harian='"+tbUser.getValueAt(i,618).toString()+"',"+
                     "toko_penjualan_harian='"+tbUser.getValueAt(i,619).toString()+"',"+
-                    "deteksi_corona='"+tbUser.getValueAt(i,620).toString()+"'");
+                    "deteksi_corona='"+tbUser.getValueAt(i,620).toString()+"',"+
+                    "surat_kontrol='"+tbUser.getValueAt(i,621).toString()+"'");
             }            
             tampil();
             emptTeks();
@@ -3519,7 +3520,8 @@ public class DlgUser extends javax.swing.JDialog {
                                     "toko_bayar_piutang='"+tbUser.getValueAt(barisdicopy,617).toString()+"',"+
                                     "toko_piutang_harian='"+tbUser.getValueAt(barisdicopy,618).toString()+"',"+
                                     "toko_penjualan_harian='"+tbUser.getValueAt(barisdicopy,619).toString()+"',"+
-                                    "deteksi_corona='"+tbUser.getValueAt(barisdicopy,620).toString()+"'");
+                                    "deteksi_corona='"+tbUser.getValueAt(barisdicopy,620).toString()+"',"+
+                                    "surat_kontrol='"+tbUser.getValueAt(barisdicopy,621).toString()+"'");
                             }    
                             userdicopy="";
                             copyhakakses="";
@@ -3832,7 +3834,7 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         "toko_pengadaan_barang,toko_hutang,toko_bayar_pemesanan,toko_member,toko_penjualan,registrasi_poli_per_tanggal,"+
                         "toko_piutang,toko_retur_beli,ipsrs_returbeli,ipsrs_riwayat_barang,pasien_corona,toko_pendapatan_harian,"+
                         "diagnosa_pasien_corona,perawatan_pasien_corona,penilaian_awal_keperawatan_gigi,master_masalah_keperawatan_gigi,"+
-                        "toko_bayar_piutang,toko_piutang_harian,toko_penjualan_harian,deteksi_corona from user order by AES_DECRYPT(id_user,'nur')");
+                        "toko_bayar_piutang,toko_piutang_harian,toko_penjualan_harian,deteksi_corona,surat_kontrol from user order by AES_DECRYPT(id_user,'nur')");
             try {
                 rs=ps.executeQuery();
                 while(rs.next()){
@@ -4465,7 +4467,8 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                                rs.getBoolean("toko_bayar_piutang"),
                                rs.getBoolean("toko_piutang_harian"),
                                rs.getBoolean("toko_penjualan_harian"),
-                               rs.getBoolean("deteksi_corona")
+                               rs.getBoolean("deteksi_corona"),
+                               rs.getBoolean("surat_kontrol")
                             });
                         }   
                     } catch (Exception e) {
@@ -5087,7 +5090,8 @@ private void BtnPrintKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                            rs.getBoolean("toko_bayar_piutang"),
                            rs.getBoolean("toko_piutang_harian"),
                            rs.getBoolean("toko_penjualan_harian"),
-                           rs.getBoolean("deteksi_corona")
+                           rs.getBoolean("deteksi_corona"),
+                           rs.getBoolean("surat_kontrol")
                         });
                     }                                             
                  }

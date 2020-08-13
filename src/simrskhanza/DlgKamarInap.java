@@ -700,7 +700,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         MnSrtRanap1 = new javax.swing.JMenuItem();
         MnSuratRanapPihak3 = new javax.swing.JMenuItem();
         MnSuratSakitRanap = new javax.swing.JMenuItem();
-        MnSKDPBPJS = new javax.swing.JMenuItem();
+        MnKontrol = new javax.swing.JMenuItem();
         MnSuratSakit = new javax.swing.JMenuItem();
         MnBlankoRanap = new javax.swing.JMenuItem();
         MnKontrolTerapi = new javax.swing.JMenuItem();
@@ -1440,21 +1440,21 @@ public class DlgKamarInap extends javax.swing.JDialog {
         });
         MnSuratSurat.add(MnSuratSakitRanap);
 
-        MnSKDPBPJS.setBackground(new java.awt.Color(255, 255, 254));
-        MnSKDPBPJS.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnSKDPBPJS.setForeground(new java.awt.Color(50, 50, 50));
-        MnSKDPBPJS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnSKDPBPJS.setText("Surat Kontrol");
-        MnSKDPBPJS.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        MnSKDPBPJS.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        MnSKDPBPJS.setName("MnSKDPBPJS"); // NOI18N
-        MnSKDPBPJS.setPreferredSize(new java.awt.Dimension(170, 26));
-        MnSKDPBPJS.addActionListener(new java.awt.event.ActionListener() {
+        MnKontrol.setBackground(new java.awt.Color(255, 255, 254));
+        MnKontrol.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnKontrol.setForeground(new java.awt.Color(50, 50, 50));
+        MnKontrol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnKontrol.setText("Surat Kontrol");
+        MnKontrol.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        MnKontrol.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        MnKontrol.setName("MnKontrol"); // NOI18N
+        MnKontrol.setPreferredSize(new java.awt.Dimension(170, 26));
+        MnKontrol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnSKDPBPJSActionPerformed(evt);
+                MnKontrolActionPerformed(evt);
             }
         });
-        MnSuratSurat.add(MnSKDPBPJS);
+        MnSuratSurat.add(MnKontrol);
 
         MnSuratSakit.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnSuratSakit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
@@ -3594,7 +3594,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         panelBiasa5.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-05-2020" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-07-2020" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -3641,7 +3641,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel40.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-05-2020" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-07-2020" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -3959,7 +3959,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R2.setPreferredSize(new java.awt.Dimension(90, 23));
         panelCari.add(R2);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-05-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-07-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -3982,7 +3982,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel22.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel22);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-05-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-07-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -4009,7 +4009,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         R3.setPreferredSize(new java.awt.Dimension(75, 23));
         panelCari.add(R3);
 
-        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-05-2020" }));
+        DTPCari3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-07-2020" }));
         DTPCari3.setDisplayFormat("dd-MM-yyyy");
         DTPCari3.setName("DTPCari3"); // NOI18N
         DTPCari3.setOpaque(false);
@@ -4032,7 +4032,7 @@ public class DlgKamarInap extends javax.swing.JDialog {
         jLabel25.setPreferredSize(new java.awt.Dimension(25, 23));
         panelCari.add(jLabel25);
 
-        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03-05-2020" }));
+        DTPCari4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-07-2020" }));
         DTPCari4.setDisplayFormat("dd-MM-yyyy");
         DTPCari4.setName("DTPCari4"); // NOI18N
         DTPCari4.setOpaque(false);
@@ -8510,7 +8510,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         }
     }//GEN-LAST:event_MnGelang11ActionPerformed
 
-    private void MnSKDPBPJSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnSKDPBPJSActionPerformed
+    private void MnKontrolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnKontrolActionPerformed
         if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, table masih kosong...!!!!");
             TCari.requestFocus();
@@ -8529,7 +8529,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                             form.isCek();
                             form.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
                             form.setLocationRelativeTo(internalFrame1);
-                            form.emptTeks();
+                            form.emptTeks();                            
                             form.setNoRm(rs2.getString("no_rkm_medis"),rs2.getString("nm_pasien"));
                             form.setVisible(true);
                       }else{
@@ -8558,7 +8558,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
             form.setNoRm(TNoRM.getText(),TPasien.getText());
             form.setVisible(true);
         }
-    }//GEN-LAST:event_MnSKDPBPJSActionPerformed
+    }//GEN-LAST:event_MnKontrolActionPerformed
 
     private void MnPermintaanLabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnPermintaanLabActionPerformed
         if(tabMode.getRowCount()==0){
@@ -10388,6 +10388,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JMenuItem MnHapusTagihanOperasi;
     private javax.swing.JMenuItem MnInputResep;
     private javax.swing.JMenuItem MnJadwalOperasi;
+    private javax.swing.JMenuItem MnKontrol;
     private javax.swing.JMenuItem MnKontrolTerapi;
     private javax.swing.JMenuItem MnLabelTracker;
     private javax.swing.JMenuItem MnLabelTracker1;
@@ -10422,7 +10423,6 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
     private javax.swing.JMenuItem MnRujukSisrute;
     private javax.swing.JMenu MnRujukan;
     private javax.swing.JMenuItem MnSEP;
-    private javax.swing.JMenuItem MnSKDPBPJS;
     private javax.swing.JMenuItem MnSehat;
     private javax.swing.JMenuItem MnSensusRanap;
     private javax.swing.JMenuItem MnSrtRanap;
@@ -10972,7 +10972,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         ppBerkasDigital.setEnabled(akses.getberkas_digital_perawatan());    
         ppIKP.setEnabled(akses.getinsiden_keselamatan_pasien());
         MnJadwalOperasi.setEnabled(akses.getbooking_operasi());  
-        MnSKDPBPJS.setEnabled(akses.getskdp_bpjs());
+        MnKontrol.setEnabled(akses.getskdp_bpjs());
         MnPermintaanLab.setEnabled(akses.getpermintaan_lab());
         MnPermintaanRadiologi.setEnabled(akses.getpermintaan_radiologi());
         MnResepDOkter.setEnabled(akses.getresep_dokter());
