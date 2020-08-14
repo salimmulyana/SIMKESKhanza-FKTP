@@ -1085,28 +1085,25 @@ public class SuratKontrol extends javax.swing.JDialog {
             
             Sequel.queryu("truncate table temporary_booking_registrasi");
             for(i=0;i<tabMode.getRowCount();i++){ 
-                Sequel.menyimpan("temporary_booking_registrasi","'0','"+
-                    tabMode.getValueAt(i,0).toString()+"','"+
-                    tabMode.getValueAt(i,1).toString()+"','"+
-                    tabMode.getValueAt(i,2).toString()+"','"+
-                    tabMode.getValueAt(i,3).toString()+"','"+
-                    tabMode.getValueAt(i,4).toString()+"','"+
-                    tabMode.getValueAt(i,5).toString()+"','"+
-                    tabMode.getValueAt(i,6).toString()+"','"+
-                    tabMode.getValueAt(i,7).toString()+"','"+
-                    tabMode.getValueAt(i,8).toString()+"','"+
-                    tabMode.getValueAt(i,9).toString()+"','"+
-                    tabMode.getValueAt(i,10).toString()+"','"+
-                    tabMode.getValueAt(i,11).toString()+"','"+
-                    tabMode.getValueAt(i,12).toString()+"','"+
-                    tabMode.getValueAt(i,13).toString()+"','"+
-                    tabMode.getValueAt(i,14).toString()+"','"+
-                    tabMode.getValueAt(i,15).toString()+"','"+
-                    tabMode.getValueAt(i,16).toString()+"','"+
-                    tabMode.getValueAt(i,17).toString()+"','','','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
-            }
-             
-            Valid.MyReport("rptSKDPBPJS.jasper","report","::[ Laporan Daftar SKDP BPJS ]::",param);
+             Sequel.menyimpan("temporary_booking_registrasi","'0','"+
+                   tabMode.getValueAt(i,0).toString()+"','"+
+                   tabMode.getValueAt(i,1).toString()+"','"+
+                   tabMode.getValueAt(i,2).toString()+"','"+
+                   tabMode.getValueAt(i,3).toString()+"','"+
+                   tabMode.getValueAt(i,4).toString()+"','"+
+                   tabMode.getValueAt(i,5).toString()+"','"+
+                   tabMode.getValueAt(i,6).toString()+"','"+
+                   tabMode.getValueAt(i,7).toString()+"','"+
+                   tabMode.getValueAt(i,8).toString()+"','"+
+                   tabMode.getValueAt(i,9).toString()+"','"+
+                   tabMode.getValueAt(i,10).toString()+"','"+
+                   tabMode.getValueAt(i,11).toString()+"','"+
+                   tabMode.getValueAt(i,12).toString()+"','"+
+                   tabMode.getValueAt(i,13).toString()+"','"+
+                   tabMode.getValueAt(i,14).toString()+"','"+                  
+                   tabMode.getValueAt(i,15).toString()+"','','','','','','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
+             }
+                Valid.MyReport("rptSKDPBPJS.jasper","report","::[ Laporan Daftar SKDP BPJS ]::",param);
         }
         this.setCursor(Cursor.getDefaultCursor());
 }//GEN-LAST:event_BtnPrintActionPerformed
