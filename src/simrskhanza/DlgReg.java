@@ -9263,6 +9263,16 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             param.put("kontakrs",akses.getkontakrs());
             param.put("emailrs",akses.getemailrs());   
             param.put("logo",Sequel.cariGambar("select logo from setting"));
+            param.put("no_rm",TNoRM.getText());
+            param.put("nama_pasien",TPasien.getText());
+            param.put("jk",Sequel.cariIsi("select jk from pasien where no_rkm_medis=?",TNoRM.getText()));
+            param.put("tgl_lahir",Sequel.cariIsi("select tgl_lahir from pasien where no_rkm_medis=?",TNoRM.getText()));
+            param.put("umur",Sequel.cariIsi("select umur from pasien where no_rkm_medis=?",TNoRM.getText()));
+            param.put("alamat",TAlmt.getText());
+            param.put("jenisbayar",nmpnj.getText());
+            param.put("png_jawab",TPngJwb.getText());
+            param.put("poli",TPoli.getText());
+            param.put("tanggal",DTPReg.getSelectedItem());            
             param.put("keluhanutama",Sequel.cariIsi("select keluhanutama from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("keluhantambahan",Sequel.cariIsi("select keluhantambahan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("rps",Sequel.cariIsi("select keluhan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
@@ -9294,28 +9304,17 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
             param.put("abrektum",Sequel.cariIsi("select abrektum from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("abekstremitas",Sequel.cariIsi("select abekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
             param.put("icd",Sequel.cariIsi("select kd_penyakit from diagnosa_pasien where prioritas=1 and no_rawat=?",TNoRw.getText()));
-            param.put("no_rawat",TNoRw.getText());
+            param.put("norawat",TNoRw.getText());
             param.put("tanggal",Sequel.cariIsi("select tgl_peresepan from resep_obat where no_rawat=?",TNoRw.getText()));
-            param.put("jam",Sequel.cariIsi("select jam_peresepan from resep_obat where no_rawat=?",TNoRw.getText()));             
+            param.put("jam",Sequel.cariIsi("select jam_rawat from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));   
+            //param.put("terapi",Sequel.cariIsi("select jam_peresepan from resep_obat where no_rawat=?",TNoRw.getText()));       
             Valid.MyReportqry("rptRiwayatPerawatan.jasper","report","::[ Riwayat Perawatan Pasien Hari Ini ]::",
-                    "SELECT reg_periksa.tgl_registrasi, reg_periksa.jam_reg, "+
-                    "poliklinik.nm_poli, pasien.no_rkm_medis, pasien.nm_pasien, "+
-                    "pasien.no_ktp, pasien.jk, pasien.tmp_lahir, pasien.tgl_lahir,"+
-                    "pasien.nm_ibu, concat(pasien.alamat,', ',kelurahan.nm_kel"+
-                    ",', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) AS alamat,"+
-                    "pasien.gol_darah,pasien.pekerjaan,pasien.stts_nikah,"+
-                    "pasien.agama,pasien.tgl_daftar,pasien.no_tlp,pasien.umur,"+
-                    "pasien.pnd,pasien.keluarga,pasien.namakeluarga,"+
-                    "penjab.png_jawab,pasien.pekerjaanpj,concat(pasien.alamatpj,"+
-                    "', ',pasien.kelurahanpj,', ',pasien.kecamatanpj,', ',"+
-                    "pasien.kabupatenpj) AS alamatpj FROM pasien INNER JOIN "+
-                    "kelurahan INNER JOIN kecamatan INNER JOIN kabupaten "+
-                    "INNER JOIN penjab ON pasien.kd_kel = kelurahan.kd_kel "+
-                    "AND pasien.kd_kec = kecamatan.kd_kec AND pasien.kd_kab = kabupaten.kd_kab "+
-                    "INNER JOIN reg_periksa ON reg_periksa.no_rkm_medis = pasien.no_rkm_medis "+
-                    "AND reg_periksa.kd_pj = penjab.kd_pj INNER JOIN poliklinik "+
-                    "ON poliklinik.kd_poli = reg_periksa.kd_poli WHERE "+
-                    "reg_periksa.no_rawat ='"+TNoRw.getText()+"' ",param);
+                    "SELECT databarang.kode_brng,databarang.nama_brng,detail_pemberian_obat.jml, "+
+                    "detail_pemberian_obat.biaya_obat,detail_pemberian_obat.embalase,databarang.kode_sat, "+
+                    "detail_pemberian_obat.tuslah,detail_pemberian_obat.total,aturan_pakai.aturan from "+
+                    "detail_pemberian_obat inner join databarang inner join aturan_pakai on "+
+                    "detail_pemberian_obat.kode_brng=databarang.kode_brng and aturan_pakai.no_rawat=detail_pemberian_obat.no_rawat and aturan_pakai.kode_brng=databarang.kode_brng "+
+                    "where detail_pemberian_obat.no_rawat='"+TNoRw.getText()+"' ",param);               
             this.setCursor(Cursor.getDefaultCursor());
         }
     }//GEN-LAST:event_MnRiwayatPerawatanActionPerformed

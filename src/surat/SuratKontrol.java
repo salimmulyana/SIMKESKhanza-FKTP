@@ -1101,7 +1101,7 @@ public class SuratKontrol extends javax.swing.JDialog {
                    tabMode.getValueAt(i,12).toString()+"','"+
                    tabMode.getValueAt(i,13).toString()+"','"+
                    tabMode.getValueAt(i,14).toString()+"','"+                  
-                   tabMode.getValueAt(i,15).toString()+"','','','','','','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
+                   tabMode.getValueAt(i,15).toString()+"','','','','','','','','','','','','','','','','','','','','',''","Rekap Nota Pembayaran");
              }
                 Valid.MyReport("rptSKDPBPJS.jasper","report","::[ Laporan Daftar SKDP BPJS ]::",param);
         }

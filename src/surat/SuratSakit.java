@@ -1256,8 +1256,11 @@ public final class SuratSakit extends javax.swing.JDialog {
             bln_romawi = "XII";
         }
 
-        Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_surat,3),signed)),0) from suratsakit where "
-                + "tanggalawal='" + Valid.SetTgl(TanggalAwal.getSelectedItem()+"") + "' ", "/SKS/" + bln_romawi + "/" + TanggalAwal.getSelectedItem().toString().substring(6,10), 3, NoSurat);
+        //Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_surat,3),signed)),0) from suratsakit where "
+        //        + "tanggalawal='" + Valid.SetTgl(TanggalAwal.getSelectedItem()+"") + "' ", "/SKS/" + bln_romawi + "/" + TanggalAwal.getSelectedItem().toString().substring(6,10), 3, NoSurat);
+    
+        Valid.autoNomerSuratKhusus("select ifnull(MAX(CONVERT(LEFT(no_surat,3),signed)),0) from suratsakit where "              
+              + "tanggalawal like '%" + Valid.SetTgl(TanggalAwal.getSelectedItem() + "").substring(0, 7) + "%' ", "/SKS/" + bln_romawi + "/" + Valid.SetTgl(TanggalAwal.getSelectedItem() + "").substring(0, 4), 3, NoSurat);
     }
 }
 

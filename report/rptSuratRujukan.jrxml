@@ -137,7 +137,7 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 				<reportElement x="0" y="390" width="561" height="350" uuid="2eff3b8c-f9c7-4343-afae-1bbc0a76ecc8"/>
 			</rectangle>
 			<staticText>
-				<reportElement mode="Opaque" x="1" y="130" width="108" height="16" uuid="5cecca6e-0429-4fe4-b599-7dc7f5aa7f04"/>
+				<reportElement mode="Opaque" x="1" y="122" width="108" height="16" uuid="5cecca6e-0429-4fe4-b599-7dc7f5aa7f04"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -145,7 +145,7 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 				<text><![CDATA[Kepada Yth.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="1" y="143" width="108" height="17" uuid="d4b7e927-bca0-4840-985e-162ad0967508"/>
+				<reportElement mode="Opaque" x="1" y="135" width="108" height="17" uuid="d4b7e927-bca0-4840-985e-162ad0967508"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -165,7 +165,7 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 				<text><![CDATA[  SURAT RUJUKAN PASIEN]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="dd MMMMM yyyy">
-				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="2" y="156" width="218" height="14" uuid="87a12409-ea6c-4fa6-9b6e-f0e76604a56e"/>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="2" y="148" width="218" height="14" uuid="87a12409-ea6c-4fa6-9b6e-f0e76604a56e"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -267,7 +267,7 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement mode="Opaque" x="2" y="170" width="104" height="20" uuid="fa9d0758-ffb7-4eaa-896a-73dd0073a4aa"/>
+				<reportElement mode="Opaque" x="2" y="162" width="104" height="16" uuid="fa9d0758-ffb7-4eaa-896a-73dd0073a4aa"/>
 				<textElement>
 					<font fontName="Tahoma" size="10"/>
 					<paragraph lineSpacing="Single"/>
@@ -714,16 +714,16 @@ reg_periksa.no_rawat=rujuk.no_rawat and reg_periksa.kd_dokter=dokter.kd_dokter w
 				<reportElement x="288" y="192" width="1" height="39" uuid="602afaa0-daf8-4d2c-814f-b753f6f4ff57"/>
 			</line>
 			<line>
-				<reportElement x="0" y="205" width="561" height="1" uuid="be62c68d-3fbf-49f9-9fb9-d8016c1a27f0"/>
+				<reportElement x="2" y="205" width="561" height="1" uuid="be62c68d-3fbf-49f9-9fb9-d8016c1a27f0"/>
 			</line>
 			<line>
-				<reportElement x="0" y="219" width="561" height="1" uuid="ba709a05-cf01-4274-a7b2-b32b602a8cb3"/>
+				<reportElement x="2" y="219" width="561" height="1" uuid="ba709a05-cf01-4274-a7b2-b32b602a8cb3"/>
 			</line>
 			<line>
-				<reportElement x="0" y="231" width="561" height="1" uuid="4e1929c8-d775-4af2-bffd-5f11093e196b"/>
+				<reportElement x="2" y="231" width="561" height="1" uuid="4e1929c8-d775-4af2-bffd-5f11093e196b"/>
 			</line>
 			<line>
-				<reportElement x="1" y="247" width="561" height="1" uuid="a7976fa9-7222-4187-a16e-8289d766cf45"/>
+				<reportElement x="2" y="247" width="561" height="1" uuid="a7976fa9-7222-4187-a16e-8289d766cf45"/>
 			</line>
 			<staticText>
 				<reportElement mode="Transparent" x="81" y="332" width="36" height="15" uuid="bcf06d53-aec4-4cbf-acf5-1a585af98803"/>
