@@ -833,7 +833,9 @@ public final class DlgReg extends javax.swing.JDialog {
         MnCetakSuratCovid = new javax.swing.JMenuItem();
         MnCetakBebasNarkoba2 = new javax.swing.JMenuItem();
         MnBlankoRawatJalan = new javax.swing.JMenuItem();
-        MnRiwayatPerawatan = new javax.swing.JMenuItem();
+        MnRiwayatPerawatanHariIni = new javax.swing.JMenu();
+        F4 = new javax.swing.JMenuItem();
+        A5 = new javax.swing.JMenuItem();
         MnKeteranganKhitan = new javax.swing.JMenuItem();
         MnLama = new javax.swing.JMenu();
         MnCetakSuratSakit4 = new javax.swing.JMenuItem();
@@ -1278,17 +1280,38 @@ public final class DlgReg extends javax.swing.JDialog {
         });
         jPopupMenu1.add(MnBlankoRawatJalan);
 
-        MnRiwayatPerawatan.setBackground(new java.awt.Color(250, 251, 251));
-        MnRiwayatPerawatan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnRiwayatPerawatan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnRiwayatPerawatan.setText("Riwayat Perawatan Pasien Hari Ini");
-        MnRiwayatPerawatan.setName("MnRiwayatPerawatan"); // NOI18N
-        MnRiwayatPerawatan.addActionListener(new java.awt.event.ActionListener() {
+        MnRiwayatPerawatanHariIni.setBackground(new java.awt.Color(254, 255, 255));
+        MnRiwayatPerawatanHariIni.setForeground(new java.awt.Color(50, 50, 50));
+        MnRiwayatPerawatanHariIni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnRiwayatPerawatanHariIni.setText("Riwayat Perawatan Hari ini");
+        MnRiwayatPerawatanHariIni.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnRiwayatPerawatanHariIni.setName("MnRiwayatPerawatanHariIni"); // NOI18N
+
+        F4.setBackground(new java.awt.Color(250, 251, 251));
+        F4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        F4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        F4.setText("Riwayat Perawatan Pasien Hari Ini (F4)");
+        F4.setName("F4"); // NOI18N
+        F4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnRiwayatPerawatanActionPerformed(evt);
+                F4ActionPerformed(evt);
             }
         });
-        jPopupMenu1.add(MnRiwayatPerawatan);
+        MnRiwayatPerawatanHariIni.add(F4);
+
+        A5.setBackground(new java.awt.Color(250, 251, 251));
+        A5.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        A5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        A5.setText("Riwayat Perawatan Pasien Hari Ini (A5)");
+        A5.setName("A5"); // NOI18N
+        A5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A5ActionPerformed(evt);
+            }
+        });
+        MnRiwayatPerawatanHariIni.add(A5);
+
+        jPopupMenu1.add(MnRiwayatPerawatanHariIni);
 
         MnKeteranganKhitan.setBackground(new java.awt.Color(254, 255, 255));
         MnKeteranganKhitan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -3639,7 +3662,7 @@ public final class DlgReg extends javax.swing.JDialog {
         panelBiasa2.setLayout(null);
 
         TglSakit1.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-08-2020" }));
+        TglSakit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-08-2020" }));
         TglSakit1.setDisplayFormat("dd-MM-yyyy");
         TglSakit1.setName("TglSakit1"); // NOI18N
         TglSakit1.setOpaque(false);
@@ -3686,7 +3709,7 @@ public final class DlgReg extends javax.swing.JDialog {
         jLabel32.setBounds(176, 10, 20, 23);
 
         TglSakit2.setForeground(new java.awt.Color(50, 70, 50));
-        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-08-2020" }));
+        TglSakit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-08-2020" }));
         TglSakit2.setDisplayFormat("dd-MM-yyyy");
         TglSakit2.setName("TglSakit2"); // NOI18N
         TglSakit2.setOpaque(false);
@@ -4705,7 +4728,7 @@ public final class DlgReg extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(60, 23));
         panelGlass7.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-08-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-08-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -4718,7 +4741,7 @@ public final class DlgReg extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(24, 23));
         panelGlass7.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-08-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-08-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -4858,7 +4881,7 @@ public final class DlgReg extends javax.swing.JDialog {
         FormInput.add(jLabel9);
         jLabel9.setBounds(165, 72, 36, 23);
 
-        DTPReg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-08-2020" }));
+        DTPReg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "18-08-2020" }));
         DTPReg.setDisplayFormat("dd-MM-yyyy");
         DTPReg.setName("DTPReg"); // NOI18N
         DTPReg.setOpaque(false);
@@ -9246,7 +9269,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         DlgSakit.setVisible(true);
     }//GEN-LAST:event_MnCetakSuratSakit4Pihak2ActionPerformed
 
-    private void MnRiwayatPerawatanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRiwayatPerawatanActionPerformed
+    private void F4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F4ActionPerformed
       if(tabMode.getRowCount()==0){
             JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
             TNoRM.requestFocus();
@@ -9317,7 +9340,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
                     "where detail_pemberian_obat.no_rawat='"+TNoRw.getText()+"' ",param);               
             this.setCursor(Cursor.getDefaultCursor());
         }
-    }//GEN-LAST:event_MnRiwayatPerawatanActionPerformed
+    }//GEN-LAST:event_F4ActionPerformed
 
     private void MnBlankoRawatJalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnBlankoRawatJalanActionPerformed
        if(tabMode.getRowCount()==0){
@@ -9538,6 +9561,79 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
         }
     }//GEN-LAST:event_MnCetakBebasNarkoba2ActionPerformed
 
+    private void A5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A5ActionPerformed
+  if(tabMode.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,"Maaf, data pasien sudah habis...!!!!");
+            TNoRM.requestFocus();
+        }else if(TPasien.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu data pasien dengan menklik data pada table...!!!");
+            tbPetugas.requestFocus();
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            Map<String, Object> param = new HashMap<>();                 
+            param.put("namars",akses.getnamars());
+            param.put("alamatrs",akses.getalamatrs());
+            param.put("kotars",akses.getkabupatenrs());
+            param.put("propinsirs",akses.getpropinsirs());
+            param.put("kontakrs",akses.getkontakrs());
+            param.put("emailrs",akses.getemailrs());   
+            param.put("logo",Sequel.cariGambar("select logo from setting"));
+            param.put("no_rm",TNoRM.getText());
+            param.put("nama_pasien",TPasien.getText());
+            param.put("jk",Sequel.cariIsi("select jk from pasien where no_rkm_medis=?",TNoRM.getText()));
+            param.put("tgl_lahir",Sequel.cariIsi("select tgl_lahir from pasien where no_rkm_medis=?",TNoRM.getText()));
+            param.put("umur",Sequel.cariIsi("select umur from pasien where no_rkm_medis=?",TNoRM.getText()));
+            param.put("alamat",TAlmt.getText());
+            param.put("jenisbayar",nmpnj.getText());
+            param.put("png_jawab",TPngJwb.getText());
+            param.put("poli",TPoli.getText());
+            param.put("tanggal",DTPReg.getSelectedItem());            
+            param.put("keluhanutama",Sequel.cariIsi("select keluhanutama from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("keluhantambahan",Sequel.cariIsi("select keluhantambahan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("rps",Sequel.cariIsi("select keluhan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("alergi",Sequel.cariIsi("select alergi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("keadaanumum",Sequel.cariIsi("select keadaanumum from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("kesadaran",Sequel.cariIsi("select kesadaran from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("gcs",Sequel.cariIsi("select gcs from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("nadi",Sequel.cariIsi("select nadi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("respirasi",Sequel.cariIsi("select respirasi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("suhu",Sequel.cariIsi("select suhu_tubuh from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("bb",Sequel.cariIsi("select berat from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("td",Sequel.cariIsi("select tensi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("tb",Sequel.cariIsi("select tinggi from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("rtl",Sequel.cariIsi("select rtl from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("pemeriksaan",Sequel.cariIsi("select pemeriksaan from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("penilaian",Sequel.cariIsi("select penilaian from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("kepala",Sequel.cariIsi("select kepala from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("leher",Sequel.cariIsi("select leher from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("thorax",Sequel.cariIsi("select thorax from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abdomen",Sequel.cariIsi("select abdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("genital",Sequel.cariIsi("select genital from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("rektum",Sequel.cariIsi("select rektum from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("ekstremitas",Sequel.cariIsi("select ekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abkepala",Sequel.cariIsi("select abkepala from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("ableher",Sequel.cariIsi("select ableher from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abthorax",Sequel.cariIsi("select abthorax from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("ababdomen",Sequel.cariIsi("select ababdomen from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abgenital",Sequel.cariIsi("select abgenital from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abrektum",Sequel.cariIsi("select abrektum from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("abekstremitas",Sequel.cariIsi("select abekstremitas from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));
+            param.put("icd",Sequel.cariIsi("select kd_penyakit from diagnosa_pasien where prioritas=1 and no_rawat=?",TNoRw.getText()));
+            param.put("norawat",TNoRw.getText());
+            param.put("tanggal",Sequel.cariIsi("select tgl_peresepan from resep_obat where no_rawat=?",TNoRw.getText()));
+            param.put("jam",Sequel.cariIsi("select jam_rawat from pemeriksaan_ralan where no_rawat=?",TNoRw.getText()));   
+            //param.put("terapi",Sequel.cariIsi("select jam_peresepan from resep_obat where no_rawat=?",TNoRw.getText()));       
+            Valid.MyReportqry("rptRiwayatPerawatanA5.jasper","report","::[ Riwayat Perawatan Pasien Hari Ini ]::",
+                    "SELECT databarang.kode_brng,databarang.nama_brng,detail_pemberian_obat.jml, "+
+                    "detail_pemberian_obat.biaya_obat,detail_pemberian_obat.embalase,databarang.kode_sat, "+
+                    "detail_pemberian_obat.tuslah,detail_pemberian_obat.total,aturan_pakai.aturan from "+
+                    "detail_pemberian_obat inner join databarang inner join aturan_pakai on "+
+                    "detail_pemberian_obat.kode_brng=databarang.kode_brng and aturan_pakai.no_rawat=detail_pemberian_obat.no_rawat and aturan_pakai.kode_brng=databarang.kode_brng "+
+                    "where detail_pemberian_obat.no_rawat='"+TNoRw.getText()+"' ",param);               
+            this.setCursor(Cursor.getDefaultCursor());
+        }       
+    }//GEN-LAST:event_A5ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -9555,6 +9651,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem A5;
     private widget.TextBox AsalRujukan;
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
@@ -9593,6 +9690,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     private javax.swing.JDialog DlgDemografi;
     private javax.swing.JDialog DlgSakit;
     private javax.swing.JDialog DlgSakit2;
+    private javax.swing.JMenuItem F4;
     private widget.PanelBiasa FormInput;
     private widget.TextBox Kabupaten2;
     private widget.TextBox Kd2;
@@ -9713,7 +9811,7 @@ private void MnLaporanRekapKunjunganBulananPoliActionPerformed(java.awt.event.Ac
     private javax.swing.JMenuItem MnResepDOkter1;
     private javax.swing.JMenuItem MnResepRanap;
     private javax.swing.JMenuItem MnResepRegisterPoli;
-    private javax.swing.JMenuItem MnRiwayatPerawatan;
+    private javax.swing.JMenu MnRiwayatPerawatanHariIni;
     private javax.swing.JMenuItem MnRujuk;
     private javax.swing.JMenuItem MnRujukMasuk;
     private javax.swing.JMenuItem MnRujukSisrute;
