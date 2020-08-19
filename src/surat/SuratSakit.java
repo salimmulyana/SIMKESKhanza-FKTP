@@ -204,7 +204,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         MnCetakSuratSakit4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakSuratSakit4.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakSuratSakit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratSakit4.setText("Cetak Surat Sakit 3");
+        MnCetakSuratSakit4.setText("Cetak Surat Sakit dan Copy Resep");
         MnCetakSuratSakit4.setName("MnCetakSuratSakit4"); // NOI18N
         MnCetakSuratSakit4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -417,7 +417,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-08-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -431,7 +431,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-08-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -541,7 +541,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         TPasien.setBounds(355, 10, 365, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-08-2020" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -596,7 +596,7 @@ public final class SuratSakit extends javax.swing.JDialog {
         jLabel18.setBounds(540, 40, 70, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-04-2020" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "15-08-2020" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -986,31 +986,34 @@ public final class SuratSakit extends javax.swing.JDialog {
     }//GEN-LAST:event_MnCetakSuratSakit1ActionPerformed
 
     private void MnCetakSuratSakit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCetakSuratSakit4ActionPerformed
-        if(TPasien.getText().trim().equals("")){
+       if(TPasien.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
         }else{
             this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-            Map<String, Object> param = new HashMap<>();
-              param.put("hari",LamaSakit.getText());
-              param.put("TanggalAwal",TanggalAwal.getSelectedItem().toString());
-              param.put("TanggalAkhir",TanggalAkhir.getSelectedItem().toString());
-              param.put("nosakit",NoSurat.getText());
-              param.put("namars",akses.getnamars());
-              param.put("alamatrs",akses.getalamatrs());
-              param.put("kotars",akses.getkabupatenrs());
-              param.put("propinsirs",akses.getpropinsirs());
-              param.put("kontakrs",akses.getkontakrs());
-              param.put("emailrs",akses.getemailrs());   
-              param.put("logo",Sequel.cariGambar("select logo from setting")); 
-            Valid.MyReportqry("rptSuratSakit3.jasper","report","::[ Surat Sakit ]::",
-                          "select reg_periksa.no_rawat,dokter.nm_dokter,pasien.keluarga,pasien.namakeluarga,pasien.tgl_lahir,pasien.jk," +
-                          " pasien.nm_pasien,pasien.jk,concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur)as umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat" +
-                          " from reg_periksa inner join pasien inner join dokter inner join kelurahan inner join kecamatan inner join kabupaten" +
-                          " on reg_periksa.no_rkm_medis=pasien.no_rkm_medis and reg_periksa.kd_dokter=dokter.kd_dokter and pasien.kd_kel=kelurahan.kd_kel "+
-                     "and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab "+
-                          "where reg_periksa.no_rawat='"+TNoRw.getText()+"' ",param);
-            this.setCursor(Cursor.getDefaultCursor());  
-        }
+                Map<String, Object> param = new HashMap<>();
+                param.put("hari",LamaSakit.getText());
+                param.put("TanggalAwal",TanggalAwal.getSelectedItem().toString());
+                param.put("TanggalAkhir",TanggalAkhir.getSelectedItem().toString());
+                param.put("nosakit",NoSurat.getText());
+                param.put("namars",akses.getnamars());
+                param.put("alamatrs",akses.getalamatrs());
+                param.put("kotars",akses.getkabupatenrs());
+                param.put("propinsirs",akses.getpropinsirs());
+                param.put("kontakrs",akses.getkontakrs());
+                param.put("emailrs",akses.getemailrs());  
+                param.put("penyakit",Sequel.cariIsi("select concat(diagnosa_pasien.kd_penyakit,' ',penyakit.nm_penyakit) from diagnosa_pasien inner join reg_periksa inner join penyakit "+
+                    "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
+                    "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
+                param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                Valid.MyReportqry("rptSuratSakitCopyResep.jasper","report","::[ Surat Sakit ]::",
+                    "SELECT databarang.kode_brng,databarang.nama_brng,detail_pemberian_obat.jml, "+
+                    "detail_pemberian_obat.biaya_obat,detail_pemberian_obat.embalase,databarang.kode_sat, "+
+                    "detail_pemberian_obat.tuslah,detail_pemberian_obat.total,aturan_pakai.aturan from "+
+                    "detail_pemberian_obat inner join databarang inner join aturan_pakai on "+
+                    "detail_pemberian_obat.kode_brng=databarang.kode_brng and aturan_pakai.no_rawat=detail_pemberian_obat.no_rawat and aturan_pakai.kode_brng=databarang.kode_brng "+
+                    "where detail_pemberian_obat.no_rawat='"+TNoRw.getText()+"' ",param); 
+                this.setCursor(Cursor.getDefaultCursor());  
+       }
     }//GEN-LAST:event_MnCetakSuratSakit4ActionPerformed
 
     private void MnCetakSuratSakit5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCetakSuratSakit5ActionPerformed
