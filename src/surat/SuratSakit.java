@@ -1005,6 +1005,14 @@ public final class SuratSakit extends javax.swing.JDialog {
                     "on diagnosa_pasien.no_rawat=reg_periksa.no_rawat and diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit "+
                     "where diagnosa_pasien.no_rawat=? and diagnosa_pasien.prioritas='1'",TNoRw.getText()));
                 param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                param.put("nama",TPasien.getText());
+                param.put("umur",Sequel.cariIsi("select umurdaftar from reg_periksa where no_rawat=?",TNoRw.getText()));
+                param.put("jk",Sequel.cariIsi("select jk from pasien where no_rkm_medis=?",TNoRM.getText()));
+                param.put("pekerjaan",Sequel.cariIsi("select pekerjaan from pasien where no_rkm_medis=?",TNoRM.getText()));
+                //param.put("instansi")
+                param.put("alamat",Sequel.cariIsi("select almt_pj from reg_periksa where no_rawat=?",TNoRw.getText()));
+                //param.put("dokter",Sequel.cariIsi("select kd_dokter from reg_periksa where no_rawat=?",TNoRw.getText()));
+                
                 Valid.MyReportqry("rptSuratSakitCopyResep.jasper","report","::[ Surat Sakit ]::",
                     "SELECT databarang.kode_brng,databarang.nama_brng,detail_pemberian_obat.jml, "+
                     "detail_pemberian_obat.biaya_obat,detail_pemberian_obat.embalase,databarang.kode_sat, "+

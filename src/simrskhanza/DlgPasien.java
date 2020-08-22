@@ -1643,6 +1643,16 @@ public class DlgPasien extends javax.swing.JDialog {
         BtnPerusahaanPj = new widget.Button();
         jLabel49 = new widget.Label();
         TKartuKeluarga = new widget.TextBox();
+        chkTNI1 = new widget.CekBox();
+        chkFaktorResiko = new widget.CekBox();
+        label1 = new widget.Label();
+        label2 = new widget.Label();
+        label3 = new widget.Label();
+        label4 = new widget.Label();
+        comboBox1 = new widget.ComboBox();
+        comboBox2 = new widget.ComboBox();
+        comboBox3 = new widget.ComboBox();
+        comboBox4 = new widget.ComboBox();
         internalFrame4 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbPasien = new widget.Table();
@@ -3168,7 +3178,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(jLabel13);
         jLabel13.setBounds(0, 280, 95, 23);
 
-        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-07-2020" }));
+        DTPLahir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-08-2020" }));
         DTPLahir.setDisplayFormat("dd-MM-yyyy");
         DTPLahir.setName("DTPLahir"); // NOI18N
         DTPLahir.setOpaque(false);
@@ -3305,7 +3315,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TKtp);
         TKtp.setBounds(712, 132, 130, 23);
 
-        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-07-2020" }));
+        DTPDaftar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-08-2020" }));
         DTPDaftar.setDisplayFormat("dd-MM-yyyy");
         DTPDaftar.setName("DTPDaftar"); // NOI18N
         DTPDaftar.setOpaque(false);
@@ -4217,7 +4227,7 @@ public class DlgPasien extends javax.swing.JDialog {
         FormInput.add(TTmpPj);
         TTmpPj.setBounds(100, 280, 190, 24);
 
-        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "24-07-2020" }));
+        DTPLahirPj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "22-08-2020" }));
         DTPLahirPj.setDisplayFormat("dd-MM-yyyy");
         DTPLahirPj.setName("DTPLahirPj"); // NOI18N
         DTPLahirPj.addItemListener(new java.awt.event.ItemListener() {
@@ -4329,6 +4339,63 @@ public class DlgPasien extends javax.swing.JDialog {
         TKartuKeluarga.setName("TKartuKeluarga"); // NOI18N
         FormInput.add(TKartuKeluarga);
         TKartuKeluarga.setBounds(710, 400, 190, 24);
+
+        chkTNI1.setText("Anggota TNI :");
+        chkTNI1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        chkTNI1.setName("chkTNI1"); // NOI18N
+        chkTNI1.setOpaque(false);
+        chkTNI1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkTNI1ActionPerformed(evt);
+            }
+        });
+        FormInput.add(chkTNI1);
+        chkTNI1.setBounds(10, 430, 95, 23);
+
+        chkFaktorResiko.setText("Faktor Resiko");
+        chkFaktorResiko.setName("chkFaktorResiko"); // NOI18N
+        FormInput.add(chkFaktorResiko);
+        chkFaktorResiko.setBounds(20, 590, 110, 16);
+
+        label1.setText("Alergi:");
+        label1.setName("label1"); // NOI18N
+        FormInput.add(label1);
+        label1.setBounds(30, 710, 70, 14);
+
+        label2.setText("Hipertensi:");
+        label2.setName("label2"); // NOI18N
+        FormInput.add(label2);
+        label2.setBounds(30, 620, 70, 14);
+
+        label3.setText("Asma:");
+        label3.setName("label3"); // NOI18N
+        FormInput.add(label3);
+        label3.setBounds(30, 650, 70, 14);
+
+        label4.setText("Diabetes:");
+        label4.setName("label4"); // NOI18N
+        FormInput.add(label4);
+        label4.setBounds(30, 680, 70, 14);
+
+        comboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox1.setName("comboBox1"); // NOI18N
+        FormInput.add(comboBox1);
+        comboBox1.setBounds(110, 710, 60, 23);
+
+        comboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox2.setName("comboBox2"); // NOI18N
+        FormInput.add(comboBox2);
+        comboBox2.setBounds(110, 620, 60, 23);
+
+        comboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox3.setName("comboBox3"); // NOI18N
+        FormInput.add(comboBox3);
+        comboBox3.setBounds(110, 650, 60, 23);
+
+        comboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox4.setName("comboBox4"); // NOI18N
+        FormInput.add(comboBox4);
+        comboBox4.setBounds(110, 680, 60, 23);
 
         Scroll1.setViewportView(FormInput);
 
@@ -8336,6 +8403,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         // TODO add your handling code here:
     }//GEN-LAST:event_TUmurThPjActionPerformed
 
+    private void chkTNI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkTNI1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkTNI1ActionPerformed
+
     /**
      * @data args the command line arguments
      */
@@ -8563,10 +8634,16 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.Button btnPropinsiPj;
     private widget.Button btnUbahPassword;
     private javax.swing.ButtonGroup buttonGroup1;
+    private widget.CekBox chkFaktorResiko;
     private widget.CekBox chkPolri;
     private widget.CekBox chkTNI;
+    private widget.CekBox chkTNI1;
     private widget.ComboBox cmbAgama;
     private widget.ComboBox cmbHlm;
+    private widget.ComboBox comboBox1;
+    private widget.ComboBox comboBox2;
+    private widget.ComboBox comboBox3;
+    private widget.ComboBox comboBox4;
     private widget.InternalFrame internalFrame1;
     private widget.InternalFrame internalFrame2;
     private widget.InternalFrame internalFrame3;
@@ -8640,6 +8717,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.TextBox kdsatuanpolri;
     private widget.TextBox kdsatuantni;
     private widget.TextBox kdsuku;
+    private widget.Label label1;
+    private widget.Label label2;
+    private widget.Label label3;
+    private widget.Label label4;
     private widget.Label label40;
     private widget.Label label41;
     private widget.TextBox nmbahasa;
