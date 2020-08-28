@@ -1653,6 +1653,15 @@ public class DlgPasien extends javax.swing.JDialog {
         comboBox2 = new widget.ComboBox();
         comboBox3 = new widget.ComboBox();
         comboBox4 = new widget.ComboBox();
+        label5 = new widget.Label();
+        comboBox5 = new widget.ComboBox();
+        chkFaktorResiko1 = new widget.CekBox();
+        label7 = new widget.Label();
+        label8 = new widget.Label();
+        label9 = new widget.Label();
+        comboBox7 = new widget.ComboBox();
+        comboBox8 = new widget.ComboBox();
+        comboBox9 = new widget.ComboBox();
         internalFrame4 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbPasien = new widget.Table();
@@ -4396,6 +4405,56 @@ public class DlgPasien extends javax.swing.JDialog {
         comboBox4.setName("comboBox4"); // NOI18N
         FormInput.add(comboBox4);
         comboBox4.setBounds(110, 680, 60, 23);
+
+        label5.setText("Stroke:");
+        label5.setName("label5"); // NOI18N
+        FormInput.add(label5);
+        label5.setBounds(30, 740, 70, 14);
+
+        comboBox5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox5.setName("comboBox5"); // NOI18N
+        FormInput.add(comboBox5);
+        comboBox5.setBounds(110, 740, 60, 23);
+
+        chkFaktorResiko1.setText("Gaya Hidup");
+        chkFaktorResiko1.setName("chkFaktorResiko1"); // NOI18N
+        chkFaktorResiko1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkFaktorResiko1ActionPerformed(evt);
+            }
+        });
+        FormInput.add(chkFaktorResiko1);
+        chkFaktorResiko1.setBounds(200, 590, 110, 16);
+
+        label7.setText("Merokok:");
+        label7.setName("label7"); // NOI18N
+        FormInput.add(label7);
+        label7.setBounds(210, 620, 70, 14);
+
+        label8.setText("Kopi:");
+        label8.setName("label8"); // NOI18N
+        FormInput.add(label8);
+        label8.setBounds(210, 650, 70, 14);
+
+        label9.setText("Alkohol:");
+        label9.setName("label9"); // NOI18N
+        FormInput.add(label9);
+        label9.setBounds(210, 680, 70, 14);
+
+        comboBox7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox7.setName("comboBox7"); // NOI18N
+        FormInput.add(comboBox7);
+        comboBox7.setBounds(290, 620, 60, 23);
+
+        comboBox8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox8.setName("comboBox8"); // NOI18N
+        FormInput.add(comboBox8);
+        comboBox8.setBounds(290, 650, 60, 23);
+
+        comboBox9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak ", "Ya" }));
+        comboBox9.setName("comboBox9"); // NOI18N
+        FormInput.add(comboBox9);
+        comboBox9.setBounds(290, 680, 60, 23);
 
         Scroll1.setViewportView(FormInput);
 
@@ -8407,6 +8466,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
         // TODO add your handling code here:
     }//GEN-LAST:event_chkTNI1ActionPerformed
 
+    private void chkFaktorResiko1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkFaktorResiko1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chkFaktorResiko1ActionPerformed
+
     /**
      * @data args the command line arguments
      */
@@ -8635,6 +8698,7 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.Button btnUbahPassword;
     private javax.swing.ButtonGroup buttonGroup1;
     private widget.CekBox chkFaktorResiko;
+    private widget.CekBox chkFaktorResiko1;
     private widget.CekBox chkPolri;
     private widget.CekBox chkTNI;
     private widget.CekBox chkTNI1;
@@ -8644,6 +8708,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.ComboBox comboBox2;
     private widget.ComboBox comboBox3;
     private widget.ComboBox comboBox4;
+    private widget.ComboBox comboBox5;
+    private widget.ComboBox comboBox7;
+    private widget.ComboBox comboBox8;
+    private widget.ComboBox comboBox9;
     private widget.InternalFrame internalFrame1;
     private widget.InternalFrame internalFrame2;
     private widget.InternalFrame internalFrame3;
@@ -8723,6 +8791,10 @@ private void KabupatenMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:eve
     private widget.Label label4;
     private widget.Label label40;
     private widget.Label label41;
+    private widget.Label label5;
+    private widget.Label label7;
+    private widget.Label label8;
+    private widget.Label label9;
     private widget.TextBox nmbahasa;
     private widget.TextBox nmcacat;
     private widget.TextBox nmgolonganpolri;

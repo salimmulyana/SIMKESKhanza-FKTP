@@ -5144,7 +5144,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_TUkuranKeyPressed
 
     private void TKeluhanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKeluhanKeyPressed
-        Valid.pindah(evt,DTPTgl,TPemeriksaan);
+//        Valid.pindah(evt,DTPTgl,TPemeriksaan);
     }//GEN-LAST:event_TKeluhanKeyPressed
 
     private void tbRawatDrKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbRawatDrKeyReleased
@@ -5634,7 +5634,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_BtnSeekDokter3ActionPerformed
 
     private void TPemeriksaanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TPemeriksaanKeyPressed
-        Valid.pindah(evt,TKeluhan,TSuhu);
+       // Valid.pindah(evt,TKeluhan,TSuhu);
     }//GEN-LAST:event_TPemeriksaanKeyPressed
 
     private void TSuhuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TSuhuKeyPressed
@@ -5674,11 +5674,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_TKeluhanTambahanKeyPressed
 
     private void TPenilaianKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TPenilaianKeyPressed
-        Valid.pindah(evt,TKeluhanTambahan,TindakLanjut);
+//        Valid.pindah(evt,TKeluhanTambahan,TindakLanjut);
     }//GEN-LAST:event_TPenilaianKeyPressed
 
     private void TindakLanjutKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TindakLanjutKeyPressed
-        Valid.pindah(evt,TPenilaian,BtnSimpan);
+//        Valid.pindah(evt,TPenilaian,BtnSimpan);
     }//GEN-LAST:event_TindakLanjutKeyPressed
 
     private void BtnTriaseIGDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTriaseIGDActionPerformed
