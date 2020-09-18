@@ -7183,24 +7183,17 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private void tampilPemeriksaanUsg() {
         Valid.tabelKosong(tabModePemeriksaan);
         try{  
-            ps4=koneksi.prepareStatement("select pemeriksaan_ralan.no_rawat,reg_periksa.no_rkm_medis,pasien.nm_pasien,"+
-                    "pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi, " +
-                    "pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,pemeriksaan_ralan.tinggi, " +
-                    "pemeriksaan_ralan.berat,pemeriksaan_ralan.gcs,pemeriksaan_ralan.keluhanutama,pemeriksaan_ralan.keluhantambahan, "+                     
-                    "pemeriksaan_ralan.keluhan,pemeriksaan_ralan.kepala,pemeriksaan_ralan.abkepala,pemeriksaan_ralan.leher,pemeriksaan_ralan.ableher, "+
-                    "pemeriksaan_ralan.thorax,pemeriksaan_ralan.abthorax,pemeriksaan_ralan.abdomen,pemeriksaan_ralan.ababdomen,pemeriksaan_ralan.genital,pemeriksaan_ralan.abgenital, "+
-                    "pemeriksaan_ralan.rektum,pemeriksaan_ralan.abrektum,pemeriksaan_ralan.ekstremitas, "+  
-                    "pemeriksaan_ralan.abekstremitas,pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.alergi,pemeriksaan_ralan.imun_ke,pemeriksaan_ralan.kesadaran,pemeriksaan_ralan.keadaanumum, "+
-                    "pemeriksaan_ralan.rtl,pemeriksaan_ralan.penilaian from pasien inner join reg_periksa inner join pemeriksaan_ralan "+
-                    "on pemeriksaan_ralan.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis where  "+
-                    "pemeriksaan_ralan.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pemeriksaan_ralan.no_rawat like ? or "+
-                    "pemeriksaan_ralan.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and reg_periksa.no_rkm_medis like ? or "+
-                    "pemeriksaan_ralan.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pasien.nm_pasien like ? or  "+
-                    "pemeriksaan_ralan.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pemeriksaan_ralan.alergi like ? or "+
-                    "pemeriksaan_ralan.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pemeriksaan_ralan.keluhan like ? or "+
-                    "pemeriksaan_ralan.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pemeriksaan_ralan.penilaian like ? or "+
-                    "pemeriksaan_ralan.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pemeriksaan_ralan.pemeriksaan like ? "+
-                   "order by pemeriksaan_ralan.no_rawat desc"); 
+            ps4=koneksi.prepareStatement("select pemeriksaan_usg.no_rawat,pemeriksaan_usg.tgl_perawatan,pemeriksaan_usg.jam_rawat,pemeriksaan_usg.kehamilan, "+ 
+                    "pemeriksaan_usg.djj,pemeriksaan_usg.letak,pemeriksaan_usg.gerakan,pemeriksaan_usg.jk,pemeriksaan_usg.anatomi,pemeriksaan_usg.gs,pemeriksaan_usg.cal, "+ 
+                    "pemeriksaan_usg.bpd,pemeriksaan_usg.fl,pemeriksaan_usg.hc,pemeriksaan_usg.ac,pemeriksaan_usg.hpl,pemeriksaan_usg.usia_kehamilan,pemeriksaan_usg.obj, "+ 
+                    "pemeriksaan_usg.letak_plasenta,pemeriksaan_usg.cairan_ketuban,pemeriksaan_usg.oui,pemeriksaan_usg.grade_plasenta,pemeriksaan_usg.kesimpulan,pemeriksaan_usg.saran "+
+                    "from pasien inner join reg_periksa inner join pemeriksaan_usg "+
+                    "on pemeriksaan_usg.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis where  "+
+                    "pemeriksaan_usg.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pemeriksaan_usg.no_rawat like ? or "+
+                    "pemeriksaan_usg.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and reg_periksa.no_rkm_medis like ? or "+
+                    "pemeriksaan_usg.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pasien.nm_pasien like ?  "+
+                   
+                    "order by pemeriksaan_usg.no_rawat desc"); 
             try{
                 ps4.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
                 ps4.setString(2,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
@@ -7214,22 +7207,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                 ps4.setString(10,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
                 ps4.setString(11,"%"+TCariPasien.getText()+"%");
                 ps4.setString(12,"%"+TCari.getText().trim()+"%");
-                ps4.setString(13,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
-                ps4.setString(14,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
-                ps4.setString(15,"%"+TCariPasien.getText()+"%");
-                ps4.setString(16,"%"+TCari.getText().trim()+"%");
-                ps4.setString(17,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
-                ps4.setString(18,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
-                ps4.setString(19,"%"+TCariPasien.getText()+"%");
-                ps4.setString(20,"%"+TCari.getText().trim()+"%");
-                ps4.setString(21,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
-                ps4.setString(22,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
-                ps4.setString(23,"%"+TCariPasien.getText()+"%");
-                ps4.setString(24,"%"+TCari.getText().trim()+"%");
-                ps4.setString(25,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
-                ps4.setString(26,Valid.SetTgl(DTPCari2.getSelectedItem()+""));
-                ps4.setString(27,"%"+TCariPasien.getText()+"%");
-                ps4.setString(28,"%"+TCari.getText().trim()+"%");
+               
                 rs=ps4.executeQuery();
                 while(rs.next()){
                     tabModePemeriksaan.addRow(new Object[]{
@@ -7239,9 +7217,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                         rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),
                         rs.getString(16),rs.getString(17),rs.getString(18),rs.getString(19),
                         rs.getString(20),rs.getString(21),rs.getString(22),rs.getString(23),
-                        rs.getString(24),rs.getString(25),rs.getString(26),rs.getString(27),
-                        rs.getString(28),rs.getString(29),rs.getString(30),rs.getString(31),rs.getString(32),
-                        rs.getString(33),rs.getString(34),rs.getString(35),rs.getString(36),
+                        rs.getString(24),rs.getString(25),
                         
                     });
                 }
