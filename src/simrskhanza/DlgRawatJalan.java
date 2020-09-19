@@ -63,7 +63,7 @@ import rekammedis.DataTriaseIGD;
  */
 public final class DlgRawatJalan extends javax.swing.JDialog {
     private final DefaultTableModel tabModeDr,tabModePr,tabModeDrPr,
-            tabModePemeriksaan,tabModeObstetri,tabModeGinekologi,
+            tabModePemeriksaan,tabModePemeriksaanUsg,tabModeObstetri,tabModeGinekologi,
             TabModeTindakan,TabModeTindakan2,TabModeTindakan3,TabModeCatatan;
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
@@ -396,6 +396,97 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         }
         tbPemeriksaan.setDefaultRenderer(Object.class, new WarnaTable());
+        
+        tabModePemeriksaanUsg=new DefaultTableModel(null,new Object[]{
+            "P","No.Rawat","No.R.M.","Nama Pasien","Tgl.Rawat","Jam Rawat","Kehamilan","Denyut Jantung Janin","letak",
+            "Gerakan","Jenis Kelamin","Anatomi","GS","CAL","BPD","FL","HC","AC","Usia Kehamilan","Taksiran Berat Janin","Letak Plasenta",
+            "Cairan Ketuban","OUI","Grade Plasenta","Kesimpulan","Saran"
+            }){
+             @Override public boolean isCellEditable(int rowIndex, int colIndex){
+                boolean a = false;
+                if (colIndex==0) {
+                    a=true;
+                }
+                return a;
+             }
+             Class[] types = new Class[] {
+                 java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class,java.lang.Object.class,
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
+                 java.lang.Object.class, java.lang.Object.class
+                 
+             };
+             @Override
+             public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+             }
+        };
+        tbPemeriksaanUsg.setModel(tabModePemeriksaanUsg);
+        tbPemeriksaanUsg.setPreferredScrollableViewportSize(new Dimension(500,30));
+        tbPemeriksaanUsg.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        for (i = 0; i < 25; i++) {
+            TableColumn column = tbPemeriksaan.getColumnModel().getColumn(i);
+            if(i==0){
+                column.setPreferredWidth(20);
+            }else if(i==1){
+                column.setPreferredWidth(105);
+            }else if(i==2){
+                column.setPreferredWidth(70);
+            }else if(i==3){
+                column.setPreferredWidth(180);
+            }else if(i==4){
+                column.setPreferredWidth(180);
+            }else if(i==5){
+                column.setPreferredWidth(180);
+            }else if(i==6){
+                column.setPreferredWidth(180);
+            }else if(i==7){
+                column.setPreferredWidth(180);
+            }else if(i==8){
+                column.setPreferredWidth(180);
+            }else if(i==9){
+                column.setPreferredWidth(180);
+            }else if(i==10){
+                column.setPreferredWidth(180);
+            }else if(i==11){
+                column.setPreferredWidth(180);
+            }else if(i==12){
+                column.setPreferredWidth(180);
+            }else if(i==13){
+                column.setPreferredWidth(180);
+            }else if(i==14){
+                column.setPreferredWidth(180);
+            }else if(i==15){
+                column.setPreferredWidth(180);
+            }else if(i==16){
+                column.setPreferredWidth(180);
+            }else if(i==17){
+                column.setPreferredWidth(180);
+            }else if(i==18){
+                column.setPreferredWidth(180);
+            }else if(i==19){
+                column.setPreferredWidth(180);
+            }else if(i==20){
+                column.setPreferredWidth(180);
+            }else if(i==21){
+                column.setPreferredWidth(180);
+            }else if(i==22){
+                column.setPreferredWidth(180);
+            }else if(i==23){
+                column.setPreferredWidth(180);
+            }else if(i==24){
+                column.setPreferredWidth(180);
+            }else if(i==25){
+                column.setPreferredWidth(180);
+            
+            }
+        }
+        tbPemeriksaanUsg.setDefaultRenderer(Object.class, new WarnaTable());
+
         
         tabModeObstetri=new DefaultTableModel(null,new Object[]{
             "P","No.Rawat","No.R.M","Nama Pasien","Tgl.Rawat","Jam Rawat",
@@ -1289,7 +1380,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         tbPemeriksaan = new widget.Table();
         internalFrame9 = new widget.InternalFrame();
         Scroll12 = new widget.ScrollPane();
-        tbPemeriksaanUSG = new widget.Table();
+        tbPemeriksaanUsg = new widget.Table();
         PanelInput4 = new javax.swing.JPanel();
         ChkInput4 = new widget.CekBox();
         panelGlass16 = new widget.panelisi();
@@ -1636,7 +1727,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-09-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-09-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1650,7 +1741,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-09-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-09-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -2588,20 +2679,20 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         Scroll12.setName("Scroll12"); // NOI18N
         Scroll12.setOpaque(true);
 
-        tbPemeriksaanUSG.setAutoCreateRowSorter(true);
-        tbPemeriksaanUSG.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
-        tbPemeriksaanUSG.setName("tbPemeriksaanUSG"); // NOI18N
-        tbPemeriksaanUSG.addMouseListener(new java.awt.event.MouseAdapter() {
+        tbPemeriksaanUsg.setAutoCreateRowSorter(true);
+        tbPemeriksaanUsg.setToolTipText("Silahkan klik untuk memilih data yang mau diedit ataupun dihapus");
+        tbPemeriksaanUsg.setName("tbPemeriksaanUsg"); // NOI18N
+        tbPemeriksaanUsg.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbPemeriksaanUSGMouseClicked(evt);
+                tbPemeriksaanUsgMouseClicked(evt);
             }
         });
-        tbPemeriksaanUSG.addKeyListener(new java.awt.event.KeyAdapter() {
+        tbPemeriksaanUsg.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                tbPemeriksaanUSGKeyReleased(evt);
+                tbPemeriksaanUsgKeyReleased(evt);
             }
         });
-        Scroll12.setViewportView(tbPemeriksaanUSG);
+        Scroll12.setViewportView(tbPemeriksaanUsg);
 
         internalFrame9.add(Scroll12, java.awt.BorderLayout.CENTER);
 
@@ -3864,7 +3955,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-09-2020" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "19-09-2020" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
@@ -6269,13 +6360,13 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         // TODO add your handling code here:
     }//GEN-LAST:event_AbGenitalActionPerformed
 
-    private void tbPemeriksaanUSGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanUSGMouseClicked
+    private void tbPemeriksaanUsgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanUsgMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbPemeriksaanUSGMouseClicked
+    }//GEN-LAST:event_tbPemeriksaanUsgMouseClicked
 
-    private void tbPemeriksaanUSGKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanUSGKeyReleased
+    private void tbPemeriksaanUsgKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanUsgKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbPemeriksaanUSGKeyReleased
+    }//GEN-LAST:event_tbPemeriksaanUsgKeyReleased
 
     private void ChkInput4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInput4ActionPerformed
         // TODO add your handling code here:
@@ -6687,7 +6778,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private widget.Table tbPemeriksaan;
     private widget.Table tbPemeriksaanGinekologi;
     private widget.Table tbPemeriksaanObstetri;
-    private widget.Table tbPemeriksaanUSG;
+    private widget.Table tbPemeriksaanUsg;
     private widget.Table tbRawatDr;
     private widget.Table tbRawatDrPr;
     private widget.Table tbRawatPr;
@@ -7181,11 +7272,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }
     
     private void tampilPemeriksaanUsg() {
-        Valid.tabelKosong(tabModePemeriksaan);
+        Valid.tabelKosong(tabModePemeriksaanUsg);
         try{  
             ps4=koneksi.prepareStatement("select pemeriksaan_usg.no_rawat,pemeriksaan_usg.tgl_perawatan,pemeriksaan_usg.jam_rawat,pemeriksaan_usg.kehamilan, "+ 
                     "pemeriksaan_usg.djj,pemeriksaan_usg.letak,pemeriksaan_usg.gerakan,pemeriksaan_usg.jk,pemeriksaan_usg.anatomi,pemeriksaan_usg.gs,pemeriksaan_usg.cal, "+ 
-                    "pemeriksaan_usg.bpd,pemeriksaan_usg.fl,pemeriksaan_usg.hc,pemeriksaan_usg.ac,pemeriksaan_usg.hpl,pemeriksaan_usg.usia_kehamilan,pemeriksaan_usg.obj, "+ 
+                    "pemeriksaan_usg.bpd,pemeriksaan_usg.fl,pemeriksaan_usg.hc,pemeriksaan_usg.ac,pemeriksaan_usg.hpl,pemeriksaan_usg.usia_kehamilan,pemeriksaan_usg.tbj, "+ 
                     "pemeriksaan_usg.letak_plasenta,pemeriksaan_usg.cairan_ketuban,pemeriksaan_usg.oui,pemeriksaan_usg.grade_plasenta,pemeriksaan_usg.kesimpulan,pemeriksaan_usg.saran "+
                     "from pasien inner join reg_periksa inner join pemeriksaan_usg "+
                     "on pemeriksaan_usg.no_rawat=reg_periksa.no_rawat and reg_periksa.no_rkm_medis=pasien.no_rkm_medis where  "+
@@ -7210,14 +7301,14 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                
                 rs=ps4.executeQuery();
                 while(rs.next()){
-                    tabModePemeriksaan.addRow(new Object[]{
+                    tabModePemeriksaanUsg.addRow(new Object[]{
                         false,rs.getString(1),rs.getString(2),rs.getString(3),
                         rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),
                         rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),
                         rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),
                         rs.getString(16),rs.getString(17),rs.getString(18),rs.getString(19),
                         rs.getString(20),rs.getString(21),rs.getString(22),rs.getString(23),
-                        rs.getString(24),rs.getString(25),
+                        rs.getString(24)
                         
                     });
                 }
@@ -7234,7 +7325,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }catch(Exception e){
             System.out.println("Notifikasi : "+e);
         }
-        LCount.setText(""+tabModePemeriksaan.getRowCount());
+        LCount.setText(""+tabModePemeriksaanUsg.getRowCount());
     }
     
     private void tampilCatatan() {
