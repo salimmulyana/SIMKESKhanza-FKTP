@@ -2675,6 +2675,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbPemeriksaanMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tbPemeriksaanMouseEntered(evt);
+            }
         });
         tbPemeriksaan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -2704,6 +2707,9 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }
         });
         tbPemeriksaanUsg.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tbPemeriksaanUsgKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tbPemeriksaanUsgKeyReleased(evt);
             }
@@ -6515,11 +6521,21 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_AbGenitalActionPerformed
 
     private void tbPemeriksaanUsgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanUsgMouseClicked
-        // TODO add your handling code here:
+        if(tabModePemeriksaanUsg.getRowCount()!=0){
+            try {
+                getDataPemeriksaanUsg();
+            } catch (java.lang.NullPointerException e) {
+            }
+
+        }
     }//GEN-LAST:event_tbPemeriksaanUsgMouseClicked
 
     private void tbPemeriksaanUsgKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanUsgKeyReleased
-        // TODO add your handling code here:
+        if(tabModePemeriksaanUsg.getRowCount()!=0){
+            try {
+                getDataPemeriksaanUsg();
+            } catch (java.lang.NullPointerException e) {
+            }
     }//GEN-LAST:event_tbPemeriksaanUsgKeyReleased
 
     private void ChkInput4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInput4ActionPerformed
@@ -6605,6 +6621,21 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private void TFlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFlActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TFlActionPerformed
+
+    private void tbPemeriksaanUsgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbPemeriksaanUsgKeyPressed
+        if(tabModePemeriksaanUsg.getRowCount()!=0) {
+            if((evt.getKeyCode()==KeyEvent.VK_ENTER)||(evt.getKeyCode()==KeyEvent.VK_UP)||(evt.getKeyCode()==KeyEvent.VK_DOWN)) {
+                try {
+                    getDataPemeriksaanUsg();
+                } catch (java.lang.NullPointerException e) {
+                }
+            }
+        }
+    }//GEN-LAST:event_tbPemeriksaanUsgKeyPressed
+
+    private void tbPemeriksaanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbPemeriksaanMouseEntered
 
     /**
     * @param args the command line arguments
@@ -7595,6 +7626,40 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         }
     }
     
+    private void getDataPemeriksaanUsg() {
+        if(tbPemeriksaanUsg.getSelectedRow()!= -1){
+            TNoRw.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),1).toString());
+            TNoRM.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),2).toString());
+            TPasien.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),3).toString());  
+            Valid.SetTgl(DTPTgl,tbPemeriksaan.getValueAt(tbPemeriksaanUsg.getSelectedRow(),4).toString());
+            cmbJam.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaanUsg.getSelectedRow(),5).toString().substring(0,2));
+            cmbMnt.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaanUsg.getSelectedRow(),5).toString().substring(3,5));
+            cmbDtk.setSelectedItem(tbPemeriksaan.getValueAt(tbPemeriksaanUsg.getSelectedRow(),5).toString().substring(6,8));
+            cmbKehamilan.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),6).toString());  
+            TDenyutJantung.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),7).toString()); 
+            cmbLetak.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),8).toString());
+            cmbGerakan.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),9).toString());
+            cmbJk.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),10).toString());
+            cmbAnatomi.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),11).toString());
+            TGs.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),12).toString()); 
+            TCrl.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),13).toString()); 
+            TBpd.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),14).toString()); 
+            TFl.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),15).toString()); 
+            THc.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),16).toString()); 
+            TAc.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),17).toString()); 
+            Valid.SetTgl(DTPHpl,tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),18).toString());
+            TUsiaHamil.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),19).toString());
+            TTbj.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),20).toString());
+            cmbPlasenta.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),21).toString());
+            cmbCairanKetuban.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),22).toString());
+            cmbOui.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),23).toString());
+            cmbGrade.setSelectedItem(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),24).toString());
+            TKesimpulan.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),25).toString());
+            TSaran.setText(tbPemeriksaanUsg.getValueAt(tbPemeriksaanUsg.getSelectedRow(),26).toString());
+            
+        }
+    }
+
     private void getDataCatatan() {
         if(tbCatatan.getSelectedRow()!= -1){
             TNoRw.setText(tbCatatan.getValueAt(tbCatatan.getSelectedRow(),1).toString());
