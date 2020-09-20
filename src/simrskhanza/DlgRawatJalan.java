@@ -398,8 +398,8 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         tbPemeriksaan.setDefaultRenderer(Object.class, new WarnaTable());
         
         tabModePemeriksaanUsg=new DefaultTableModel(null,new Object[]{
-            "P","No.Rawat","No.R.M.","Nama Pasien","Tgl.Rawat","Jam Rawat","Kehamilan","Denyut Jantung Janin","letak",
-            "Gerakan","Jenis Kelamin","Anatomi","GS","CAL","BPD","FL","HC","AC","Usia Kehamilan","Taksiran Berat Janin","Letak Plasenta",
+            "P","No.Rawat","No.R.M.","Nama Pasien","Tgl.Rawat","Jam Rawat","Kehamilan","Denyut Jantung Janin","Letak",
+            "Gerakan","Jenis Kelamin","Anatomi","GS","CRL","BPD","FL","HC","AC","Tanggal Perkiraan Lahir","Usia Kehamilan","Taksiran Berat Janin","Letak Plasenta",
             "Cairan Ketuban","OUI","Grade Plasenta","Kesimpulan","Saran"
             }){
              @Override public boolean isCellEditable(int rowIndex, int colIndex){
@@ -416,7 +416,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, 
                  java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class,
-                 java.lang.Object.class, java.lang.Object.class
+                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
                  
              };
              @Override
@@ -431,7 +431,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         for (i = 0; i < 25; i++) {
             TableColumn column = tbPemeriksaan.getColumnModel().getColumn(i);
             if(i==0){
-                column.setPreferredWidth(10);
+                column.setPreferredWidth(5);
             }else if(i==1){
                 column.setPreferredWidth(105);
             }else if(i==2){
@@ -7440,7 +7440,6 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                     "pemeriksaan_usg.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pemeriksaan_usg.no_rawat like ? or "+
                     "pemeriksaan_usg.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and reg_periksa.no_rkm_medis like ? or "+
                     "pemeriksaan_usg.tgl_perawatan between ? and ? and reg_periksa.no_rkm_medis like ? and pasien.nm_pasien like ?  "+
-                   
                     "order by pemeriksaan_usg.no_rawat desc"); 
             try{
                 ps4.setString(1,Valid.SetTgl(DTPCari1.getSelectedItem()+""));
