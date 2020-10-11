@@ -32,7 +32,7 @@ import javax.swing.table.TableColumn;
 
 /**
  *
- * dr.Salim Mulyana
+ * @author perpustakaan
  */
 public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
@@ -41,12 +41,10 @@ public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
     private validasi Valid=new validasi();
     private PreparedStatement ps,ps2;
     private ResultSet rs,rs2;
-  /*  private int i=0,kr1l=0,kr1p=0,th1s4l=0,th1s4p=0,th5s14l=0,th5s14p=0,th15s44l=0,th15S44p=0,
+    private int i=0,kr1l=0,kr1p=0,th1s4l=0,th1s4p=0,th5s14l=0,th5s14p=0,th15s44l=0,th15S44p=0,
                 th45s64l=0,th45s64p=0,th65plusl=0,th65plusp=0,totall=0,totalp=0,totaljml=0,matil=0,matip=0,
                 tkr1l=0,tkr1p=0,tth1s4l=0,tth1s4p=0,tth5s14l=0,tth5s14p=0,tth15s44l=0,tth15S44p=0,
                 tth45s64l=0,tth45s64p=0,tth65plusl=0,tth65plusp=0,ttotall=0,ttotalp=0,ttotaljml=0,tmatil=0,tmatip=0;
-    */
-    private int i=0,kr15=0,th15s20=0,th21s44=0,th45s54=0,th55s59=0,th60plus=0,laki=0,perempuan=0,baru=0,lama=0,total=0;
     /** Creates new form DlgLhtBiaya
      * @param parent
      * @param modal */
@@ -56,11 +54,8 @@ public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
         this.setLocation(8,1);
         setSize(885,674);
 
-        /*Object[] rowRwJlDr={"No.","ICD 10","Jenis Penyakit","< 1(L)","< 1(P)","1-4(L)","1-4(P)","5-14(L)","5-14(P)","15-44(L)","15-44(P)",
-                            "45-64(L)","45-64(P)",">65(L)",">65(P)","Total(L)","Total(P)","Total(Jml)","Meninggal(L)","Meninggal(P)"}; */
-       
-        Object[] rowRwJlDr={"No.","ICD 10","Jenis Penyakit","< 15 Th","15-20 Th","21-44 Th","45-54 Th","55-59 Th",">60 Th","Laki-laki","Perempuan",
-                            "Baru","Lama","Total Kunjungan"};
+        Object[] rowRwJlDr={"No.","ICD 10","Jenis Penyakit","< 1(L)","< 1(P)","1-4(L)","1-4(P)","5-14(L)","5-14(P)","15-44(L)","15-44(P)",
+                            "45-64(L)","45-64(P)",">65(L)",">65(P)","Total(L)","Total(P)","Total(Jml)","Meninggal(L)","Meninggal(P)"};
         tabMode=new DefaultTableModel(null,rowRwJlDr){
               @Override public boolean isCellEditable(int rowIndex, int colIndex){return false;}
         };
@@ -69,7 +64,7 @@ public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
         tbBangsal.setPreferredScrollableViewportSize(new Dimension(500,500));
         tbBangsal.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 14; i++) {
+        for (i = 0; i < 20; i++) {
             TableColumn column = tbBangsal.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(30);
@@ -77,11 +72,11 @@ public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
                 column.setPreferredWidth(60);
             }else if(i==2){
                 column.setPreferredWidth(200);
-            }else if(i==3){
+            }else if(i==17){
                 column.setPreferredWidth(70);
-            }else if(i==4){
+            }else if(i==18){
                 column.setPreferredWidth(75);
-            }else if(i==5){
+            }else if(i==19){
                 column.setPreferredWidth(75);
             }else{
                 column.setPreferredWidth(47);
@@ -93,8 +88,9 @@ public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
         try {
             ps=koneksi.prepareStatement("select diagnosa_pasien.kd_penyakit,SUBSTRING(penyakit.nm_penyakit,1,80) as nm_penyakit from diagnosa_pasien inner join penyakit "+
                     "inner join reg_periksa on diagnosa_pasien.kd_penyakit=penyakit.kd_penyakit and reg_periksa.no_rawat=diagnosa_pasien.no_rawat "+
-                    "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? and penyakit.status='Tidak Menular' "+
-                    "group by diagnosa_pasien.kd_penyakit ");
+                    "where diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? and left(upper(diagnosa_pasien.kd_penyakit),1)<>'A' and "+
+                    "diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? and left(upper(diagnosa_pasien.kd_penyakit),1)<>'B' and "+
+                    "diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1'  and reg_periksa.tgl_registrasi between ? and ? and left(upper(diagnosa_pasien.kd_penyakit),1)<>'-' group by diagnosa_pasien.kd_penyakit ");
             ps2=koneksi.prepareStatement("select concat(reg_periksa.umurdaftar,' ',reg_periksa.sttsumur) as umur,pasien.jk,pasien.no_rkm_medis from pasien inner join reg_periksa inner join diagnosa_pasien "+
                     "on pasien.no_rkm_medis=reg_periksa.no_rkm_medis and reg_periksa.no_rawat=diagnosa_pasien.no_rawat where "+
                     "diagnosa_pasien.status='Ralan' and diagnosa_pasien.prioritas='1' and reg_periksa.tgl_registrasi between ? and ? and diagnosa_pasien.kd_penyakit=? "+
@@ -139,7 +135,7 @@ public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
             }
         });
 
-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Surveilance Penyakit Tidak Menular Puskesmas ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Hasil Pelayanan Penyakit Tidak Menular Berbasis Puskesmas dan Rumah Sakit ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
         internalFrame1.setName("internalFrame1"); // NOI18N
         internalFrame1.setLayout(new java.awt.BorderLayout(1, 1));
 
@@ -253,21 +249,21 @@ public final class DlgDkkPenyakitTidakMenularRalan extends javax.swing.JDialog {
     private void BtnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPrintActionPerformed
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
         if(tabMode.getRowCount()==0){
-            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda cetak...!!!!");
+            JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
             //TCari.requestFocus();
         }else if(tabMode.getRowCount()!=0){
             
             Map<String, Object> param = new HashMap<>();            
-           // param.put("tkr1l",(tkr1l+tkr1p));
-            //param.put("tth1s4l",(tth1s4l+tth1s4p));
-            //param.put("tth5s14l",(tth5s14l+th5s14p));
-            //param.put("tth15s44l",(tth15s44l+tth15S44p));
-            //param.put("tth45s64l",(tth45s64l+tth45s64p));
-            //param.put("tth65plusl",(tth65plusl+tth65plusp));
-            //param.put("tanggal",Tgl2.getDate());
-            //param.put("ttotall",(ttotall+ttotalp));
-            //param.put("ttotaljml",ttotaljml);
-            //param.put("tmatil",(tmatil+tmatip));
+            param.put("tkr1l",(tkr1l+tkr1p));
+            param.put("tth1s4l",(tth1s4l+tth1s4p));
+            param.put("tth5s14l",(tth5s14l+th5s14p));
+            param.put("tth15s44l",(tth15s44l+tth15S44p));
+            param.put("tth45s64l",(tth45s64l+tth45s64p));
+            param.put("tth65plusl",(tth65plusl+tth65plusp));
+            param.put("tanggal",Tgl2.getDate());
+            param.put("ttotall",(ttotall+ttotalp));
+            param.put("ttotaljml",ttotaljml);
+            param.put("tmatil",(tmatil+tmatip));
             param.put("namars",akses.getnamars());
             param.put("alamatrs",akses.getalamatrs());
             param.put("kotars",akses.getkabupatenrs());
@@ -406,13 +402,10 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
             ps.setString(6,Valid.SetTgl(Tgl2.getSelectedItem()+""));
             rs=ps.executeQuery();
             i=1;
-            /*tkr1l=0;tkr1p=0;tth1s4l=0;tth1s4p=0;tth5s14l=0;tth5s14p=0;tth15s44l=0;tth15S44p=0;tth45s64l=0;
-            tth45s64p=0;tth65plusl=0;tth65plusp=0;ttotall=0;ttotalp=0;ttotaljml=0;tmatil=0;tmatip=0;*/
-            kr15=0;th15s20=0;th21s44=0;th45s54=0;th55s59=0;th60plus=0;laki=0;perempuan=0;baru=0;lama=0;total=0;
-            
+            tkr1l=0;tkr1p=0;tth1s4l=0;tth1s4p=0;tth5s14l=0;tth5s14p=0;tth15s44l=0;tth15S44p=0;tth45s64l=0;
+            tth45s64p=0;tth65plusl=0;tth65plusp=0;ttotall=0;ttotalp=0;ttotaljml=0;tmatil=0;tmatip=0;
             while(rs.next()){
-                //kr1l=0;kr1p=0;th1s4l=0;th1s4p=0;th5s14l=0;th5s14p=0;th15s44l=0;th15S44p=0;th45s64l=0;th45s64p=0;th65plusl=0;th65plusp=0;totall=0;totalp=0;totaljml=0;matil=0;matip=0;
-                kr15=0;th15s20=0;th21s44=0;th45s54=0;th55s59=0;th60plus=0;laki=0;perempuan=0;baru=0;lama=0;total=0;
+                kr1l=0;kr1p=0;th1s4l=0;th1s4p=0;th5s14l=0;th5s14p=0;th15s44l=0;th15S44p=0;th45s64l=0;th45s64p=0;th65plusl=0;th65plusp=0;totall=0;totalp=0;totaljml=0;matil=0;matip=0;
                 ps2.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+""));
                 ps2.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+""));
                 ps2.setString(3,rs.getString("kd_penyakit"));
@@ -441,7 +434,7 @@ private void BtnCari1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                                 break;
                         }
                     }else if(rs2.getString("umur").contains("Th")){
-                        if(Valid.SetAngka(rs2.getString("umur").replaceAll(" Th","").replaceAll("Th","").replaceAll(" ",""))<15){
+                        if(Valid.SetAngka(rs2.getString("umur").replaceAll(" Th","").replaceAll("Th","").replaceAll(" ",""))<=4){
                             switch (rs2.getString("jk")) {
                                 case "L":
                                     th1s4l=th1s4l+1;
