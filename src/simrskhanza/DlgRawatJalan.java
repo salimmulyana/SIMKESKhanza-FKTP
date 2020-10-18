@@ -428,7 +428,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         tbPemeriksaanUsg.setPreferredScrollableViewportSize(new Dimension(500,30));
         tbPemeriksaanUsg.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
-        for (i = 0; i < 26; i++) {
+        for (i = 0; i < 25; i++) {
             TableColumn column = tbPemeriksaan.getColumnModel().getColumn(i);
             if(i==0){
                 column.setPreferredWidth(5);
@@ -481,9 +481,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
             }else if(i==24){
                 column.setPreferredWidth(180);
             }else if(i==25){
-                column.setPreferredWidth(250);
-            }else if(i==26){
-                column.setPreferredWidth(250);
+                column.setPreferredWidth(180);
             
             }
         }
@@ -1745,7 +1743,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-09-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-09-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1759,7 +1757,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-09-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-09-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -3993,15 +3991,10 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
         jLabel23.setBounds(554, 10, 60, 23);
 
         DTPTgl.setForeground(new java.awt.Color(50, 70, 50));
-        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-09-2020" }));
+        DTPTgl.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-09-2020" }));
         DTPTgl.setDisplayFormat("dd-MM-yyyy");
         DTPTgl.setName("DTPTgl"); // NOI18N
         DTPTgl.setOpaque(false);
-        DTPTgl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DTPTglActionPerformed(evt);
-            }
-        });
         DTPTgl.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 DTPTglKeyPressed(evt);
@@ -5026,7 +5019,7 @@ public final class DlgRawatJalan extends javax.swing.JDialog {
                                             "order by pemeriksaan_ralan.no_rawat desc",param);
                 }   break;
                 
-            case 4:
+            case 3:
                 if(tabModePemeriksaan.getRowCount()==0){
                     JOptionPane.showMessageDialog(null,"Maaf, data sudah habis. Tidak ada data yang bisa anda print...!!!!");
                     BtnBatal.requestFocus();
@@ -6541,9 +6534,8 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
         if(tabModePemeriksaanUsg.getRowCount()!=0){
             try {
                 getDataPemeriksaanUsg();
-            } catch (java.lang.NullPointerException e){
+            } catch (java.lang.NullPointerException e) {
             }
-        }    
     }//GEN-LAST:event_tbPemeriksaanUsgKeyReleased
 
     private void ChkInput4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChkInput4ActionPerformed
@@ -6644,10 +6636,6 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     private void tbPemeriksaanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbPemeriksaanMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_tbPemeriksaanMouseEntered
-
-    private void DTPTglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DTPTglActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DTPTglActionPerformed
 
     /**
     * @param args the command line arguments
@@ -7337,13 +7325,11 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
             PanelInput4.setPreferredSize(new Dimension(WIDTH,400));
             panelGlass16.setVisible(true);      
             ChkInput4.setVisible(true);
-          //  DTPHpl.setDate(tgl1);
         }else if(ChkInput4.isSelected()==false){           
             ChkInput4.setVisible(false);            
             PanelInput4.setPreferredSize(new Dimension(WIDTH,10));
             panelGlass16.setVisible(false);      
             ChkInput4.setVisible(true);
-           // DTPHpl.setDate(tgl1);
         }
     }
     
@@ -7509,7 +7495,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                         rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),
                         rs.getString(16),rs.getString(17),rs.getString(18),rs.getString(19),
                         rs.getString(20),rs.getString(21),rs.getString(22),rs.getString(23),
-                        rs.getString(24),rs.getString(25),rs.getString(26)
+                        rs.getString(24)
                         
                     });
                 }
