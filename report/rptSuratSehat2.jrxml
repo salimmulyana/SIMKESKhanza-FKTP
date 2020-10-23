@@ -19,6 +19,7 @@
 	<parameter name="tb" class="java.lang.String"/>
 	<parameter name="norawat" class="java.lang.String"/>
 	<parameter name="rtl" class="java.lang.String"/>
+	<parameter name="suhu" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select reg_periksa.no_rawat,dokter.nm_dokter,pasien.tgl_lahir,pasien.jk,
  pasien.nm_pasien,pasien.jk,pasien.umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat
@@ -391,6 +392,38 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{rtl}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="442" y="185" width="7" height="12" uuid="97fd8979-7b7d-47a0-97a2-cbf52875bdce"/>
+				<textElement>
+					<font fontName="Tahoma" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="448" y="184" width="56" height="24" uuid="f30fbf12-35f4-4b44-acb1-11c5d4a994ca"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{suhu}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="506" y="183" width="48" height="22" uuid="1da1a00a-1c04-4586-ae86-bad94d3560f7"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="183" width="74" height="22" uuid="6a8026f7-05b2-41cd-87cc-8babd57f4bb6"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Suhu]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<summary>

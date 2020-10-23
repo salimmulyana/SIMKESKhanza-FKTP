@@ -259,7 +259,7 @@
 					<font fontName="Tahoma" size="11" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{temp9}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{temp10}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="152" y="237" width="68" height="16" uuid="3dd85109-ba96-4b3d-bf9f-bf2a03b36c8e"/>
@@ -267,7 +267,7 @@
 					<font fontName="Tahoma" size="11" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{temp10}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{temp9}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="410" y="311" width="140" height="19" uuid="c70da310-cdbc-4661-a41e-3d11113c370c"/>

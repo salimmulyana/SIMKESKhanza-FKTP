@@ -21,6 +21,7 @@
 	<parameter name="rtl" class="java.lang.String"/>
 	<parameter name="pemeriksaan" class="java.lang.String"/>
 	<parameter name="penilaian" class="java.lang.String"/>
+	<parameter name="suhu" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select reg_periksa.no_rawat,dokter.nm_dokter,pasien.tgl_lahir,pasien.jk,
  pasien.nm_pasien,pasien.jk,pasien.umur,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat
@@ -155,7 +156,7 @@
 				<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="242" width="340" height="19" uuid="c76403ab-1541-43d3-8a0c-f66154a87b99"/>
+				<reportElement x="0" y="260" width="340" height="19" uuid="c76403ab-1541-43d3-8a0c-f66154a87b99"/>
 				<textElement textAlignment="Justified">
 					<font fontName="Tahoma" size="12"/>
 					<paragraph lineSpacing="Single"/>
@@ -163,7 +164,7 @@
 				<text><![CDATA[Sesuai dengan hasil pemeriksaan yang kami lakukan ternyata:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="263" width="555" height="31" uuid="a5fd0c1e-41ea-4490-9ad5-ef6071e2a6af"/>
+				<reportElement x="0" y="281" width="555" height="31" uuid="a5fd0c1e-41ea-4490-9ad5-ef6071e2a6af"/>
 				<textElement>
 					<font fontName="Tahoma" size="12" isBold="false"/>
 					<paragraph lineSpacing="Single"/>
@@ -235,7 +236,7 @@
 				<text><![CDATA[Tekanan darah]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="95" y="225" width="87" height="15" uuid="14d61935-2316-4da5-844d-ce32520d1492"/>
+				<reportElement x="95" y="243" width="87" height="15" uuid="14d61935-2316-4da5-844d-ce32520d1492"/>
 				<textElement>
 					<font fontName="Tahoma" size="12"/>
 					<paragraph lineSpacing="Single"/>
@@ -275,7 +276,7 @@
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="184" y="228" width="7" height="12" uuid="310f457d-0e9b-4ff3-9ae3-be7d7a246017"/>
+				<reportElement x="184" y="244" width="7" height="12" uuid="310f457d-0e9b-4ff3-9ae3-be7d7a246017"/>
 				<textElement>
 					<font fontName="Tahoma" size="9"/>
 					<paragraph lineSpacing="Single"/>
@@ -409,18 +410,50 @@
 				<textFieldExpression><![CDATA[$F{nm_dokter}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="195" y="226" width="360" height="23" uuid="e5008508-2f97-4156-9c88-3ead40254356"/>
+				<reportElement x="195" y="244" width="360" height="23" uuid="e5008508-2f97-4156-9c88-3ead40254356"/>
 				<textElement>
 					<font fontName="Tahoma" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{pemeriksaan}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="336" y="243" width="217" height="18" uuid="36595901-fa67-4be1-b8f3-c4cebe7ed7c1"/>
+				<reportElement x="336" y="260" width="217" height="18" uuid="36595901-fa67-4be1-b8f3-c4cebe7ed7c1"/>
 				<textElement>
 					<font fontName="Tahoma" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{penilaian}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="252" y="230" width="45" height="15" uuid="e62e7857-3d8e-4ae2-b0c4-fc346109118e"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="227" width="83" height="22" uuid="6545733e-25cf-436b-8e3b-0e5664958a42"/>
+				<textElement>
+					<font fontName="Tahoma" size="12"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Suhu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="229" width="7" height="12" uuid="a59db268-843b-4982-83a6-1f9c4f7dcba9"/>
+				<textElement>
+					<font fontName="Tahoma" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="194" y="228" width="56" height="17" uuid="0dfaf9d0-0bb0-46bc-8dbd-b77807a1b454"/>
+				<textElement>
+					<font fontName="Tahoma" size="12" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{suhu}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
