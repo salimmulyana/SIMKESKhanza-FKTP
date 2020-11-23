@@ -473,7 +473,7 @@ public class RMDeteksiDiniCorona extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(63, 23));
         panelGlass7.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-05-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-10-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -486,7 +486,7 @@ public class RMDeteksiDiniCorona extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(24, 23));
         panelGlass7.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-05-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-10-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -697,7 +697,7 @@ public class RMDeteksiDiniCorona extends javax.swing.JDialog {
         FormInput.add(jLabel18);
         jLabel18.setBounds(644, 70, 80, 23);
 
-        TglGejala.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-05-2020" }));
+        TglGejala.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-10-2020" }));
         TglGejala.setDisplayFormat("dd-MM-yyyy");
         TglGejala.setName("TglGejala"); // NOI18N
         TglGejala.setOpaque(false);
@@ -757,7 +757,7 @@ public class RMDeteksiDiniCorona extends javax.swing.JDialog {
         FormInput.add(A3);
         A3.setBounds(733, 180, 85, 23);
 
-        TglSkrining.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-05-2020" }));
+        TglSkrining.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-10-2020" }));
         TglSkrining.setDisplayFormat("dd-MM-yyyy");
         TglSkrining.setName("TglSkrining"); // NOI18N
         TglSkrining.setOpaque(false);
@@ -888,7 +888,7 @@ public class RMDeteksiDiniCorona extends javax.swing.JDialog {
         FormInput.add(jLabel35);
         jLabel35.setBounds(310, 360, 10, 23);
 
-        TglKedatangan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10-05-2020" }));
+        TglKedatangan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "30-10-2020" }));
         TglKedatangan.setDisplayFormat("dd-MM-yyyy");
         TglKedatangan.setName("TglKedatangan"); // NOI18N
         TglKedatangan.setOpaque(false);
