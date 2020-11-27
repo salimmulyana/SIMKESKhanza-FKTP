@@ -725,6 +725,80 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         A32 = new widget.ComboBox();
         jLabel306 = new widget.Label();
         Gs174 = new widget.TextBox();
+        jLabel307 = new widget.Label();
+        A33 = new widget.ComboBox();
+        jLabel308 = new widget.Label();
+        jLabel309 = new widget.Label();
+        A34 = new widget.ComboBox();
+        A35 = new widget.ComboBox();
+        jLabel310 = new widget.Label();
+        jLabel311 = new widget.Label();
+        A36 = new widget.ComboBox();
+        A37 = new widget.ComboBox();
+        jLabel312 = new widget.Label();
+        jLabel313 = new widget.Label();
+        A38 = new widget.ComboBox();
+        A39 = new widget.ComboBox();
+        jLabel314 = new widget.Label();
+        jLabel315 = new widget.Label();
+        A40 = new widget.ComboBox();
+        A41 = new widget.ComboBox();
+        jLabel316 = new widget.Label();
+        jLabel317 = new widget.Label();
+        A42 = new widget.ComboBox();
+        A43 = new widget.ComboBox();
+        jLabel318 = new widget.Label();
+        jLabel319 = new widget.Label();
+        A44 = new widget.ComboBox();
+        A45 = new widget.ComboBox();
+        jLabel320 = new widget.Label();
+        jLabel321 = new widget.Label();
+        A46 = new widget.ComboBox();
+        A47 = new widget.ComboBox();
+        jLabel322 = new widget.Label();
+        jLabel323 = new widget.Label();
+        A48 = new widget.ComboBox();
+        A49 = new widget.ComboBox();
+        jLabel324 = new widget.Label();
+        jLabel325 = new widget.Label();
+        A50 = new widget.ComboBox();
+        A51 = new widget.ComboBox();
+        jLabel326 = new widget.Label();
+        jLabel327 = new widget.Label();
+        A52 = new widget.ComboBox();
+        A53 = new widget.ComboBox();
+        jLabel328 = new widget.Label();
+        A54 = new widget.ComboBox();
+        jLabel329 = new widget.Label();
+        A55 = new widget.ComboBox();
+        jLabel330 = new widget.Label();
+        A56 = new widget.ComboBox();
+        jLabel331 = new widget.Label();
+        A57 = new widget.ComboBox();
+        jLabel332 = new widget.Label();
+        A58 = new widget.ComboBox();
+        jLabel333 = new widget.Label();
+        A59 = new widget.ComboBox();
+        jLabel334 = new widget.Label();
+        A60 = new widget.ComboBox();
+        jLabel335 = new widget.Label();
+        A61 = new widget.ComboBox();
+        jLabel336 = new widget.Label();
+        A62 = new widget.ComboBox();
+        jLabel337 = new widget.Label();
+        A63 = new widget.ComboBox();
+        jLabel338 = new widget.Label();
+        A64 = new widget.ComboBox();
+        jLabel339 = new widget.Label();
+        A65 = new widget.ComboBox();
+        jLabel340 = new widget.Label();
+        A66 = new widget.ComboBox();
+        jLabel341 = new widget.Label();
+        A67 = new widget.ComboBox();
+        jLabel342 = new widget.Label();
+        A68 = new widget.ComboBox();
+        jLabel343 = new widget.Label();
+        A69 = new widget.ComboBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
 
@@ -3991,7 +4065,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         jLabel296.setText("Orientasi ankle kaki kiri:");
         jLabel296.setName("jLabel296"); // NOI18N
         FormInput.add(jLabel296);
-        jLabel296.setBounds(500, 1790, 130, 23);
+        jLabel296.setBounds(10, 2360, 130, 23);
 
         A25.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Menebal >= 3 mm", "Tidak dapat diamati dengan baik karena kendala teknis" }));
         A25.setName("A25"); // NOI18N
@@ -4011,30 +4085,30 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A25);
-        A25.setBounds(640, 1790, 220, 23);
+        A25.setBounds(150, 2360, 220, 23);
 
         jLabel297.setText("Keterangan tambahan:");
         jLabel297.setName("jLabel297"); // NOI18N
         FormInput.add(jLabel297);
-        jLabel297.setBounds(10, 1820, 130, 23);
+        jLabel297.setBounds(20, 2400, 130, 23);
 
         Gs173.setEditable(false);
         Gs173.setHighlighter(null);
         Gs173.setName("Gs173"); // NOI18N
         FormInput.add(Gs173);
-        Gs173.setBounds(150, 1820, 230, 23);
+        Gs173.setBounds(160, 2400, 230, 23);
 
         jLabel298.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel298.setText("ORGAN KANDUNGAN IBU HAMIL");
         jLabel298.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel298.setName("jLabel298"); // NOI18N
         FormInput.add(jLabel298);
-        jLabel298.setBounds(10, 1880, 190, 23);
+        jLabel298.setBounds(20, 2460, 190, 23);
 
         jLabel299.setText("Nyeri Perut Ibu hamil:");
         jLabel299.setName("jLabel299"); // NOI18N
         FormInput.add(jLabel299);
-        jLabel299.setBounds(10, 1900, 130, 23);
+        jLabel299.setBounds(20, 2480, 130, 23);
 
         A26.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Lower Abdominal Pain", "Nyeri tekan supra pubic", "Acute Abdomen", "Nyeri tekan regio lumbalis D", "Nyeri tekan mc-burney", "Acute abdomen", " " }));
         A26.setName("A26"); // NOI18N
@@ -4054,12 +4128,12 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A26);
-        A26.setBounds(150, 1900, 180, 23);
+        A26.setBounds(160, 2480, 180, 23);
 
         jLabel300.setText("Vesica Urinaria:");
         jLabel300.setName("jLabel300"); // NOI18N
         FormInput.add(jLabel300);
-        jLabel300.setBounds(300, 1900, 130, 23);
+        jLabel300.setBounds(310, 2480, 130, 23);
 
         A27.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Terisi", "Kosong", "Trabeculae", "Penebalan dinding", "Diverticle", "Batu" }));
         A27.setName("A27"); // NOI18N
@@ -4079,12 +4153,12 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A27);
-        A27.setBounds(440, 1900, 120, 23);
+        A27.setBounds(450, 2480, 120, 23);
 
         jLabel301.setText("Uterus:");
         jLabel301.setName("jLabel301"); // NOI18N
         FormInput.add(jLabel301);
-        jLabel301.setBounds(500, 1900, 130, 23);
+        jLabel301.setBounds(510, 2480, 130, 23);
 
         A28.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dalam batas normal", "Antefleksi", "Retrofleksi", "Anteversi", "Regroversi", "Ditemukan myoma uteri" }));
         A28.setName("A28"); // NOI18N
@@ -4104,12 +4178,12 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A28);
-        A28.setBounds(640, 1900, 220, 23);
+        A28.setBounds(650, 2480, 220, 23);
 
         jLabel302.setText("Ovarium Kanan:");
         jLabel302.setName("jLabel302"); // NOI18N
         FormInput.add(jLabel302);
-        jLabel302.setBounds(10, 1930, 130, 23);
+        jLabel302.setBounds(20, 2510, 130, 23);
 
         A29.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dalam batas normal", "Ditemukan kista ovarium" }));
         A29.setName("A29"); // NOI18N
@@ -4129,12 +4203,12 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A29);
-        A29.setBounds(150, 1930, 220, 23);
+        A29.setBounds(160, 2510, 220, 23);
 
         jLabel303.setText("Ovarium kiri:");
         jLabel303.setName("jLabel303"); // NOI18N
         FormInput.add(jLabel303);
-        jLabel303.setBounds(500, 1930, 130, 23);
+        jLabel303.setBounds(510, 2510, 130, 23);
 
         A30.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dalam batas normal", "Ditemukan kista ovarium" }));
         A30.setName("A30"); // NOI18N
@@ -4154,12 +4228,12 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A30);
-        A30.setBounds(640, 1930, 220, 23);
+        A30.setBounds(650, 2510, 220, 23);
 
         jLabel304.setText("Cavum douglas:");
         jLabel304.setName("jLabel304"); // NOI18N
         FormInput.add(jLabel304);
-        jLabel304.setBounds(10, 1960, 130, 23);
+        jLabel304.setBounds(20, 2540, 130, 23);
 
         A31.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dalam batas normal", "Ditemukan cairan bebas banyak", "Ditemukan cairan bebas sedikit" }));
         A31.setName("A31"); // NOI18N
@@ -4179,12 +4253,12 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A31);
-        A31.setBounds(150, 1960, 220, 23);
+        A31.setBounds(160, 2540, 220, 23);
 
         jLabel305.setText("Cervix:");
         jLabel305.setName("jLabel305"); // NOI18N
         FormInput.add(jLabel305);
-        jLabel305.setBounds(500, 1960, 130, 23);
+        jLabel305.setBounds(510, 2540, 130, 23);
 
         A32.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dalam batas normal", "Shortening canal <2,5 cm", "Funeling", "Hourglass apprearance" }));
         A32.setName("A32"); // NOI18N
@@ -4204,18 +4278,943 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
             }
         });
         FormInput.add(A32);
-        A32.setBounds(640, 1960, 220, 23);
+        A32.setBounds(650, 2540, 220, 23);
 
         jLabel306.setText("Keterangan tambahan:");
         jLabel306.setName("jLabel306"); // NOI18N
         FormInput.add(jLabel306);
-        jLabel306.setBounds(10, 1990, 130, 23);
+        jLabel306.setBounds(20, 2570, 130, 23);
 
         Gs174.setEditable(false);
         Gs174.setHighlighter(null);
         Gs174.setName("Gs174"); // NOI18N
         FormInput.add(Gs174);
-        Gs174.setBounds(150, 1990, 230, 23);
+        Gs174.setBounds(160, 2570, 230, 23);
+
+        jLabel307.setText("Cavum septum Pellucidum:");
+        jLabel307.setName("jLabel307"); // NOI18N
+        FormInput.add(jLabel307);
+        jLabel307.setBounds(500, 1790, 130, 23);
+
+        A33.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A33.setName("A33"); // NOI18N
+        A33.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A33ItemStateChanged(evt);
+            }
+        });
+        A33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A33ActionPerformed(evt);
+            }
+        });
+        A33.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A33KeyPressed(evt);
+            }
+        });
+        FormInput.add(A33);
+        A33.setBounds(640, 1790, 220, 23);
+
+        jLabel308.setText("Cisterna magna:");
+        jLabel308.setName("jLabel308"); // NOI18N
+        FormInput.add(jLabel308);
+        jLabel308.setBounds(10, 1820, 130, 23);
+
+        jLabel309.setText("Nuchal fold:");
+        jLabel309.setName("jLabel309"); // NOI18N
+        FormInput.add(jLabel309);
+        jLabel309.setBounds(10, 1850, 130, 23);
+
+        A34.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A34.setName("A34"); // NOI18N
+        A34.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A34ItemStateChanged(evt);
+            }
+        });
+        A34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A34ActionPerformed(evt);
+            }
+        });
+        A34.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A34KeyPressed(evt);
+            }
+        });
+        FormInput.add(A34);
+        A34.setBounds(150, 1850, 220, 23);
+
+        A35.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A35.setName("A35"); // NOI18N
+        A35.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A35ItemStateChanged(evt);
+            }
+        });
+        A35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A35ActionPerformed(evt);
+            }
+        });
+        A35.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A35KeyPressed(evt);
+            }
+        });
+        FormInput.add(A35);
+        A35.setBounds(150, 1820, 220, 23);
+
+        jLabel310.setText("Vermis cerebelli:");
+        jLabel310.setName("jLabel310"); // NOI18N
+        FormInput.add(jLabel310);
+        jLabel310.setBounds(500, 1820, 130, 23);
+
+        jLabel311.setText("Palatum:");
+        jLabel311.setName("jLabel311"); // NOI18N
+        FormInput.add(jLabel311);
+        jLabel311.setBounds(500, 1850, 130, 23);
+
+        A36.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A36.setName("A36"); // NOI18N
+        A36.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A36ItemStateChanged(evt);
+            }
+        });
+        A36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A36ActionPerformed(evt);
+            }
+        });
+        A36.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A36KeyPressed(evt);
+            }
+        });
+        FormInput.add(A36);
+        A36.setBounds(640, 1850, 220, 23);
+
+        A37.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Menebal >= 3 mm", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A37.setName("A37"); // NOI18N
+        A37.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A37ItemStateChanged(evt);
+            }
+        });
+        A37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A37ActionPerformed(evt);
+            }
+        });
+        A37.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A37KeyPressed(evt);
+            }
+        });
+        FormInput.add(A37);
+        A37.setBounds(640, 1820, 220, 23);
+
+        jLabel312.setText("Orbita:");
+        jLabel312.setName("jLabel312"); // NOI18N
+        FormInput.add(jLabel312);
+        jLabel312.setBounds(10, 1880, 130, 23);
+
+        jLabel313.setText("Face profile::");
+        jLabel313.setName("jLabel313"); // NOI18N
+        FormInput.add(jLabel313);
+        jLabel313.setBounds(10, 1910, 130, 23);
+
+        A38.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A38.setName("A38"); // NOI18N
+        A38.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A38ItemStateChanged(evt);
+            }
+        });
+        A38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A38ActionPerformed(evt);
+            }
+        });
+        A38.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A38KeyPressed(evt);
+            }
+        });
+        FormInput.add(A38);
+        A38.setBounds(150, 1910, 220, 23);
+
+        A39.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A39.setName("A39"); // NOI18N
+        A39.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A39ItemStateChanged(evt);
+            }
+        });
+        A39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A39ActionPerformed(evt);
+            }
+        });
+        A39.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A39KeyPressed(evt);
+            }
+        });
+        FormInput.add(A39);
+        A39.setBounds(150, 1880, 220, 23);
+
+        jLabel314.setText("Lensa mata:");
+        jLabel314.setName("jLabel314"); // NOI18N
+        FormInput.add(jLabel314);
+        jLabel314.setBounds(500, 1880, 130, 23);
+
+        jLabel315.setText("Nasal bone:");
+        jLabel315.setName("jLabel315"); // NOI18N
+        FormInput.add(jLabel315);
+        jLabel315.setBounds(500, 1910, 130, 23);
+
+        A40.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A40.setName("A40"); // NOI18N
+        A40.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A40ItemStateChanged(evt);
+            }
+        });
+        A40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A40ActionPerformed(evt);
+            }
+        });
+        A40.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A40KeyPressed(evt);
+            }
+        });
+        FormInput.add(A40);
+        A40.setBounds(640, 1910, 220, 23);
+
+        A41.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Menebal >= 3 mm", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A41.setName("A41"); // NOI18N
+        A41.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A41ItemStateChanged(evt);
+            }
+        });
+        A41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A41ActionPerformed(evt);
+            }
+        });
+        A41.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A41KeyPressed(evt);
+            }
+        });
+        FormInput.add(A41);
+        A41.setBounds(640, 1880, 220, 23);
+
+        jLabel316.setText("Retronasal triangle:");
+        jLabel316.setName("jLabel316"); // NOI18N
+        FormInput.add(jLabel316);
+        jLabel316.setBounds(10, 1940, 130, 23);
+
+        jLabel317.setText("Bibir bawah:");
+        jLabel317.setName("jLabel317"); // NOI18N
+        FormInput.add(jLabel317);
+        jLabel317.setBounds(10, 1970, 130, 23);
+
+        A42.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A42.setName("A42"); // NOI18N
+        A42.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A42ItemStateChanged(evt);
+            }
+        });
+        A42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A42ActionPerformed(evt);
+            }
+        });
+        A42.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A42KeyPressed(evt);
+            }
+        });
+        FormInput.add(A42);
+        A42.setBounds(150, 1970, 220, 23);
+
+        A43.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A43.setName("A43"); // NOI18N
+        A43.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A43ItemStateChanged(evt);
+            }
+        });
+        A43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A43ActionPerformed(evt);
+            }
+        });
+        A43.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A43KeyPressed(evt);
+            }
+        });
+        FormInput.add(A43);
+        A43.setBounds(150, 1940, 220, 23);
+
+        jLabel318.setText("Bibir atas:");
+        jLabel318.setName("jLabel318"); // NOI18N
+        FormInput.add(jLabel318);
+        jLabel318.setBounds(500, 1940, 130, 23);
+
+        jLabel319.setText("Cavum septum Pellucidum:");
+        jLabel319.setName("jLabel319"); // NOI18N
+        FormInput.add(jLabel319);
+        jLabel319.setBounds(500, 1970, 130, 23);
+
+        A44.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A44.setName("A44"); // NOI18N
+        A44.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A44ItemStateChanged(evt);
+            }
+        });
+        A44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A44ActionPerformed(evt);
+            }
+        });
+        A44.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A44KeyPressed(evt);
+            }
+        });
+        FormInput.add(A44);
+        A44.setBounds(640, 1970, 220, 23);
+
+        A45.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Menebal >= 3 mm", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A45.setName("A45"); // NOI18N
+        A45.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A45ItemStateChanged(evt);
+            }
+        });
+        A45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A45ActionPerformed(evt);
+            }
+        });
+        A45.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A45KeyPressed(evt);
+            }
+        });
+        FormInput.add(A45);
+        A45.setBounds(640, 1940, 220, 23);
+
+        jLabel320.setText("Mandibula:");
+        jLabel320.setName("jLabel320"); // NOI18N
+        FormInput.add(jLabel320);
+        jLabel320.setBounds(10, 2000, 130, 23);
+
+        jLabel321.setText("Simetrical Lung fields:");
+        jLabel321.setName("jLabel321"); // NOI18N
+        FormInput.add(jLabel321);
+        jLabel321.setBounds(10, 2030, 130, 23);
+
+        A46.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A46.setName("A46"); // NOI18N
+        A46.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A46ItemStateChanged(evt);
+            }
+        });
+        A46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A46ActionPerformed(evt);
+            }
+        });
+        A46.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A46KeyPressed(evt);
+            }
+        });
+        FormInput.add(A46);
+        A46.setBounds(150, 2030, 220, 23);
+
+        A47.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A47.setName("A47"); // NOI18N
+        A47.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A47ItemStateChanged(evt);
+            }
+        });
+        A47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A47ActionPerformed(evt);
+            }
+        });
+        A47.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A47KeyPressed(evt);
+            }
+        });
+        FormInput.add(A47);
+        A47.setBounds(150, 2000, 220, 23);
+
+        jLabel322.setText("Leher:");
+        jLabel322.setName("jLabel322"); // NOI18N
+        FormInput.add(jLabel322);
+        jLabel322.setBounds(500, 2000, 130, 23);
+
+        jLabel323.setText("ICEF:");
+        jLabel323.setName("jLabel323"); // NOI18N
+        FormInput.add(jLabel323);
+        jLabel323.setBounds(500, 2030, 130, 23);
+
+        A48.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ada", "Tidak ada", "Tidak dapat diamat dengan baik karena kendala teknis" }));
+        A48.setName("A48"); // NOI18N
+        A48.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A48ItemStateChanged(evt);
+            }
+        });
+        A48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A48ActionPerformed(evt);
+            }
+        });
+        A48.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A48KeyPressed(evt);
+            }
+        });
+        FormInput.add(A48);
+        A48.setBounds(640, 2030, 220, 23);
+
+        A49.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Menebal >= 3 mm", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A49.setName("A49"); // NOI18N
+        A49.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A49ItemStateChanged(evt);
+            }
+        });
+        A49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A49ActionPerformed(evt);
+            }
+        });
+        A49.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A49KeyPressed(evt);
+            }
+        });
+        FormInput.add(A49);
+        A49.setBounds(640, 2000, 220, 23);
+
+        jLabel324.setText("Cardiac regular activities:");
+        jLabel324.setName("jLabel324"); // NOI18N
+        FormInput.add(jLabel324);
+        jLabel324.setBounds(10, 2060, 130, 23);
+
+        jLabel325.setText("4CV:");
+        jLabel325.setName("jLabel325"); // NOI18N
+        FormInput.add(jLabel325);
+        jLabel325.setBounds(10, 2090, 130, 23);
+
+        A50.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A50.setName("A50"); // NOI18N
+        A50.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A50ItemStateChanged(evt);
+            }
+        });
+        A50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A50ActionPerformed(evt);
+            }
+        });
+        A50.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A50KeyPressed(evt);
+            }
+        });
+        FormInput.add(A50);
+        A50.setBounds(150, 2090, 220, 23);
+
+        A51.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A51.setName("A51"); // NOI18N
+        A51.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A51ItemStateChanged(evt);
+            }
+        });
+        A51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A51ActionPerformed(evt);
+            }
+        });
+        A51.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A51KeyPressed(evt);
+            }
+        });
+        FormInput.add(A51);
+        A51.setBounds(150, 2060, 220, 23);
+
+        jLabel326.setText("Cardiac situs:");
+        jLabel326.setName("jLabel326"); // NOI18N
+        FormInput.add(jLabel326);
+        jLabel326.setBounds(500, 2060, 130, 23);
+
+        jLabel327.setText("LVOT:");
+        jLabel327.setName("jLabel327"); // NOI18N
+        FormInput.add(jLabel327);
+        jLabel327.setBounds(500, 2090, 130, 23);
+
+        A52.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A52.setName("A52"); // NOI18N
+        A52.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A52ItemStateChanged(evt);
+            }
+        });
+        A52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A52ActionPerformed(evt);
+            }
+        });
+        A52.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A52KeyPressed(evt);
+            }
+        });
+        FormInput.add(A52);
+        A52.setBounds(640, 2090, 220, 23);
+
+        A53.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Situs solitus", "Situs inversus" }));
+        A53.setName("A53"); // NOI18N
+        A53.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A53ItemStateChanged(evt);
+            }
+        });
+        A53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A53ActionPerformed(evt);
+            }
+        });
+        A53.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A53KeyPressed(evt);
+            }
+        });
+        FormInput.add(A53);
+        A53.setBounds(640, 2060, 220, 23);
+
+        jLabel328.setText("RVOT:");
+        jLabel328.setName("jLabel328"); // NOI18N
+        FormInput.add(jLabel328);
+        jLabel328.setBounds(10, 2120, 130, 23);
+
+        A54.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A54.setName("A54"); // NOI18N
+        A54.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A54ItemStateChanged(evt);
+            }
+        });
+        A54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A54ActionPerformed(evt);
+            }
+        });
+        A54.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A54KeyPressed(evt);
+            }
+        });
+        FormInput.add(A54);
+        A54.setBounds(150, 2120, 220, 23);
+
+        jLabel329.setText("3VV:");
+        jLabel329.setName("jLabel329"); // NOI18N
+        FormInput.add(jLabel329);
+        jLabel329.setBounds(500, 2120, 130, 23);
+
+        A55.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A55.setName("A55"); // NOI18N
+        A55.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A55ItemStateChanged(evt);
+            }
+        });
+        A55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A55ActionPerformed(evt);
+            }
+        });
+        A55.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A55KeyPressed(evt);
+            }
+        });
+        FormInput.add(A55);
+        A55.setBounds(640, 2120, 220, 23);
+
+        jLabel330.setText("Diafragma:");
+        jLabel330.setName("jLabel330"); // NOI18N
+        FormInput.add(jLabel330);
+        jLabel330.setBounds(10, 2150, 130, 23);
+
+        A56.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A56.setName("A56"); // NOI18N
+        A56.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A56ItemStateChanged(evt);
+            }
+        });
+        A56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A56ActionPerformed(evt);
+            }
+        });
+        A56.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A56KeyPressed(evt);
+            }
+        });
+        FormInput.add(A56);
+        A56.setBounds(150, 2150, 220, 23);
+
+        jLabel331.setText("Lambung:");
+        jLabel331.setName("jLabel331"); // NOI18N
+        FormInput.add(jLabel331);
+        jLabel331.setBounds(500, 2150, 130, 23);
+
+        A57.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A57.setName("A57"); // NOI18N
+        A57.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A57ItemStateChanged(evt);
+            }
+        });
+        A57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A57ActionPerformed(evt);
+            }
+        });
+        A57.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A57KeyPressed(evt);
+            }
+        });
+        FormInput.add(A57);
+        A57.setBounds(640, 2150, 220, 23);
+
+        jLabel332.setText("Liver/hati:");
+        jLabel332.setName("jLabel332"); // NOI18N
+        FormInput.add(jLabel332);
+        jLabel332.setBounds(10, 2180, 130, 23);
+
+        A58.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A58.setName("A58"); // NOI18N
+        A58.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A58ItemStateChanged(evt);
+            }
+        });
+        A58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A58ActionPerformed(evt);
+            }
+        });
+        A58.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A58KeyPressed(evt);
+            }
+        });
+        FormInput.add(A58);
+        A58.setBounds(150, 2180, 220, 23);
+
+        jLabel333.setText("Ginjal:");
+        jLabel333.setName("jLabel333"); // NOI18N
+        FormInput.add(jLabel333);
+        jLabel333.setBounds(500, 2180, 130, 23);
+
+        A59.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A59.setName("A59"); // NOI18N
+        A59.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A59ItemStateChanged(evt);
+            }
+        });
+        A59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A59ActionPerformed(evt);
+            }
+        });
+        A59.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A59KeyPressed(evt);
+            }
+        });
+        FormInput.add(A59);
+        A59.setBounds(640, 2180, 220, 23);
+
+        jLabel334.setText("Dinding perut:");
+        jLabel334.setName("jLabel334"); // NOI18N
+        FormInput.add(jLabel334);
+        jLabel334.setBounds(10, 2210, 130, 23);
+
+        A60.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A60.setName("A60"); // NOI18N
+        A60.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A60ItemStateChanged(evt);
+            }
+        });
+        A60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A60ActionPerformed(evt);
+            }
+        });
+        A60.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A60KeyPressed(evt);
+            }
+        });
+        FormInput.add(A60);
+        A60.setBounds(150, 2210, 220, 23);
+
+        jLabel335.setText("Vesica urinaria:");
+        jLabel335.setName("jLabel335"); // NOI18N
+        FormInput.add(jLabel335);
+        jLabel335.setBounds(500, 2210, 130, 23);
+
+        A61.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A61.setName("A61"); // NOI18N
+        A61.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A61ItemStateChanged(evt);
+            }
+        });
+        A61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A61ActionPerformed(evt);
+            }
+        });
+        A61.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A61KeyPressed(evt);
+            }
+        });
+        FormInput.add(A61);
+        A61.setBounds(640, 2210, 220, 23);
+
+        jLabel336.setText("Cervical spine:");
+        jLabel336.setName("jLabel336"); // NOI18N
+        FormInput.add(jLabel336);
+        jLabel336.setBounds(10, 2240, 130, 23);
+
+        A62.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A62.setName("A62"); // NOI18N
+        A62.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A62ItemStateChanged(evt);
+            }
+        });
+        A62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A62ActionPerformed(evt);
+            }
+        });
+        A62.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A62KeyPressed(evt);
+            }
+        });
+        FormInput.add(A62);
+        A62.setBounds(150, 2240, 220, 23);
+
+        jLabel337.setText("Thoracal spine");
+        jLabel337.setName("jLabel337"); // NOI18N
+        FormInput.add(jLabel337);
+        jLabel337.setBounds(500, 2240, 130, 23);
+
+        A63.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A63.setName("A63"); // NOI18N
+        A63.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A63ItemStateChanged(evt);
+            }
+        });
+        A63.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A63ActionPerformed(evt);
+            }
+        });
+        A63.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A63KeyPressed(evt);
+            }
+        });
+        FormInput.add(A63);
+        A63.setBounds(640, 2240, 220, 23);
+
+        jLabel338.setText("Lumbar spine:");
+        jLabel338.setName("jLabel338"); // NOI18N
+        FormInput.add(jLabel338);
+        jLabel338.setBounds(10, 2270, 130, 23);
+
+        A64.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A64.setName("A64"); // NOI18N
+        A64.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A64ItemStateChanged(evt);
+            }
+        });
+        A64.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A64ActionPerformed(evt);
+            }
+        });
+        A64.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A64KeyPressed(evt);
+            }
+        });
+        FormInput.add(A64);
+        A64.setBounds(150, 2270, 220, 23);
+
+        jLabel339.setText("Sacral spine:");
+        jLabel339.setName("jLabel339"); // NOI18N
+        FormInput.add(jLabel339);
+        jLabel339.setBounds(500, 2270, 130, 23);
+
+        A65.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A65.setName("A65"); // NOI18N
+        A65.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A65ItemStateChanged(evt);
+            }
+        });
+        A65.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A65ActionPerformed(evt);
+            }
+        });
+        A65.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A65KeyPressed(evt);
+            }
+        });
+        FormInput.add(A65);
+        A65.setBounds(640, 2270, 220, 23);
+
+        jLabel340.setText("Skin line punggung:");
+        jLabel340.setName("jLabel340"); // NOI18N
+        FormInput.add(jLabel340);
+        jLabel340.setBounds(10, 2300, 130, 23);
+
+        A66.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Kesan abnormal", "Tidak diamati dengan baik karena kendala teknis" }));
+        A66.setName("A66"); // NOI18N
+        A66.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A66ItemStateChanged(evt);
+            }
+        });
+        A66.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A66ActionPerformed(evt);
+            }
+        });
+        A66.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A66KeyPressed(evt);
+            }
+        });
+        FormInput.add(A66);
+        A66.setBounds(150, 2300, 220, 23);
+
+        jLabel341.setText("Upper extermities:");
+        jLabel341.setName("jLabel341"); // NOI18N
+        FormInput.add(jLabel341);
+        jLabel341.setBounds(500, 2300, 130, 23);
+
+        A67.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ada 2", "Yang tampak 1", "Cuma ada 1", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A67.setName("A67"); // NOI18N
+        A67.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A67ItemStateChanged(evt);
+            }
+        });
+        A67.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A67ActionPerformed(evt);
+            }
+        });
+        A67.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A67KeyPressed(evt);
+            }
+        });
+        FormInput.add(A67);
+        A67.setBounds(640, 2300, 220, 23);
+
+        jLabel342.setText("Lower extremities:");
+        jLabel342.setName("jLabel342"); // NOI18N
+        FormInput.add(jLabel342);
+        jLabel342.setBounds(10, 2330, 130, 23);
+
+        A68.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ada 2", "Yang tampak 1", "Cuma ada 1", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A68.setName("A68"); // NOI18N
+        A68.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A68ItemStateChanged(evt);
+            }
+        });
+        A68.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A68ActionPerformed(evt);
+            }
+        });
+        A68.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A68KeyPressed(evt);
+            }
+        });
+        FormInput.add(A68);
+        A68.setBounds(150, 2330, 220, 23);
+
+        jLabel343.setText("Orientasi ankle kaki kanan:");
+        jLabel343.setName("jLabel343"); // NOI18N
+        FormInput.add(jLabel343);
+        jLabel343.setBounds(450, 2330, 180, 23);
+
+        A69.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kesan normal", "Menebal >= 3 mm", "Tidak dapat diamati dengan baik karena kendala teknis" }));
+        A69.setName("A69"); // NOI18N
+        A69.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A69ItemStateChanged(evt);
+            }
+        });
+        A69.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                A69ActionPerformed(evt);
+            }
+        });
+        A69.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                A69KeyPressed(evt);
+            }
+        });
+        FormInput.add(A69);
+        A69.setBounds(640, 2330, 220, 23);
 
         scrollInput.setViewportView(FormInput);
 
@@ -4839,6 +5838,450 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         // TODO add your handling code here:
     }//GEN-LAST:event_A32KeyPressed
 
+    private void A33ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A33ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A33ItemStateChanged
+
+    private void A33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A33ActionPerformed
+
+    private void A33KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A33KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A33KeyPressed
+
+    private void A34ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A34ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A34ItemStateChanged
+
+    private void A34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A34ActionPerformed
+
+    private void A34KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A34KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A34KeyPressed
+
+    private void A35ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A35ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A35ItemStateChanged
+
+    private void A35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A35ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A35ActionPerformed
+
+    private void A35KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A35KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A35KeyPressed
+
+    private void A36ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A36ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A36ItemStateChanged
+
+    private void A36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A36ActionPerformed
+
+    private void A36KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A36KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A36KeyPressed
+
+    private void A37ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A37ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A37ItemStateChanged
+
+    private void A37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A37ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A37ActionPerformed
+
+    private void A37KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A37KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A37KeyPressed
+
+    private void A38ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A38ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A38ItemStateChanged
+
+    private void A38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A38ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A38ActionPerformed
+
+    private void A38KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A38KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A38KeyPressed
+
+    private void A39ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A39ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A39ItemStateChanged
+
+    private void A39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A39ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A39ActionPerformed
+
+    private void A39KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A39KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A39KeyPressed
+
+    private void A40ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A40ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A40ItemStateChanged
+
+    private void A40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A40ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A40ActionPerformed
+
+    private void A40KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A40KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A40KeyPressed
+
+    private void A41ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A41ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A41ItemStateChanged
+
+    private void A41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A41ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A41ActionPerformed
+
+    private void A41KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A41KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A41KeyPressed
+
+    private void A42ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A42ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A42ItemStateChanged
+
+    private void A42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A42ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A42ActionPerformed
+
+    private void A42KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A42KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A42KeyPressed
+
+    private void A43ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A43ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A43ItemStateChanged
+
+    private void A43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A43ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A43ActionPerformed
+
+    private void A43KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A43KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A43KeyPressed
+
+    private void A44ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A44ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A44ItemStateChanged
+
+    private void A44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A44ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A44ActionPerformed
+
+    private void A44KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A44KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A44KeyPressed
+
+    private void A45ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A45ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A45ItemStateChanged
+
+    private void A45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A45ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A45ActionPerformed
+
+    private void A45KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A45KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A45KeyPressed
+
+    private void A46ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A46ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A46ItemStateChanged
+
+    private void A46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A46ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A46ActionPerformed
+
+    private void A46KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A46KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A46KeyPressed
+
+    private void A47ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A47ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A47ItemStateChanged
+
+    private void A47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A47ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A47ActionPerformed
+
+    private void A47KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A47KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A47KeyPressed
+
+    private void A48ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A48ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A48ItemStateChanged
+
+    private void A48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A48ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A48ActionPerformed
+
+    private void A48KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A48KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A48KeyPressed
+
+    private void A49ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A49ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A49ItemStateChanged
+
+    private void A49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A49ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A49ActionPerformed
+
+    private void A49KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A49KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A49KeyPressed
+
+    private void A50ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A50ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A50ItemStateChanged
+
+    private void A50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A50ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A50ActionPerformed
+
+    private void A50KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A50KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A50KeyPressed
+
+    private void A51ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A51ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A51ItemStateChanged
+
+    private void A51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A51ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A51ActionPerformed
+
+    private void A51KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A51KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A51KeyPressed
+
+    private void A52ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A52ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A52ItemStateChanged
+
+    private void A52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A52ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A52ActionPerformed
+
+    private void A52KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A52KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A52KeyPressed
+
+    private void A53ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A53ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A53ItemStateChanged
+
+    private void A53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A53ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A53ActionPerformed
+
+    private void A53KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A53KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A53KeyPressed
+
+    private void A54ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A54ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A54ItemStateChanged
+
+    private void A54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A54ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A54ActionPerformed
+
+    private void A54KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A54KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A54KeyPressed
+
+    private void A55ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A55ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A55ItemStateChanged
+
+    private void A55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A55ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A55ActionPerformed
+
+    private void A55KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A55KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A55KeyPressed
+
+    private void A56ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A56ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A56ItemStateChanged
+
+    private void A56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A56ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A56ActionPerformed
+
+    private void A56KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A56KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A56KeyPressed
+
+    private void A57ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A57ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A57ItemStateChanged
+
+    private void A57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A57ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A57ActionPerformed
+
+    private void A57KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A57KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A57KeyPressed
+
+    private void A58ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A58ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A58ItemStateChanged
+
+    private void A58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A58ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A58ActionPerformed
+
+    private void A58KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A58KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A58KeyPressed
+
+    private void A59ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A59ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A59ItemStateChanged
+
+    private void A59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A59ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A59ActionPerformed
+
+    private void A59KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A59KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A59KeyPressed
+
+    private void A60ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A60ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A60ItemStateChanged
+
+    private void A60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A60ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A60ActionPerformed
+
+    private void A60KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A60KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A60KeyPressed
+
+    private void A61ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A61ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A61ItemStateChanged
+
+    private void A61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A61ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A61ActionPerformed
+
+    private void A61KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A61KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A61KeyPressed
+
+    private void A62ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A62ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A62ItemStateChanged
+
+    private void A62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A62ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A62ActionPerformed
+
+    private void A62KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A62KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A62KeyPressed
+
+    private void A63ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A63ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A63ItemStateChanged
+
+    private void A63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A63ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A63ActionPerformed
+
+    private void A63KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A63KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A63KeyPressed
+
+    private void A64ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A64ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A64ItemStateChanged
+
+    private void A64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A64ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A64ActionPerformed
+
+    private void A64KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A64KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A64KeyPressed
+
+    private void A65ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A65ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A65ItemStateChanged
+
+    private void A65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A65ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A65ActionPerformed
+
+    private void A65KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A65KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A65KeyPressed
+
+    private void A66ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A66ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A66ItemStateChanged
+
+    private void A66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A66ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A66ActionPerformed
+
+    private void A66KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A66KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A66KeyPressed
+
+    private void A67ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A67ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A67ItemStateChanged
+
+    private void A67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A67ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A67ActionPerformed
+
+    private void A67KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A67KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A67KeyPressed
+
+    private void A68ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A68ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A68ItemStateChanged
+
+    private void A68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A68ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A68ActionPerformed
+
+    private void A68KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A68KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A68KeyPressed
+
+    private void A69ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A69ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A69ItemStateChanged
+
+    private void A69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A69ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A69ActionPerformed
+
+    private void A69KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A69KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_A69KeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -4881,9 +6324,46 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.ComboBox A30;
     private widget.ComboBox A31;
     private widget.ComboBox A32;
+    private widget.ComboBox A33;
+    private widget.ComboBox A34;
+    private widget.ComboBox A35;
+    private widget.ComboBox A36;
+    private widget.ComboBox A37;
+    private widget.ComboBox A38;
+    private widget.ComboBox A39;
     private widget.ComboBox A4;
+    private widget.ComboBox A40;
+    private widget.ComboBox A41;
+    private widget.ComboBox A42;
+    private widget.ComboBox A43;
+    private widget.ComboBox A44;
+    private widget.ComboBox A45;
+    private widget.ComboBox A46;
+    private widget.ComboBox A47;
+    private widget.ComboBox A48;
+    private widget.ComboBox A49;
     private widget.ComboBox A5;
+    private widget.ComboBox A50;
+    private widget.ComboBox A51;
+    private widget.ComboBox A52;
+    private widget.ComboBox A53;
+    private widget.ComboBox A54;
+    private widget.ComboBox A55;
+    private widget.ComboBox A56;
+    private widget.ComboBox A57;
+    private widget.ComboBox A58;
+    private widget.ComboBox A59;
     private widget.ComboBox A6;
+    private widget.ComboBox A60;
+    private widget.ComboBox A61;
+    private widget.ComboBox A62;
+    private widget.ComboBox A63;
+    private widget.ComboBox A64;
+    private widget.ComboBox A65;
+    private widget.ComboBox A66;
+    private widget.ComboBox A67;
+    private widget.ComboBox A68;
+    private widget.ComboBox A69;
     private widget.ComboBox A7;
     private widget.ComboBox A8;
     private widget.ComboBox A9;
@@ -5315,10 +6795,47 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.Label jLabel304;
     private widget.Label jLabel305;
     private widget.Label jLabel306;
+    private widget.Label jLabel307;
+    private widget.Label jLabel308;
+    private widget.Label jLabel309;
     private widget.Label jLabel31;
+    private widget.Label jLabel310;
+    private widget.Label jLabel311;
+    private widget.Label jLabel312;
+    private widget.Label jLabel313;
+    private widget.Label jLabel314;
+    private widget.Label jLabel315;
+    private widget.Label jLabel316;
+    private widget.Label jLabel317;
+    private widget.Label jLabel318;
+    private widget.Label jLabel319;
     private widget.Label jLabel32;
+    private widget.Label jLabel320;
+    private widget.Label jLabel321;
+    private widget.Label jLabel322;
+    private widget.Label jLabel323;
+    private widget.Label jLabel324;
+    private widget.Label jLabel325;
+    private widget.Label jLabel326;
+    private widget.Label jLabel327;
+    private widget.Label jLabel328;
+    private widget.Label jLabel329;
     private widget.Label jLabel33;
+    private widget.Label jLabel330;
+    private widget.Label jLabel331;
+    private widget.Label jLabel332;
+    private widget.Label jLabel333;
+    private widget.Label jLabel334;
+    private widget.Label jLabel335;
+    private widget.Label jLabel336;
+    private widget.Label jLabel337;
+    private widget.Label jLabel338;
+    private widget.Label jLabel339;
     private widget.Label jLabel34;
+    private widget.Label jLabel340;
+    private widget.Label jLabel341;
+    private widget.Label jLabel342;
+    private widget.Label jLabel343;
     private widget.Label jLabel35;
     private widget.Label jLabel36;
     private widget.Label jLabel37;
