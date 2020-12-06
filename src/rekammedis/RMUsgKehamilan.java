@@ -124,8 +124,8 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
 
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));
         //RiwayatSakitSebelumnya.setDocument(new batasInput((byte)50).getKata(RiwayatSakitSebelumnya));
-        RiwayatPeriksaSebelumnya.setDocument(new batasInput((byte)50).getKata(RiwayatPeriksaSebelumnya));
-        DiagnosaKehamilan.setDocument(new batasInput((byte)50).getKata(DiagnosaKehamilan));
+        //RiwayatPeriksaSebelumnya.setDocument(new batasInput((byte)50).getKata(RiwayatPeriksaSebelumnya));
+        //DiagnosaKehamilan.setDocument(new batasInput((byte)50).getKata(DiagnosaKehamilan));
 
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){
@@ -5571,7 +5571,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_Gs29ActionPerformed
 
     private void BtnPtgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPtgKeyPressed
-        Valid.pindah(evt,JadwalKontrol,BtnSimpan);
+      //  Valid.pindah(evt,JadwalKontrol,BtnSimpan);
     }//GEN-LAST:event_BtnPtgKeyPressed
 
     private void BtnPtgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPtgActionPerformed
@@ -5595,7 +5595,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_TglSkriningActionPerformed
 
     private void A1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A1KeyPressed
-        Valid.pindah(evt,TglSkrining,A2);
+       // Valid.pindah(evt,TglSkrining,A2);
     }//GEN-LAST:event_A1KeyPressed
 
     private void A1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A1ItemStateChanged
@@ -6980,21 +6980,21 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         Alamat.setText("");
         TglSkrining.setDate(new Date());
         A1.setSelectedIndex(0);
-        A2.setSelectedIndex(0);
+        //A2.setSelectedIndex(0);
         //A3.setSelectedIndex(0);
         //TglGejala.setDate(new Date());
-        RiwayatPeriksaSebelumnya.setText("");
+        //RiwayatPeriksaSebelumnya.setText("");
         //RiwayatSakitSebelumnya.setText("");
-        B1.setSelectedIndex(0);
-        DiagnosaKehamilan.setText("");
+        //B1.setSelectedIndex(0);
+        //DiagnosaKehamilan.setText("");
       //  TglKedatangan.setDate(new Date());
       //  B2a.setSelectedIndex(0);
        // B2b.setSelectedIndex(0);
       //  B2c.setSelectedIndex(0);
       //  B2d.setSelectedIndex(0);
        // B2e.setSelectedIndex(0);
-        Rtl.setSelectedIndex(3);
-        JadwalKontrol.setSelectedIndex(0);
+        //Rtl.setSelectedIndex(3);
+        //JadwalKontrol.setSelectedIndex(0);
        // HasilLaborat.setText("");
        // HasilRadiologi.setText("");
         ChkInput.setSelected(true);
@@ -7013,19 +7013,19 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             kdptg.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
             nmptg.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
             A1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
-            A2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
+            //A2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
            // A3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
             //RiwayatSakitSebelumnya.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
-            RiwayatPeriksaSebelumnya.setText(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString());
-            B1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
-            DiagnosaKehamilan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString());
+            //RiwayatPeriksaSebelumnya.setText(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString());
+            //B1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
+            //DiagnosaKehamilan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString());
             //B2a.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),20).toString());
             //B2b.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),21).toString());
             //B2c.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),22).toString());
             //B2d.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),23).toString());
             //B2e.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),24).toString());
-            Rtl.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),25).toString());
-            JadwalKontrol.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),26).toString());
+            //Rtl.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),25).toString());
+            //JadwalKontrol.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),26).toString());
             //isLabRad(NoRawat.getText());
             Valid.SetTgl(TglSkrining,tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
            // Valid.SetTgl(TglGejala,tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
@@ -7048,9 +7048,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
     
     public void isCek(){
-        BtnSimpan.setEnabled(akses.getusg_transabdominal());
-        BtnHapus.setEnabled(akses.getusg_transabdominal());
-        BtnEdit.setEnabled(akses.getusg_transabdominal());
+       // BtnSimpan.setEnabled(akses.getusg_transabdominal());
+        //BtnHapus.setEnabled(akses.getusg_transabdominal());
+        //BtnEdit.setEnabled(akses.getusg_transabdominal());
         if(akses.getjml2()>=1){
             kdptg.setEditable(false);
             BtnPtg.setEnabled(false);

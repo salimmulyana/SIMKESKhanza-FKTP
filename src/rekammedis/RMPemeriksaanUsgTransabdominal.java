@@ -2090,9 +2090,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
     
     public void isCek(){
-        BtnSimpan.setEnabled(akses.getusg_transabdominal());
-        BtnHapus.setEnabled(akses.getusg_transabdominal());
-        BtnEdit.setEnabled(akses.getusg_transabdominal());
+       // BtnSimpan.setEnabled(akses.getusg_transabdominal());
+        //BtnHapus.setEnabled(akses.getusg_transabdominal());
+        //BtnEdit.setEnabled(akses.getusg_transabdominal());
         if(akses.getjml2()>=1){
             kdptg.setEditable(false);
             BtnPtg.setEnabled(false);

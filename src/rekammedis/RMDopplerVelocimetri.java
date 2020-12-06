@@ -1254,7 +1254,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_BtnEditKeyPressed
 
     private void A1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A1KeyPressed
-        Valid.pindah(evt,TglSkrining,A2);
+       // Valid.pindah(evt,TglSkrining,A2);
     }//GEN-LAST:event_A1KeyPressed
 
     private void DiagnosaKehamilanKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DiagnosaKehamilanKeyPressed
@@ -1569,19 +1569,19 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         NoRM.setText("");
         NamaPasien.setText("");
         NoRawat.setText("");
-        Gs.setText("");
+        //Gs.setText("");
         //NoHP.setText("");
         //Pekerjaan.setText("");
         //TglLahir.setText("");
         Alamat.setText("");
-        TglSkrining.setDate(new Date());
+        //TglSkrining.setDate(new Date());
         A1.setSelectedIndex(0);
         A2.setSelectedIndex(0);
         //A3.setSelectedIndex(0);
         //TglGejala.setDate(new Date());
         RiwayatPeriksaSebelumnya.setText("");
         //RiwayatSakitSebelumnya.setText("");
-        B1.setSelectedIndex(0);
+        //B1.setSelectedIndex(0);
         DiagnosaKehamilan.setText("");
       //  TglKedatangan.setDate(new Date());
       //  B2a.setSelectedIndex(0);
@@ -1604,7 +1604,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             NoRM.setText(tbObat.getValueAt(tbObat.getSelectedRow(),1).toString());
             NamaPasien.setText(tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());
             Alamat.setText(tbObat.getValueAt(tbObat.getSelectedRow(),3).toString());
-            Gs.setText(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString());
+            //Gs.setText(tbObat.getValueAt(tbObat.getSelectedRow(),4).toString());
             
             kdptg.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
             nmptg.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
@@ -1613,7 +1613,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
            // A3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
             //RiwayatSakitSebelumnya.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
             RiwayatPeriksaSebelumnya.setText(tbObat.getValueAt(tbObat.getSelectedRow(),16).toString());
-            B1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
+            //B1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),17).toString());
             DiagnosaKehamilan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),18).toString());
             //B2a.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),20).toString());
             //B2b.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),21).toString());
@@ -1623,7 +1623,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             Rtl.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),25).toString());
             JadwalKontrol.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),26).toString());
             //isLabRad(NoRawat.getText());
-            Valid.SetTgl(TglSkrining,tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
+            //Valid.SetTgl(TglSkrining,tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
            // Valid.SetTgl(TglGejala,tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
            // Valid.SetTgl(TglKedatangan,tbObat.getValueAt(tbObat.getSelectedRow(),19).toString());
         }
@@ -1644,9 +1644,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
     
     public void isCek(){
-        BtnSimpan.setEnabled(akses.getusg_transabdominal());
-        BtnHapus.setEnabled(akses.getusg_transabdominal());
-        BtnEdit.setEnabled(akses.getusg_transabdominal());
+     //   BtnSimpan.setEnabled(akses.getusg_transabdominal());
+      //  BtnHapus.setEnabled(akses.getusg_transabdominal());
+       // BtnEdit.setEnabled(akses.getusg_transabdominal());
         if(akses.getjml2()>=1){
             kdptg.setEditable(false);
             BtnPtg.setEnabled(false);
@@ -1672,7 +1672,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 while(rs.next()){
                     NoRM.setText(rs.getString("no_rkm_medis"));
                     NamaPasien.setText(rs.getString("nm_pasien"));
-                    Gs.setText(rs.getString("no_ktp"));
+                    //Gs.setText(rs.getString("no_ktp"));
                    // NoHP.setText(rs.getString("no_tlp"));
                     //Pekerjaan.setText(rs.getString("pekerjaan"));
                     Alamat.setText(rs.getString("asal"));

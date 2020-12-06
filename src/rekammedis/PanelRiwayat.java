@@ -1771,7 +1771,7 @@ public class PanelRiwayat extends widget.panelisi {
                             //menampilkan riwayat pemeriksaan ralan
                             try {
                                 rs3=koneksi.prepareStatement(
-                                        "select pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,"+
+                                        "select pemeriksaan_ralan.keluhanutama,pemeriksaan_ralan.keluhantambahan,pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,"+
                                         "pemeriksaan_ralan.tinggi,pemeriksaan_ralan.berat,pemeriksaan_ralan.gcs,pemeriksaan_ralan.keluhan, "+
                                         "pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.alergi,pemeriksaan_ralan.imun_ke,pemeriksaan_ralan.rtl,"+
                                         "pemeriksaan_ralan.penilaian from pemeriksaan_ralan where "+
@@ -1812,12 +1812,30 @@ public class PanelRiwayat extends widget.panelisi {
                                                 "<td valign='top'>"+rs3.getString("gcs")+"</td>"+
                                                 "<td valign='top'>"+rs3.getString("imun_ke")+"</td>"+
                                              "</tr>"); 
+                                        if(!rs3.getString("keluhanutama").equals("")){
+                                            htmlContent.append(
+                                                 "<tr>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' colspan='2'>Keluhan Utama</td>"+
+                                                    "<td valign='top' colspan='6'> : "+rs3.getString("keluhanutama").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                                 "</tr>");
+                                        }
+                                        if(!rs3.getString("keluhantambahan").equals("")){
+                                            htmlContent.append(
+                                                 "<tr>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' colspan='2'>Keluhan Tambahan</td>"+
+                                                    "<td valign='top' colspan='6'> : "+rs3.getString("keluhantambahan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                                 "</tr>");
+                                        }
                                         if(!rs3.getString("keluhan").equals("")){
                                             htmlContent.append(
                                                  "<tr>"+
                                                     "<td valign='top' align='center'></td>"+
                                                     "<td valign='top' align='center'></td>"+
-                                                    "<td valign='top' colspan='2'>Keluhan</td>"+
+                                                    "<td valign='top' colspan='2'>RPS</td>"+
                                                     "<td valign='top' colspan='6'> : "+rs3.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                                  "</tr>");
                                         }
@@ -8110,7 +8128,7 @@ public class PanelRiwayat extends widget.panelisi {
                             //menampilkan riwayat pemeriksaan ralan
                             try {
                                 rs3=koneksi.prepareStatement(
-                                        "select pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,"+
+                                        "select pemeriksaan_ralan.keluhanutama,pemeriksaan_ralan.keluhantambahan,pemeriksaan_ralan.tgl_perawatan,pemeriksaan_ralan.jam_rawat,pemeriksaan_ralan.suhu_tubuh,pemeriksaan_ralan.tensi,pemeriksaan_ralan.nadi,pemeriksaan_ralan.respirasi,"+
                                         "pemeriksaan_ralan.tinggi,pemeriksaan_ralan.berat,pemeriksaan_ralan.gcs,pemeriksaan_ralan.keluhan, "+
                                         "pemeriksaan_ralan.pemeriksaan,pemeriksaan_ralan.alergi,pemeriksaan_ralan.imun_ke,pemeriksaan_ralan.rtl,"+
                                         "pemeriksaan_ralan.penilaian from pemeriksaan_ralan where "+
@@ -8151,12 +8169,32 @@ public class PanelRiwayat extends widget.panelisi {
                                                 "<td valign='top'>"+rs3.getString("gcs")+"</td>"+
                                                 "<td valign='top'>"+rs3.getString("imun_ke")+"</td>"+
                                              "</tr>"); 
+                                        
+                               
+                                        if(!rs3.getString("keluhanutama").equals("")){
+                                            htmlContent.append(
+                                                 "<tr>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' colspan='2'>Keluhan Utama</td>"+
+                                                    "<td valign='top' colspan='6'> : "+rs3.getString("keluhanutama").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                                 "</tr>");
+                                        }
+                                        if(!rs3.getString("keluhantambahan").equals("")){
+                                            htmlContent.append(
+                                                 "<tr>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' colspan='2'>Keluhan Tambahan</td>"+
+                                                    "<td valign='top' colspan='6'> : "+rs3.getString("keluhantambahan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                                 "</tr>");
+                                        }
                                         if(!rs3.getString("keluhan").equals("")){
                                             htmlContent.append(
                                                  "<tr>"+
                                                     "<td valign='top' align='center'></td>"+
                                                     "<td valign='top' align='center'></td>"+
-                                                    "<td valign='top' colspan='2'>Keluhan</td>"+
+                                                    "<td valign='top' colspan='2'>RPS</td>"+
                                                     "<td valign='top' colspan='6'> : "+rs3.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                                  "</tr>");
                                         }
@@ -8444,7 +8482,7 @@ public class PanelRiwayat extends widget.panelisi {
                             //menampilkan riwayat pemeriksaan ranap
                             try {
                                 rs3=koneksi.prepareStatement(
-                                        "select pemeriksaan_ranap.suhu_tubuh,pemeriksaan_ranap.tensi,pemeriksaan_ranap.nadi,pemeriksaan_ranap.respirasi," +
+                                        "select pemeriksaan_ralan.keluhanutama,pemeriksaan_ralan.keluhantambahan,pemeriksaan_ranap.suhu_tubuh,pemeriksaan_ranap.tensi,pemeriksaan_ranap.nadi,pemeriksaan_ranap.respirasi," +
                                         "pemeriksaan_ranap.tinggi,pemeriksaan_ranap.berat,pemeriksaan_ranap.gcs,pemeriksaan_ranap.keluhan,pemeriksaan_ranap.penilaian,pemeriksaan_ranap.rtl," +
                                         "pemeriksaan_ranap.pemeriksaan,pemeriksaan_ranap.alergi,pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat "+
                                         "from pemeriksaan_ranap where pemeriksaan_ranap.no_rawat='"+rs2.getString("no_rawat")+"' order by pemeriksaan_ranap.tgl_perawatan,pemeriksaan_ranap.jam_rawat").executeQuery();
@@ -8483,12 +8521,30 @@ public class PanelRiwayat extends widget.panelisi {
                                                 "<td valign='top'>"+rs3.getString("gcs")+"</td>"+
                                              "</tr>");   
                                         
+                                        if(!rs3.getString("keluhanutama").equals("")){
+                                            htmlContent.append(
+                                                 "<tr>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' colspan='2'>Keluhan Utama</td>"+
+                                                    "<td valign='top' colspan='6'> : "+rs3.getString("keluhanutama").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                                 "</tr>");
+                                        }
+                                        if(!rs3.getString("keluhantambahan").equals("")){
+                                            htmlContent.append(
+                                                 "<tr>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' align='center'></td>"+
+                                                    "<td valign='top' colspan='2'>Keluhan Tambahan</td>"+
+                                                    "<td valign='top' colspan='6'> : "+rs3.getString("keluhantambahan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
+                                                 "</tr>");
+                                        }
                                         if(!rs3.getString("keluhan").equals("")){
                                             htmlContent.append(
                                                  "<tr>"+
                                                     "<td valign='top' align='center'></td>"+
                                                     "<td valign='top' align='center'></td>"+
-                                                    "<td valign='top' colspan='2'>Keluhan</td>"+
+                                                    "<td valign='top' colspan='2'>RPS</td>"+
                                                     "<td valign='top' colspan='5'> : "+rs3.getString("keluhan").replaceAll("(\r\n|\r|\n|\n\r)","<br>")+"</td>"+
                                                  "</tr>");
                                         }
