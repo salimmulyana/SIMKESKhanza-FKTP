@@ -198,6 +198,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         MnCetakSuratCovid = new javax.swing.JMenuItem();
+        MnCetakSuratCovid1 = new javax.swing.JMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
@@ -256,7 +257,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         MnCetakSuratCovid.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakSuratCovid.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakSuratCovid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratCovid.setText("Cetak Surat Keterangan Covid");
+        MnCetakSuratCovid.setText("Cetak Surat Keterangan Covid 1");
         MnCetakSuratCovid.setName("MnCetakSuratCovid"); // NOI18N
         MnCetakSuratCovid.setPreferredSize(new java.awt.Dimension(200, 26));
         MnCetakSuratCovid.addActionListener(new java.awt.event.ActionListener() {
@@ -265,6 +266,20 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
             }
         });
         jPopupMenu1.add(MnCetakSuratCovid);
+
+        MnCetakSuratCovid1.setBackground(new java.awt.Color(250, 250, 250));
+        MnCetakSuratCovid1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        MnCetakSuratCovid1.setForeground(new java.awt.Color(50, 50, 50));
+        MnCetakSuratCovid1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
+        MnCetakSuratCovid1.setText("Cetak Surat Keterangan Covid 2");
+        MnCetakSuratCovid1.setName("MnCetakSuratCovid1"); // NOI18N
+        MnCetakSuratCovid1.setPreferredSize(new java.awt.Dimension(200, 26));
+        MnCetakSuratCovid1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MnCetakSuratCovid1ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(MnCetakSuratCovid1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -444,7 +459,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-12-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -458,7 +473,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-12-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -562,7 +577,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         TPasien.setBounds(355, 10, 365, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-12-2020" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -597,7 +612,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         jLabel16.setBounds(599, 40, 27, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "11-07-2020" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-12-2020" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
@@ -1088,6 +1103,39 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_SehatActionPerformed
 
+    private void MnCetakSuratCovid1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCetakSuratCovid1ActionPerformed
+   if(TPasien.getText().trim().equals("")){
+            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
+        }else{
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+                Map<String, Object> param = new HashMap<>();
+                param.put("namars",akses.getnamars());
+                param.put("alamatrs",akses.getalamatrs());
+                param.put("kotars",akses.getkabupatenrs());
+                param.put("propinsirs",akses.getpropinsirs());
+                param.put("kontakrs",akses.getkontakrs());
+                param.put("emailrs",akses.getemailrs());  
+                param.put("logo",Sequel.cariGambar("select logo from setting")); 
+                param.put("finger",Sequel.cariIsi("select sha1(sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KdDok.getText())); 
+                param.put("finger2",Sequel.cariIsi("select sha1(sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KdPetugas.getText())); 
+                Valid.MyReportqry("rptSuratKeteranganCovid2.jasper","report","::[ Surat Keterangan Covid ]::",
+                            "select surat_keterangan_covid.no_surat,surat_keterangan_covid.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,spesialis.nm_sps,"+
+                            "surat_keterangan_covid.kd_dokter,dokter.nm_dokter,surat_keterangan_covid.nip,petugas.nama,surat_keterangan_covid.igm,pasien.tgl_lahir,"+
+                            "surat_keterangan_covid.igg,surat_keterangan_covid.sehat,surat_keterangan_covid.tidaksehat,surat_keterangan_covid.berlakumulai,pasien.jk,"+
+                            "surat_keterangan_covid.berlakuselsai,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat "+
+                            "from surat_keterangan_covid inner join reg_periksa on surat_keterangan_covid.no_rawat=reg_periksa.no_rawat "+
+                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
+                            "inner join dokter on surat_keterangan_covid.kd_dokter=dokter.kd_dokter "+
+                            "inner join petugas on surat_keterangan_covid.nip=petugas.nip "+
+                            "inner join spesialis on dokter.kd_sps=spesialis.kd_sps "+
+                            "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel "+
+                            "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
+                            "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
+                            "where surat_keterangan_covid.no_surat='"+NoSurat.getText()+"' ",param);
+                this.setCursor(Cursor.getDefaultCursor());  
+       }
+    }//GEN-LAST:event_MnCetakSuratCovid1ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1123,6 +1171,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
     private widget.TextBox KdPetugas;
     private widget.Label LCount;
     private javax.swing.JMenuItem MnCetakSuratCovid;
+    private javax.swing.JMenuItem MnCetakSuratCovid1;
     private widget.TextBox NoSurat;
     private javax.swing.JPanel PanelInput;
     private widget.ScrollPane Scroll;
