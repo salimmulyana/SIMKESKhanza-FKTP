@@ -1110,7 +1110,7 @@ public final class DlgPeriksaLaboratorium extends javax.swing.JDialog {
             param.put("finger",Sequel.cariIsi("select sha1(sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KodePj.getText()));  
             param.put("finger2",Sequel.cariIsi("select sha1(sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KdPtg.getText()));  
             if(noorder.equals("")){
-                pilihan = (String)JOptionPane.showInputDialog(null,"Silahkan pilih hasil pemeriksaan..!","Hasil Pemeriksaan",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Model 1","Model 2", "Model 3", "Model 4", "Model 5", "Model 6", "Model 7", "Model 8", "Model 9", "Model 10", "Model 11"},"Model 1");
+                pilihan = (String)JOptionPane.showInputDialog(null,"Silahkan pilih hasil pemeriksaan..!","Hasil Pemeriksaan",JOptionPane.QUESTION_MESSAGE,null,new Object[]{"Model 1","Model 2", "Model 3", "Model 4", "Model 5", "Model 6", "Model 7", "Model 8", "Model 9", "Model 10", "Model 11","Covid"},"Model 1");
                 switch (pilihan) {
                     case "Model 1":
                           Valid.MyReport("rptPeriksaLab.jasper","report","::[ Pemeriksaan Laboratorium ]::",param);            
@@ -1144,6 +1144,9 @@ public final class DlgPeriksaLaboratorium extends javax.swing.JDialog {
                           break;
                     case "Model 11":
                           Valid.MyReport("rptPeriksaLab11.jasper","report","::[ Pemeriksaan Laboratorium ]::",param);            
+                          break;
+                    case "Covid":
+                          Valid.MyReport("rptPeriksaLabCovid.jasper","report","::[ Pemeriksaan Laboratorium ]::",param);            
                           break;
                 }  
             }else{
@@ -1185,6 +1188,7 @@ public final class DlgPeriksaLaboratorium extends javax.swing.JDialog {
                     case "Model 11":
                           Valid.MyReport("rptPeriksaLab11Permintaan.jasper","report","::[ Pemeriksaan Laboratorium ]::",param);            
                           break;
+                    
                 }
             }
                        
