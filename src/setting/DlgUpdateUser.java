@@ -648,7 +648,7 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                         "toko_pengadaan_barang,toko_hutang,toko_bayar_pemesanan,toko_member,toko_penjualan,registrasi_poli_per_tanggal,"+
                         "toko_piutang,toko_retur_beli,ipsrs_returbeli,ipsrs_riwayat_barang,pasien_corona,toko_pendapatan_harian,"+
                         "diagnosa_pasien_corona,perawatan_pasien_corona,penilaian_awal_keperawatan_gigi,master_masalah_keperawatan_gigi,"+
-                        "toko_bayar_piutang,toko_piutang_harian,toko_penjualan_harian,deteksi_corona,surat_kontrol from user where id_user=AES_ENCRYPT(?,'nur')");
+                        "toko_bayar_piutang,toko_piutang_harian,toko_penjualan_harian,deteksi_corona,surat_kontrol,surat_keterangan_covid from user where id_user=AES_ENCRYPT(?,'nur')");
             try {
                 ps.setString(1,user);
                 rs=ps.executeQuery();
@@ -3098,6 +3098,9 @@ public class DlgUpdateUser extends javax.swing.JDialog {
                     
                     if("[R]Set Harga Toko".toLowerCase().contains(TCari.getText().toLowerCase())){
                         tabMode.addRow(new Object[]{false,"[R]Set Harga Toko",rs.getBoolean("toko_set_harga")});
+                    }
+                    if("Surat Keterangan Covid".toLowerCase().contains(TCari.getText().toLowerCase())){
+                        tabMode.addRow(new Object[]{false,"Surat Keterangan Covid",rs.getBoolean("surat_keterangan_covid")});
                     }
                 }       
                 LCount.setText(""+tabMode.getRowCount());
@@ -5577,6 +5580,10 @@ public class DlgUpdateUser extends javax.swing.JDialog {
             
             if("[R]Set Harga Toko".equals(tbUser.getValueAt(i,1).toString())){
                 Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","toko_set_harga='"+tbUser.getValueAt(i,2).toString()+"'");
+            }
+            
+            if("Surat Keterangan Covid".equals(tbUser.getValueAt(i,1).toString())){
+                Sequel.mengedit("user","id_user=AES_ENCRYPT('"+TKd.getText()+"','nur')","surat_keterangan_covid='"+tbUser.getValueAt(i,2).toString()+"'");
             }
         }
         JOptionPane.showMessageDialog(null,"Proses update hak akses selesai..!!");
