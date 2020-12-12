@@ -198,7 +198,6 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         MnCetakSuratCovid = new javax.swing.JMenuItem();
-        MnCetakSuratCovid1 = new javax.swing.JMenuItem();
         buttonGroup1 = new javax.swing.ButtonGroup();
         internalFrame1 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
@@ -266,20 +265,6 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
             }
         });
         jPopupMenu1.add(MnCetakSuratCovid);
-
-        MnCetakSuratCovid1.setBackground(new java.awt.Color(250, 250, 250));
-        MnCetakSuratCovid1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
-        MnCetakSuratCovid1.setForeground(new java.awt.Color(50, 50, 50));
-        MnCetakSuratCovid1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratCovid1.setText("Cetak Surat Keterangan Covid 2");
-        MnCetakSuratCovid1.setName("MnCetakSuratCovid1"); // NOI18N
-        MnCetakSuratCovid1.setPreferredSize(new java.awt.Dimension(200, 26));
-        MnCetakSuratCovid1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MnCetakSuratCovid1ActionPerformed(evt);
-            }
-        });
-        jPopupMenu1.add(MnCetakSuratCovid1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -1103,39 +1088,6 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_SehatActionPerformed
 
-    private void MnCetakSuratCovid1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnCetakSuratCovid1ActionPerformed
-   if(TPasien.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(null,"Maaf, Silahkan anda pilih dulu pasien...!!!");
-        }else{
-            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                Map<String, Object> param = new HashMap<>();
-                param.put("namars",akses.getnamars());
-                param.put("alamatrs",akses.getalamatrs());
-                param.put("kotars",akses.getkabupatenrs());
-                param.put("propinsirs",akses.getpropinsirs());
-                param.put("kontakrs",akses.getkontakrs());
-                param.put("emailrs",akses.getemailrs());  
-                param.put("logo",Sequel.cariGambar("select logo from setting")); 
-                param.put("finger",Sequel.cariIsi("select sha1(sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KdDok.getText())); 
-                param.put("finger2",Sequel.cariIsi("select sha1(sidikjari) from sidikjari inner join pegawai on pegawai.id=sidikjari.id where pegawai.nik=?",KdPetugas.getText())); 
-                Valid.MyReportqry("rptSuratKeteranganCovid2.jasper","report","::[ Surat Keterangan Covid ]::",
-                            "select surat_keterangan_covid.no_surat,surat_keterangan_covid.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,spesialis.nm_sps,"+
-                            "surat_keterangan_covid.kd_dokter,dokter.nm_dokter,surat_keterangan_covid.nip,petugas.nama,surat_keterangan_covid.igm,pasien.tgl_lahir,"+
-                            "surat_keterangan_covid.igg,surat_keterangan_covid.sehat,surat_keterangan_covid.tidaksehat,surat_keterangan_covid.berlakumulai,pasien.jk,"+
-                            "surat_keterangan_covid.berlakuselsai,pasien.pekerjaan,concat(pasien.alamat,', ',kelurahan.nm_kel,', ',kecamatan.nm_kec,', ',kabupaten.nm_kab) as alamat "+
-                            "from surat_keterangan_covid inner join reg_periksa on surat_keterangan_covid.no_rawat=reg_periksa.no_rawat "+
-                            "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
-                            "inner join dokter on surat_keterangan_covid.kd_dokter=dokter.kd_dokter "+
-                            "inner join petugas on surat_keterangan_covid.nip=petugas.nip "+
-                            "inner join spesialis on dokter.kd_sps=spesialis.kd_sps "+
-                            "inner join kelurahan on pasien.kd_kel=kelurahan.kd_kel "+
-                            "inner join kecamatan on pasien.kd_kec=kecamatan.kd_kec "+
-                            "inner join kabupaten on pasien.kd_kab=kabupaten.kd_kab "+
-                            "where surat_keterangan_covid.no_surat='"+NoSurat.getText()+"' ",param);
-                this.setCursor(Cursor.getDefaultCursor());  
-       }
-    }//GEN-LAST:event_MnCetakSuratCovid1ActionPerformed
-
     /**
     * @param args the command line arguments
     */
@@ -1171,7 +1123,6 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
     private widget.TextBox KdPetugas;
     private widget.Label LCount;
     private javax.swing.JMenuItem MnCetakSuratCovid;
-    private javax.swing.JMenuItem MnCetakSuratCovid1;
     private widget.TextBox NoSurat;
     private javax.swing.JPanel PanelInput;
     private widget.ScrollPane Scroll;
