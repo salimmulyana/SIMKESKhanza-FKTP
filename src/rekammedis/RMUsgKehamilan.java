@@ -219,13 +219,13 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         NamaPasien = new widget.TextBox();
         jLabel7 = new widget.Label();
         NoRawat = new widget.TextBox();
-        A1 = new widget.ComboBox();
+        JmlGs = new widget.ComboBox();
         Gs = new widget.TextBox();
         jLabel11 = new widget.Label();
         jLabel16 = new widget.Label();
         Alamat = new widget.TextBox();
         jLabel18 = new widget.Label();
-        TglSkrining = new widget.Tanggal();
+        Hpht = new widget.Tanggal();
         jLabel34 = new widget.Label();
         jLabel51 = new widget.Label();
         kdptg = new widget.TextBox();
@@ -259,47 +259,47 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         Gs13 = new widget.TextBox();
         jLabel64 = new widget.Label();
         jLabel32 = new widget.Label();
-        Gs28 = new widget.TextBox();
-        Gs29 = new widget.TextBox();
+        KelainanGs2 = new widget.TextBox();
+        LokasiGs2 = new widget.TextBox();
         jLabel38 = new widget.Label();
         jLabel28 = new widget.Label();
         jLabel25 = new widget.Label();
-        TglSkrining1 = new widget.Tanggal();
+        Edd = new widget.Tanggal();
         jLabel41 = new widget.Label();
         jLabel43 = new widget.Label();
-        Gs30 = new widget.TextBox();
+        Gravida = new widget.TextBox();
         jLabel45 = new widget.Label();
-        Gs31 = new widget.TextBox();
+        Para = new widget.TextBox();
         jLabel52 = new widget.Label();
-        Gs32 = new widget.TextBox();
+        Premature = new widget.TextBox();
         jLabel99 = new widget.Label();
-        Gs33 = new widget.TextBox();
+        Immature = new widget.TextBox();
         jLabel101 = new widget.Label();
-        Gs34 = new widget.TextBox();
+        Abortus = new widget.TextBox();
         jLabel102 = new widget.Label();
-        Gs35 = new widget.TextBox();
+        AnakHidup = new widget.TextBox();
         jLabel26 = new widget.Label();
-        A3 = new widget.ComboBox();
+        JmlJanin = new widget.ComboBox();
         jLabel27 = new widget.Label();
-        A4 = new widget.ComboBox();
+        PenampakanGs = new widget.ComboBox();
         jLabel44 = new widget.Label();
-        A5 = new widget.ComboBox();
+        LokasiGs = new widget.ComboBox();
         jLabel48 = new widget.Label();
-        A6 = new widget.ComboBox();
+        KelainanGs = new widget.ComboBox();
         jLabel98 = new widget.Label();
         jLabel100 = new widget.Label();
-        A7 = new widget.ComboBox();
+        KelaiananYs = new widget.ComboBox();
         jLabel103 = new widget.Label();
-        A9 = new widget.ComboBox();
+        YsDlmGs = new widget.ComboBox();
         jLabel105 = new widget.Label();
         jLabel106 = new widget.Label();
         jLabel107 = new widget.Label();
         jLabel108 = new widget.Label();
-        A10 = new widget.ComboBox();
+        JaninDlmGs = new widget.ComboBox();
         jLabel104 = new widget.Label();
-        A8 = new widget.ComboBox();
+        Djj = new widget.ComboBox();
         jLabel109 = new widget.Label();
-        A11 = new widget.ComboBox();
+        GerakanJanin = new widget.ComboBox();
         Gs5 = new widget.TextBox();
         jLabel23 = new widget.Label();
         jLabel24 = new widget.Label();
@@ -387,7 +387,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         jLabel117 = new widget.Label();
         jLabel118 = new widget.Label();
         jLabel119 = new widget.Label();
-        Gs43 = new widget.TextBox();
+        gs1 = new widget.TextBox();
         Gs48 = new widget.TextBox();
         Gs49 = new widget.TextBox();
         Gs50 = new widget.TextBox();
@@ -982,7 +982,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(63, 23));
         panelGlass7.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-11-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -995,7 +995,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(24, 23));
         panelGlass7.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-11-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1109,20 +1109,20 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(NoRawat);
         NoRawat.setBounds(76, 10, 141, 23);
 
-        A1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Satu", "Dua", "Tiga" }));
-        A1.setName("A1"); // NOI18N
-        A1.addItemListener(new java.awt.event.ItemListener() {
+        JmlGs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Satu", "Dua", "Tiga" }));
+        JmlGs.setName("JmlGs"); // NOI18N
+        JmlGs.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A1ItemStateChanged(evt);
+                JmlGsItemStateChanged(evt);
             }
         });
-        A1.addKeyListener(new java.awt.event.KeyAdapter() {
+        JmlGs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A1KeyPressed(evt);
+                JmlGsKeyPressed(evt);
             }
         });
-        FormInput.add(A1);
-        A1.setBounds(110, 140, 80, 23);
+        FormInput.add(JmlGs);
+        JmlGs.setBounds(110, 140, 80, 23);
 
         Gs.setEditable(false);
         Gs.setHighlighter(null);
@@ -1151,22 +1151,22 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel18);
         jLabel18.setBounds(10, 140, 100, 23);
 
-        TglSkrining.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-11-2020" }));
-        TglSkrining.setDisplayFormat("dd-MM-yyyy");
-        TglSkrining.setName("TglSkrining"); // NOI18N
-        TglSkrining.setOpaque(false);
-        TglSkrining.addActionListener(new java.awt.event.ActionListener() {
+        Hpht.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
+        Hpht.setDisplayFormat("dd-MM-yyyy");
+        Hpht.setName("Hpht"); // NOI18N
+        Hpht.setOpaque(false);
+        Hpht.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TglSkriningActionPerformed(evt);
+                HphtActionPerformed(evt);
             }
         });
-        TglSkrining.addKeyListener(new java.awt.event.KeyAdapter() {
+        Hpht.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                TglSkriningKeyPressed(evt);
+                HphtKeyPressed(evt);
             }
         });
-        FormInput.add(TglSkrining);
-        TglSkrining.setBounds(710, 40, 90, 23);
+        FormInput.add(Hpht);
+        Hpht.setBounds(710, 40, 90, 23);
 
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel34.setText(":");
@@ -1363,22 +1363,22 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel32);
         jLabel32.setBounds(740, 300, 50, 23);
 
-        Gs28.setEditable(false);
-        Gs28.setHighlighter(null);
-        Gs28.setName("Gs28"); // NOI18N
-        FormInput.add(Gs28);
-        Gs28.setBounds(860, 190, 220, 23);
+        KelainanGs2.setEditable(false);
+        KelainanGs2.setHighlighter(null);
+        KelainanGs2.setName("KelainanGs2"); // NOI18N
+        FormInput.add(KelainanGs2);
+        KelainanGs2.setBounds(860, 190, 220, 23);
 
-        Gs29.setEditable(false);
-        Gs29.setHighlighter(null);
-        Gs29.setName("Gs29"); // NOI18N
-        Gs29.addActionListener(new java.awt.event.ActionListener() {
+        LokasiGs2.setEditable(false);
+        LokasiGs2.setHighlighter(null);
+        LokasiGs2.setName("LokasiGs2"); // NOI18N
+        LokasiGs2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Gs29ActionPerformed(evt);
+                LokasiGs2ActionPerformed(evt);
             }
         });
-        FormInput.add(Gs29);
-        Gs29.setBounds(400, 190, 190, 23);
+        FormInput.add(LokasiGs2);
+        LokasiGs2.setBounds(400, 190, 190, 23);
 
         jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel38.setName("jLabel38"); // NOI18N
@@ -1397,17 +1397,17 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel25);
         jLabel25.setBounds(50, 360, 30, 23);
 
-        TglSkrining1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-11-2020" }));
-        TglSkrining1.setDisplayFormat("dd-MM-yyyy");
-        TglSkrining1.setName("TglSkrining1"); // NOI18N
-        TglSkrining1.setOpaque(false);
-        TglSkrining1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Edd.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
+        Edd.setDisplayFormat("dd-MM-yyyy");
+        Edd.setName("Edd"); // NOI18N
+        Edd.setOpaque(false);
+        Edd.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                TglSkrining1KeyPressed(evt);
+                EddKeyPressed(evt);
             }
         });
-        FormInput.add(TglSkrining1);
-        TglSkrining1.setBounds(800, 300, 90, 23);
+        FormInput.add(Edd);
+        Edd.setBounds(800, 300, 90, 23);
 
         jLabel41.setText("cm");
         jLabel41.setName("jLabel41"); // NOI18N
@@ -1419,146 +1419,146 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel43);
         jLabel43.setBounds(20, 110, 50, 23);
 
-        Gs30.setEditable(false);
-        Gs30.setHighlighter(null);
-        Gs30.setName("Gs30"); // NOI18N
-        FormInput.add(Gs30);
-        Gs30.setBounds(80, 110, 70, 23);
+        Gravida.setEditable(false);
+        Gravida.setHighlighter(null);
+        Gravida.setName("Gravida"); // NOI18N
+        FormInput.add(Gravida);
+        Gravida.setBounds(80, 110, 70, 23);
 
         jLabel45.setText("Para:");
         jLabel45.setName("jLabel45"); // NOI18N
         FormInput.add(jLabel45);
         jLabel45.setBounds(160, 110, 30, 23);
 
-        Gs31.setEditable(false);
-        Gs31.setHighlighter(null);
-        Gs31.setName("Gs31"); // NOI18N
-        FormInput.add(Gs31);
-        Gs31.setBounds(200, 110, 70, 23);
+        Para.setEditable(false);
+        Para.setHighlighter(null);
+        Para.setName("Para"); // NOI18N
+        FormInput.add(Para);
+        Para.setBounds(200, 110, 70, 23);
 
         jLabel52.setText("Premature:");
         jLabel52.setName("jLabel52"); // NOI18N
         FormInput.add(jLabel52);
         jLabel52.setBounds(270, 110, 70, 23);
 
-        Gs32.setEditable(false);
-        Gs32.setHighlighter(null);
-        Gs32.setName("Gs32"); // NOI18N
-        FormInput.add(Gs32);
-        Gs32.setBounds(350, 110, 70, 23);
+        Premature.setEditable(false);
+        Premature.setHighlighter(null);
+        Premature.setName("Premature"); // NOI18N
+        FormInput.add(Premature);
+        Premature.setBounds(350, 110, 70, 23);
 
         jLabel99.setText("Immature:");
         jLabel99.setName("jLabel99"); // NOI18N
         FormInput.add(jLabel99);
         jLabel99.setBounds(420, 110, 70, 23);
 
-        Gs33.setEditable(false);
-        Gs33.setHighlighter(null);
-        Gs33.setName("Gs33"); // NOI18N
-        FormInput.add(Gs33);
-        Gs33.setBounds(500, 110, 70, 23);
+        Immature.setEditable(false);
+        Immature.setHighlighter(null);
+        Immature.setName("Immature"); // NOI18N
+        FormInput.add(Immature);
+        Immature.setBounds(500, 110, 70, 23);
 
         jLabel101.setText("Abortus:");
         jLabel101.setName("jLabel101"); // NOI18N
         FormInput.add(jLabel101);
         jLabel101.setBounds(580, 110, 60, 23);
 
-        Gs34.setEditable(false);
-        Gs34.setHighlighter(null);
-        Gs34.setName("Gs34"); // NOI18N
-        FormInput.add(Gs34);
-        Gs34.setBounds(650, 110, 70, 23);
+        Abortus.setEditable(false);
+        Abortus.setHighlighter(null);
+        Abortus.setName("Abortus"); // NOI18N
+        FormInput.add(Abortus);
+        Abortus.setBounds(650, 110, 70, 23);
 
         jLabel102.setText("Anak hidup:");
         jLabel102.setName("jLabel102"); // NOI18N
         FormInput.add(jLabel102);
         jLabel102.setBounds(730, 110, 60, 23);
 
-        Gs35.setEditable(false);
-        Gs35.setHighlighter(null);
-        Gs35.setName("Gs35"); // NOI18N
-        FormInput.add(Gs35);
-        Gs35.setBounds(800, 110, 70, 23);
+        AnakHidup.setEditable(false);
+        AnakHidup.setHighlighter(null);
+        AnakHidup.setName("AnakHidup"); // NOI18N
+        FormInput.add(AnakHidup);
+        AnakHidup.setBounds(800, 110, 70, 23);
 
         jLabel26.setText("Jml Janin:");
         jLabel26.setName("jLabel26"); // NOI18N
         FormInput.add(jLabel26);
         jLabel26.setBounds(200, 140, 60, 23);
 
-        A3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Satu", "Dua", "Tiga" }));
-        A3.setName("A3"); // NOI18N
-        A3.addItemListener(new java.awt.event.ItemListener() {
+        JmlJanin.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Satu", "Dua", "Tiga" }));
+        JmlJanin.setName("JmlJanin"); // NOI18N
+        JmlJanin.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A3ItemStateChanged(evt);
+                JmlJaninItemStateChanged(evt);
             }
         });
-        A3.addKeyListener(new java.awt.event.KeyAdapter() {
+        JmlJanin.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A3KeyPressed(evt);
+                JmlJaninKeyPressed(evt);
             }
         });
-        FormInput.add(A3);
-        A3.setBounds(260, 140, 80, 23);
+        FormInput.add(JmlJanin);
+        JmlJanin.setBounds(260, 140, 80, 23);
 
         jLabel27.setText("Penampakan GS:");
         jLabel27.setName("jLabel27"); // NOI18N
         FormInput.add(jLabel27);
         jLabel27.setBounds(10, 190, 90, 23);
 
-        A4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tampak GS", "Belum tampak GS", "Tidak tampak GS" }));
-        A4.setName("A4"); // NOI18N
-        A4.addItemListener(new java.awt.event.ItemListener() {
+        PenampakanGs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tampak GS", "Belum tampak GS", "Tidak tampak GS" }));
+        PenampakanGs.setName("PenampakanGs"); // NOI18N
+        PenampakanGs.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A4ItemStateChanged(evt);
+                PenampakanGsItemStateChanged(evt);
             }
         });
-        A4.addKeyListener(new java.awt.event.KeyAdapter() {
+        PenampakanGs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A4KeyPressed(evt);
+                PenampakanGsKeyPressed(evt);
             }
         });
-        FormInput.add(A4);
-        A4.setBounds(100, 190, 120, 23);
+        FormInput.add(PenampakanGs);
+        PenampakanGs.setBounds(100, 190, 120, 23);
 
         jLabel44.setText("Lokasi GS:");
         jLabel44.setName("jLabel44"); // NOI18N
         FormInput.add(jLabel44);
         jLabel44.setBounds(230, 190, 50, 23);
 
-        A5.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Intrauterine", "Ectopic", "Extrauterine", "Uterine scar pregnancy", "Keterangan tambahan" }));
-        A5.setName("A5"); // NOI18N
-        A5.addItemListener(new java.awt.event.ItemListener() {
+        LokasiGs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Intrauterine", "Ectopic", "Extrauterine", "Uterine scar pregnancy", "Keterangan tambahan" }));
+        LokasiGs.setName("LokasiGs"); // NOI18N
+        LokasiGs.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A5ItemStateChanged(evt);
+                LokasiGsItemStateChanged(evt);
             }
         });
-        A5.addKeyListener(new java.awt.event.KeyAdapter() {
+        LokasiGs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A5KeyPressed(evt);
+                LokasiGsKeyPressed(evt);
             }
         });
-        FormInput.add(A5);
-        A5.setBounds(280, 190, 120, 23);
+        FormInput.add(LokasiGs);
+        LokasiGs.setBounds(280, 190, 120, 23);
 
         jLabel48.setText("Kelainan pada GS:");
         jLabel48.setName("jLabel48"); // NOI18N
         FormInput.add(jLabel48);
         jLabel48.setBounds(600, 190, 100, 23);
 
-        A6.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak tampak kelainan", "Dinding irregular", "Subchoroionic bleeding", "Keterangan tambahan" }));
-        A6.setName("A6"); // NOI18N
-        A6.addItemListener(new java.awt.event.ItemListener() {
+        KelainanGs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak tampak kelainan", "Dinding irregular", "Subchoroionic bleeding", "Keterangan tambahan" }));
+        KelainanGs.setName("KelainanGs"); // NOI18N
+        KelainanGs.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A6ItemStateChanged(evt);
+                KelainanGsItemStateChanged(evt);
             }
         });
-        A6.addKeyListener(new java.awt.event.KeyAdapter() {
+        KelainanGs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A6KeyPressed(evt);
+                KelainanGsKeyPressed(evt);
             }
         });
-        FormInput.add(A6);
-        A6.setBounds(700, 190, 160, 23);
+        FormInput.add(KelainanGs);
+        KelainanGs.setBounds(700, 190, 160, 23);
 
         jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel98.setText("III");
@@ -1574,45 +1574,45 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel100);
         jLabel100.setBounds(10, 80, 140, 23);
 
-        A7.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak tampak kelainan", "Ukuran YS 2-8 mm", "Small yolk cac <= 2mm", "Calcified yolk sac", "Large yolk sac >= 8 mm", "Floating yolk sac", "Solid echodense yolk sac" }));
-        A7.setName("A7"); // NOI18N
-        A7.addItemListener(new java.awt.event.ItemListener() {
+        KelaiananYs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tidak tampak kelainan", "Ukuran YS 2-8 mm", "Small yolk cac <= 2mm", "Calcified yolk sac", "Large yolk sac >= 8 mm", "Floating yolk sac", "Solid echodense yolk sac" }));
+        KelaiananYs.setName("KelaiananYs"); // NOI18N
+        KelaiananYs.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A7ItemStateChanged(evt);
+                KelaiananYsItemStateChanged(evt);
             }
         });
-        A7.addKeyListener(new java.awt.event.KeyAdapter() {
+        KelaiananYs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A7KeyPressed(evt);
+                KelaiananYsKeyPressed(evt);
             }
         });
-        FormInput.add(A7);
-        A7.setBounds(380, 250, 160, 23);
+        FormInput.add(KelaiananYs);
+        KelaiananYs.setBounds(380, 250, 160, 23);
 
         jLabel103.setText("Kelainan pada YS:");
         jLabel103.setName("jLabel103"); // NOI18N
         FormInput.add(jLabel103);
         jLabel103.setBounds(280, 250, 100, 23);
 
-        A9.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tampak YS", "Tak tampak YS", "Tidak ada YS" }));
-        A9.setName("A9"); // NOI18N
-        A9.addItemListener(new java.awt.event.ItemListener() {
+        YsDlmGs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tampak YS", "Tak tampak YS", "Tidak ada YS" }));
+        YsDlmGs.setName("YsDlmGs"); // NOI18N
+        YsDlmGs.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A9ItemStateChanged(evt);
+                YsDlmGsItemStateChanged(evt);
             }
         });
-        A9.addActionListener(new java.awt.event.ActionListener() {
+        YsDlmGs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                A9ActionPerformed(evt);
+                YsDlmGsActionPerformed(evt);
             }
         });
-        A9.addKeyListener(new java.awt.event.KeyAdapter() {
+        YsDlmGs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A9KeyPressed(evt);
+                YsDlmGsKeyPressed(evt);
             }
         });
-        FormInput.add(A9);
-        A9.setBounds(140, 250, 130, 23);
+        FormInput.add(YsDlmGs);
+        YsDlmGs.setBounds(140, 250, 130, 23);
 
         jLabel105.setText("Penampakan YS dalam GS:");
         jLabel105.setName("jLabel105"); // NOI18N
@@ -1638,65 +1638,65 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel108);
         jLabel108.setBounds(0, 300, 150, 23);
 
-        A10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Belum tampak janin", "Tidak tampak janin", "Tampak janin" }));
-        A10.setName("A10"); // NOI18N
-        A10.addItemListener(new java.awt.event.ItemListener() {
+        JaninDlmGs.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Belum tampak janin", "Tidak tampak janin", "Tampak janin" }));
+        JaninDlmGs.setName("JaninDlmGs"); // NOI18N
+        JaninDlmGs.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A10ItemStateChanged(evt);
+                JaninDlmGsItemStateChanged(evt);
             }
         });
-        A10.addActionListener(new java.awt.event.ActionListener() {
+        JaninDlmGs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                A10ActionPerformed(evt);
+                JaninDlmGsActionPerformed(evt);
             }
         });
-        A10.addKeyListener(new java.awt.event.KeyAdapter() {
+        JaninDlmGs.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A10KeyPressed(evt);
+                JaninDlmGsKeyPressed(evt);
             }
         });
-        FormInput.add(A10);
-        A10.setBounds(150, 300, 130, 23);
+        FormInput.add(JaninDlmGs);
+        JaninDlmGs.setBounds(150, 300, 130, 23);
 
         jLabel104.setText("Detak jantung janin:");
         jLabel104.setName("jLabel104"); // NOI18N
         FormInput.add(jLabel104);
         jLabel104.setBounds(280, 300, 100, 23);
 
-        A8.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ada", "Tidak ada" }));
-        A8.setName("A8"); // NOI18N
-        A8.addItemListener(new java.awt.event.ItemListener() {
+        Djj.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ada", "Tidak ada" }));
+        Djj.setName("Djj"); // NOI18N
+        Djj.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A8ItemStateChanged(evt);
+                DjjItemStateChanged(evt);
             }
         });
-        A8.addKeyListener(new java.awt.event.KeyAdapter() {
+        Djj.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A8KeyPressed(evt);
+                DjjKeyPressed(evt);
             }
         });
-        FormInput.add(A8);
-        A8.setBounds(380, 300, 90, 23);
+        FormInput.add(Djj);
+        Djj.setBounds(380, 300, 90, 23);
 
         jLabel109.setText(" Gerakan Janin:");
         jLabel109.setName("jLabel109"); // NOI18N
         FormInput.add(jLabel109);
         jLabel109.setBounds(490, 300, 100, 23);
 
-        A11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ada", "Tidak ada" }));
-        A11.setName("A11"); // NOI18N
-        A11.addItemListener(new java.awt.event.ItemListener() {
+        GerakanJanin.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ada", "Tidak ada" }));
+        GerakanJanin.setName("GerakanJanin"); // NOI18N
+        GerakanJanin.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                A11ItemStateChanged(evt);
+                GerakanJaninItemStateChanged(evt);
             }
         });
-        A11.addKeyListener(new java.awt.event.KeyAdapter() {
+        GerakanJanin.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                A11KeyPressed(evt);
+                GerakanJaninKeyPressed(evt);
             }
         });
-        FormInput.add(A11);
-        A11.setBounds(590, 300, 90, 23);
+        FormInput.add(GerakanJanin);
+        GerakanJanin.setBounds(590, 300, 90, 23);
 
         Gs5.setEditable(false);
         Gs5.setHighlighter(null);
@@ -2162,11 +2162,11 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel119);
         jLabel119.setBounds(170, 1350, 20, 23);
 
-        Gs43.setEditable(false);
-        Gs43.setHighlighter(null);
-        Gs43.setName("Gs43"); // NOI18N
-        FormInput.add(Gs43);
-        Gs43.setBounds(90, 360, 70, 23);
+        gs1.setEditable(false);
+        gs1.setHighlighter(null);
+        gs1.setName("gs1"); // NOI18N
+        FormInput.add(gs1);
+        gs1.setBounds(90, 360, 70, 23);
 
         Gs48.setEditable(false);
         Gs48.setHighlighter(null);
@@ -5482,93 +5482,93 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }//GEN-LAST:event_MnCetakDeteksiDiniActionPerformed
 
-    private void A11KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A11KeyPressed
+    private void GerakanJaninKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GerakanJaninKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A11KeyPressed
+    }//GEN-LAST:event_GerakanJaninKeyPressed
 
-    private void A11ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A11ItemStateChanged
+    private void GerakanJaninItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_GerakanJaninItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A11ItemStateChanged
+    }//GEN-LAST:event_GerakanJaninItemStateChanged
 
-    private void A8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A8KeyPressed
+    private void DjjKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DjjKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A8KeyPressed
+    }//GEN-LAST:event_DjjKeyPressed
 
-    private void A8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A8ItemStateChanged
+    private void DjjItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_DjjItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A8ItemStateChanged
+    }//GEN-LAST:event_DjjItemStateChanged
 
-    private void A10KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A10KeyPressed
+    private void JaninDlmGsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JaninDlmGsKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A10KeyPressed
+    }//GEN-LAST:event_JaninDlmGsKeyPressed
 
-    private void A10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A10ActionPerformed
+    private void JaninDlmGsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JaninDlmGsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A10ActionPerformed
+    }//GEN-LAST:event_JaninDlmGsActionPerformed
 
-    private void A10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A10ItemStateChanged
+    private void JaninDlmGsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JaninDlmGsItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A10ItemStateChanged
+    }//GEN-LAST:event_JaninDlmGsItemStateChanged
 
-    private void A9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A9KeyPressed
+    private void YsDlmGsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_YsDlmGsKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A9KeyPressed
+    }//GEN-LAST:event_YsDlmGsKeyPressed
 
-    private void A9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A9ActionPerformed
+    private void YsDlmGsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YsDlmGsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A9ActionPerformed
+    }//GEN-LAST:event_YsDlmGsActionPerformed
 
-    private void A9ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A9ItemStateChanged
+    private void YsDlmGsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_YsDlmGsItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A9ItemStateChanged
+    }//GEN-LAST:event_YsDlmGsItemStateChanged
 
-    private void A7KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A7KeyPressed
+    private void KelaiananYsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KelaiananYsKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A7KeyPressed
+    }//GEN-LAST:event_KelaiananYsKeyPressed
 
-    private void A7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A7ItemStateChanged
+    private void KelaiananYsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_KelaiananYsItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A7ItemStateChanged
+    }//GEN-LAST:event_KelaiananYsItemStateChanged
 
-    private void A6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A6KeyPressed
+    private void KelainanGsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KelainanGsKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A6KeyPressed
+    }//GEN-LAST:event_KelainanGsKeyPressed
 
-    private void A6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A6ItemStateChanged
+    private void KelainanGsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_KelainanGsItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A6ItemStateChanged
+    }//GEN-LAST:event_KelainanGsItemStateChanged
 
-    private void A5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A5KeyPressed
+    private void LokasiGsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LokasiGsKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A5KeyPressed
+    }//GEN-LAST:event_LokasiGsKeyPressed
 
-    private void A5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A5ItemStateChanged
+    private void LokasiGsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LokasiGsItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A5ItemStateChanged
+    }//GEN-LAST:event_LokasiGsItemStateChanged
 
-    private void A4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A4KeyPressed
+    private void PenampakanGsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PenampakanGsKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A4KeyPressed
+    }//GEN-LAST:event_PenampakanGsKeyPressed
 
-    private void A4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A4ItemStateChanged
+    private void PenampakanGsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_PenampakanGsItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A4ItemStateChanged
+    }//GEN-LAST:event_PenampakanGsItemStateChanged
 
-    private void A3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A3KeyPressed
+    private void JmlJaninKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JmlJaninKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_A3KeyPressed
+    }//GEN-LAST:event_JmlJaninKeyPressed
 
-    private void A3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A3ItemStateChanged
+    private void JmlJaninItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JmlJaninItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_A3ItemStateChanged
+    }//GEN-LAST:event_JmlJaninItemStateChanged
 
-    private void TglSkrining1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TglSkrining1KeyPressed
+    private void EddKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EddKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TglSkrining1KeyPressed
+    }//GEN-LAST:event_EddKeyPressed
 
-    private void Gs29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Gs29ActionPerformed
+    private void LokasiGs2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LokasiGs2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Gs29ActionPerformed
+    }//GEN-LAST:event_LokasiGs2ActionPerformed
 
     private void BtnPtgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnPtgKeyPressed
       //  Valid.pindah(evt,JadwalKontrol,BtnSimpan);
@@ -5586,21 +5586,21 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         // TODO add your handling code here:
     }//GEN-LAST:event_kdptgKeyPressed
 
-    private void TglSkriningKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TglSkriningKeyPressed
-        Valid.pindah(evt,TCari,A1);
-    }//GEN-LAST:event_TglSkriningKeyPressed
+    private void HphtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_HphtKeyPressed
+        Valid.pindah(evt,TCari,JmlGs);
+    }//GEN-LAST:event_HphtKeyPressed
 
-    private void TglSkriningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TglSkriningActionPerformed
+    private void HphtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HphtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TglSkriningActionPerformed
+    }//GEN-LAST:event_HphtActionPerformed
 
-    private void A1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A1KeyPressed
+    private void JmlGsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JmlGsKeyPressed
        // Valid.pindah(evt,TglSkrining,A2);
-    }//GEN-LAST:event_A1KeyPressed
+    }//GEN-LAST:event_JmlGsKeyPressed
 
-    private void A1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A1ItemStateChanged
+    private void JmlGsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_JmlGsItemStateChanged
 
-    }//GEN-LAST:event_A1ItemStateChanged
+    }//GEN-LAST:event_JmlGsItemStateChanged
 
     private void A12ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A12ItemStateChanged
         // TODO add your handling code here:
@@ -6299,9 +6299,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private widget.ComboBox A1;
-    private widget.ComboBox A10;
-    private widget.ComboBox A11;
     private widget.ComboBox A12;
     private widget.ComboBox A13;
     private widget.ComboBox A14;
@@ -6320,7 +6317,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.ComboBox A27;
     private widget.ComboBox A28;
     private widget.ComboBox A29;
-    private widget.ComboBox A3;
     private widget.ComboBox A30;
     private widget.ComboBox A31;
     private widget.ComboBox A32;
@@ -6331,7 +6327,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.ComboBox A37;
     private widget.ComboBox A38;
     private widget.ComboBox A39;
-    private widget.ComboBox A4;
     private widget.ComboBox A40;
     private widget.ComboBox A41;
     private widget.ComboBox A42;
@@ -6342,7 +6337,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.ComboBox A47;
     private widget.ComboBox A48;
     private widget.ComboBox A49;
-    private widget.ComboBox A5;
     private widget.ComboBox A50;
     private widget.ComboBox A51;
     private widget.ComboBox A52;
@@ -6353,7 +6347,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.ComboBox A57;
     private widget.ComboBox A58;
     private widget.ComboBox A59;
-    private widget.ComboBox A6;
     private widget.ComboBox A60;
     private widget.ComboBox A61;
     private widget.ComboBox A62;
@@ -6364,10 +6357,9 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.ComboBox A67;
     private widget.ComboBox A68;
     private widget.ComboBox A69;
-    private widget.ComboBox A7;
-    private widget.ComboBox A8;
-    private widget.ComboBox A9;
+    private widget.TextBox Abortus;
     private widget.TextBox Alamat;
+    private widget.TextBox AnakHidup;
     private widget.Button BtnAll;
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
@@ -6380,7 +6372,11 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.CekBox ChkInput;
     private widget.Tanggal DTPCari1;
     private widget.Tanggal DTPCari2;
+    private widget.ComboBox Djj;
+    private widget.Tanggal Edd;
     private widget.PanelBiasa FormInput;
+    private widget.ComboBox GerakanJanin;
+    private widget.TextBox Gravida;
     private widget.TextBox Gs;
     private widget.TextBox Gs1;
     private widget.TextBox Gs10;
@@ -6477,15 +6473,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.TextBox Gs25;
     private widget.TextBox Gs26;
     private widget.TextBox Gs27;
-    private widget.TextBox Gs28;
-    private widget.TextBox Gs29;
     private widget.TextBox Gs3;
-    private widget.TextBox Gs30;
-    private widget.TextBox Gs31;
-    private widget.TextBox Gs32;
-    private widget.TextBox Gs33;
-    private widget.TextBox Gs34;
-    private widget.TextBox Gs35;
     private widget.TextBox Gs36;
     private widget.TextBox Gs37;
     private widget.TextBox Gs38;
@@ -6494,7 +6482,6 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.TextBox Gs40;
     private widget.TextBox Gs41;
     private widget.TextBox Gs42;
-    private widget.TextBox Gs43;
     private widget.TextBox Gs44;
     private widget.TextBox Gs45;
     private widget.TextBox Gs46;
@@ -6556,16 +6543,29 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private widget.TextBox Gs97;
     private widget.TextBox Gs98;
     private widget.TextBox Gs99;
+    private widget.Tanggal Hpht;
+    private widget.TextBox Immature;
+    private widget.ComboBox JaninDlmGs;
+    private widget.ComboBox JmlGs;
+    private widget.ComboBox JmlJanin;
+    private widget.ComboBox KelaiananYs;
+    private widget.ComboBox KelainanGs;
+    private widget.TextBox KelainanGs2;
     private widget.Label LCount;
+    private widget.ComboBox LokasiGs;
+    private widget.TextBox LokasiGs2;
     private javax.swing.JMenuItem MnCetakDeteksiDini;
     private widget.TextBox NamaPasien;
     private widget.TextBox NoRM;
     private widget.TextBox NoRawat;
     private javax.swing.JPanel PanelInput;
+    private widget.TextBox Para;
+    private widget.ComboBox PenampakanGs;
+    private widget.TextBox Premature;
     private widget.ScrollPane Scroll;
     private widget.TextBox TCari;
-    private widget.Tanggal TglSkrining;
-    private widget.Tanggal TglSkrining1;
+    private widget.ComboBox YsDlmGs;
+    private widget.TextBox gs1;
     private widget.InternalFrame internalFrame1;
     private widget.Label jLabel10;
     private widget.Label jLabel100;
@@ -6978,8 +6978,8 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         //Pekerjaan.setText("");
         //TglLahir.setText("");
         Alamat.setText("");
-        TglSkrining.setDate(new Date());
-        A1.setSelectedIndex(0);
+        Hpht.setDate(new Date());
+        JmlGs.setSelectedIndex(0);
         //A2.setSelectedIndex(0);
         //A3.setSelectedIndex(0);
         //TglGejala.setDate(new Date());
@@ -6999,7 +6999,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
        // HasilRadiologi.setText("");
         ChkInput.setSelected(true);
         isForm(); 
-        A1.requestFocus();
+        JmlGs.requestFocus();
     }
 
     private void getData() {
@@ -7012,7 +7012,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             
             kdptg.setText(tbObat.getValueAt(tbObat.getSelectedRow(),9).toString());
             nmptg.setText(tbObat.getValueAt(tbObat.getSelectedRow(),10).toString());
-            A1.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
+            JmlGs.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),11).toString());
             //A2.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),12).toString());
            // A3.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
             //RiwayatSakitSebelumnya.setText(tbObat.getValueAt(tbObat.getSelectedRow(),15).toString());
@@ -7027,7 +7027,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             //Rtl.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),25).toString());
             //JadwalKontrol.setSelectedItem(tbObat.getValueAt(tbObat.getSelectedRow(),26).toString());
             //isLabRad(NoRawat.getText());
-            Valid.SetTgl(TglSkrining,tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
+            Valid.SetTgl(Hpht,tbObat.getValueAt(tbObat.getSelectedRow(),8).toString());
            // Valid.SetTgl(TglGejala,tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
            // Valid.SetTgl(TglKedatangan,tbObat.getValueAt(tbObat.getSelectedRow(),19).toString());
         }

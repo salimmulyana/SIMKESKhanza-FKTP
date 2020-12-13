@@ -1448,7 +1448,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             BtnSimpan.setEnabled(akses.gettoko_penjualan());
             BtnTambah.setEnabled(akses.gettoko_barang());
             kdptg.setText(akses.getkode());
-            Sequel.cariIsi("select nama from carijual.petugas where nip=?", nmptg,kdptg.getText());
+            Sequel.cariIsi("select nama from petugas where nip=?", nmptg,kdptg.getText());
         }    
         if(Sequel.cariIsi("select tampilkan_tombol_nota_toko from set_nota").equals("Yes")){
             BtnNota.setVisible(true);
