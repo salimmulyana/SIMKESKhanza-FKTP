@@ -568,8 +568,8 @@ public class DlgCariPeriksaLab extends javax.swing.JDialog {
         MnCetakHasilLabRapid.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakHasilLabRapid.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakHasilLabRapid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakHasilLabRapid.setText("Covid");
-        MnCetakHasilLabRapid.setActionCommand("Covid-Rapid");
+        MnCetakHasilLabRapid.setText("Rapid Test");
+        MnCetakHasilLabRapid.setActionCommand("Rapid Test");
         MnCetakHasilLabRapid.setName("MnCetakHasilLabRapid"); // NOI18N
         MnCetakHasilLabRapid.setPreferredSize(new java.awt.Dimension(100, 26));
         MnCetakHasilLabRapid.addActionListener(new java.awt.event.ActionListener() {
@@ -583,8 +583,8 @@ public class DlgCariPeriksaLab extends javax.swing.JDialog {
         MnCetakHasilLabSwab.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakHasilLabSwab.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakHasilLabSwab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakHasilLabSwab.setText("Covid");
-        MnCetakHasilLabSwab.setActionCommand("Covid-Rapid");
+        MnCetakHasilLabSwab.setText("Rapid Antigen");
+        MnCetakHasilLabSwab.setActionCommand("Rapid Antigen");
         MnCetakHasilLabSwab.setName("MnCetakHasilLabSwab"); // NOI18N
         MnCetakHasilLabSwab.setPreferredSize(new java.awt.Dimension(100, 26));
         MnCetakHasilLabSwab.addActionListener(new java.awt.event.ActionListener() {
