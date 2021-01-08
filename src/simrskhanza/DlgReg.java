@@ -97,6 +97,7 @@ import surat.SuratBebasNarkoba;
 import surat.SuratKeteranganCovid;
 import surat.SuratSakit;
 import surat.SuratTidakHamil;
+import surat.SuratKeteranganObgin;
 /**
  *
  * @author dosen
