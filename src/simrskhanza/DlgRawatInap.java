@@ -5223,7 +5223,7 @@ private void BtnEditKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
     }//GEN-LAST:event_TPenilaianKeyPressed
 
     private void TindakLanjutKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TindakLanjutKeyPressed
-        Valid.pindah(evt,TPenilaian,BtnSimpan);
+//        Valid.pindah(evt,TPenilaian,BtnSimpan);
     }//GEN-LAST:event_TindakLanjutKeyPressed
 
     private void BtnResumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnResumeActionPerformed
