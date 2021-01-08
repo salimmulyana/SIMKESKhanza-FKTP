@@ -1190,6 +1190,33 @@ public final class sekuel {
         return angka;
     }
     
+    public int cariBilling(String norawat){
+        angka=0;
+        try {
+            ps=connect.prepareStatement(
+                    "select count(billing_verif.no_rawat) from billing_verif where billing_verif.no_rawat=?");
+            try {
+                ps.setString(1,norawat);
+                rs=ps.executeQuery();
+                if(rs.next()){
+                    angka=rs.getInt(1);
+                }
+            } catch (Exception e) {
+                System.out.println("Notifikasi : "+e);
+            } finally{
+                if(rs!=null){
+                    rs.close();
+                }
+                if(ps!=null){
+                    ps.close();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return angka;
+    }
+    
     public void cariIsi(String sql,JTextField txt,String kunci){
         try {
             ps=connect.prepareStatement(sql);
