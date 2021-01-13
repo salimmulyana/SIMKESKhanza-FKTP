@@ -169,7 +169,7 @@ public class DlgDeposit extends javax.swing.JDialog {
         }
         
         try {
-            psrekening=koneksi.prepareStatement("select * from set_akun_ranap");
+            psrekening=koneksi.prepareStatement("select * from set_akun_ranap2");
             try {
                 rsrekening=psrekening.executeQuery();
                 if(rsrekening.next()){                 
@@ -764,7 +764,7 @@ public class DlgDeposit extends javax.swing.JDialog {
                 if(metodejurnal.equals("Yes")){
                     Sequel.queryu("delete from tampjurnal");                   
                     Sequel.menyimpan("tampjurnal","'"+norekening+"','"+nama_bayar.getSelectedItem()+""+"','"+BesarDeposit.getText()+"','0'","Rekening");
-                    Sequel.menyimpan("tampjurnal","'"+"211213"+"','"+"UANG MUKA JAMINAN"+"','0','"+BesarDeposit.getText()+"'","Rekening"); 
+                    Sequel.menyimpan("tampjurnal","'"+Uang_Muka_Ranap+"','"+"UANG MUKA JAMINAN"+"','0','"+BesarDeposit.getText()+"'","Rekening"); 
                     jur.simpanJurnal(TNoRw.getText(),Valid.SetTgl(DTPTgl.getSelectedItem()+""),"U","PEMBAYARAN DEPOSIT PASIEN RAWAT INAP, DIPOSTING OLEH "+akses.getkode());
                 }              
                 //==================
