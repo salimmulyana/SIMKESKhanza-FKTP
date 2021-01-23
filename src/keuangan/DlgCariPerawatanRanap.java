@@ -1784,6 +1784,13 @@ private void ppPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         TAlergi.setText(alergi);
     }
     
+    public void setPetugas(String kode, String nama,String kode2, String nama2){
+        kddokter.setText(kode);
+        nmdokter.setText(nama);
+        KdPtg2.setText(kode2);
+        NmPtg2.setText(nama2);
+    }
+    
     private void jam(){
         ActionListener taskPerformer = new ActionListener(){
             private int nilai_jam;
@@ -1838,6 +1845,7 @@ private void ppPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         // Timer
         new Timer(1000, taskPerformer).start();
     }
+    
     
     private void isktg(){
         Sequel.cariIsi("select nm_kategori from kategori_perawatan where kd_kategori=? ",NmKtg,KdKtg.getText());
