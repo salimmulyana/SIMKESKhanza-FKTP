@@ -3374,6 +3374,7 @@ private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B
                 }                
             }
         }           
+  
     }//GEN-LAST:event_BtnSimpanActionPerformed
 
     private void norawatubahlamaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_norawatubahlamaKeyPressed

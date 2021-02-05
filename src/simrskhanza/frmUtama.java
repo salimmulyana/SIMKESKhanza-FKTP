@@ -95,6 +95,8 @@ import bridging.PCareMapingPoli;
 import bridging.PCareMapingTindakanRalan;
 import bridging.PCareMapingTindakanRanap;
 import bridging.PCarePesertaKegiatanKelompok;
+import custom.DlgBillingVerif;
+import custom.DlgBillingTracer;
 import informasi.InformasiAnalisaKamin;
 import laporan.DlgDkkSurveilansRalan;
 import laporan.DlgFrekuensiPenyakitRanap;
@@ -105,6 +107,7 @@ import laporan.DlgDkkSurveilansPD3I;
 import setting.DlgVakum;
 import setting.DlgUser;
 import setting.DlgSetKamarInap;
+import setting.DlgSetMetodeJurnal;
 import setting.DlgSetOtoLokasi;
 import setting.DlgSetTarif;
 import setting.DlgSetAplikasi;
@@ -16139,6 +16142,43 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         DlgHome.dispose();
         this.setCursor(Cursor.getDefaultCursor());
     }
+    
+    private void btnBillingVerifActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        isTutup();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgBillingVerif rhtindakandokter=new DlgBillingVerif(this,false);
+        rhtindakandokter.isCek();
+        rhtindakandokter.setSize(PanelUtama.getWidth(),PanelUtama.getHeight());
+        rhtindakandokter.setLocationRelativeTo(PanelUtama);
+        rhtindakandokter.setVisible(true);
+        DlgHome.dispose();
+        this.setCursor(Cursor.getDefaultCursor());
+    } 
+    
+    private void btnBillingTracerActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        isTutup();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgBillingTracer rhtindakandokter=new DlgBillingTracer(this,false);
+        rhtindakandokter.isCek();
+        rhtindakandokter.setSize(PanelUtama.getWidth(),PanelUtama.getHeight());
+        rhtindakandokter.setLocationRelativeTo(PanelUtama);
+        rhtindakandokter.setVisible(true);
+        DlgHome.dispose();
+        this.setCursor(Cursor.getDefaultCursor());
+    }
+    
+    private void btnSetupMetodeJurnalActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        isTutup();
+        DlgHome.dispose();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgSetMetodeJurnal aplikasi=new DlgSetMetodeJurnal(this,false);
+        aplikasi.emptTeks();
+        aplikasi.tampil();
+        aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
+        aplikasi.setLocationRelativeTo(PanelUtama);
+        aplikasi.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }
     /**
     * @param args the command line arguments
     */
@@ -16735,7 +16775,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             btnSuplierToko,btnJenisToko,btnSetHargaToko,btnBarangToko,btnPenagihanPiutangPasien,btnAkunPenagihanPiutang,btnStokOpnameToko,
             btnRiwayatBarangToko,btnSuratPemesananToko,btnPengajuanBarangToko,btnPenerimaanBarangToko,btnPengadaanBarangToko,btnHutangToko,
             btnBayarPesanToko,btnMemberToko,btnPenjualanToko,btnRegistrasiPoliPerTanggal,btnPiutangToko,btnReturKeSuplierToko,btnReturBarangNonMedis,
-            btnRiwayatBarangNonMedis,btnPasienCorona,btnPendapatanHarianToko;
+            btnRiwayatBarangNonMedis,btnPasienCorona,btnPendapatanHarianToko,btnBillingVerif,btnBillingTracer,btnSetupMetodeJurnal;
     
     public void isWall(){
         try{            
@@ -16962,6 +17002,14 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
 
             if(akses.getdeposit_pasien()==true){                          
                 Panelmenu.add(btnDeposit);
+                jmlmenu++;
+            }
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingVerif);
+                jmlmenu++;
+            }
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingTracer);
                 jmlmenu++;
             }
             
@@ -17869,6 +17917,15 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 Panelmenu.add(btnDeposit);
                 jmlmenu++;
             }
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingVerif);
+                jmlmenu++;
+            }
+            
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingTracer);
+                jmlmenu++;
+            }
 
             if(akses.getrekap_per_shift()==true){
                 Panelmenu.add(btnRekapPershift);
@@ -18317,6 +18374,16 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
 
             if(akses.getdeposit_pasien()==true){                          
                 Panelmenu.add(btnDeposit);
+                jmlmenu++;
+            }
+            
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingVerif);
+                jmlmenu++;
+            }
+            
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingTracer);
                 jmlmenu++;
             }
 
@@ -19783,6 +19850,15 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 Panelmenu.add(btnPendapatanHarianToko); 
                 jmlmenu++;
             }
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingVerif);
+                jmlmenu++;
+            }
+            
+            if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingTracer);
+                jmlmenu++;
+            }
         }else if(cmbMenu.getSelectedIndex()==17){   
             jmlmenu=0;
             if(akses.getaplikasi()==true){
@@ -19864,6 +19940,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 Panelmenu.add(btnSetupTarif);
                 jmlmenu++;
             }
+            
+            if(akses.getset_penggunaan_tarif()==true){
+                Panelmenu.add(btnSetupMetodeJurnal);
+                jmlmenu++;
+            }
 
             if(akses.getset_oto_ralan()==true){
                 Panelmenu.add(btnSetOtoRalan);
@@ -19914,6 +19995,15 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 Panelmenu.add(btnSetHargaToko);
                 jmlmenu++;
             }
+            if(akses.getjurnal_harian()==true){
+            Panelmenu.add(btnBillingVerif);
+            jmlmenu++;
+        }
+        
+        if(akses.getjurnal_harian()==true){
+            Panelmenu.add(btnBillingTracer);
+            jmlmenu++;
+        }
         }    
     }
 
@@ -20037,6 +20127,15 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         if(akses.getdeposit_pasien()==true){                          
             Panelmenu.add(btnDeposit);
             jmlmenu++;
+        }
+        if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingVerif);
+                jmlmenu++;
+        }
+            
+        if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingTracer);
+                jmlmenu++;
         }
         
         if(akses.getperkiraan_biaya_ranap()==true){                          
@@ -20936,6 +21035,16 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             Panelmenu.add(btnDeposit);
             jmlmenu++;
         }
+        
+        if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingVerif);
+                jmlmenu++;
+        }
+            
+        if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingTracer);
+                jmlmenu++;
+        }
 
         if(akses.getrekap_per_shift()==true){
             Panelmenu.add(btnRekapPershift);
@@ -21382,6 +21491,15 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         if(akses.getdeposit_pasien()==true){                          
             Panelmenu.add(btnDeposit);
             jmlmenu++;
+        }
+        if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingVerif);
+                jmlmenu++;
+        }
+            
+        if(akses.getjurnal_harian()==true){
+                Panelmenu.add(btnBillingTracer);
+                jmlmenu++;
         }
 
         if(akses.getpiutang_pasien()==true){
@@ -22915,6 +23033,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             Panelmenu.add(btnSetupTarif);
             jmlmenu++;
         }
+        
+        if(akses.getset_penggunaan_tarif()==true){
+            Panelmenu.add(btnSetupMetodeJurnal);
+            jmlmenu++;
+        }
 
         if(akses.getset_oto_ralan()==true){
             Panelmenu.add(btnSetOtoRalan);
@@ -23133,6 +23256,19 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         if(akses.getdeposit_pasien()==true){    
             if(btnDeposit.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
                 Panelmenu.add(btnDeposit);
+                jmlmenu++;
+            }                
+        }
+        if(akses.getjurnal_harian()==true){
+            if(btnBillingVerif.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnBillingVerif); 
+                jmlmenu++;
+            }                
+        }
+        
+        if(akses.getjurnal_harian()==true){
+            if(btnBillingTracer.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnBillingTracer); 
                 jmlmenu++;
             }                
         }
@@ -24397,6 +24533,20 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 jmlmenu++;
             }                
         }
+        
+        if(akses.getjurnal_harian()==true){
+            if(btnBillingVerif.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnBillingVerif); 
+                jmlmenu++;
+            }                
+        }
+        
+        if(akses.getjurnal_harian()==true){
+            if(btnBillingTracer.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnBillingTracer); 
+                jmlmenu++;
+            }                
+        }
 
         if(akses.getrekap_per_shift()==true){
             if(btnRekapPershift.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
@@ -25019,6 +25169,20 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         if(akses.getdeposit_pasien()==true){   
             if(btnDeposit.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
                 Panelmenu.add(btnDeposit);
+                jmlmenu++;
+            }                
+        }
+        
+        if(akses.getjurnal_harian()==true){
+            if(btnBillingVerif.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnBillingVerif); 
+                jmlmenu++;
+            }                
+        }
+        
+        if(akses.getjurnal_harian()==true){
+            if(btnBillingTracer.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnBillingTracer); 
                 jmlmenu++;
             }                
         }
@@ -27167,6 +27331,13 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
                 jmlmenu++;
             }                
         }
+        
+        if(akses.getset_penggunaan_tarif()==true){
+            if(btnSetupMetodeJurnal.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnSetupMetodeJurnal);
+                jmlmenu++;
+            }                
+        }
 
         if(akses.getset_oto_ralan()==true){
             if(btnSetOtoRalan.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
@@ -29086,6 +29257,42 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         btnPendapatanHarianToko.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPendapatanHarianTokoActionPerformed(evt);
+            }
+        });
+        
+        btnBillingVerif = new widget.ButtonBig();
+        btnBillingVerif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/x-office-address-book.png"))); // NOI18N
+        btnBillingVerif.setText("Billing Verif");
+        btnBillingVerif.setIconTextGap(0);
+        btnBillingVerif.setName("btnBillingVerif"); // NOI18N
+        btnBillingVerif.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnBillingVerif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBillingVerifActionPerformed(evt);
+            }
+        });
+        
+        btnBillingTracer = new widget.ButtonBig();
+        btnBillingTracer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/x-office-address-book.png"))); // NOI18N
+        btnBillingTracer.setText("Billing Tracer");
+        btnBillingTracer.setIconTextGap(0);
+        btnBillingTracer.setName("btnBillingTracer"); // NOI18N
+        btnBillingTracer.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnBillingTracer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBillingTracerActionPerformed(evt);
+            }
+        });
+        
+        btnSetupMetodeJurnal = new widget.ButtonBig();
+        btnSetupMetodeJurnal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/x-office-address-book.png"))); // NOI18N
+        btnSetupMetodeJurnal.setText("Set Metode Jurnal Pelayanan");
+        btnSetupMetodeJurnal.setIconTextGap(0);
+        btnSetupMetodeJurnal.setName("btnSetupMetodeJurnal"); // NOI18N
+        btnSetupMetodeJurnal.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnSetupMetodeJurnal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetupMetodeJurnalActionPerformed(evt);
             }
         });
     }
