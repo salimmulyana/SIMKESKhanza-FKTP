@@ -41,7 +41,7 @@ public class TokoReturBeli extends javax.swing.JDialog {
     private WarnaTable2 warna=new WarnaTable2();
     public boolean tampikan=true;
     private boolean sukses=true;
-    private String Retur_Beli_Toko=Sequel.cariIsi("select Retur_Beli_Toko from set_akun"),Kontra_Retur_Beli_Toko=Sequel.cariIsi("select Kontra_Retur_Beli_Toko from set_akun");
+    private String hpptoko="",Retur_Beli_Toko=Sequel.cariIsi("select Retur_Beli_Toko from set_akun"),Kontra_Retur_Beli_Toko=Sequel.cariIsi("select Kontra_Retur_Beli_Toko from set_akun");
 
     /** Creates new form DlgProgramStudi
      * @param parent
@@ -420,6 +420,11 @@ public class TokoReturBeli extends javax.swing.JDialog {
 
         TglRetur.setDisplayFormat("dd-MM-yyyy");
         TglRetur.setName("TglRetur"); // NOI18N
+        TglRetur.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                TglReturItemStateChanged(evt);
+            }
+        });
         TglRetur.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TglReturKeyPressed(evt);
@@ -802,6 +807,7 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                     for(i=0;i<jml;i++){
                         tbDokter.setValueAt("",i,0);
                         tbDokter.setValueAt(0,i,5);
+                        tbDokter.setValueAt("",i,6);
                     }
                     getData();
                 }else{
@@ -813,6 +819,13 @@ private void btnPetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             }
         }
     }//GEN-LAST:event_BtnSimpanActionPerformed
+
+    private void TglReturItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TglReturItemStateChanged
+        try {
+            autoNomor();
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_TglReturItemStateChanged
 
     /**
     * @param args the command line arguments

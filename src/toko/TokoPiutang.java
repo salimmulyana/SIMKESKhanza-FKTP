@@ -39,6 +39,7 @@ public class TokoPiutang extends javax.swing.JDialog {
     private WarnaTable2 warna=new WarnaTable2();
     private boolean sukses=true;
     private TokoCariPiutang caripiutang=new TokoCariPiutang(null,false);
+    private String hpptoko="";
     
     
 
@@ -215,6 +216,11 @@ public class TokoPiutang extends javax.swing.JDialog {
             public void windowDeactivated(WindowEvent e) {}
         });
         
+        try {
+            hpptoko=koneksiDB.HPPTOKO();
+        } catch (Exception e) {
+            hpptoko="dasar";
+        }
     }
     
 
@@ -641,6 +647,11 @@ public class TokoPiutang extends javax.swing.JDialog {
 
         Tgl.setDisplayFormat("dd-MM-yyyy");
         Tgl.setName("Tgl"); // NOI18N
+        Tgl.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                TglItemStateChanged(evt);
+            }
+        });
         Tgl.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TglKeyPressed(evt);
@@ -977,14 +988,14 @@ private void kdmemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kdm
 private void kdptgKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kdptgKeyPressed
         switch (evt.getKeyCode()) {
             case KeyEvent.VK_PAGE_DOWN:
-                Sequel.cariIsi("select nama from caripiutang.petugas where nip=?", nmptg,kdptg.getText());
+                Sequel.cariIsi("select nama from petugas where nip=?", nmptg,kdptg.getText());
                 break;
             case KeyEvent.VK_PAGE_UP:
-                Sequel.cariIsi("select nama from caripiutang.petugas where nip=?", nmptg,kdptg.getText());
+                Sequel.cariIsi("select nama from petugas where nip=?", nmptg,kdptg.getText());
                 Jenisjual.requestFocus();
                 break;
             case KeyEvent.VK_ENTER:
-                Sequel.cariIsi("select nama from caripiutang.petugas where nip=?", nmptg,kdptg.getText());
+                Sequel.cariIsi("select nama from petugas where nip=?", nmptg,kdptg.getText());
                 TCari.requestFocus();
                 break;
             case KeyEvent.VK_UP:
@@ -1073,6 +1084,13 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private void TglTempoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TglTempoKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_TglTempoKeyPressed
+
+    private void TglItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_TglItemStateChanged
+        try {
+            autoNomor();
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_TglItemStateChanged
 
     /**
     * @param args the command line arguments
@@ -1195,7 +1213,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         try{
             ps=koneksi.prepareStatement(
                 "select tokobarang.kode_brng,tokobarang.nama_brng,tokojenisbarang.nm_jenis,tokobarang.stok, "+
-                "tokobarang.kode_sat,tokobarang.distributor,tokobarang.grosir,tokobarang.retail,tokobarang.dasar "+
+                "tokobarang.kode_sat,tokobarang.distributor,tokobarang.grosir,tokobarang.retail,tokobarang."+hpptoko+" as dasar "+
                 "from tokobarang inner join tokojenisbarang on tokobarang.jenis=tokojenisbarang.kd_jenis "+
                 "where tokobarang.stok>0 and tokobarang.status='1' and "+
                 "(tokobarang.kode_brng like ? or tokobarang.nama_brng like ? or tokojenisbarang.nm_jenis like ?) order by tokobarang.nama_brng");
@@ -1338,7 +1356,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             BtnSimpan.setEnabled(akses.gettoko_piutang());
             BtnTambah.setEnabled(akses.gettoko_barang());
             kdptg.setText(akses.getkode());
-            Sequel.cariIsi("select nama from caripiutang.petugas where nip=?", nmptg,kdptg.getText());
+            Sequel.cariIsi("select nama from petugas where nip=?", nmptg,kdptg.getText());
         }    
         if(Sequel.cariIsi("select tampilkan_tombol_nota_toko from set_nota").equals("Yes")){
             BtnNota.setVisible(true);
