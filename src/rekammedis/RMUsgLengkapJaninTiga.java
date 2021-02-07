@@ -30,7 +30,7 @@ import simrskhanza.DlgRujuk;
  *
  * @author dosen
  */
-public class RMUsgKehamilan extends javax.swing.JDialog {
+public class RMUsgLengkapJaninTiga extends javax.swing.JDialog {
     private final DefaultTableModel tabMode;
     private Connection koneksi=koneksiDB.condb();
     private sekuel Sequel=new sekuel();
@@ -44,7 +44,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
     /** Creates new form DlgPemberianInfus
      * @param parent
      * @param modal */
-    public RMUsgKehamilan(java.awt.Frame parent, boolean modal) {
+    public RMUsgLengkapJaninTiga(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
 
@@ -982,7 +982,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         jLabel15.setPreferredSize(new java.awt.Dimension(63, 23));
         panelGlass7.add(jLabel15);
 
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-02-2021" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -995,7 +995,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         jLabel17.setPreferredSize(new java.awt.Dimension(24, 23));
         panelGlass7.add(jLabel17);
 
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-02-2021" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -1151,7 +1151,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel18);
         jLabel18.setBounds(10, 140, 100, 23);
 
-        Hpht.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
+        Hpht.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-02-2021" }));
         Hpht.setDisplayFormat("dd-MM-yyyy");
         Hpht.setName("Hpht"); // NOI18N
         Hpht.setOpaque(false);
@@ -1397,7 +1397,7 @@ public class RMUsgKehamilan extends javax.swing.JDialog {
         FormInput.add(jLabel25);
         jLabel25.setBounds(50, 360, 30, 23);
 
-        Edd.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "12-12-2020" }));
+        Edd.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "06-02-2021" }));
         Edd.setDisplayFormat("dd-MM-yyyy");
         Edd.setName("Edd"); // NOI18N
         Edd.setOpaque(false);
@@ -6287,7 +6287,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
-            RMUsgKehamilan dialog = new RMUsgKehamilan(new javax.swing.JFrame(), true);
+            RMUsgLengkapJaninTiga dialog = new RMUsgLengkapJaninTiga(new javax.swing.JFrame(), true);
             dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                 @Override
                 public void windowClosing(java.awt.event.WindowEvent e) {
