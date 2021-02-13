@@ -1,0 +1,6 @@
+Penambahan kolom gelar di DlgPasien
+Penambahan cara masuk di kamar inap apakah dari poli ralan atau igd
+di pemeriksaan ralan: anamenesis,  pemeriksaan fisik, assesment di pisahkan
+Penilaian resiko jatuh
+
+Bikin dokumentasi di github

@@ -1,0 +1,23 @@
+SET FOREIGN_KEY_CHECKS=0;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_dr` MODIFY COLUMN `tgl_perawatan` date NOT NULL AFTER `kd_dokter`;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_dr` MODIFY COLUMN `jam_rawat` time(0) NOT NULL AFTER `tgl_perawatan`;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_dr` ADD PRIMARY KEY (`no_rawat`, `kd_jenis_prw`, `kd_dokter`, `tgl_perawatan`, `jam_rawat`) USING BTREE;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_drpr` MODIFY COLUMN `tgl_perawatan` date NOT NULL AFTER `nip`;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_drpr` MODIFY COLUMN `jam_rawat` time(0) NOT NULL AFTER `tgl_perawatan`;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_drpr` ADD PRIMARY KEY (`no_rawat`, `kd_jenis_prw`, `kd_dokter`, `nip`, `tgl_perawatan`, `jam_rawat`) USING BTREE;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_pr` MODIFY COLUMN `tgl_perawatan` date NOT NULL AFTER `nip`;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_pr` MODIFY COLUMN `jam_rawat` time(0) NOT NULL AFTER `tgl_perawatan`;
+
+ALTER TABLE `siksalim18april2020`.`rawat_jl_pr` ADD PRIMARY KEY (`no_rawat`, `kd_jenis_prw`, `nip`, `tgl_perawatan`, `jam_rawat`) USING BTREE;
+
+ALTER TABLE `siksalim18april2020`.`surat_keluar` MODIFY COLUMN `no_urut` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL FIRST;
+
+SET FOREIGN_KEY_CHECKS=1;

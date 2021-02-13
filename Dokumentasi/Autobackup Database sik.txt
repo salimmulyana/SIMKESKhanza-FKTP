@@ -1,0 +1,11 @@
+mysqldump -uroot -prosmayanti siksalim20april2020 > siksalim20april2020.sql
+
+
+
+mkdir backupsik
+mysqldump -uroot -prosmayanti siksalim20april2020 | gzip > /home/furybsd/backupsik/siksalim20april2020_`date '+%m-%d-%Y'`.sql.gz
+
+crontab -e
+0 * * * * mysqldump -uroot -prosmayanti siksalim20april2020 | gzip > /home/furybsd/backupsik/siksalim20april2020_`date '+%m-%d-%Y'`.sql.gz >/dev/null 2>&1
+
+sudo service cron restart
