@@ -41,7 +41,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
     private ResultSet rs,rsakunbayar;
     private double all=0,bayar=0;
     private int i,kolom=0,no=0;
-    private String shift="",tanggal2="",nopemasukanlain="",nonota="",petugas="",norawatjalan="",norawatinap="",notajual="";
+    private String shift="",tanggal2="",nopemasukanlain="",nonota="",petugas="",norawatjalan="",norawatinap="",notajual="",carabayar="";
     private StringBuilder htmlContent;
     private String[] akunbayar;
     private double[] totalbayar;
@@ -337,6 +337,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
         panelGlass6.add(jLabel10);
 
         CmbJam2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
+        CmbJam2.setSelectedIndex(23);
         CmbJam2.setName("CmbJam2"); // NOI18N
         CmbJam2.setPreferredSize(new java.awt.Dimension(62, 23));
         CmbJam2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -347,6 +348,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
         panelGlass6.add(CmbJam2);
 
         CmbMenit2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        CmbMenit2.setSelectedIndex(59);
         CmbMenit2.setName("CmbMenit2"); // NOI18N
         CmbMenit2.setPreferredSize(new java.awt.Dimension(62, 23));
         CmbMenit2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -357,6 +359,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
         panelGlass6.add(CmbMenit2);
 
         CmbDetik2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        CmbDetik2.setSelectedIndex(59);
         CmbDetik2.setName("CmbDetik2"); // NOI18N
         CmbDetik2.setPreferredSize(new java.awt.Dimension(62, 23));
         CmbDetik2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -557,6 +560,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
                     "<td valign='middle' bgcolor='#FFFAF8' align='center' width='110px'>Tanggal</td>"+
                     "<td valign='middle' bgcolor='#FFFAF8' align='center' width='100px'>No.Rawat/No.Nota</td>"+
                     "<td valign='middle' bgcolor='#FFFAF8' align='center' width='220px'>Nama Pasien</td>"+
+                    "<td valign='middle' bgcolor='#FFFAF8' align='center' width='100px'>Jenis/Cara Bayar</td>"+
                     "<td valign='middle' bgcolor='#FFFAF8' align='center' width='80px'>Pembayaran</td>"+
                     "<td valign='middle' bgcolor='#FFFAF8' align='center' width='130px'>Petugas</td>"+
                     "<td valign='middle' bgcolor='#FFFAF8' align='center' width='400px'>Akun Bayar</td>"+
@@ -589,15 +593,10 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
             all=0;
             ps= koneksi.prepareStatement(
                     "select no_nota,tgl_bayar,nama_pasien,jumlah_bayar,petugas from tagihan_sadewa "+
-                    "where tgl_bayar between ? and ? and nama_pasien like ? or "+
-                    "tgl_bayar between ? and ? and no_nota like ? order by tgl_bayar,no_nota");
+                    "where tgl_bayar between ? and ? order by tgl_bayar,no_nota");
             try {
                 ps.setString(1,Valid.SetTgl(Tgl1.getSelectedItem()+"")+" "+CmbJam.getSelectedItem()+":"+CmbMenit.getSelectedItem()+":"+CmbDetik.getSelectedItem());
                 ps.setString(2,Valid.SetTgl(Tgl2.getSelectedItem()+"")+" "+CmbJam2.getSelectedItem()+":"+CmbMenit2.getSelectedItem()+":"+CmbDetik2.getSelectedItem());
-                ps.setString(3,"%"+TCari.getText().trim()+"%");
-                ps.setString(4,Valid.SetTgl(Tgl1.getSelectedItem()+"")+" "+CmbJam.getSelectedItem()+":"+CmbMenit.getSelectedItem()+":"+CmbDetik.getSelectedItem());
-                ps.setString(5,Valid.SetTgl(Tgl2.getSelectedItem()+"")+" "+CmbJam2.getSelectedItem()+":"+CmbMenit2.getSelectedItem()+":"+CmbDetik2.getSelectedItem());
-                ps.setString(6,"%"+TCari.getText().trim()+"%");
                 rs=ps.executeQuery();
                 no=1;
                 while(rs.next()){                            
@@ -605,29 +604,34 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
                     norawatinap="";
                     norawatjalan="";
                     notajual="";
+                    carabayar="";
                     nopemasukanlain="";
                     nonota=Sequel.cariIsi("select no_nota from nota_inap where no_rawat=?",rs.getString("no_nota"));
                     if(!nonota.equals("")){
                         norawatinap=rs.getString("no_nota");
+                        carabayar=Sequel.cariIsi("select png_jawab from penjab inner join reg_periksa on penjab.kd_pj=reg_periksa.kd_pj where reg_periksa.no_rawat=?",rs.getString("no_nota"));
                     }else if(nonota.equals("")){
                         nonota=Sequel.cariIsi("select no_nota from nota_jalan where no_rawat=?",rs.getString("no_nota"));
                         if(!nonota.equals("")){
                             norawatjalan=rs.getString("no_nota");
+                            carabayar=Sequel.cariIsi("select png_jawab from penjab inner join reg_periksa on penjab.kd_pj=reg_periksa.kd_pj where reg_periksa.no_rawat=?",rs.getString("no_nota"));
                         }else if(nonota.equals("")){
                             nonota=Sequel.cariIsi("select nota_jual from penjualan where nota_jual=?",rs.getString("no_nota"));
                             if(!nonota.equals("")){
                                 notajual=rs.getString("no_nota");
+                                carabayar="Penjualan Apotek";
                             }else if(nonota.equals("")){
                                 nonota=Sequel.cariIsi("select no_masuk from pemasukan_lain where no_masuk=?",rs.getString("no_nota"));
                                 if(!nonota.equals("")){
                                     nopemasukanlain=rs.getString("no_nota");
+                                    carabayar="Pemasukan Lain";
                                 }else{
                                     nopemasukanlain="";
                                 }
                             }                                            
                         }
                     }
-                    if(petugas.toLowerCase().trim().contains(User.getText().toLowerCase().trim())){
+                    if((petugas.toLowerCase().trim().contains(User.getText().toLowerCase().trim()))&&(rs.getString("nama_pasien").toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())||nonota.toLowerCase().trim().contains(TCari.getText().toLowerCase().trim()))){
                         all=all+rs.getDouble("jumlah_bayar");
                         htmlContent.append(                             
                             "<tr class='isi'>"+
@@ -635,6 +639,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
                                 "<td valign='middle' align='center'>"+rs.getString("tgl_bayar")+"</td>"+
                                 "<td valign='middle' align='center'>"+nonota+"</td>"+
                                 "<td valign='middle' align='left'>"+rs.getString("nama_pasien")+"</td>"+
+                                "<td valign='middle' align='center'>"+carabayar+"</td>"+
                                 "<td valign='middle' align='right'>"+Valid.SetAngka(rs.getDouble("jumlah_bayar"))+"</td>"+
                                 "<td valign='middle' align='left'>"+petugas+"</td>"+
                                 "<td>"+
@@ -680,7 +685,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
                 htmlContent.append(                             
                     "<tr class='isi'>"+
                         "<td valign='middle' align='center'></td>"+
-                        "<td valign='middle' align='left' colspan='5'>Total "+akunbayar[i]+"</td>"+
+                        "<td valign='middle' align='left' colspan='6'>Total "+akunbayar[i]+"</td>"+
                         "<td valign='middle' align='right'>"+Valid.SetAngka(totalbayar[i])+"</td>"+
                     "</tr>"
                 );   
@@ -690,7 +695,7 @@ public final class DlgPembayaranPerAKunBayar3 extends javax.swing.JDialog {
                 htmlContent.append(                             
                     "<tr class='isi'>"+
                         "<td valign='middle' align='center'></td>"+
-                        "<td valign='middle' align='left' colspan='5'><b>Jumkah Total<b></td>"+
+                        "<td valign='middle' align='left' colspan='6'><b>Jumlah Total<b></td>"+
                         "<td valign='middle' align='right'><b>"+Valid.SetAngka(all)+"<b></td>"+
                     "</tr>"
                 ); 

@@ -2948,19 +2948,19 @@ public final class RMPenilaianAwalKeperawatanRalan extends javax.swing.JDialog {
     }//GEN-LAST:event_InformasiKeyPressed
 
     private void KeluhanUtamaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeluhanUtamaKeyPressed
-        Valid.pindah(evt,BMI,RPK);
+        Valid.pindah2(evt,BMI,RPK);
     }//GEN-LAST:event_KeluhanUtamaKeyPressed
 
     private void RPDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RPDKeyPressed
-        Valid.pindah(evt,RPK,RPO);
+        Valid.pindah2(evt,RPK,RPO);
     }//GEN-LAST:event_RPDKeyPressed
 
     private void RPKKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RPKKeyPressed
-        Valid.pindah(evt,KeluhanUtama,RPD);
+        Valid.pindah2(evt,KeluhanUtama,RPD);
     }//GEN-LAST:event_RPKKeyPressed
 
     private void RPOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RPOKeyPressed
-        Valid.pindah(evt,RPD,Alergi);
+        Valid.pindah2(evt,RPD,Alergi);
     }//GEN-LAST:event_RPOKeyPressed
 
     private void AlatBantuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AlatBantuKeyPressed
@@ -3108,7 +3108,7 @@ public final class RMPenilaianAwalKeperawatanRalan extends javax.swing.JDialog {
     }//GEN-LAST:event_KetDokterKeyPressed
 
     private void RencanaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RencanaKeyPressed
-        // TODO add your handling code here:
+        Valid.pindah2(evt,TCariMasalah,BtnSimpan);
     }//GEN-LAST:event_RencanaKeyPressed
 
     private void TotalHasilKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TotalHasilKeyPressed
@@ -3916,7 +3916,11 @@ public final class RMPenilaianAwalKeperawatanRalan extends javax.swing.JDialog {
     
     private void isBMI(){
         if((!TB.getText().equals(""))&&(!BB.getText().equals(""))){
-            BMI.setText(Valid.SetAngka7(Valid.SetAngka(BB.getText())/((Valid.SetAngka(TB.getText())/100)*(Valid.SetAngka(TB.getText())/100)))+"");
+            try {
+                BMI.setText(Valid.SetAngka7(Valid.SetAngka(BB.getText())/((Valid.SetAngka(TB.getText())/100)*(Valid.SetAngka(TB.getText())/100)))+"");
+            } catch (Exception e) {
+                BMI.setText("");
+            }
         }
     }
 }

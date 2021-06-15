@@ -35,7 +35,7 @@
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
-            <StringItem index="0" value="27-06-2020"/>
+            <StringItem index="0" value="21-04-2021"/>
           </StringArray>
         </Property>
         <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -929,7 +929,7 @@
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="1">
-                                    <StringItem index="0" value="27-06-2020"/>
+                                    <StringItem index="0" value="21-04-2021"/>
                                   </StringArray>
                                 </Property>
                                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -2213,7 +2213,7 @@
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="1">
-                                    <StringItem index="0" value="27-06-2020 17:39:24"/>
+                                    <StringItem index="0" value="21-04-2021 12:48:49"/>
                                   </StringArray>
                                 </Property>
                                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy HH:mm:ss"/>
@@ -2250,7 +2250,7 @@
                               <Properties>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="1">
-                                    <StringItem index="0" value="27-06-2020"/>
+                                    <StringItem index="0" value="21-04-2021"/>
                                   </StringArray>
                                 </Property>
                                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -2753,26 +2753,6 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="widget.ComboBox" name="AsalRujukan">
-                              <Properties>
-                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                  <StringArray count="2">
-                                    <StringItem index="0" value="1. Faskes 1"/>
-                                    <StringItem index="1" value="2. Faskes 2(RS)"/>
-                                  </StringArray>
-                                </Property>
-                                <Property name="selectedIndex" type="int" value="1"/>
-                                <Property name="name" type="java.lang.String" value="AsalRujukan" noResource="true"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AsalRujukanKeyPressed"/>
-                              </Events>
-                              <Constraints>
-                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="107" y="85" width="130" height="23"/>
-                                </Constraint>
-                              </Constraints>
-                            </Component>
                             <Component class="widget.Label" name="jLabel38">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Eksekutif :"/>
@@ -3023,7 +3003,7 @@
                                 </Property>
                                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                                   <StringArray count="1">
-                                    <StringItem index="0" value="27-06-2020"/>
+                                    <StringItem index="0" value="21-04-2021"/>
                                   </StringArray>
                                 </Property>
                                 <Property name="displayFormat" type="java.lang.String" value="dd-MM-yyyy"/>
@@ -3324,17 +3304,73 @@
                                 </Constraint>
                               </Constraints>
                             </Component>
-                            <Component class="widget.Label" name="jLabel51">
+                            <Component class="widget.Button" name="btnSKDP">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="No.SKDP :"/>
-                                <Property name="name" type="java.lang.String" value="jLabel51" noResource="true"/>
+                                <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
+                                  <Image iconType="3" name="/picture/190.png"/>
+                                </Property>
+                                <Property name="mnemonic" type="int" value="88"/>
+                                <Property name="toolTipText" type="java.lang.String" value="Alt+X"/>
+                                <Property name="name" type="java.lang.String" value="btnSKDP" noResource="true"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSKDPActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                  <AbsoluteConstraints x="427" y="85" width="28" height="23"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="widget.ComboBox" name="AsalRujukan">
+                              <Properties>
+                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                  <StringArray count="2">
+                                    <StringItem index="0" value="1. Faskes 1"/>
+                                    <StringItem index="1" value="2. Faskes 2(RS)"/>
+                                  </StringArray>
+                                </Property>
+                                <Property name="selectedIndex" type="int" value="1"/>
+                                <Property name="name" type="java.lang.String" value="AsalRujukan" noResource="true"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AsalRujukanKeyPressed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                  <AbsoluteConstraints x="107" y="85" width="125" height="23"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="widget.Button" name="btnSPRI">
+                              <Properties>
+                                <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
+                                  <Image iconType="3" name="/picture/190.png"/>
+                                </Property>
+                                <Property name="mnemonic" type="int" value="88"/>
+                                <Property name="toolTipText" type="java.lang.String" value="Alt+X"/>
+                                <Property name="name" type="java.lang.String" value="btnSPRI" noResource="true"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSPRIActionPerformed"/>
+                              </Events>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                                  <AbsoluteConstraints x="457" y="85" width="28" height="23"/>
+                                </Constraint>
+                              </Constraints>
+                            </Component>
+                            <Component class="widget.Label" name="jLabel54">
+                              <Properties>
+                                <Property name="text" type="java.lang.String" value="No.SKDP/SPRI :"/>
+                                <Property name="name" type="java.lang.String" value="jLabel54" noResource="true"/>
                                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                                   <Dimension value="[55, 23]"/>
                                 </Property>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="270" y="85" width="70" height="23"/>
+                                  <AbsoluteConstraints x="235" y="85" width="83" height="23"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -3350,26 +3386,7 @@
                               </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="344" y="85" width="110" height="23"/>
-                                </Constraint>
-                              </Constraints>
-                            </Component>
-                            <Component class="widget.Button" name="btnSKDP">
-                              <Properties>
-                                <Property name="icon" type="javax.swing.Icon" noResource="true" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                  <Image iconType="3" name="/picture/190.png"/>
-                                </Property>
-                                <Property name="mnemonic" type="int" value="88"/>
-                                <Property name="toolTipText" type="java.lang.String" value="Alt+X"/>
-                                <Property name="name" type="java.lang.String" value="btnSKDP" noResource="true"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSKDPActionPerformed"/>
-                                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btnSKDPKeyPressed"/>
-                              </Events>
-                              <Constraints>
-                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="457" y="85" width="28" height="23"/>
+                                  <AbsoluteConstraints x="322" y="85" width="103" height="23"/>
                                 </Constraint>
                               </Constraints>
                             </Component>

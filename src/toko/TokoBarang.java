@@ -32,7 +32,7 @@ import javax.swing.JTable;
 import javax.swing.event.DocumentEvent;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
-import restore.DlgRestoreIPSRSBarang;
+import restore.DlgRestoreTokoBarang;
 
 /**
  *
@@ -107,7 +107,7 @@ public final class TokoBarang extends javax.swing.JDialog {
         }
         tbJnsPerawatan.setDefaultRenderer(Object.class, new WarnaTable());
 
-        kode_brng.setDocument(new batasInput((byte)10).getKata(kode_brng));
+        kode_brng.setDocument(new batasInput((byte)40).getKata(kode_brng));
         nama_brng.setDocument(new batasInput((byte)80).getKata(nama_brng));
         kode_sat.setDocument(new batasInput((byte)4).getKata(kode_sat));
         stok.setDocument(new batasInput((byte)10).getKata(stok));
@@ -516,7 +516,7 @@ public final class TokoBarang extends javax.swing.JDialog {
             }
         });
         FormInput.add(kode_brng);
-        kode_brng.setBounds(93, 10, 130, 23);
+        kode_brng.setBounds(93, 10, 160, 23);
 
         nama_brng.setName("nama_brng"); // NOI18N
         nama_brng.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1036,7 +1036,7 @@ private void btnSatuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     }//GEN-LAST:event_btnJenisActionPerformed
 
     private void MnRestoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MnRestoreActionPerformed
-        DlgRestoreIPSRSBarang restore=new DlgRestoreIPSRSBarang(null,true);
+        DlgRestoreTokoBarang restore=new DlgRestoreTokoBarang(null,true);
         restore.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
         restore.setLocationRelativeTo(internalFrame1);
         restore.setVisible(true);

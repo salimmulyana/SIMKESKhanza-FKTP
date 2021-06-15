@@ -36,13 +36,7 @@ public class koneksiDB {
                         "  Puskesmas yang  gratis dan boleh digunakan siapa saja tanpa dikenai \n" +
                         "  biaya apapun. Dilarang keras memperjualbelikan/mengambil \n" +
                         "  keuntungan dari Software ini dalam bentuk apapun tanpa seijin pembuat \n" +
-                        "  software (Khanza.Soft Media). Bagi yang sengaja memperjualbelikan/\n" +
-                        "  mengambil keuntangan dari softaware ini tanpa ijin, kami sumpahi sial \n" +
-                        "  1000 turunan, miskin sampai 500 turunan. Selalu mendapat kecelakaan \n" +
-                        "  sampai 400 turunan. Anak pertamanya cacat tidak punya kaki sampai 300 \n" +
-                        "  turunan. Susah cari jodoh sampai umur 50 tahun sampai 200 turunan.\n" +
-                        "  Ya Alloh maafkan kami karena telah berdoa buruk, semua ini kami lakukan\n" +
-                        "  karena kami tidak pernah rela karya kami dibajak tanpa ijin.\n\n"+
+                        "  software (Khanza.Soft Media).\n"+
                         "                                                                           \n"+
                         "  #    ____  ___  __  __  ____   ____    _  __ _                              \n" +
                         "  #   / ___||_ _||  \\/  ||  _ \\ / ___|  | |/ /| |__    __ _  _ __   ____ __ _ \n" +
@@ -53,13 +47,14 @@ public class koneksiDB {
                         "                                                                           \n"+
                         "  Licensi yang dianut di software ini https://en.wikipedia.org/wiki/Aladdin_Free_Public_License \n"+
                         "  Informasi dan panduan bisa dicek di halaman https://github.com/mas-elkhanza/SIMRS-Khanza/wiki \n"+
+                        "  Bagi yang ingin berdonasi untuk pengembangan aplikasi ini bisa ke BSI 1015369872 atas nama Windiarto\n"+
                         "                                                                           ");
             }catch(Exception e){
                 System.out.println("Notif : "+e);
                 try {
                     if(connection.isClosed()){
                         prop.loadFromXML(new FileInputStream("setting/database.xml"));
-                        dataSource.setURL("jdbc:mysql://"+EnkripsiAES.decrypt(prop.getProperty("HOST"))+":"+EnkripsiAES.decrypt(prop.getProperty("PORT"))+"/"+EnkripsiAES.decrypt(prop.getProperty("DATABASE"))+"?zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true");
+                        dataSource.setURL("jdbc:mysql://"+EnkripsiAES.decrypt(prop.getProperty("HOST"))+":"+EnkripsiAES.decrypt(prop.getProperty("PORT"))+"/"+EnkripsiAES.decrypt(prop.getProperty("DATABASE"))+"?zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true&amp;cachePrepStmts=true");
                         dataSource.setUser(EnkripsiAES.decrypt(prop.getProperty("USER")));
                         dataSource.setPassword(EnkripsiAES.decrypt(prop.getProperty("PAS")));
                         connection=dataSource.getConnection();  
@@ -236,6 +231,16 @@ public class koneksiDB {
         try{
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
             var=prop.getProperty("ALARMBOOKINGPERIKSA");
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
+    public static String ALARMPERMINTAANRANAP(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var=prop.getProperty("ALARMPERMINTAANRANAP");
         }catch(Exception e){
             var=""; 
         }
@@ -786,6 +791,74 @@ public class koneksiDB {
         try{
             prop.loadFromXML(new FileInputStream("setting/database.xml"));
             var=prop.getProperty("DEPOAKTIFOBAT");
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
+    public static String STOKKOSONGRESEP(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var=prop.getProperty("STOKKOSONGRESEP");
+        }catch(Exception e){
+            var="no"; 
+        }
+        return var;
+    }
+    
+    public static String HPPFARMASI(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            if(prop.getProperty("HPPFARMASI").equals("h_beli")){
+                var="h_beli";
+            }else{
+                var="dasar";
+            }
+        }catch(Exception e){
+            var="dasar"; 
+        }
+        return var;
+    }
+    
+    public static String HPPTOKO(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            if(prop.getProperty("HPPTOKO").equals("h_beli")){
+                var="h_beli";
+            }else{
+                var="dasar";
+            }
+        }catch(Exception e){
+            var="dasar"; 
+        }
+        return var;
+    }
+    
+    public static String URLAPIMEDQLAB(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var=prop.getProperty("URLAPIMEDQLAB");
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
+    public static String SECRETKEYAPIMEDQLAB(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var=prop.getProperty("SECRETKEYAPIMEDQLAB");
+        }catch(Exception e){
+            var=""; 
+        }
+        return var;
+    }
+    
+    public static String CONSIDAPIMEDQLAB(){
+        try{
+            prop.loadFromXML(new FileInputStream("setting/database.xml"));
+            var=prop.getProperty("CONSIDAPIMEDQLAB");
         }catch(Exception e){
             var=""; 
         }
